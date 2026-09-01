@@ -133,6 +133,8 @@ rerun rather than changing a test result in place.
   default.
 - `DATA_SOURCES.md`: source attribution, snapshot hashes and data layout.
 - `RELEASE_NOTES_v1.0.0.md`: the first public version boundary.
+- `RELEASE_NOTES_v1.0.1.md`: metadata-only Zenodo archival follow-up to the
+  frozen `v1.0.0` materials.
 
 ## Interpretation boundaries
 
@@ -148,6 +150,7 @@ rerun rather than changing a test result in place.
 ## Release materials
 
 The repository-level release checklist is in
-`docs/IEEE_ACCESS_RELEASE_CHECKLIST.md`. The first public tag should be made
-only after the author metadata and code license are confirmed. A Zenodo DOI
+`docs/IEEE_ACCESS_RELEASE_CHECKLIST.md`. The original `v1.0.0` tag remains
+immutable; `v1.0.1` corrects the formal author metadata and provides the
+Zenodo archival trigger without changing the frozen analyses. A Zenodo DOI
 must refer to an immutable GitHub Release, not to a moving branch.

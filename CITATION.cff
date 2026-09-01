@@ -3,11 +3,13 @@ message: "If you use this software or computational supplement, please cite this
 title: "Time-aware crash-severity modelling: STATS19 and CAS"
 type: software
 authors:
-  - name: Lhj828828
+  - given-names: Haojie
+    family-names: Liu
+    affiliation: Shandong Jianzhu University
     email: 18255884865@163.com
 repository-code: "https://github.com/Lhj828828/stats19-crash-severity-temporal-eval"
 license: MIT
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-09-01
 keywords:
   - crash severity classification
