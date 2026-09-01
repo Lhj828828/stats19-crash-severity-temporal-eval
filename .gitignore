@@ -1,11 +1,67 @@
-# Local Python environments and caches
+# Python runtimes, caches and local tooling
 .venv/
 .venv-*/
+env/
+venv/
+ENV/
 __pycache__/
 *.py[cod]
+*$py.class
 .pytest_cache/
 .ipynb_checkpoints/
 .vscode/
+.mypy_cache/
+.pytype/
+.pyre/
+.ruff_cache/
+.cache/
+.coverage
+.coverage.*
+htmlcov/
+*.log
+
+# Build and packaging output
+.Python
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+*.egg
+MANIFEST
+*.manifest
+*.spec
+.pdm-python
+.pdm-build/
+.pixi/
+__pypackages__/
+.python-version
+Pipfile.lock
+poetry.lock
+poetry.toml
+uv.lock
+
+# Credentials and local application state
+.env
+.env.*
+!.env.example
+.envrc
+.pypirc
+.idea/
+.spyderproject
+.spyproject
+.ropeproject
+.abstra/
+.streamlit/secrets.toml
+tempCodeRunnerFile.py
 
 # Local QA, temporary documents and scratch output
 _qa_*/
@@ -36,8 +92,17 @@ models/*
 
 # Large record-level result artifacts. Compact summary CSV files remain tracked.
 results/**/predictions/*
+results/**/validation_predictions/*
 results/**/shap_values/*
 results/**/*.npz
 results/**/*.npy
 results/**/*.joblib
 results/**/*.csv.gz
+
+# Common local archives and OS metadata
+*.zip
+*.tar
+*.tar.gz
+*.7z
+.DS_Store
+Thumbs.db
