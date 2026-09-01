@@ -1,5 +1,7 @@
 # Time-aware crash-severity modelling: STATS19 and CAS
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22231696.svg)](https://doi.org/10.5281/zenodo.22231696)
+
 This repository contains the frozen computational materials for the IEEE
 Access manuscript on leakage-aware temporal generalization in collision
 severity classification. It combines the UK STATS19 primary analysis with a
@@ -151,6 +153,13 @@ rerun rather than changing a test result in place.
 
 The repository-level release checklist is in
 `docs/IEEE_ACCESS_RELEASE_CHECKLIST.md`. The original `v1.0.0` tag remains
-immutable; `v1.0.1` corrects the formal author metadata and provides the
-Zenodo archival trigger without changing the frozen analyses. A Zenodo DOI
-must refer to an immutable GitHub Release, not to a moving branch.
+immutable; `v1.0.1` corrects the formal author metadata, and `v1.0.2` points
+to the same frozen commit and provides the successful Zenodo archival event.
+No analytical code, data-processing rule, model output or study conclusion
+changed between these two tags.
+
+The exact archived `v1.0.2` release is available at
+<https://doi.org/10.5281/zenodo.22231697>. The concept DOI
+<https://doi.org/10.5281/zenodo.22231696> represents all versions and resolves
+to the latest Zenodo archive. Cite the version DOI when referring to the
+computational materials used for this study.
