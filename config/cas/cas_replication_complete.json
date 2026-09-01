@@ -1,0 +1,34 @@
+{
+  "version": "CAS_REPLICATION_CLOSEOUT_V1",
+  "status": "CAS_REPLICATION_ANALYSIS_COMPLETE",
+  "created_local": "2026-09-01T15:57:13+08:00",
+  "protocol": "config/cas/cas_cross_dataset_reporting_protocol.json",
+  "protocol_sha256": "8022dd11b8a7251ec842b889ad5cd8a3c047eb28a97a6a50d8f727bed86ad879",
+  "comparison_rows": 8,
+  "replication_label_counts": {
+    "broad_pattern_agreement": 1,
+    "different_direction_near_zero_or_mixed": 1,
+    "different_observed_pattern": 1,
+    "direction_replicated": 1,
+    "direction_same_evidence_weaker_in_cas": 2,
+    "executability_demonstrated": 1,
+    "not_replicated": 1
+  },
+  "one_time_2025_evaluation_status": "FROZEN_MODELS_EVALUATED_ONCE",
+  "post_test_model_selection": false,
+  "new_inferential_test": false,
+  "records_pooled": false,
+  "cross_national_generalizability_claim_allowed": false,
+  "artifact_manifest": "logs/cas/cas_replication_artifact_manifest.csv",
+  "artifact_manifest_sha256": "eb7770c43e4955d87b76900f841418861e1600193a921a6badf857f977d1812e",
+  "external_upstream": {
+    "final_summary": {
+      "path": "../STATS19论文/logs/d14_final_summary.json",
+      "sha256": "20b7d749d826e95c3d5e76fc35207854954f79c4c318fdf8b4bcae596d873433"
+    },
+    "final_comparison_protocol": {
+      "path": "../STATS19论文/config/d16_final_comparison_protocol.json",
+      "sha256": "ccae94276f7e45e4eb4ca746d0c52ed562ef5dda197a2d1f87eb74df916c0f09"
+    }
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "version": "D8_V1",
+  "status": "BASELINE_SPECIFICATION_FROZEN_BEFORE_VALIDATION_INSPECTION",
+  "created_local": "2026-08-28",
+  "upstream": {
+    "D5_schema": "config/d5_dataset_schema.json",
+    "D5_schema_sha256": "cea222466650a095170a66a3d094eba76b3cdf71c22bc6bcb61054152969030b",
+    "D6_protocol": "config/d6_analysis_protocol.json",
+    "D6_protocol_sha256": "5040fa8b1c2d4d33304af371cfec91b0bc8fcf49b8d872ca473ea00e2d31a3f8",
+    "D7_training_inputs": "config/d7_training_inputs.json",
+    "D7_training_inputs_sha256": "232962cc1ba5cf61504a6bf5b151f484cb9c7c0e5c8b45164e952132601599cb",
+    "D6_assignments_sha256": "5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076"
+  },
+  "evaluation_scope": {
+    "allowed": "training and validation roles from 2018-2023 only",
+    "forbidden": "all temporal/random test performance and all 2024 performance",
+    "temporal_training_years": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "temporal_validation_years": [
+      2023
+    ],
+    "random_seeds": [
+      1103,
+      2207,
+      3301,
+      4409,
+      5501
+    ]
+  },
+  "features": {
+    "allowlist": [
+      "feature_day_of_week",
+      "feature_first_road_class",
+      "feature_road_type",
+      "feature_junction_detail",
+      "feature_junction_control",
+      "feature_second_road_class",
+      "feature_pedestrian_crossing",
+      "feature_light_conditions",
+      "feature_weather_conditions",
+      "feature_road_surface_conditions",
+      "feature_special_conditions_at_site",
+      "feature_carriageway_hazards",
+      "feature_urban_or_rural_area",
+      "feature_trunk_road_flag",
+      "feature_speed_limit",
+      "feature_month",
+      "feature_hour"
+    ],
+    "categorical": [
+      "feature_day_of_week",
+      "feature_first_road_class",
+      "feature_road_type",
+      "feature_junction_detail",
+      "feature_junction_control",
+      "feature_second_road_class",
+      "feature_pedestrian_crossing",
+      "feature_light_conditions",
+      "feature_weather_conditions",
+      "feature_road_surface_conditions",
+      "feature_special_conditions_at_site",
+      "feature_carriageway_hazards",
+      "feature_urban_or_rural_area",
+      "feature_trunk_road_flag",
+      "feature_month",
+      "feature_hour"
+    ],
+    "numeric": [
+      "feature_speed_limit"
+    ],
+    "metadata_excluded": [
+      "meta_collision_index",
+      "meta_collision_year",
+      "meta_date",
+      "meta_police_force",
+      "meta_injury_based"
+    ],
+    "target_excluded": "target_severity"
+  },
+  "preprocessing": {
+    "fit_scope": "each training partition only",
+    "categorical": "training vocabulary, explicit __UNSEEN__, one-hot without dropping a level",
+    "numeric": "training median imputation followed by training-fitted standardization",
+    "rare_pooling": "disabled"
+  },
+  "models": {
+    "dummy_most_frequent": {
+      "role": "minimum-performance floor",
+      "strategy": "most_frequent",
+      "class_weight": null
+    },
+    "logistic_unweighted": {
+      "role": "natural-prevalence linear baseline",
+      "solver": "lbfgs",
+      "penalty": "l2",
+      "C": 1.0,
+      "max_iter": 500,
+      "tol": 0.0001,
+      "class_weight": null
+    },
+    "logistic_weighted": {
+      "role": "primary linear comparator for class-weighted LightGBM",
+      "solver": "lbfgs",
+      "penalty": "l2",
+      "C": 1.0,
+      "max_iter": 500,
+      "tol": 0.0001,
+      "class_weight": "D7 split-specific balanced weights"
+    }
+  },
+  "prediction_rule": "argmax over class probabilities; no threshold tuning",
+  "validation_reporting": [
+    "Macro-F1",
+    "quadratic weighted kappa",
+    "ordinal MAE",
+    "accuracy",
+    "class recalls",
+    "serious-or-fatal recall",
+    "mean asymmetric cost",
+    "confusion matrix"
+  ],
+  "asymmetric_cost_matrix": {
+    "class_order": [
+      "Slight",
+      "Serious",
+      "Fatal"
+    ],
+    "rows_true_columns_predicted": [
+      [
+        0.0,
+        1.0,
+        2.0
+      ],
+      [
+        2.0,
+        0.0,
+        1.0
+      ],
+      [
+        5.0,
+        3.0,
+        0.0
+      ]
+    ],
+    "purpose": "descriptive test metric only; never a tuning target",
+    "rationale": "underestimating severe outcomes receives a larger penalty than overestimation",
+    "freeze_timing": "fixed in code and config before D8 validation performance inspection"
+  },
+  "primary_future_comparison": "logistic_weighted versus class-weighted LightGBM",
+  "test_embargo": {
+    "year": 2024,
+    "rule": "No preprocessing fit, tuning, threshold choice, model selection or intermediate performance inspection before the one-time D11 evaluation."
+  }
+}

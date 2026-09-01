@@ -1,0 +1,43 @@
+# Local Python environments and caches
+.venv/
+.venv-*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.vscode/
+
+# Local QA, temporary documents and scratch output
+_qa_*/
+tmp_docx/
+tmp/
+*.tmp
+*_D16_reproduction/
+
+# Local manuscript drafts and journal-specific templates
+manuscript/
+
+# Raw data snapshots are reproducible from the documented official sources.
+# Keep directory placeholders, but do not commit the data files themselves.
+data/raw/downloads/*
+!data/raw/downloads/.gitkeep
+data/raw/collisions/*
+!data/raw/collisions/.gitkeep
+data/raw/cas/*
+!data/raw/cas/.gitkeep
+
+# Rebuildable intermediate tables and fitted model binaries
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+models/*
+!models/.gitkeep
+
+# Large record-level result artifacts. Compact summary CSV files remain tracked.
+results/**/predictions/*
+results/**/shap_values/*
+results/**/*.npz
+results/**/*.npy
+results/**/*.joblib
+results/**/*.csv.gz

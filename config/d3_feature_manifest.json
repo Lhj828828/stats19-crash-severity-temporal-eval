@@ -1,0 +1,106 @@
+{
+  "version": "D3_V1",
+  "status": "FROZEN",
+  "source_table": "collision_only",
+  "study_population": "police-reported personal-injury collisions in Great Britain, 2018-2024",
+  "prediction_task": "predict reported collision injury severity conditional on a collision",
+  "prediction_time": "at collision; no consequence, response, injury-derived, or severity-adjustment inputs",
+  "target": {
+    "source": "collision_severity",
+    "encoding": {
+      "3": 0,
+      "2": 1,
+      "1": 2
+    },
+    "ordered_labels": [
+      "Slight",
+      "Serious",
+      "Fatal"
+    ]
+  },
+  "direct_features": {
+    "categorical": [
+      "day_of_week",
+      "first_road_class",
+      "road_type",
+      "junction_detail",
+      "junction_control",
+      "second_road_class",
+      "pedestrian_crossing",
+      "light_conditions",
+      "weather_conditions",
+      "road_surface_conditions",
+      "special_conditions_at_site",
+      "carriageway_hazards",
+      "urban_or_rural_area",
+      "trunk_road_flag"
+    ],
+    "numeric": [
+      "speed_limit"
+    ]
+  },
+  "derived_features": [
+    {
+      "feature": "month",
+      "source": "date",
+      "type": "categorical",
+      "rule": "calendar month 1-12"
+    },
+    {
+      "feature": "hour",
+      "source": "time",
+      "type": "categorical",
+      "rule": "hour 0-23 parsed from valid HH:MM"
+    }
+  ],
+  "split_and_group_only": {
+    "collision_year": "temporal split",
+    "date": "chronological ordering before month derivation",
+    "police_force": "regional grouping/sensitivity analysis only",
+    "collision_injury_based": "label-process sensitivity reporting only"
+  },
+  "unknown_policy": {
+    "categorical": "map official unknown and not-applicable codes to separate explicit categories; never treat raw codes as ordered magnitudes",
+    "speed_limit": {
+      "valid_values": [
+        20,
+        30,
+        40,
+        50,
+        60,
+        70
+      ],
+      "verified_unknown_codes_in_2018_2024_data": [
+        -1
+      ],
+      "transform": "convert verified unknown codes to missing",
+      "schema_guard": "raise an error for any other value until that year's official guide is checked",
+      "downstream": "LightGBM uses native missing values; any imputation for other models is fitted within each training fold only"
+    }
+  },
+  "excluded_fields": {
+    "collision_index": "EXCLUDE_IDENTIFIER",
+    "collision_ref_no": "EXCLUDE_IDENTIFIER",
+    "location_easting_osgr": "EXCLUDE_EXACT_GEOGRAPHY",
+    "location_northing_osgr": "EXCLUDE_EXACT_GEOGRAPHY",
+    "longitude": "EXCLUDE_EXACT_GEOGRAPHY",
+    "latitude": "EXCLUDE_EXACT_GEOGRAPHY",
+    "number_of_vehicles": "EXCLUDE_POST_COLLISION",
+    "number_of_casualties": "EXCLUDE_OUTCOME",
+    "local_authority_district": "EXCLUDE_EXACT_GEOGRAPHY",
+    "local_authority_ons_district": "EXCLUDE_EXACT_GEOGRAPHY",
+    "local_authority_highway": "EXCLUDE_EXACT_GEOGRAPHY",
+    "local_authority_highway_current": "EXCLUDE_EXACT_GEOGRAPHY",
+    "first_road_number": "EXCLUDE_HIGH_CARDINALITY",
+    "junction_detail_historic": "EXCLUDE_HISTORIC_DUPLICATE",
+    "second_road_number": "EXCLUDE_HIGH_CARDINALITY",
+    "pedestrian_crossing_human_control_historic": "EXCLUDE_HISTORIC_DUPLICATE",
+    "pedestrian_crossing_physical_facilities_historic": "EXCLUDE_HISTORIC_DUPLICATE",
+    "carriageway_hazards_historic": "EXCLUDE_HISTORIC_DUPLICATE",
+    "did_police_officer_attend_scene_of_accident": "EXCLUDE_POST_COLLISION",
+    "lsoa_of_accident_location": "EXCLUDE_EXACT_GEOGRAPHY",
+    "enhanced_severity_collision": "EXCLUDE_TARGET_DERIVED",
+    "collision_adjusted_severity_serious": "EXCLUDE_TARGET_DERIVED",
+    "collision_adjusted_severity_slight": "EXCLUDE_TARGET_DERIVED"
+  }
+}

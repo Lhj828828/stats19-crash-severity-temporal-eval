@@ -1,0 +1,163 @@
+{
+  "version": "D14_EXCLUDE2020_V1",
+  "status": "FROZEN_BEFORE_EXCLUDE2020_MODEL_FITTING",
+  "created_local": "2026-08-31",
+  "timing_disclosure": "Excluding 2020 was specified in the working outline before this run, but was not externally preregistered. The exact implementation, model set and paired bootstrap comparisons were frozen after D11-D14 main results were known and before fitting any exclusion-2020 model.",
+  "scientific_scope": {
+    "role": "appendix sensitivity analysis",
+    "question": "Are strict-temporal 2024 estimates and the primary LightGBM-versus-Logistic comparison sensitive to retaining 2020 in temporal training?",
+    "not_answered": "This analysis does not identify a causal pandemic effect and cannot determine whether 2020 drives H1 random-internal-versus-2024 gaps, because random models are not refitted here.",
+    "no_model_selection": true,
+    "no_retuning": true,
+    "no_threshold_change": true
+  },
+  "upstream_sha256": {
+    "C:\\Users\\Administrator\\Desktop\\PeerJ_Computer_Science_交通事故严重度预测论文大纲_执行质量完善版.docx": "bbbf6b60a799a23c3afab0b856f215b34d27c3f726197efbe1d997de8394c77b",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\data\\processed\\stats19_modeling_dataset.csv.gz": "2277e47fd899c15116bfa2e62eca9f9c7ea9d45d08d1b5cda2027724c843021e",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\data\\processed\\d6_split_assignments.csv.gz": "5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\config\\d5_dataset_schema.json": "cea222466650a095170a66a3d094eba76b3cdf71c22bc6bcb61054152969030b",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\config\\d6_analysis_protocol.json": "5040fa8b1c2d4d33304af371cfec91b0bc8fcf49b8d872ca473ea00e2d31a3f8",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\config\\d10_lightgbm_protocol.json": "079aad5af8e95360b60b17b664c847336db66b4712811bac17b67ce5a9d5c963",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\config\\d10_selected_lightgbm.json": "b822cf2c8e68d447b3636103f3d929e2209bf402b9ae01acf4a94d16e6f43444",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\config\\d11_evaluation_protocol.json": "3bfb1617463df61c08123f5638535a39b335675c875bb88e15c6485b343befa5",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\logs\\d11_artifact_manifest.csv": "dda41121012a5926e6e8c80132a65293f1572fb7ad4e15f050b158aa1de85182",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\config\\d14_shap_protocol.json": "25442cc216ee80a7b84f859371b18ddd93df98e958f9c7a1b6318b884d46bb22",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\logs\\d14_shap_artifact_manifest.csv": "33c3c360689a7a42942c83a84e0a28bda6936498a02f8ef129cb0d6a6db5446d",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\results\\d11\\predictions\\temporal__logistic_weighted__test.csv.gz": "8d47b66a6d1e964fbd4c9cd4c285fa37fe17aa4f8dab2bf6e5b9012872e25892",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\results\\d11\\predictions\\temporal__lightgbm_weighted__test.csv.gz": "2d5d656bbd1e8919ea0a7ad4c7adbcb0ec758ed5129236c05c8cf067d516980b",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\code\\baseline_modeling.py": "34c024f461ad3c6a083e5e2ea16e911ae96b2bb6a75151dd3ece11f7005f79ec",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\code\\d8_train_baselines.py": "a891ca24566d579e8e12708fe2b7b8608111a10d6b5b7de9308b36d1cf98f1ca",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\code\\d10_tune_lightgbm.py": "ba584669cedc84c7095cf2385ecdce815a6d8ccbf75ab9538f12bc0468178cc1",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\code\\d11_evaluate_frozen_models.py": "7cc6ffcb554f5b86efc68a8a17fd5f4601f253111d0926de048ede585b5d4b3c",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\code\\d14_exclude2020_sensitivity.py": "a85f8852c5fe652ac114d0bb3c9af5000db77bb5efec2968771068cb08365354",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\code\\test_d14_exclude2020.py": "ba5bc7f471e24b8406a1a232fc9a2789e9f1558cd2e95f29453a29002bc106c9",
+    "C:\\Users\\Administrator\\Desktop\\STATS19论文\\requirements.txt": "4a34009a43f2f0407dcfd4c5692d9b79fd60f68ace0db2bc49942bb9f3a5898f"
+  },
+  "split": {
+    "training_years": [
+      2018,
+      2019,
+      2021,
+      2022
+    ],
+    "excluded_training_year": 2020,
+    "validation_years": [
+      2023
+    ],
+    "test_years": [
+      2024
+    ],
+    "expected_rows": {
+      "train": 447262,
+      "validation": 104258,
+      "test": 100927
+    },
+    "test_rule": "same frozen 2024 records and order as the main temporal evaluation"
+  },
+  "features_and_preprocessing": {
+    "allowlist": [
+      "feature_day_of_week",
+      "feature_first_road_class",
+      "feature_road_type",
+      "feature_junction_detail",
+      "feature_junction_control",
+      "feature_second_road_class",
+      "feature_pedestrian_crossing",
+      "feature_light_conditions",
+      "feature_weather_conditions",
+      "feature_road_surface_conditions",
+      "feature_special_conditions_at_site",
+      "feature_carriageway_hazards",
+      "feature_urban_or_rural_area",
+      "feature_trunk_road_flag",
+      "feature_speed_limit",
+      "feature_month",
+      "feature_hour"
+    ],
+    "fit_scope": "exclude-2020 training rows only",
+    "categorical": "training-fitted vocabulary with __UNSEEN__ transform-only mapping",
+    "logistic": "training-fitted one-hot encoding; speed-limit median and scaling",
+    "lightgbm": "native categorical features; speed-limit NaN retained",
+    "class_weights": "recomputed only from the exclusion-2020 training class counts"
+  },
+  "models": {
+    "logistic_weighted": {
+      "parameters": {
+        "penalty": "l2",
+        "C": 1.0,
+        "solver": "lbfgs",
+        "max_iter": 500,
+        "tol": 0.0001,
+        "random_state": 20260828
+      },
+      "role": "primary linear comparator"
+    },
+    "lightgbm_weighted": {
+      "selected_candidate": "C03",
+      "n_estimators": 1200,
+      "parameters": {
+        "num_leaves": 63,
+        "max_depth": -1,
+        "min_child_samples": 100,
+        "min_split_gain": 0.0,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "colsample_bytree": 1.0,
+        "subsample": 1.0,
+        "subsample_freq": 0
+      },
+      "common_parameters": {
+        "boosting_type": "gbdt",
+        "objective": "multiclass",
+        "num_class": 3,
+        "learning_rate": 0.05,
+        "max_bin": 255,
+        "random_state": 20260830,
+        "n_jobs": 8,
+        "deterministic": true,
+        "force_col_wise": true,
+        "verbosity": -1
+      },
+      "role": "primary nonlinear comparator"
+    }
+  },
+  "evaluation": {
+    "prediction_rule": "argmax over Slight, Serious and Fatal probabilities",
+    "validation": "descriptive pipeline audit only; no selection",
+    "test_metrics": [
+      "macro_f1",
+      "qwk",
+      "ordinal_mae",
+      "accuracy",
+      "fatal_recall",
+      "serious_or_fatal_recall",
+      "mean_asymmetric_cost"
+    ],
+    "comparisons": [
+      "exclude2020 LightGBM versus exclude2020 Logistic on 2024",
+      "exclude2020 versus main model for each primary model on 2024",
+      "change in the LightGBM-versus-Logistic contrast relative to the main analysis"
+    ]
+  },
+  "bootstrap": {
+    "iterations": 2000,
+    "seed": 20260828,
+    "resampling": "paired nonparametric bootstrap over common 2024 collisions, stratified by true severity; implemented by multinomial resampling of joint prediction patterns",
+    "confidence_level": 0.95,
+    "interval_method": "percentile",
+    "multiplicity_adjustment": "none; descriptive sensitivity intervals"
+  },
+  "runtime": {
+    "CPU_thread_limit": 8,
+    "GPU_used": false,
+    "package_versions_at_freeze": {
+      "python": "3.13.15",
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scipy": "1.18.1",
+      "scikit_learn": "1.9.0",
+      "lightgbm": "4.7.0",
+      "platform": "Windows-11-10.0.26200-SP0"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "version": "D9S1_V1",
+  "status": "FROZEN_BEFORE_MATCHED_SENSITIVITY_RESULTS",
+  "freeze_date_local": "2026-08-29",
+  "analysis_origin": "Post-hoc sensitivity analysis specified after D9 selected its runtime-only 100,000-row fallback and before D10 LightGBM fitting",
+  "purpose": "Reduce training-sample-size confounding when interpreting the D9 Ordered Logit validation results",
+  "upstream": {
+    "D8_protocol": "config/d8_baseline_protocol.json",
+    "D8_protocol_sha256": "7b4a1c487334827799169f88342bbac49559f2a1c7bad8412558e958501114c5",
+    "D9_protocol": "config/d9_ordered_logit_protocol.json",
+    "D9_protocol_sha256": "7faf663b170ac078cb4bbd3a091c04e60225b955239c22d25e7dc2d3284805fc",
+    "D9_benchmark": "logs/d9_runtime_benchmark.json",
+    "D9_benchmark_sha256": "bfa29029818029453f6872945d1d19ca96a7966f38ab7f4e0b1efd505d3eae21",
+    "D9_metrics": "results/d9/d9_validation_metrics.csv",
+    "D9_metrics_sha256": "b9cb7b7b1c9e149c022a13b2ff961ddb1aff1c8e30eeba1b485a956f90411c06",
+    "D6_assignments": "data/processed/d6_split_assignments.csv.gz",
+    "D6_assignments_sha256": "5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076",
+    "D9_script_sha256": "2ad90b59a28e18a68146759931151db4db4d11e279e32461f8cf947e29c726c3",
+    "D8_script_sha256": "a891ca24566d579e8e12708fe2b7b8608111a10d6b5b7de9308b36d1cf98f1ca",
+    "baseline_modeling_sha256": "34c024f461ad3c6a083e5e2ea16e911ae96b2bb6a75151dd3ece11f7005f79ec"
+  },
+  "matched_subset": {
+    "training_rows_per_split": 100000,
+    "splits": "temporal plus all five frozen random-reference splits",
+    "base_seed": 20260829,
+    "temporal_seed": 20260829,
+    "random_seed_rule": "base_seed + frozen random-reference split seed",
+    "sampling": "the exact D9 stratified train_test_split algorithm, followed by ascending row-position sorting",
+    "identity_control": "persist row position, collision identifier and target for every selected row; record ordered-row SHA-256 and deterministic file SHA-256",
+    "historical_note": "D9 did not persist training identifiers at fit time. D9-S1 reconstructs them deterministically from the unchanged hashed assignment artifact and the D9 source algorithm. This is reported transparently and is not described as a contemporaneous D9 manifest."
+  },
+  "comparator": {
+    "model": "logistic_unweighted_matched_100k",
+    "base_specification": "D8 logistic_unweighted",
+    "class_weight": null,
+    "penalty": "l2",
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 500,
+    "tol": 0.0001,
+    "prediction_rule": "argmax over class probabilities; no threshold tuning",
+    "preprocessing": "fit category vocabulary, one-hot encoding, numeric median and standardization separately on each matched 100,000-row subset"
+  },
+  "evaluation": {
+    "validation": "the complete validation partition paired with each D9 model",
+    "metrics": [
+      "Macro-F1",
+      "quadratic weighted kappa",
+      "ordinal MAE",
+      "accuracy",
+      "class recalls",
+      "serious-or-fatal recall",
+      "mean asymmetric cost",
+      "confusion matrix"
+    ],
+    "all_six_splits_required": true,
+    "no_result_based_tuning": true
+  },
+  "interpretation_boundary": "Matching controls training-row count but does not isolate model structure: proportional-odds constraints, regularization and encoding still differ. Report as a sensitivity analysis, not a pure causal decomposition of structure versus sample size.",
+  "reporting_role": "appendix sensitivity table; not a primary result table",
+  "test_embargo": {
+    "year": 2024,
+    "rule": "No 2024 record may be fitted, predicted or evaluated in D9-S1."
+  }
+}

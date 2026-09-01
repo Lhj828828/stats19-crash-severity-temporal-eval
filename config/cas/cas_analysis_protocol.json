@@ -1,0 +1,172 @@
+{
+  "version": "CAS_SPLITS_V1",
+  "status": "FROZEN_BEFORE_ANY_CAS_MODEL_TRAINING",
+  "created_local": "2026-09-01T11:02:17+08:00",
+  "decision_basis": "Frozen after feasibility/schema auditing and before model fitting or performance inspection. The 2025 schema and distributions were previously inspected and are disclosed; no 2025 model result exists.",
+  "upstream": {
+    "feasibility_protocol": "config/cas/cas_feasibility_protocol.json",
+    "feasibility_protocol_sha256": "b9d9a4134fb4b8a48b8951652f486a275a2553582801102f36906410a0749e17",
+    "modeling_dataset": "data/processed/cas_modeling_dataset.csv.gz",
+    "modeling_dataset_sha256": "714ca06b492f209b95cde9042a0b439f38f0d29213f70bc64207d8af9be777cd",
+    "modeling_schema": "config/cas/cas_modeling_schema.json",
+    "modeling_schema_sha256": "44ca815864e8919a46feb993e931da4e9435467db5722382c831228d2e220bba",
+    "cleaning_rules": "config/cas/cas_cleaning_rules.json",
+    "cleaning_rules_sha256": "663698ecf8f46caadd7de3475e9272a16393e3a75a1bcf9e21b9edf0b1cb7833"
+  },
+  "population": {
+    "years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "row_count": 43121,
+    "statistical_unit": "police-reported personal-injury crash",
+    "target_order": [
+      "Minor",
+      "Serious",
+      "Fatal"
+    ],
+    "feature_count": 15
+  },
+  "temporal_protocol": {
+    "purpose": "primary deployment-oriented evaluation",
+    "train_years": [
+      2022,
+      2023
+    ],
+    "validation_years": [
+      2024
+    ],
+    "test_years": [
+      2025
+    ],
+    "row_counts": {
+      "train": 21934,
+      "validation": 10645,
+      "test": 10542
+    },
+    "target_counts": {
+      "train": {
+        "Minor": 17107,
+        "Serious": 4188,
+        "Fatal": 639
+      },
+      "validation": {
+        "Minor": 8306,
+        "Serious": 2090,
+        "Fatal": 249
+      },
+      "test": {
+        "Minor": 8222,
+        "Serious": 2061,
+        "Fatal": 259
+      }
+    },
+    "model_selection": "training and validation only",
+    "final_test_rule": "Evaluate frozen models once on 2025. Do not use 2025 for preprocessing fit, tuning, threshold selection or model choice."
+  },
+  "random_reference_protocol": {
+    "purpose": "same-period random reference, not a deployment estimate",
+    "pool_years": [
+      2022,
+      2023,
+      2024
+    ],
+    "pool_row_count": 32579,
+    "ratios": {
+      "train": 0.7,
+      "validation": 0.15,
+      "test": 0.15
+    },
+    "row_counts_per_seed": {
+      "train": 22805,
+      "validation": 4887,
+      "test": 4887
+    },
+    "stratify_by": "target_severity",
+    "seeds": [
+      1103,
+      2207,
+      3301,
+      4409,
+      5501
+    ],
+    "second_stage_seed_rule": "seed + 1000003",
+    "locked_temporal_test_year": 2025,
+    "future_diagnostic": "After each random model is frozen, apply it once to 2025 without retuning; report separately from its internal test."
+  },
+  "class_feasibility_preflight": {
+    "year": 2025,
+    "fatal_count": 259,
+    "screening_threshold": 50,
+    "decision": "proceed",
+    "interpretation": "This checks only extreme sparsity and does not guarantee narrow fatal-recall confidence intervals."
+  },
+  "training_only_operations": [
+    "categorical vocabulary fitting",
+    "unseen-category mapping",
+    "numeric imputation and missing-indicator fitting for linear models",
+    "class-weight calculation",
+    "hyperparameter selection"
+  ],
+  "planned_model_scope": {
+    "main": [
+      "dummy_most_frequent",
+      "logistic_weighted",
+      "lightgbm_weighted"
+    ],
+    "rule": "Any additional model is appendix-only and must be declared before its performance is inspected."
+  },
+  "frozen_metrics": {
+    "selection_metric": "Macro-F1 on validation data",
+    "required_reporting": [
+      "Macro-F1",
+      "quadratic weighted kappa",
+      "ordinal MAE",
+      "accuracy",
+      "class-specific recall",
+      "serious-or-fatal recall",
+      "pre-specified asymmetric error cost"
+    ],
+    "asymmetric_cost_matrix": [
+      [
+        0.0,
+        1.0,
+        2.0
+      ],
+      [
+        2.0,
+        0.0,
+        1.0
+      ],
+      [
+        5.0,
+        3.0,
+        0.0
+      ]
+    ],
+    "cost_matrix_note": "Rows are true Minor/Serious/Fatal and columns are predicted Minor/Serious/Fatal; descriptive, not a tuning target.",
+    "bootstrap_iterations": 2000,
+    "bootstrap_seed": 20260901,
+    "bootstrap_unit": "crash record, stratified by true class"
+  },
+  "directional_replication_questions": {
+    "H1": "Compare each metric's random-internal versus same-random-model 2025 gap; do not force a uniform optimism claim.",
+    "H2": "Compare weighted LightGBM minus weighted Logistic on random and temporal tests, including Macro-F1 and fatal-recall trade-offs.",
+    "H3": "Describe LightGBM mean-absolute-SHAP feature-rank stability between internal and 2025 cohorts using Spearman correlation.",
+    "cross_dataset_rule": "Report direction and uncertainty separately. Do not pool records, absolute metrics or claim cross-national generalizability."
+  },
+  "assignments": {
+    "file": "data/processed/cas_split_assignments.csv.gz",
+    "sha256": "69309305340f25c6bfb6fee7474b47bf015eba28d3c3627f081becc3d0ebdf32",
+    "role_columns": [
+      "temporal_role",
+      "random_role_seed_1103",
+      "random_role_seed_2207",
+      "random_role_seed_3301",
+      "random_role_seed_4409",
+      "random_role_seed_5501"
+    ]
+  }
+}

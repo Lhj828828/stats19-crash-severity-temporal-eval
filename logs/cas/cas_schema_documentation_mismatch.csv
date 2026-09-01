@@ -1,0 +1,9 @@
+﻿comparison,field_name
+live_not_documented,OBJECTID
+live_not_documented,crashRoadSideRoad
+live_not_documented,intersection
+documented_not_live,crashDistance
+documented_not_live,easting
+documented_not_live,intersectionMidblock
+documented_not_live,northing
+documented_not_live,roadMarkings

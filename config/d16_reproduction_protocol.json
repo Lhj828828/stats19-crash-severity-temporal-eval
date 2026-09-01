@@ -1,0 +1,637 @@
+{
+  "version": "D16_V2",
+  "status": "FROZEN_BEFORE_D16_EXECUTION",
+  "created_local": "2026-08-31",
+  "purpose": "Clean-environment, isolated raw-to-results reproduction of the frozen STATS19 analysis.",
+  "execution_history": {
+    "pre_scientific_run_incident": "The first environment-install attempt stopped before D1 because the Windows console could not encode one pip output character.",
+    "amendment": "Console output now replaces unsupported display characters and a ready marker is required before a partial environment is reused.",
+    "scientific_parameters_changed": false,
+    "pipeline_stage_started_before_amendment": false,
+    "V2_amendment": "After exact D1-D9 reconstruction, one Ordered Logit split showed four changed labels and small probability drift. V2 retains that result as a secondary-baseline deviation and continues strict checks of the primary Logistic/LightGBM chain.",
+    "V2_tolerance_changed": false,
+    "V2_primary_model_contract_changed": false
+  },
+  "source_policy": {
+    "source_project_is_read_only": true,
+    "workspace_must_be_outside_source_project": true,
+    "source_frozen_artifact_set": {
+      "files": 197,
+      "set_sha256": "b8e2bbbf718b4bf8f9f3cba0b8e1b2b608622510cefea4fecec7110e8a60fe87",
+      "seconds": 2.312
+    }
+  },
+  "runtime": {
+    "required_python": "3.13.15",
+    "clean_virtual_environment": true,
+    "locked_requirements": "requirements-lock.txt",
+    "thread_cap": 4,
+    "thread_environment": {
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "NUMEXPR_NUM_THREADS": "4",
+      "VECLIB_MAXIMUM_THREADS": "4",
+      "BLIS_NUM_THREADS": "4",
+      "LOKY_MAX_CPU_COUNT": "4",
+      "PYTHONHASHSEED": "0",
+      "MPLBACKEND": "Agg"
+    },
+    "per_stage_timeout_seconds": 14400
+  },
+  "copied_inputs": {
+    "code/baseline_modeling.py": {
+      "bytes": 7907,
+      "sha256": "34c024f461ad3c6a083e5e2ea16e911ae96b2bb6a75151dd3ece11f7005f79ec"
+    },
+    "code/build_d14_note.py": {
+      "bytes": 35680,
+      "sha256": "fddded26d748b95a9cbe1d92a3cbb8e5bbce7d16809450d28a1639175656305e"
+    },
+    "code/cas_feasibility_audit.py": {
+      "bytes": 35560,
+      "sha256": "8ba46e087d33efeede43827929d9212b6771d1b7283688f0e4b12f38baa273ee"
+    },
+    "code/d10_tune_lightgbm.py": {
+      "bytes": 47702,
+      "sha256": "ba584669cedc84c7095cf2385ecdce815a6d8ccbf75ab9538f12bc0468178cc1"
+    },
+    "code/d10b_tree_sensitivity.py": {
+      "bytes": 19380,
+      "sha256": "f0285be37c76fe4a19afabec5581e2ef064461c5de4211295e6b641aea13d758"
+    },
+    "code/d11_evaluate_frozen_models.py": {
+      "bytes": 38806,
+      "sha256": "7cc6ffcb554f5b86efc68a8a17fd5f4601f253111d0926de048ede585b5d4b3c"
+    },
+    "code/d12_bootstrap_uncertainty.py": {
+      "bytes": 47493,
+      "sha256": "ed579bd41c5dff8a91a6cca28f0ce34946f93a781f5738c675110ea8b25f62ac"
+    },
+    "code/d13_freeze_results.py": {
+      "bytes": 28135,
+      "sha256": "2e9323075c035a0c691b0e4814dfc279ddd174e9e77df3a56e1f3b9c08dcb211"
+    },
+    "code/d14_closeout.py": {
+      "bytes": 30715,
+      "sha256": "dd8b4a73dbaa7a140599598909707157928a92ec9eddc616eb246fa404334996"
+    },
+    "code/d14_exclude2020_sensitivity.py": {
+      "bytes": 40718,
+      "sha256": "d4dcb3d0a79d71add182f8e96a4c81762ac7df8b1749f4ff213bab809d68e6d3"
+    },
+    "code/d14_shap_stability.py": {
+      "bytes": 40254,
+      "sha256": "76cf2d0945874ffbd339a41d52afe5b567b490d1260848910356ca6b9f806b9e"
+    },
+    "code/d15_reproducibility.py": {
+      "bytes": 27033,
+      "sha256": "c031c18e9be47fd6f98a186ff960fa9518b74fbbd2599ba64208ffb017504b35"
+    },
+    "code/d16_reproduce.py": {
+      "bytes": 80756,
+      "sha256": "82c850477e437d9df6441ed013aeb8ec90925cf82cd8b97eae7687b76fb62dbc"
+    },
+    "code/d1_acquire_and_audit.py": {
+      "bytes": 13437,
+      "sha256": "492d09ed7c041bb415509f1fb7196bb161f52f6307091871302a6631cdcd44d9"
+    },
+    "code/d2_audit_schema_and_codes.py": {
+      "bytes": 18201,
+      "sha256": "c2baeac740591b8f28dca06882dac250fe50a5ee91a2ba6af26f70203db8784e"
+    },
+    "code/d3_build_leakage_audit.py": {
+      "bytes": 20802,
+      "sha256": "b8d5ff169312d2508dc45301ad13e5aaa5d0b86d0cde315afc1246f82423130a"
+    },
+    "code/d4_build_features.py": {
+      "bytes": 17506,
+      "sha256": "223ccf11284ffe350dc2fb71566f7653e45a3ada0076958d190d8b58832a74a1"
+    },
+    "code/d5_quality_control.py": {
+      "bytes": 19694,
+      "sha256": "b198373a84169b79805e3106e874c38c9c10681ec1b9570adf48a031bf60c4bf"
+    },
+    "code/d6_freeze_protocol_and_plot.py": {
+      "bytes": 27401,
+      "sha256": "8ffd4474ab1073b63984da72f7c9041dbbd668fcca7aa076218f418c49353860"
+    },
+    "code/d7_finalize_training_inputs.py": {
+      "bytes": 14513,
+      "sha256": "925fe0bfd903960675aec1928c14ac36850cb2f4444a8b05eda01e5b951a74a1"
+    },
+    "code/d8_train_baselines.py": {
+      "bytes": 27283,
+      "sha256": "a891ca24566d579e8e12708fe2b7b8608111a10d6b5b7de9308b36d1cf98f1ca"
+    },
+    "code/d9_train_ordered_logit.py": {
+      "bytes": 37563,
+      "sha256": "2ad90b59a28e18a68146759931151db4db4d11e279e32461f8cf947e29c726c3"
+    },
+    "code/d9s1_matched_subset_logistic.py": {
+      "bytes": 29099,
+      "sha256": "c7e874325b089583a72e0bb261a43f17b36786ebaa8f33343668a6d9e43fb71a"
+    },
+    "code/modeling_data.py": {
+      "bytes": 2762,
+      "sha256": "ec28dc9c8cc83ad7609be3ba1710b167c3886746a76903136c5e49914f44fbbf"
+    },
+    "code/test_cas_feasibility_audit.py": {
+      "bytes": 5153,
+      "sha256": "ca6f7bdb5b54a2132c6dfe4845dbac835e0be8f276eb505c6f04770b1722ed38"
+    },
+    "code/test_d10_lightgbm.py": {
+      "bytes": 11628,
+      "sha256": "aa4a20e31c515d34971e40c84bb2a03b0e27201e1401e4d2883ad13d55535a87"
+    },
+    "code/test_d10b_tree_sensitivity.py": {
+      "bytes": 8348,
+      "sha256": "0026ed3ab79451b706345f39c7602998c3d653a51a9ba3d941ead6425c2561d1"
+    },
+    "code/test_d11_evaluation.py": {
+      "bytes": 7763,
+      "sha256": "651f4cc1699279043ee514b199a52a70bb9329ae6683fc3d934d64db9f7d2c12"
+    },
+    "code/test_d12_bootstrap.py": {
+      "bytes": 7009,
+      "sha256": "2d85e12097910ad3ef8d566d16be30d03264d86cb3b9facf4d7e9f3f9cd463b6"
+    },
+    "code/test_d13_checkpoint.py": {
+      "bytes": 5819,
+      "sha256": "efca29126ee1318a0cdb3185b0b7b039fd0b7375eb81301c0fd3ab0ee8a3d98a"
+    },
+    "code/test_d14_closeout.py": {
+      "bytes": 4110,
+      "sha256": "c28776bacb0f07c02bbbd9e5d1f7ddfec6e86628c4b9379229055b70bdbb0a85"
+    },
+    "code/test_d14_exclude2020.py": {
+      "bytes": 4850,
+      "sha256": "ba5bc7f471e24b8406a1a232fc9a2789e9f1558cd2e95f29453a29002bc106c9"
+    },
+    "code/test_d14_shap.py": {
+      "bytes": 5324,
+      "sha256": "fa9a305e9d794a32f56c4303c7761b92ef971fd8f36ca65cf0602b02ed59b66a"
+    },
+    "code/test_d15_reproducibility.py": {
+      "bytes": 1292,
+      "sha256": "7a2302739465bce9c49440df884362c9f8def14b701302d1706cd7c55b921191"
+    },
+    "code/test_d16_d14_exclude2020.py": {
+      "bytes": 4741,
+      "sha256": "3ab3c728d2ccc2e94bec14837aaf90c56f52bc9278a374b58f3c8f4378d4e801"
+    },
+    "code/test_d16_reproduction.py": {
+      "bytes": 1742,
+      "sha256": "a02951d9386c03714ad5ebd59181dd7bd558ed80271f93ec00fce50545f1e617"
+    },
+    "code/test_d6_protocol.py": {
+      "bytes": 3578,
+      "sha256": "deb49ab2d9c832c5a1a8f74ee3f895ea38ce31bbff2a980aa38decd746235fa9"
+    },
+    "code/test_d7_training_inputs.py": {
+      "bytes": 3794,
+      "sha256": "70fa22215ebe2242292669cfcfd93477710876269b826da7cfd18dc4eda4afed"
+    },
+    "code/test_d8_baselines.py": {
+      "bytes": 6057,
+      "sha256": "509db96261626566128ac5926d1665ab21d467d913603505b08a6cbbdfecf63a"
+    },
+    "code/test_d9_ordered_logit.py": {
+      "bytes": 6228,
+      "sha256": "bc06bab66731013c09e29b93a12658243ec234d6bdbfa95900e23d723117ca3c"
+    },
+    "code/test_d9s1_matched_subset.py": {
+      "bytes": 9032,
+      "sha256": "7a264c16aca3b19fa5c66af2f74ae567bc29ec2e15c7ecaf7b327123e741973c"
+    },
+    "code/test_environment.py": {
+      "bytes": 2060,
+      "sha256": "de912a7608901674b3f689f9b52b08e24de38b02b8ed2080981f6978914d5ab4"
+    },
+    "config/d8_baseline_protocol.json": {
+      "bytes": 4809,
+      "sha256": "7b4a1c487334827799169f88342bbac49559f2a1c7bad8412558e958501114c5"
+    },
+    "config/d9_ordered_logit_protocol.json": {
+      "bytes": 5351,
+      "sha256": "7faf663b170ac078cb4bbd3a091c04e60225b955239c22d25e7dc2d3284805fc"
+    },
+    "config/d9s1_matched_subset_protocol.json": {
+      "bytes": 3704,
+      "sha256": "a1b498d06d11696ed204643bde517aa1d216b63ce5d1748938dde6a18038fee4"
+    },
+    "config/d10_lightgbm_protocol.json": {
+      "bytes": 8564,
+      "sha256": "079aad5af8e95360b60b17b664c847336db66b4712811bac17b67ce5a9d5c963"
+    },
+    "config/d10_execution_amendment.json": {
+      "bytes": 884,
+      "sha256": "f3b37e07125e6069de9699420402c51381e8f1d9d7fd3f8a827d5d8a41183108"
+    },
+    "config/d10b_tree_sensitivity_protocol.json": {
+      "bytes": 4177,
+      "sha256": "64b83c5980313e86d9ef73f81b67d6a806482d16e9d6a49a15046d96c18c1da4"
+    },
+    "config/d11_evaluation_protocol.json": {
+      "bytes": 17430,
+      "sha256": "3bfb1617463df61c08123f5638535a39b335675c875bb88e15c6485b343befa5"
+    },
+    "config/d12_bootstrap_protocol.json": {
+      "bytes": 12442,
+      "sha256": "beff75845f185d420517e472fc7c9179b54885d7426632916092635a65572616"
+    },
+    "config/d13_positioning_protocol.json": {
+      "bytes": 4095,
+      "sha256": "076c72596cad0a63b19cde373e28cdfccf280897c47aed1d65dffe4c1b719512"
+    },
+    "config/d14_shap_protocol.json": {
+      "bytes": 8550,
+      "sha256": "25442cc216ee80a7b84f859371b18ddd93df98e958f9c7a1b6318b884d46bb22"
+    },
+    "config/d14_exclude2020_protocol.json": {
+      "bytes": 8161,
+      "sha256": "76f81303b9caee50789d04551c6b09abd0b64830c8ed52f4e84cccc72743233b"
+    },
+    "config/d14_exclude2020_protocol_v2.json": {
+      "bytes": 8675,
+      "sha256": "2db671ca62f91fb0b061f06c471ef0d625f8770563d12c9f1fe3374d81ee6cba"
+    },
+    "config/d14_closeout_protocol.json": {
+      "bytes": 4412,
+      "sha256": "2566757791a443426eef77a5bd3caef9f632dca0157456c32d70bed26e340eef"
+    },
+    "config/d14_closeout_protocol_v2.json": {
+      "bytes": 4886,
+      "sha256": "feb5e66cc0ec25db41ac34e9a0d0152c28909588e948ef83540bb2fe5c2ddb7d"
+    },
+    "config/d15_reproducibility_protocol.json": {
+      "bytes": 3783,
+      "sha256": "90014f3a6462c62a7749db439c42564c98a5de99fbb21fce63534dffcf4c9bbd"
+    },
+    "README.md": {
+      "bytes": 4206,
+      "sha256": "bc8918919aafc357493f0f46a1bac8b203f83708a0b1d4a6727e2b928edab494"
+    },
+    "requirements.txt": {
+      "bytes": 113,
+      "sha256": "4a34009a43f2f0407dcfd4c5692d9b79fd60f68ace0db2bc49942bb9f3a5898f"
+    },
+    "requirements-lock.txt": {
+      "bytes": 580,
+      "sha256": "7a974836ebbd01a87f4cd9c95b9154ce30e62449d1fadae01c1217ff59ee9903"
+    },
+    "run_d15_reproducibility.ps1": {
+      "bytes": 721,
+      "sha256": "ed4949852b8d3f18c105e1dad82d176872efe8e8f152042d27b2f92306db3c5e"
+    },
+    "run_d16_reproduction.py": {
+      "bytes": 224,
+      "sha256": "6ab0c9ed4ce04879ede341e2464c7f6923c0e664e0fb802cb932c790ffe6924e"
+    },
+    "run_d16_reproduction.ps1": {
+      "bytes": 330,
+      "sha256": "eb0587119cb5b05d0a442e66a7c419a71df1b1b40d34a51894f0f27abf889d22"
+    },
+    "logs/d9_runtime_benchmark.json": {
+      "bytes": 962,
+      "sha256": "bfa29029818029453f6872945d1d19ca96a7966f38ab7f4e0b1efd505d3eae21"
+    },
+    "logs/d10b_execution_incident.json": {
+      "bytes": 1292,
+      "sha256": "0f664949f7ae6de990cea8a9b09a7f6649ff78d233a11a5e10dc02027fc47f4e"
+    },
+    "data/raw/downloads/dft-road-casualty-statistics-collision-1979-latest-published-year.csv": {
+      "bytes": 1534937928,
+      "sha256": "4b60aac426b8fb7771dc9a3fc3e383399e88c9a49041544926aec4bea409e366"
+    },
+    "data/external/documentation/dft-road-casualty-statistics-historical-revisions-data.csv": {
+      "bytes": 71850,
+      "sha256": "bb841fc091efb8ece9d0a129fba2896876982bbc6e7f5dff1bea1c43b3086e8b"
+    },
+    "data/external/documentation/dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2024.xlsx": {
+      "bytes": 72373,
+      "sha256": "2cdc5ca0ea56207343ff64d7bf2819c1839f215838b042e1830db75663ab3a1e"
+    },
+    "data/external/documentation/dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx": {
+      "bytes": 81378,
+      "sha256": "5ee0d473e212ed50b2723ae52feeda86487861ed6a5a627b900f7b93c9bbf6b6"
+    },
+    "data/external/documentation/dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx": {
+      "bytes": 18111,
+      "sha256": "9a0db9e666e696a8c4e61dd6c1eccd0d957e0a5871cd7c4439d43b63893bced8"
+    },
+    "data/external/documentation/stats19.pdf": {
+      "bytes": 642784,
+      "sha256": "56c8911ff479c62479ee5b3ff1b248aafffd8f45b54354c82c49e6c925685eb4"
+    },
+    "data/external/documentation/Understanding-historical-road-safety-data.docx": {
+      "bytes": 20575,
+      "sha256": "99810e80f8ae2bc0fb81a94c954efcc36ed4e94e15fd968f1c9eb0e46026706b"
+    }
+  },
+  "pipeline": [
+    {
+      "stage": "D1_acquire_and_audit",
+      "arguments": [
+        "code/d1_acquire_and_audit.py"
+      ]
+    },
+    {
+      "stage": "D2_schema_and_codes",
+      "arguments": [
+        "code/d2_audit_schema_and_codes.py"
+      ]
+    },
+    {
+      "stage": "D3_leakage_audit",
+      "arguments": [
+        "code/d3_build_leakage_audit.py"
+      ]
+    },
+    {
+      "stage": "D4_feature_table",
+      "arguments": [
+        "code/d4_build_features.py"
+      ]
+    },
+    {
+      "stage": "D5_quality_control",
+      "arguments": [
+        "code/d5_quality_control.py"
+      ]
+    },
+    {
+      "stage": "D6_protocol_and_splits",
+      "arguments": [
+        "code/d6_freeze_protocol_and_plot.py"
+      ]
+    },
+    {
+      "stage": "D7_training_inputs",
+      "arguments": [
+        "code/d7_finalize_training_inputs.py"
+      ]
+    },
+    {
+      "stage": "D8_full_baselines",
+      "arguments": [
+        "code/d8_train_baselines.py",
+        "--full"
+      ]
+    },
+    {
+      "stage": "D9_ordered_logit_subset",
+      "arguments": [
+        "code/d9_train_ordered_logit.py",
+        "--run",
+        "--mode",
+        "subset"
+      ]
+    },
+    {
+      "stage": "D9S1_prepare_protocol",
+      "arguments": [
+        "code/d16_reproduce.py",
+        "--internal-protocol",
+        "d9s1"
+      ]
+    },
+    {
+      "stage": "D9S1_freeze_protocol",
+      "arguments": [
+        "code/d9s1_matched_subset_logistic.py",
+        "--freeze"
+      ]
+    },
+    {
+      "stage": "D9S1_matched_subset",
+      "arguments": [
+        "code/d9s1_matched_subset_logistic.py",
+        "--run"
+      ]
+    },
+    {
+      "stage": "D10_prepare_protocol",
+      "arguments": [
+        "code/d16_reproduce.py",
+        "--internal-protocol",
+        "d10"
+      ]
+    },
+    {
+      "stage": "D10_tune",
+      "arguments": [
+        "code/d10_tune_lightgbm.py",
+        "--tune"
+      ]
+    },
+    {
+      "stage": "D10_fit_all",
+      "arguments": [
+        "code/d10_tune_lightgbm.py",
+        "--fit-all"
+      ]
+    },
+    {
+      "stage": "D10B_rebase_protocol",
+      "arguments": [
+        "code/d16_reproduce.py",
+        "--internal-protocol",
+        "d10b"
+      ]
+    },
+    {
+      "stage": "D10B_tree_sensitivity",
+      "arguments": [
+        "code/d16_reproduce.py",
+        "--internal-protocol",
+        "d10b_execute"
+      ]
+    },
+    {
+      "stage": "D11_prepare_protocol",
+      "arguments": [
+        "code/d16_reproduce.py",
+        "--internal-protocol",
+        "d11"
+      ]
+    },
+    {
+      "stage": "D11_freeze_protocol",
+      "arguments": [
+        "code/d11_evaluate_frozen_models.py",
+        "--freeze"
+      ]
+    },
+    {
+      "stage": "D11_preflight",
+      "arguments": [
+        "code/d11_evaluate_frozen_models.py",
+        "--preflight"
+      ]
+    },
+    {
+      "stage": "D11_one_time_evaluation",
+      "arguments": [
+        "code/d11_evaluate_frozen_models.py",
+        "--run"
+      ]
+    },
+    {
+      "stage": "D12_prepare_protocol",
+      "arguments": [
+        "code/d16_reproduce.py",
+        "--internal-protocol",
+        "d12"
+      ]
+    },
+    {
+      "stage": "D12_freeze_protocol",
+      "arguments": [
+        "code/d12_bootstrap_uncertainty.py",
+        "--freeze-protocol"
+      ]
+    },
+    {
+      "stage": "D12_bootstrap",
+      "arguments": [
+        "code/d12_bootstrap_uncertainty.py",
+        "--run"
+      ]
+    },
+    {
+      "stage": "D13_prepare_protocol",
+      "arguments": [
+        "code/d16_reproduce.py",
+        "--internal-protocol",
+        "d13"
+      ]
+    },
+    {
+      "stage": "D13_freeze_protocol",
+      "arguments": [
+        "code/d13_freeze_results.py",
+        "--freeze-protocol"
+      ]
+    },
+    {
+      "stage": "D13_freeze_results",
+      "arguments": [
+        "code/d13_freeze_results.py",
+        "--run"
+      ]
+    },
+    {
+      "stage": "D14_SHAP_prepare_protocol",
+      "arguments": [
+        "code/d16_reproduce.py",
+        "--internal-protocol",
+        "d14_shap"
+      ]
+    },
+    {
+      "stage": "D14_SHAP_freeze_protocol",
+      "arguments": [
+        "code/d14_shap_stability.py",
+        "--freeze"
+      ]
+    },
+    {
+      "stage": "D14_SHAP",
+      "arguments": [
+        "code/d14_shap_stability.py",
+        "--run"
+      ]
+    },
+    {
+      "stage": "D14_exclude_2020_prepare_protocol",
+      "arguments": [
+        "code/d16_reproduce.py",
+        "--internal-protocol",
+        "d14_exclude2020"
+      ]
+    },
+    {
+      "stage": "D14_exclude_2020_freeze_protocol",
+      "arguments": [
+        "code/d16_reproduce.py",
+        "--internal-protocol",
+        "d14_exclude2020_freeze"
+      ]
+    },
+    {
+      "stage": "D14_exclude_2020",
+      "arguments": [
+        "code/d16_reproduce.py",
+        "--internal-protocol",
+        "d14_exclude2020_run"
+      ]
+    },
+    {
+      "stage": "D14_closeout_prepare_protocol",
+      "arguments": [
+        "code/d16_reproduce.py",
+        "--internal-protocol",
+        "d14_closeout"
+      ]
+    },
+    {
+      "stage": "D14_closeout_freeze_protocol",
+      "arguments": [
+        "code/d14_closeout.py",
+        "--freeze"
+      ]
+    },
+    {
+      "stage": "D14_closeout",
+      "arguments": [
+        "code/d14_closeout.py",
+        "--run"
+      ]
+    }
+  ],
+  "test_suite": [
+    "code/test_d6_protocol.py",
+    "code/test_d7_training_inputs.py",
+    "code/test_d8_baselines.py",
+    "code/test_d9_ordered_logit.py",
+    "code/test_d9s1_matched_subset.py",
+    "code/test_d10_lightgbm.py",
+    "code/test_d10b_tree_sensitivity.py",
+    "code/test_d11_evaluation.py",
+    "code/test_d12_bootstrap.py",
+    "code/test_d13_checkpoint.py",
+    "code/test_d14_shap.py",
+    "code/test_d16_d14_exclude2020.py",
+    "code/test_d14_closeout.py",
+    "code/test_environment.py"
+  ],
+  "comparison": {
+    "identifiers_categories_labels_counts": "exact",
+    "generated_data_and_split_files": "byte-for-byte SHA-256 equality",
+    "floating_absolute_tolerance": 1e-10,
+    "floating_relative_tolerance": 1e-08,
+    "probability_absolute_tolerance": 1e-12,
+    "PNG_pixel_absolute_tolerance": 0.00784313725490196,
+    "model_binary_hashes": "not required; regenerated predictions, metrics and tests are compared",
+    "PDF_binary_hashes": "not required because renderer metadata may vary; PNG content and underlying result tables are checked",
+    "secondary_Ordered_Logit_policy": "Identity/target columns and every non-Ordered model component remain strict. Ordered Logit numerical mismatches are reported as DEVIATION, never coerced to equality or hidden by a wider tolerance."
+  },
+  "expected_scientific_summary": {
+    "rows": 743646,
+    "features": 17,
+    "temporal_test_rows": 100927,
+    "primary_prediction_detail": "Primary 2024 prediction tables and recomputed metrics agree; logistic_weighted: macro_f1=0.348337, fatal_recall=0.217710; lightgbm_weighted: macro_f1=0.362233, fatal_recall=0.117177",
+    "D14_status": "D14_COMPLETE_WITH_REGIONAL_HOLDOUT_DEVIATION",
+    "H1_status": "NOT_SUPPORTED",
+    "H2_status": "FAIL",
+    "H3_status": "RANK_CHANGE_QUANTIFIED_NO_BINARY_MATERIALITY_THRESHOLD"
+  },
+  "boundaries": {
+    "H1": "metric-dependent; no uniform random-split optimism claim",
+    "H2": "Macro-F1 gain with fatal-recall trade-off; no uniform superiority claim",
+    "H3": "descriptive SHAP rank analysis; no causal claim",
+    "regional_holdout": "not executed; spatial generalization unverified",
+    "CAS": "not part of D16; execute only after STATS19 reproduction is frozen"
+  }
+}

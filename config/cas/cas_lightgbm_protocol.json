@@ -1,0 +1,255 @@
+{
+  "version": "CAS_LIGHTGBM_V1",
+  "status": "FROZEN_BEFORE_CAS_LIGHTGBM_VALIDATION_INSPECTION",
+  "created_local": "2026-09-01T11:51:27+08:00",
+  "purpose": "Reuse the STATS19 six-candidate weighted-LightGBM comparison on CAS without accessing test performance",
+  "upstream": {
+    "modeling_schema": "config/cas/cas_modeling_schema.json",
+    "modeling_schema_sha256": "44ca815864e8919a46feb993e931da4e9435467db5722382c831228d2e220bba",
+    "analysis_protocol": "config/cas/cas_analysis_protocol.json",
+    "analysis_protocol_sha256": "8c864a216aa9f1a27d970de17d005bdcfa0aa56512b95f12dff7eddbd5aeb134",
+    "training_inputs": "config/cas/cas_training_inputs.json",
+    "training_inputs_sha256": "d951705e72f3c01fd131bfa63d5a74ffcfb47765ef1999b8083effb3efaf1924",
+    "split_assignments": "data/processed/cas_split_assignments.csv.gz",
+    "split_assignments_sha256": "69309305340f25c6bfb6fee7474b47bf015eba28d3c3627f081becc3d0ebdf32",
+    "baseline_protocol": "config/cas/cas_baseline_protocol.json",
+    "baseline_protocol_sha256": "a742946b90e270603f5f4fbaced51adc1445441b04a511be338b141c3c501bbd",
+    "baseline_models_frozen": "config/cas/cas_baseline_models_frozen.json",
+    "baseline_models_frozen_sha256": "fa60a65025f07f3df8dae80fb07f576fca9def185d07ff40f83de52ec1e8f640",
+    "baseline_validation_metrics": "results/cas_baseline/validation_metrics.csv",
+    "baseline_validation_metrics_sha256": "09d63ac7accb88e26fcd48bcbf05836d318e5657f9a928d4ed1d77b04e7e3828"
+  },
+  "evaluation_scope": {
+    "tuning_protocol": "temporal only",
+    "tuning_train_years": [
+      2022,
+      2023
+    ],
+    "tuning_validation_years": [
+      2024
+    ],
+    "post_selection_validation_models": "temporal plus five frozen random-reference splits",
+    "random_split_rule": "reuse temporal-selected candidate and iteration count",
+    "forbidden": "all test roles and all 2025 model performance"
+  },
+  "features": {
+    "allowlist": [
+      "feature_number_of_lanes",
+      "feature_state_highway",
+      "feature_terrain",
+      "feature_light",
+      "feature_road_character",
+      "feature_road_lane",
+      "feature_road_surface",
+      "feature_street_light",
+      "feature_traffic_control",
+      "feature_urban",
+      "feature_weather_primary",
+      "feature_weather_secondary",
+      "feature_advisory_speed",
+      "feature_speed_limit",
+      "feature_temporary_speed_limit"
+    ],
+    "categorical": [
+      "feature_number_of_lanes",
+      "feature_state_highway",
+      "feature_terrain",
+      "feature_light",
+      "feature_road_character",
+      "feature_road_lane",
+      "feature_road_surface",
+      "feature_street_light",
+      "feature_traffic_control",
+      "feature_urban",
+      "feature_weather_primary",
+      "feature_weather_secondary"
+    ],
+    "numeric": [
+      "feature_advisory_speed",
+      "feature_speed_limit",
+      "feature_temporary_speed_limit"
+    ],
+    "metadata_excluded": [
+      "meta_crash_id",
+      "meta_crash_year",
+      "meta_region"
+    ],
+    "target_excluded": "target_severity"
+  },
+  "preprocessing": {
+    "fit_scope": "each training partition only",
+    "categorical": "LightGBM-native pandas categorical values with training-only vocabulary and explicit __UNSEEN__",
+    "numeric": "numeric values retained; NaN handled natively",
+    "one_hot_encoding": false,
+    "scaling": false,
+    "rare_pooling": false
+  },
+  "class_weighting": {
+    "rule": {
+      "name": "balanced",
+      "formula": "n_training / (n_classes * n_training_in_class)",
+      "n_classes": 3,
+      "source_rows": "training role only, calculated separately per split",
+      "target_labels": {
+        "0": "Minor",
+        "1": "Serious",
+        "2": "Fatal"
+      }
+    },
+    "application": "split-specific frozen training weights",
+    "validation_metrics": "unweighted natural-prevalence metrics"
+  },
+  "common_model_parameters": {
+    "boosting_type": "gbdt",
+    "objective": "multiclass",
+    "num_class": 3,
+    "learning_rate": 0.05,
+    "max_bin": 255,
+    "random_state": 20260901,
+    "n_jobs": 8,
+    "deterministic": true,
+    "force_col_wise": true,
+    "verbosity": -1
+  },
+  "tuning": {
+    "maximum_estimators": 1200,
+    "early_stopping_rounds": 75,
+    "early_stopping_metric": "unweighted multiclass log loss on 2024 validation",
+    "candidates": [
+      {
+        "candidate_id": "C01",
+        "complexity_rank": 1,
+        "parameters": {
+          "num_leaves": 15,
+          "max_depth": -1,
+          "min_child_samples": 100,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C02",
+        "complexity_rank": 3,
+        "parameters": {
+          "num_leaves": 31,
+          "max_depth": -1,
+          "min_child_samples": 100,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C03",
+        "complexity_rank": 6,
+        "parameters": {
+          "num_leaves": 63,
+          "max_depth": -1,
+          "min_child_samples": 100,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C04",
+        "complexity_rank": 5,
+        "parameters": {
+          "num_leaves": 31,
+          "max_depth": -1,
+          "min_child_samples": 50,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C05",
+        "complexity_rank": 2,
+        "parameters": {
+          "num_leaves": 31,
+          "max_depth": -1,
+          "min_child_samples": 250,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C06",
+        "complexity_rank": 4,
+        "parameters": {
+          "num_leaves": 31,
+          "max_depth": -1,
+          "min_child_samples": 100,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 5.0,
+          "colsample_bytree": 0.8,
+          "subsample": 0.8,
+          "subsample_freq": 1
+        }
+      }
+    ],
+    "boundary_rule": {
+      "trigger": "selected candidate best_iteration equals 1200",
+      "action": "rerun only the selected candidate with 2000 estimators and the same early-stopping rule before final model freeze",
+      "selection": "use the extended run's best_iteration"
+    }
+  },
+  "selection_rule": {
+    "primary_metric": "Macro-F1 on 2024 temporal validation",
+    "constraint_reference": {
+      "model": "temporal weighted multinomial Logistic",
+      "macro_f1": 0.3258240642895635,
+      "qwk": 0.0908132338150008,
+      "fatal_recall": 0.6224899598393574
+    },
+    "eligibility_constraints": {
+      "minimum_qwk": 0.0808132338150008,
+      "minimum_fatal_recall": 0.5724899598393574
+    },
+    "ranking": [
+      "eligible candidates only",
+      "highest Macro-F1",
+      "highest QWK if tied",
+      "highest fatal recall if tied",
+      "lowest pre-frozen complexity_rank if tied",
+      "lexicographically smallest candidate_id if tied"
+    ],
+    "fallback_if_none_eligible": "apply the same ranking to all candidates and explicitly record that constraints were unmet"
+  },
+  "final_validation_fit": {
+    "n_estimators": "selected temporal best_iteration",
+    "early_stopping": false,
+    "same_parameters_for_all_splits": true,
+    "prediction_rule": "argmax; no threshold tuning"
+  },
+  "test_boundary": {
+    "year": 2025,
+    "prior_access": "Schema, target counts, missingness/category coverage and drift were inspected during feasibility auditing.",
+    "prohibited_before_model_freeze": [
+      "preprocessing fit",
+      "hyperparameter tuning",
+      "threshold choice",
+      "model selection",
+      "model performance inspection"
+    ]
+  }
+}

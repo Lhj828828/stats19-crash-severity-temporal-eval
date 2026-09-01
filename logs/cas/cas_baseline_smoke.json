@@ -1,0 +1,10 @@
+{
+  "version": "CAS_BASELINE_V1",
+  "status": "PASS",
+  "models": [
+    "dummy_most_frequent",
+    "logistic_weighted"
+  ],
+  "threads": 8,
+  "test_performance_used": false
+}

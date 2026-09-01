@@ -1,0 +1,95 @@
+{
+  "analysis_target_order": [
+    "Minor",
+    "Serious",
+    "Fatal"
+  ],
+  "candidate_features": {
+    "categorical": [
+      "NumberOfLanes",
+      "crashSHDescription",
+      "flatHill",
+      "light",
+      "roadCharacter",
+      "roadLane",
+      "roadSurface",
+      "streetLight",
+      "trafficControl",
+      "urban",
+      "weatherA",
+      "weatherB"
+    ],
+    "numeric": [
+      "advisorySpeed",
+      "speedLimit",
+      "temporarySpeedLimit"
+    ],
+    "special_handling": {
+      "NumberOfLanes": "categorical despite integer storage; retain 0 because it is observed mainly with Off road",
+      "advisorySpeed": "structurally sparse; do not apply ordinary mean imputation",
+      "temporarySpeedLimit": "structurally sparse; do not apply ordinary mean imputation"
+    }
+  },
+  "candidate_temporal_protocol": {
+    "excluded_years": {
+      "2020-2021": "official CAS open-data warning says these years are incomplete",
+      "2026": "current partial year",
+      "pre-2020": "two included fields changed recording on 2019-12-17"
+    },
+    "test_years": [
+      2025
+    ],
+    "train_years": [
+      2022,
+      2023
+    ],
+    "validation_years": [
+      2024
+    ]
+  },
+  "comparison_rule": "Train and evaluate CAS separately from STATS19. Compare only the direction of random-versus-temporal gaps, model-gain contraction, ordinal error patterns, and explanation-rank stability. Do not pool records or compare absolute metric levels as if labels were identical.",
+  "excluded_severity": "Non-Injury Crash",
+  "feature_alignment": {
+    "crosswalk": "logs/cas/cas_stats19_feature_crosswalk.csv",
+    "rule": "Use dataset-specific feature configurations. The feature sets are not one-to-one aligned, so CAS is an independent workflow replication, not an external test set for a model trained on STATS19."
+  },
+  "license": "CC BY 4.0 International",
+  "matched_population": "police-reported personal-injury crashes only",
+  "native_target_order": [
+    "Minor Crash",
+    "Serious Crash",
+    "Fatal Crash"
+  ],
+  "official_definition_evidence": {
+    "fatal": "injury resulting in death within 30 days of the crash",
+    "minor": "minor injury such as sprain or bruise",
+    "serious": "fracture, concussion, internal injury, crushing, severe cut or laceration, severe general shock requiring treatment, or removal to and detention in hospital",
+    "source": "https://www.transport.govt.nz/statistics-and-insights/glossary-and-references"
+  },
+  "official_item_id": "8d684f1841fa4dbea6afaefc8a1ba0fc",
+  "prediction_time": "at collision; no casualty count, participant count, struck-object, event-trajectory, response, exact-location, or outcome-derived input",
+  "raw_snapshot": {
+    "csv_read_rule": "pd.read_csv(..., keep_default_na=False); convert only empty strings to missing",
+    "literal_category_warning": "Do not let pandas default NA parsing convert the literal source value None to NaN",
+    "lossless_jsonl": "data/raw/cas/cas_injury_2022_2025_snapshot.jsonl.gz",
+    "md5": "aa902dd3ef09d832b978a871da959665",
+    "row_count": 43121,
+    "sha256": "cc554366351cf4d5ccc7207f583c8ff1437036a615f1bac4dcdcccac76d1745c",
+    "where_clause": "crashYear BETWEEN 2022 AND 2025 AND crashSeverity <> 'Non-Injury Crash'"
+  },
+  "retrieved_at_local": "2026-08-28T23:15:56+08:00",
+  "source_pages": {
+    "cas_system": "https://www.nzta.govt.nz/partners/data-and-tools/crash-analysis-system",
+    "field_descriptions": "https://opendata-nzta.opendata.arcgis.com/pages/cas-data-field-descriptions",
+    "landing": "https://opendata-nzta.opendata.arcgis.com/datasets/NZTA::crash-analysis-system-cas-data-1/about",
+    "severity_glossary": "https://www.transport.govt.nz/statistics-and-insights/glossary-and-references"
+  },
+  "statistical_unit": "police-reported crash",
+  "status": "FEASIBILITY_AUDIT_NOT_MODEL_TRAINING",
+  "target_mapping": {
+    "Fatal Crash": "Fatal",
+    "Minor Crash": "Minor",
+    "Serious Crash": "Serious"
+  },
+  "version": "CAS_FEASIBILITY_V1"
+}

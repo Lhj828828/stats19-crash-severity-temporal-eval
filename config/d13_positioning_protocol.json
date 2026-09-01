@@ -1,0 +1,85 @@
+{
+  "version": "D13_V1",
+  "status": "FROZEN_POST_D12_POSITIONING_RULES",
+  "created_local": "2026-08-31",
+  "timing_disclosure": "D13 is intentionally a post-result checkpoint. It translates frozen D11/D12 estimates into evidence-constrained narrative branches and performs no model selection.",
+  "scientific_lock": {
+    "model_fits": 0,
+    "new_bootstrap_draws": 0,
+    "threshold_changes": 0,
+    "hypothesis_rewrites": 0,
+    "read_frozen_D11_D12_only": true
+  },
+  "parent_artifacts": {
+    "results/d11/d11_test_metrics.csv": "d0755ce6feffb0bd6150dacbf87e2632472199d3928b5664f06a6bf1c96745b6",
+    "logs/d11_artifact_manifest.csv": "dda41121012a5926e6e8c80132a65293f1572fb7ad4e15f050b158aa1de85182",
+    "config/d12_bootstrap_protocol.json": "beff75845f185d420517e472fc7c9179b54885d7426632916092635a65572616",
+    "logs/d12_artifact_manifest.csv": "ab51857b08d139998a8d66e8af30ffc568e4b12e8702733466baf787233215fb",
+    "results/d12/d12_model_metric_intervals.csv": "37eccd2159ed05b90d9d7baabb0c9bf6b44a79a56e7d5e36f32861ee9523dd92",
+    "results/d12/d12_pairwise_model_differences.csv": "4300b6754e1f39fe077a0f98e9a081b41a4ce126ca020cb6eb1eda529b4204b3",
+    "results/d12/d12_random_optimism_gaps.csv": "e5c8ed6fc059be357739b3aa352a3fee52002fe329438574b9e1f6a4c1326c5a",
+    "results/d12/d12_random_optimism_summary.csv": "eb9d82b056d51189b5bf40fa119ba6ebb8ffe287cd4d6577c1b9560c16f18667",
+    "results/d12/d12_model_gain_summary.csv": "74d29950aada795f4afab12866e6b6ae7704451e68690bf6e318dd63ed6070cc",
+    "code/d13_freeze_results.py": "2e9323075c035a0c691b0e4814dfc279ddd174e9e77df3a56e1f3b9c08dcb211",
+    "code/test_d13_checkpoint.py": "efca29126ee1318a0cdb3185b0b7b039fd0b7375eb81301c0fd3ab0ee8a3d98a"
+  },
+  "manifest_audits": {
+    "D11": {
+      "manifest": "logs/d11_artifact_manifest.csv",
+      "manifest_sha256": "dda41121012a5926e6e8c80132a65293f1572fb7ad4e15f050b158aa1de85182",
+      "rows": 64,
+      "artifact_bytes": 161336449
+    },
+    "D12": {
+      "manifest": "logs/d12_artifact_manifest.csv",
+      "manifest_sha256": "ab51857b08d139998a8d66e8af30ffc568e4b12e8702733466baf787233215fb",
+      "rows": 15,
+      "artifact_bytes": 2968190
+    }
+  },
+  "tables": {
+    "main_performance": {
+      "rows": 35,
+      "definition": "Five models by seven metrics; random results are mean and sample SD across five seeds, temporal 2024 values include D12 intervals."
+    },
+    "H1_primary_model_gaps": {
+      "rows": 14,
+      "models": [
+        "logistic_weighted",
+        "lightgbm_weighted"
+      ],
+      "positive_gap": "random internal evaluation is more optimistic"
+    },
+    "H2_temporal_comparison": {
+      "rows": 7,
+      "candidate": "lightgbm_weighted",
+      "reference": "logistic_weighted"
+    }
+  },
+  "decision_rules": {
+    "H1": {
+      "branch": "Use metric-dependent branch when primary metrics conflict.",
+      "consistent_random_optimism": "all five point gaps positive and all five 95% intervals above zero",
+      "consistent_random_pessimism": "all five point gaps negative and all five 95% intervals below zero",
+      "equivalence": "No frozen equivalence margin; an interval crossing zero does not establish practical equivalence."
+    },
+    "H2": {
+      "macro_f1_point_threshold": 0.01,
+      "macro_f1_interval_rule": "paired 95% interval lower bound exceeds zero",
+      "joint_rule": "Macro-F1 alone is insufficient if QWK, fatal recall or asymmetric cost clearly deteriorates. An oriented interval wholly below zero is recorded as clear deterioration."
+    },
+    "H3": {
+      "status": "PENDING_NOT_EVALUATED",
+      "reason": "Frozen SHAP ranking results do not yet exist.",
+      "prohibition": "Do not infer H3 from predictive performance."
+    }
+  },
+  "planned_outputs": [
+    "results/d13/d13_main_performance_table.csv",
+    "results/d13/d13_h1_primary_model_gaps.csv",
+    "results/d13/d13_h2_temporal_comparison.csv",
+    "logs/d13_positioning_decision.json",
+    "logs/d13_checkpoint.md",
+    "logs/d13_run_summary.json"
+  ]
+}

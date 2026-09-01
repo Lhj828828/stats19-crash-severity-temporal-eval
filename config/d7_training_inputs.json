@@ -1,0 +1,165 @@
+{
+  "version": "D7_V1",
+  "status": "TRAINING_INPUTS_AUDITED_AND_FROZEN",
+  "created_local": "2026-08-28",
+  "purpose": "Verify the frozen D6 assignments and save class weights calculated only from each training partition. No split is regenerated.",
+  "upstream": {
+    "D6_protocol": "config/d6_analysis_protocol.json",
+    "D6_protocol_sha256": "5040fa8b1c2d4d33304af371cfec91b0bc8fcf49b8d872ca473ea00e2d31a3f8",
+    "D6_assignments": "data/processed/d6_split_assignments.csv.gz",
+    "D6_assignments_sha256": "5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076",
+    "D5_schema": "config/d5_dataset_schema.json",
+    "D5_schema_sha256": "cea222466650a095170a66a3d094eba76b3cdf71c22bc6bcb61054152969030b"
+  },
+  "split_storage": {
+    "design": "single collision-level table with six frozen role columns",
+    "reason": "One combined artifact prevents row drift and avoids five redundant copies of the same collision identifiers.",
+    "role_columns": [
+      "temporal_role",
+      "random_role_seed_1103",
+      "random_role_seed_2207",
+      "random_role_seed_3301",
+      "random_role_seed_4409",
+      "random_role_seed_5501"
+    ]
+  },
+  "feature_contract": {
+    "feature_count": 17,
+    "feature_columns": [
+      "feature_day_of_week",
+      "feature_first_road_class",
+      "feature_road_type",
+      "feature_junction_detail",
+      "feature_junction_control",
+      "feature_second_road_class",
+      "feature_pedestrian_crossing",
+      "feature_light_conditions",
+      "feature_weather_conditions",
+      "feature_road_surface_conditions",
+      "feature_special_conditions_at_site",
+      "feature_carriageway_hazards",
+      "feature_urban_or_rural_area",
+      "feature_trunk_road_flag",
+      "feature_speed_limit",
+      "feature_month",
+      "feature_hour"
+    ],
+    "metadata_excluded_from_models": [
+      "meta_collision_index",
+      "meta_collision_year",
+      "meta_date",
+      "meta_police_force",
+      "meta_injury_based"
+    ],
+    "target_excluded_from_features": "target_severity"
+  },
+  "class_weight_rule": {
+    "name": "balanced",
+    "formula": "n_training / (n_classes * n_training_in_class)",
+    "n_classes": 3,
+    "source_rows": "training role only, calculated separately per split",
+    "target_labels": {
+      "0": "Slight",
+      "1": "Serious",
+      "2": "Fatal"
+    }
+  },
+  "weight_sets": {
+    "temporal": {
+      "role_column": "temporal_role",
+      "training_role": "train",
+      "training_rows": 538461,
+      "class_counts": {
+        "0": 421745,
+        "1": 108920,
+        "2": 7796
+      },
+      "class_weights": {
+        "0": 0.42558180891296876,
+        "1": 1.647879177377892,
+        "2": 23.022960492560287
+      }
+    },
+    "random_reference": {
+      "1103": {
+        "role_column": "random_role_seed_1103",
+        "training_role": "train",
+        "training_rows": 449903,
+        "class_counts": {
+          "0": 350730,
+          "1": 92650,
+          "2": 6523
+        },
+        "class_weights": {
+          "0": 0.42758722283998135,
+          "1": 1.6186472387119986,
+          "2": 22.9905973733967
+        }
+      },
+      "2207": {
+        "role_column": "random_role_seed_2207",
+        "training_role": "train",
+        "training_rows": 449903,
+        "class_counts": {
+          "0": 350730,
+          "1": 92650,
+          "2": 6523
+        },
+        "class_weights": {
+          "0": 0.42758722283998135,
+          "1": 1.6186472387119986,
+          "2": 22.9905973733967
+        }
+      },
+      "3301": {
+        "role_column": "random_role_seed_3301",
+        "training_role": "train",
+        "training_rows": 449903,
+        "class_counts": {
+          "0": 350730,
+          "1": 92650,
+          "2": 6523
+        },
+        "class_weights": {
+          "0": 0.42758722283998135,
+          "1": 1.6186472387119986,
+          "2": 22.9905973733967
+        }
+      },
+      "4409": {
+        "role_column": "random_role_seed_4409",
+        "training_role": "train",
+        "training_rows": 449903,
+        "class_counts": {
+          "0": 350730,
+          "1": 92650,
+          "2": 6523
+        },
+        "class_weights": {
+          "0": 0.42758722283998135,
+          "1": 1.6186472387119986,
+          "2": 22.9905973733967
+        }
+      },
+      "5501": {
+        "role_column": "random_role_seed_5501",
+        "training_role": "train",
+        "training_rows": 449903,
+        "class_counts": {
+          "0": 350730,
+          "1": 92650,
+          "2": 6523
+        },
+        "class_weights": {
+          "0": 0.42758722283998135,
+          "1": 1.6186472387119986,
+          "2": 22.9905973733967
+        }
+      }
+    }
+  },
+  "test_embargo": {
+    "year": 2024,
+    "rule": "No preprocessing fit, tuning, threshold choice, model selection or intermediate performance inspection before the one-time D11 evaluation."
+  }
+}

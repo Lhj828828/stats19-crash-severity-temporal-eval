@@ -1,0 +1,60 @@
+{
+  "version": "CAS_LIGHTGBM_V1",
+  "status": "LIGHTGBM_MODELS_FROZEN_BEFORE_2025_EVALUATION",
+  "created_local": "2026-09-01T11:55:43+08:00",
+  "protocol_sha256": "a086baf7facdbdb94dee34e28507eb848fe749b6750e4806b88e24c037d3c695",
+  "selected_sha256": "baf3376508ddf5c825120e8ae848faa5f8daf0524bdd9aa83c2c40c5f0053d82",
+  "artifact_manifest_sha256": "b7863fecc4f5c4b3338d36780da4a3ec75d6db9d5a2c193d466c2accd9b5fee7",
+  "model_files": [
+    {
+      "file": "models/cas_lightgbm/random_seed_1103/lightgbm_weighted.joblib",
+      "sha256": "20bc5db794efeb6524b6b6c01ea68dfe0469791a1e00ae7b7307790865f34e92"
+    },
+    {
+      "file": "models/cas_lightgbm/random_seed_1103/preprocessing_bundle.joblib",
+      "sha256": "b06ef05f1e95360a2aae15fcfa5ebc3bd4354b60afafb284de278aca70f9d979"
+    },
+    {
+      "file": "models/cas_lightgbm/random_seed_2207/lightgbm_weighted.joblib",
+      "sha256": "bf30d320428dd9c46214d162d3b5bc25f640232e7e4cfc97f3570a878de89e9d"
+    },
+    {
+      "file": "models/cas_lightgbm/random_seed_2207/preprocessing_bundle.joblib",
+      "sha256": "5c9b7aa8f710668246a7fff749b6f2cd942a7be94b61bfcdd89cc51f11d6b64b"
+    },
+    {
+      "file": "models/cas_lightgbm/random_seed_3301/lightgbm_weighted.joblib",
+      "sha256": "3f56862040a291c30659ca8fb38b5b50669d0a928c50bedc817c278a48df0bca"
+    },
+    {
+      "file": "models/cas_lightgbm/random_seed_3301/preprocessing_bundle.joblib",
+      "sha256": "44cb6a2f1a182e9671bb58ce7aad1e0d9f7e875366fecafe40ab330a316cc260"
+    },
+    {
+      "file": "models/cas_lightgbm/random_seed_4409/lightgbm_weighted.joblib",
+      "sha256": "edff8df7beb8578b9a1f7b1d57ab46af41b742617efb996f2c153e54cf416582"
+    },
+    {
+      "file": "models/cas_lightgbm/random_seed_4409/preprocessing_bundle.joblib",
+      "sha256": "12645e8b31bab2b5b75c52eb13e80c2ffd3a67a5e15d740add37a314422728da"
+    },
+    {
+      "file": "models/cas_lightgbm/random_seed_5501/lightgbm_weighted.joblib",
+      "sha256": "71ef20ffcbbbbc74699809a6a0cea4089c1714bd6aac934d78957844e3ae340c"
+    },
+    {
+      "file": "models/cas_lightgbm/random_seed_5501/preprocessing_bundle.joblib",
+      "sha256": "a4c90a6870d0092ecdd4854c297f49c9b450a49a67ac17f595e9177cdf1623f8"
+    },
+    {
+      "file": "models/cas_lightgbm/temporal/lightgbm_weighted.joblib",
+      "sha256": "83ed1cf82d5fd5dc1491955403278bb1216c56f02adf724d1fd8c604da6b4dfc"
+    },
+    {
+      "file": "models/cas_lightgbm/temporal/preprocessing_bundle.joblib",
+      "sha256": "c944e61f2b27e5f45a97fb16ac649e53388af94595e3e81801f015480c02c043"
+    }
+  ],
+  "test_performance_used": false,
+  "threads": 8
+}

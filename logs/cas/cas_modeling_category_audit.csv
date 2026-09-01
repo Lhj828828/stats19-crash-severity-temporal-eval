@@ -1,0 +1,65 @@
+﻿feature,category,count,pct,is_source_missing,is_literal_none_or_null
+feature_number_of_lanes,0,299,0.006933976484775399,False,False
+feature_number_of_lanes,1,1564,0.03627003084344055,False,False
+feature_number_of_lanes,2,34057,0.7898007931170428,False,False
+feature_number_of_lanes,3,2597,0.06022587602328332,False,False
+feature_number_of_lanes,4,3106,0.07202986943716519,False,False
+feature_number_of_lanes,5,526,0.012198232879571438,False,False
+feature_number_of_lanes,6,233,0.005403399735627652,False,False
+feature_number_of_lanes,7,20,0.0004638111361053779,False,False
+feature_number_of_lanes,8,24,0.0005565733633264534,False,False
+feature_number_of_lanes,__SOURCE_MISSING__,695,0.016117436979661882,True,False
+feature_state_highway,No,30345,0.7037174462558846,False,False
+feature_state_highway,Unknown,10,0.00023190556805268895,False,False
+feature_state_highway,Yes,12763,0.2959810765056469,False,False
+feature_state_highway,__SOURCE_MISSING__,3,6.957167041580668e-05,True,False
+feature_terrain,Flat,33657,0.7805245703949352,False,False
+feature_terrain,Hill Road,9338,0.21655341944760093,False,False
+feature_terrain,Null,126,0.0029220101574638805,False,True
+feature_light,Bright sun,16033,0.3718141972588762,False,False
+feature_light,Dark,11887,0.27566614874423134,False,False
+feature_light,Overcast,12971,0.3008047123211428,False,False
+feature_light,Twilight,2197,0.05094965330117576,False,False
+feature_light,Unknown,33,0.0007652883745738735,False,False
+feature_road_character,Bridge,1025,0.023770320725400616,False,False
+feature_road_character,Motorway ramp,689,0.015978293638830268,False,False
+feature_road_character,Nil,40682,0.9434382319519492,False,False
+feature_road_character,Overpass,182,0.004220681338558939,False,False
+feature_road_character,Rail xing,149,0.0034553929639850652,False,False
+feature_road_character,Speed hump,244,0.00565849586048561,False,False
+feature_road_character,Tram lines,10,0.00023190556805268895,False,False
+feature_road_character,Tunnel,36,0.0008348600449896802,False,False
+feature_road_character,Underpass,104,0.002411817907747965,False,False
+feature_road_lane,1-way,4970,0.11525706732218641,False,False
+feature_road_lane,2-way,37214,0.8630133809512767,False,False
+feature_road_lane,Null,19,0.000440620579300109,False,True
+feature_road_lane,Off road,918,0.021288931147236845,False,False
+feature_road_surface,End of seal,38,0.000881241158600218,False,False
+feature_road_surface,Null,19,0.000440620579300109,False,True
+feature_road_surface,Sealed,41844,0.9703856589596717,False,False
+feature_road_surface,Unsealed,1220,0.02829247930242805,False,False
+feature_street_light,None,14219,0.3297465272141184,False,True
+feature_street_light,Null,670,0.015537673059530159,False,True
+feature_street_light,Off,19489,0.4519607615778855,False,False
+feature_street_light,On,8743,0.20275503814846593,False,False
+feature_traffic_control,Give way,7696,0.1784745251733494,False,False
+feature_traffic_control,Isolated Pedestrian signal (non-intersection),71,0.0016465295331740916,False,False
+feature_traffic_control,Nil,28796,0.6677952737645231,False,False
+feature_traffic_control,Pointsman,22,0.0005101922497159157,False,False
+feature_traffic_control,School Patrol/warden,3,6.957167041580668e-05,False,False
+feature_traffic_control,Stop,2975,0.06899190649567497,False,False
+feature_traffic_control,Traffic Signals,3105,0.07200667888035991,False,False
+feature_traffic_control,Unknown,453,0.01050532223278681,False,False
+feature_urban,Open,17062,0.3956772802114979,False,False
+feature_urban,Urban,26059,0.6043227197885022,False,False
+feature_weather_primary,Fine,34902,0.8093968136174949,False,False
+feature_weather_primary,Hail or Sleet,30,0.0006957167041580668,False,False
+feature_weather_primary,Heavy rain,1368,0.03172468170960785,False,False
+feature_weather_primary,Light rain,6050,0.1403028686718768,False,False
+feature_weather_primary,Mist or Fog,715,0.01658124811576726,False,False
+feature_weather_primary,Null,37,0.0008580506017949491,False,True
+feature_weather_primary,Snow,19,0.000440620579300109,False,False
+feature_weather_secondary,Frost,659,0.015282576934672202,False,False
+feature_weather_secondary,None,83,0.0019248162148373183,False,True
+feature_weather_secondary,Null,41122,0.9536420769462675,False,True
+feature_weather_secondary,Strong wind,1257,0.029150529904223,False,False

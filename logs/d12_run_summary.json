@@ -1,0 +1,47 @@
+{
+  "version": "D12_V1",
+  "completed_local": "2026-08-31",
+  "runtime_seconds": 12.792665800021496,
+  "bootstrap_iterations": 2000,
+  "master_seed": 20260828,
+  "evaluation_groups": 11,
+  "model_metric_interval_rows": 385,
+  "paired_model_difference_rows": 77,
+  "random_optimism_gap_rows": 175,
+  "fit_operations": 0,
+  "threshold_changes": 0,
+  "model_selection_operations": 0,
+  "D11_input_audit": {
+    "manifest_rows": 64,
+    "prediction_files": 55,
+    "prediction_bytes": 161001199,
+    "manifest_sha256": "dda41121012a5926e6e8c80132a65293f1572fb7ad4e15f050b158aa1de85182",
+    "metrics_sha256": "d0755ce6feffb0bd6150dacbf87e2632472199d3928b5664f06a6bf1c96745b6",
+    "run_lock_sha256": "4169a25a830de1f4451f90a7681e2e05ef01e20f50aaabd68f12a5785d9b3425"
+  },
+  "H2_temporal_macro_f1": {
+    "raw_delta": 0.01389563924621845,
+    "ci_lower": 0.01087499912993538,
+    "ci_upper": 0.016955648563164664,
+    "point_exceeds_0_01": true,
+    "ci_lower_above_zero": true
+  },
+  "H2_temporal_fatal_recall": {
+    "raw_delta": -0.10053262316910787,
+    "ci_lower": -0.11651131824234354,
+    "ci_upper": -0.08388814913448736
+  },
+  "H1_lightgbm_mean_optimism_gaps": {
+    "macro_f1": -0.0031813885126504293,
+    "qwk": 0.0535535005855309,
+    "fatal_recall": 0.26466302723073404
+  },
+  "inference_boundary": "Intervals condition on fixed fitted models. H1 across-seed summaries are descriptive because random partitions overlap.",
+  "environment": {
+    "python": "3.13.15",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scikit_learn": "1.9.0",
+    "thread_limit": 4
+  }
+}

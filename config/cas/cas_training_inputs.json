@@ -1,0 +1,161 @@
+{
+  "version": "CAS_SPLITS_V1",
+  "status": "TRAINING_INPUTS_AUDITED_AND_FROZEN_BEFORE_MODELING",
+  "created_local": "2026-09-01T11:02:17+08:00",
+  "upstream": {
+    "modeling_dataset": "data/processed/cas_modeling_dataset.csv.gz",
+    "modeling_dataset_sha256": "714ca06b492f209b95cde9042a0b439f38f0d29213f70bc64207d8af9be777cd",
+    "modeling_schema": "config/cas/cas_modeling_schema.json",
+    "modeling_schema_sha256": "44ca815864e8919a46feb993e931da4e9435467db5722382c831228d2e220bba",
+    "cleaning_rules": "config/cas/cas_cleaning_rules.json",
+    "cleaning_rules_sha256": "663698ecf8f46caadd7de3475e9272a16393e3a75a1bcf9e21b9edf0b1cb7833"
+  },
+  "split_assignments": {
+    "file": "data/processed/cas_split_assignments.csv.gz",
+    "sha256": "69309305340f25c6bfb6fee7474b47bf015eba28d3c3627f081becc3d0ebdf32",
+    "role_columns": [
+      "temporal_role",
+      "random_role_seed_1103",
+      "random_role_seed_2207",
+      "random_role_seed_3301",
+      "random_role_seed_4409",
+      "random_role_seed_5501"
+    ]
+  },
+  "feature_contract": {
+    "feature_count": 15,
+    "feature_columns": [
+      "feature_number_of_lanes",
+      "feature_state_highway",
+      "feature_terrain",
+      "feature_light",
+      "feature_road_character",
+      "feature_road_lane",
+      "feature_road_surface",
+      "feature_street_light",
+      "feature_traffic_control",
+      "feature_urban",
+      "feature_weather_primary",
+      "feature_weather_secondary",
+      "feature_advisory_speed",
+      "feature_speed_limit",
+      "feature_temporary_speed_limit"
+    ],
+    "metadata_excluded_from_models": [
+      "meta_crash_id",
+      "meta_crash_year",
+      "meta_region"
+    ],
+    "target_excluded_from_features": "target_severity"
+  },
+  "class_weight_rule": {
+    "name": "balanced",
+    "formula": "n_training / (n_classes * n_training_in_class)",
+    "n_classes": 3,
+    "source_rows": "training role only, calculated separately per split",
+    "target_labels": {
+      "0": "Minor",
+      "1": "Serious",
+      "2": "Fatal"
+    }
+  },
+  "weight_sets": {
+    "temporal": {
+      "role_column": "temporal_role",
+      "training_rows": 21934,
+      "class_counts": {
+        "0": 17107,
+        "1": 4188,
+        "2": 639
+      },
+      "class_weights": {
+        "0": 0.42738839851133065,
+        "1": 1.7457815982171283,
+        "2": 11.441836202399582
+      }
+    },
+    "random_reference": {
+      "1103": {
+        "role_column": "random_role_seed_1103",
+        "training_rows": 22805,
+        "class_counts": {
+          "0": 17789,
+          "1": 4394,
+          "2": 622
+        },
+        "class_weights": {
+          "0": 0.4273240017239118,
+          "1": 1.730010620543165,
+          "2": 12.221329046087888
+        }
+      },
+      "2207": {
+        "role_column": "random_role_seed_2207",
+        "training_rows": 22805,
+        "class_counts": {
+          "0": 17789,
+          "1": 4394,
+          "2": 622
+        },
+        "class_weights": {
+          "0": 0.4273240017239118,
+          "1": 1.730010620543165,
+          "2": 12.221329046087888
+        }
+      },
+      "3301": {
+        "role_column": "random_role_seed_3301",
+        "training_rows": 22805,
+        "class_counts": {
+          "0": 17789,
+          "1": 4394,
+          "2": 622
+        },
+        "class_weights": {
+          "0": 0.4273240017239118,
+          "1": 1.730010620543165,
+          "2": 12.221329046087888
+        }
+      },
+      "4409": {
+        "role_column": "random_role_seed_4409",
+        "training_rows": 22805,
+        "class_counts": {
+          "0": 17789,
+          "1": 4394,
+          "2": 622
+        },
+        "class_weights": {
+          "0": 0.4273240017239118,
+          "1": 1.730010620543165,
+          "2": 12.221329046087888
+        }
+      },
+      "5501": {
+        "role_column": "random_role_seed_5501",
+        "training_rows": 22805,
+        "class_counts": {
+          "0": 17789,
+          "1": 4394,
+          "2": 622
+        },
+        "class_weights": {
+          "0": 0.4273240017239118,
+          "1": 1.730010620543165,
+          "2": 12.221329046087888
+        }
+      }
+    }
+  },
+  "test_boundary": {
+    "year": 2025,
+    "prior_access": "Schema, target counts, missingness/category coverage and drift were inspected during feasibility auditing.",
+    "prohibited_before_model_freeze": [
+      "preprocessing fit",
+      "hyperparameter tuning",
+      "threshold choice",
+      "model selection",
+      "model performance inspection"
+    ]
+  }
+}

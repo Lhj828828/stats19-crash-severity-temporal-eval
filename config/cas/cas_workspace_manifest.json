@@ -1,0 +1,87 @@
+{
+  "version": "CAS_WORKSPACE_V2",
+  "status": "CAS_REPLICATION_ANALYSIS_COMPLETE",
+  "created_local": "2026-09-01",
+  "updated_local": "2026-09-01",
+  "workspace": "C:/Users/Administrator/Desktop/CAS验证",
+  "source_project": "C:/Users/Administrator/Desktop/STATS19论文",
+  "separation_policy": {
+    "source_action": "copy_only",
+    "stats19_frozen_project_modified": false,
+    "records_pooled_across_datasets": false
+  },
+  "stats19_reference": {
+    "D16_status": "D16_CORE_REPRODUCTION_PASS_WITH_DOCUMENTED_NUMERICAL_DEVIATIONS",
+    "execution_protocol_sha256": "6c54871b70d967bbf0cfd9fcadeaa2b472a823d85aa7f239e17b77fb4ac5073d",
+    "final_comparison_protocol_sha256": "ccae94276f7e45e4eb4ca746d0c52ed562ef5dda197a2d1f87eb74df916c0f09"
+  },
+  "cas_snapshot": {
+    "years": [2022, 2023, 2024, 2025],
+    "row_count": 43121,
+    "csv_sha256": "cc554366351cf4d5ccc7207f583c8ff1437036a615f1bac4dcdcccac76d1745c",
+    "license": "CC BY 4.0 International"
+  },
+  "temporal_protocol": {
+    "train_years": [2022, 2023],
+    "validation_years": [2024],
+    "test_years": [2025],
+    "test_status": "FROZEN_MODELS_EVALUATED_ONCE_AFTER_MODEL_FREEZE"
+  },
+  "modeling_status": {
+    "model_ready_table": true,
+    "split_assignments": true,
+    "models_trained": true,
+    "models_frozen_before_2025_evaluation": true,
+    "test_model_evaluated": true,
+    "one_time_2025_evaluation": true,
+    "test_feasibility_audited": true,
+    "preprocessing_refit_on_test": false,
+    "post_test_model_selection": false,
+    "h1_h2_bootstrap_complete": true,
+    "h3_shap_complete": true,
+    "cross_dataset_directional_closeout": true
+  },
+  "frozen_modeling_table": {
+    "file": "data/processed/cas_modeling_dataset.csv.gz",
+    "row_count": 43121,
+    "feature_count": 15,
+    "sha256": "714ca06b492f209b95cde9042a0b439f38f0d29213f70bc64207d8af9be777cd"
+  },
+  "frozen_splits": {
+    "file": "data/processed/cas_split_assignments.csv.gz",
+    "sha256": "69309305340f25c6bfb6fee7474b47bf015eba28d3c3627f081becc3d0ebdf32",
+    "temporal_rows": {
+      "train": 21934,
+      "validation": 10645,
+      "test": 10542
+    },
+    "random_rows_per_seed": {
+      "train": 22805,
+      "validation": 4887,
+      "test": 4887
+    }
+  },
+  "verification": {
+    "feasibility_checks_passed": 8,
+    "modeling_input_checks_passed": 8,
+    "failed_checks": 0,
+    "stage_specific_test_files": 8,
+    "last_full_suite_status": "PASS",
+    "last_full_suite_date": "2026-09-01",
+    "full_suite_checkpoint": "logs/cas/cas_full_test_suite.md",
+    "checkpoint": "logs/cas/cas_replication_checkpoint.md"
+  },
+  "completion_artifacts": {
+    "evaluation": "config/cas/cas_evaluation_complete.json",
+    "h1_h2_bootstrap": "config/cas/cas_bootstrap_complete.json",
+    "h3_shap": "config/cas/cas_h3_complete.json",
+    "directional_closeout": "config/cas/cas_replication_complete.json"
+  },
+  "claim_boundary": {
+    "records_pooled_across_datasets": false,
+    "absolute_metrics_compared_as_exchangeable": false,
+    "cross_national_generalizability_claim_allowed": false,
+    "allowed_cross_dataset_claim": "workflow executability and separately reported directional agreement or disagreement"
+  },
+  "next_gate": "Integrate the frozen CAS appendix results into the manuscript and archive a versioned repository; no further model selection or 2025 retuning is permitted."
+}

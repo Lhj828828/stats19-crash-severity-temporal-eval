@@ -1,0 +1,20 @@
+{
+  "version": "D10_EXECUTION_AMENDMENT_V1",
+  "created_local": "2026-08-30",
+  "reason": "The first incomplete tuning run used n_jobs=-1 and saturated the workstation CPU, causing excessive heat and fan noise. The user interrupted that run.",
+  "timing_disclosure": "The C01 validation metrics were printed before interruption. No complete tuning table or selected-parameter artifact was written.",
+  "original_protocol_sha256": "079aad5af8e95360b60b17b664c847336db66b4712811bac17b67ce5a9d5c963",
+  "scope": "runtime resource control only",
+  "original_n_jobs": -1,
+  "amended_n_jobs": 4,
+  "scientific_parameters_changed": false,
+  "data_split_changed": false,
+  "candidate_set_changed": false,
+  "selection_rule_changed": false,
+  "restart_all_candidates": true,
+  "determinism_controls": {
+    "deterministic": true,
+    "force_col_wise": true,
+    "random_state": 20260830
+  }
+}

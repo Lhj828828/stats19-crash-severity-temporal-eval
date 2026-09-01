@@ -1,0 +1,14 @@
+{
+  "version": "D8_SMOKE_V1",
+  "status": "PASS",
+  "training_rows": 20000,
+  "validation_rows": 5000,
+  "models": [
+    "dummy_most_frequent",
+    "logistic_unweighted",
+    "logistic_weighted"
+  ],
+  "encoded_features": 156,
+  "no_2024": true,
+  "convergence_warnings": 0
+}

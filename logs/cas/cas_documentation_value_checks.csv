@@ -1,0 +1,7 @@
+﻿field_name,documented_values,observed_values,status,handling
+crashSeverity,F|S|M|N,Fatal Crash|Minor Crash|Non-Injury Crash|Serious Crash,MISMATCH,freeze and map the observed full labels; never assume F/S/M/N
+crashSHDescription,1|2,No|Unknown|Yes|__MISSING__,MISMATCH,treat observed Yes/No/Unknown as categorical labels
+holiday,four named periods; otherwise None,Christmas New Year|Easter|Labour Weekend|Queens Birthday|__MISSING__,REPRESENTATION_DIFFERENCE,map API missing to outside listed holiday periods
+roadSurface,Sealed|Unsealed,End of seal|Null|Sealed|Unsealed,ADDITIONAL_LIVE_VALUES,retain End of seal and Null as explicit categories
+streetLight,On|Off|None|Unknown,None|Null|Off|On,LABEL_DIFFERENCE,retain None and Null as distinct source labels
+weatherB,Frost|Strong Wind|Unknown,Frost|None|Null|Strong wind,LABEL_DIFFERENCE,"retain Frost, Strong wind, None and Null without merging"

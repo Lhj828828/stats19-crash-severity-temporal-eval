@@ -1,0 +1,237 @@
+{
+  "version": "CAS_MODELING_V1",
+  "status": "QC_PASSED_AND_FROZEN_BEFORE_MODELING",
+  "created_local": "2026-09-01T11:01:21+08:00",
+  "file": "data/processed/cas_modeling_dataset.csv.gz",
+  "sha256": "714ca06b492f209b95cde9042a0b439f38f0d29213f70bc64207d8af9be777cd",
+  "row_count": 43121,
+  "statistical_unit": "police-reported personal-injury crash",
+  "metadata_columns": [
+    "meta_crash_id",
+    "meta_crash_year",
+    "meta_region"
+  ],
+  "metadata_roles": {
+    "meta_crash_id": "record identity and audit only",
+    "meta_crash_year": "temporal splitting only",
+    "meta_region": "grouped descriptive audit only; excluded from models"
+  },
+  "target_column": "target_severity",
+  "target_labels": {
+    "0": "Minor",
+    "1": "Serious",
+    "2": "Fatal"
+  },
+  "feature_count": 15,
+  "feature_columns": [
+    "feature_number_of_lanes",
+    "feature_state_highway",
+    "feature_terrain",
+    "feature_light",
+    "feature_road_character",
+    "feature_road_lane",
+    "feature_road_surface",
+    "feature_street_light",
+    "feature_traffic_control",
+    "feature_urban",
+    "feature_weather_primary",
+    "feature_weather_secondary",
+    "feature_advisory_speed",
+    "feature_speed_limit",
+    "feature_temporary_speed_limit"
+  ],
+  "categorical_feature_columns": [
+    "feature_number_of_lanes",
+    "feature_state_highway",
+    "feature_terrain",
+    "feature_light",
+    "feature_road_character",
+    "feature_road_lane",
+    "feature_road_surface",
+    "feature_street_light",
+    "feature_traffic_control",
+    "feature_urban",
+    "feature_weather_primary",
+    "feature_weather_secondary"
+  ],
+  "numeric_feature_columns": [
+    "feature_advisory_speed",
+    "feature_speed_limit",
+    "feature_temporary_speed_limit"
+  ],
+  "source_to_feature": {
+    "NumberOfLanes": "feature_number_of_lanes",
+    "crashSHDescription": "feature_state_highway",
+    "flatHill": "feature_terrain",
+    "light": "feature_light",
+    "roadCharacter": "feature_road_character",
+    "roadLane": "feature_road_lane",
+    "roadSurface": "feature_road_surface",
+    "streetLight": "feature_street_light",
+    "trafficControl": "feature_traffic_control",
+    "urban": "feature_urban",
+    "weatherA": "feature_weather_primary",
+    "weatherB": "feature_weather_secondary",
+    "advisorySpeed": "feature_advisory_speed",
+    "speedLimit": "feature_speed_limit",
+    "temporarySpeedLimit": "feature_temporary_speed_limit"
+  },
+  "feature_selection_policy": "Model code must select exactly feature_columns; metadata and target must never enter a model through exclusion-based selection.",
+  "observed_categories_for_schema_audit_only": {
+    "feature_number_of_lanes": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "__SOURCE_MISSING__"
+    ],
+    "feature_state_highway": [
+      "No",
+      "Unknown",
+      "Yes",
+      "__SOURCE_MISSING__"
+    ],
+    "feature_terrain": [
+      "Flat",
+      "Hill Road",
+      "Null"
+    ],
+    "feature_light": [
+      "Bright sun",
+      "Dark",
+      "Overcast",
+      "Twilight",
+      "Unknown"
+    ],
+    "feature_road_character": [
+      "Bridge",
+      "Motorway ramp",
+      "Nil",
+      "Overpass",
+      "Rail xing",
+      "Speed hump",
+      "Tram lines",
+      "Tunnel",
+      "Underpass"
+    ],
+    "feature_road_lane": [
+      "1-way",
+      "2-way",
+      "Null",
+      "Off road"
+    ],
+    "feature_road_surface": [
+      "End of seal",
+      "Null",
+      "Sealed",
+      "Unsealed"
+    ],
+    "feature_street_light": [
+      "None",
+      "Null",
+      "Off",
+      "On"
+    ],
+    "feature_traffic_control": [
+      "Give way",
+      "Isolated Pedestrian signal (non-intersection)",
+      "Nil",
+      "Pointsman",
+      "School Patrol/warden",
+      "Stop",
+      "Traffic Signals",
+      "Unknown"
+    ],
+    "feature_urban": [
+      "Open",
+      "Urban"
+    ],
+    "feature_weather_primary": [
+      "Fine",
+      "Hail or Sleet",
+      "Heavy rain",
+      "Light rain",
+      "Mist or Fog",
+      "Null",
+      "Snow"
+    ],
+    "feature_weather_secondary": [
+      "Frost",
+      "None",
+      "Null",
+      "Strong wind"
+    ]
+  },
+  "observed_numeric_values": {
+    "feature_advisory_speed": [
+      15,
+      25,
+      30,
+      35,
+      45,
+      55,
+      65,
+      75,
+      85,
+      95
+    ],
+    "feature_speed_limit": [
+      5,
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70,
+      80,
+      90,
+      100,
+      110
+    ],
+    "feature_temporary_speed_limit": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70,
+      80,
+      90
+    ]
+  },
+  "missing_counts": {
+    "feature_number_of_lanes": 695,
+    "feature_state_highway": 3,
+    "feature_terrain": 0,
+    "feature_light": 0,
+    "feature_road_character": 0,
+    "feature_road_lane": 0,
+    "feature_road_surface": 0,
+    "feature_street_light": 0,
+    "feature_traffic_control": 0,
+    "feature_urban": 0,
+    "feature_weather_primary": 0,
+    "feature_weather_secondary": 0,
+    "feature_advisory_speed": 40801,
+    "feature_speed_limit": 698,
+    "feature_temporary_speed_limit": 41627
+  },
+  "category_vocabulary_policy": "Observed full-snapshot categories are audit evidence only and must not be supplied to an encoder; fit vocabulary on training rows only.",
+  "parent": {
+    "feasibility_protocol": "config/cas/cas_feasibility_protocol.json",
+    "feasibility_protocol_sha256": "b9d9a4134fb4b8a48b8951652f486a275a2553582801102f36906410a0749e17",
+    "lossless_snapshot": "data/raw/cas/cas_injury_2022_2025_snapshot.jsonl.gz",
+    "lossless_snapshot_sha256": "7db99dd4ba92716d751dabbc08b03f72373c635025b7d5335cf0b6705a7bd7f3",
+    "interim_table": "data/interim/cas_modeling_table.csv.gz",
+    "interim_table_sha256": "714ca06b492f209b95cde9042a0b439f38f0d29213f70bc64207d8af9be777cd",
+    "cleaning_rules": "config/cas/cas_cleaning_rules.json",
+    "cleaning_rules_sha256": "663698ecf8f46caadd7de3475e9272a16393e3a75a1bcf9e21b9edf0b1cb7833"
+  }
+}

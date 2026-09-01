@@ -1,0 +1,91 @@
+﻿protocol,seed,feature,feature_type,training_levels,validation_unseen_count,training_missing_count,validation_missing_count,value_applied_to_data
+temporal,year_based,feature_number_of_lanes,categorical_native,10,0,0,0,training categories plus __UNSEEN__
+temporal,year_based,feature_state_highway,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+temporal,year_based,feature_terrain,categorical_native,3,0,0,0,training categories plus __UNSEEN__
+temporal,year_based,feature_light,categorical_native,5,0,0,0,training categories plus __UNSEEN__
+temporal,year_based,feature_road_character,categorical_native,9,0,0,0,training categories plus __UNSEEN__
+temporal,year_based,feature_road_lane,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+temporal,year_based,feature_road_surface,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+temporal,year_based,feature_street_light,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+temporal,year_based,feature_traffic_control,categorical_native,8,0,0,0,training categories plus __UNSEEN__
+temporal,year_based,feature_urban,categorical_native,2,0,0,0,training categories plus __UNSEEN__
+temporal,year_based,feature_weather_primary,categorical_native,7,0,0,0,training categories plus __UNSEEN__
+temporal,year_based,feature_weather_secondary,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+temporal,year_based,feature_advisory_speed,numeric_native,,,20720,10094,none; NaN retained
+temporal,year_based,feature_speed_limit,numeric_native,,,350,187,none; NaN retained
+temporal,year_based,feature_temporary_speed_limit,numeric_native,,,21164,10278,none; NaN retained
+random_reference,1103,feature_number_of_lanes,categorical_native,10,0,0,0,training categories plus __UNSEEN__
+random_reference,1103,feature_state_highway,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,1103,feature_terrain,categorical_native,3,0,0,0,training categories plus __UNSEEN__
+random_reference,1103,feature_light,categorical_native,5,0,0,0,training categories plus __UNSEEN__
+random_reference,1103,feature_road_character,categorical_native,9,0,0,0,training categories plus __UNSEEN__
+random_reference,1103,feature_road_lane,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,1103,feature_road_surface,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,1103,feature_street_light,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,1103,feature_traffic_control,categorical_native,8,0,0,0,training categories plus __UNSEEN__
+random_reference,1103,feature_urban,categorical_native,2,0,0,0,training categories plus __UNSEEN__
+random_reference,1103,feature_weather_primary,categorical_native,7,0,0,0,training categories plus __UNSEEN__
+random_reference,1103,feature_weather_secondary,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,1103,feature_advisory_speed,numeric_native,,,21560,4611,none; NaN retained
+random_reference,1103,feature_speed_limit,numeric_native,,,379,83,none; NaN retained
+random_reference,1103,feature_temporary_speed_limit,numeric_native,,,22011,4706,none; NaN retained
+random_reference,2207,feature_number_of_lanes,categorical_native,10,0,0,0,training categories plus __UNSEEN__
+random_reference,2207,feature_state_highway,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,2207,feature_terrain,categorical_native,3,0,0,0,training categories plus __UNSEEN__
+random_reference,2207,feature_light,categorical_native,5,0,0,0,training categories plus __UNSEEN__
+random_reference,2207,feature_road_character,categorical_native,9,0,0,0,training categories plus __UNSEEN__
+random_reference,2207,feature_road_lane,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,2207,feature_road_surface,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,2207,feature_street_light,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,2207,feature_traffic_control,categorical_native,8,0,0,0,training categories plus __UNSEEN__
+random_reference,2207,feature_urban,categorical_native,2,0,0,0,training categories plus __UNSEEN__
+random_reference,2207,feature_weather_primary,categorical_native,7,0,0,0,training categories plus __UNSEEN__
+random_reference,2207,feature_weather_secondary,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,2207,feature_advisory_speed,numeric_native,,,21560,4623,none; NaN retained
+random_reference,2207,feature_speed_limit,numeric_native,,,351,91,none; NaN retained
+random_reference,2207,feature_temporary_speed_limit,numeric_native,,,22010,4720,none; NaN retained
+random_reference,3301,feature_number_of_lanes,categorical_native,10,0,0,0,training categories plus __UNSEEN__
+random_reference,3301,feature_state_highway,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,3301,feature_terrain,categorical_native,3,0,0,0,training categories plus __UNSEEN__
+random_reference,3301,feature_light,categorical_native,5,0,0,0,training categories plus __UNSEEN__
+random_reference,3301,feature_road_character,categorical_native,9,0,0,0,training categories plus __UNSEEN__
+random_reference,3301,feature_road_lane,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,3301,feature_road_surface,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,3301,feature_street_light,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,3301,feature_traffic_control,categorical_native,8,0,0,0,training categories plus __UNSEEN__
+random_reference,3301,feature_urban,categorical_native,2,0,0,0,training categories plus __UNSEEN__
+random_reference,3301,feature_weather_primary,categorical_native,7,0,0,0,training categories plus __UNSEEN__
+random_reference,3301,feature_weather_secondary,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,3301,feature_advisory_speed,numeric_native,,,21560,4617,none; NaN retained
+random_reference,3301,feature_speed_limit,numeric_native,,,392,72,none; NaN retained
+random_reference,3301,feature_temporary_speed_limit,numeric_native,,,22003,4743,none; NaN retained
+random_reference,4409,feature_number_of_lanes,categorical_native,10,0,0,0,training categories plus __UNSEEN__
+random_reference,4409,feature_state_highway,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,4409,feature_terrain,categorical_native,3,0,0,0,training categories plus __UNSEEN__
+random_reference,4409,feature_light,categorical_native,5,0,0,0,training categories plus __UNSEEN__
+random_reference,4409,feature_road_character,categorical_native,9,0,0,0,training categories plus __UNSEEN__
+random_reference,4409,feature_road_lane,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,4409,feature_road_surface,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,4409,feature_street_light,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,4409,feature_traffic_control,categorical_native,8,0,0,0,training categories plus __UNSEEN__
+random_reference,4409,feature_urban,categorical_native,2,0,0,0,training categories plus __UNSEEN__
+random_reference,4409,feature_weather_primary,categorical_native,7,0,0,0,training categories plus __UNSEEN__
+random_reference,4409,feature_weather_secondary,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,4409,feature_advisory_speed,numeric_native,,,21546,4627,none; NaN retained
+random_reference,4409,feature_speed_limit,numeric_native,,,358,94,none; NaN retained
+random_reference,4409,feature_temporary_speed_limit,numeric_native,,,22036,4700,none; NaN retained
+random_reference,5501,feature_number_of_lanes,categorical_native,10,0,0,0,training categories plus __UNSEEN__
+random_reference,5501,feature_state_highway,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,5501,feature_terrain,categorical_native,3,0,0,0,training categories plus __UNSEEN__
+random_reference,5501,feature_light,categorical_native,5,0,0,0,training categories plus __UNSEEN__
+random_reference,5501,feature_road_character,categorical_native,9,0,0,0,training categories plus __UNSEEN__
+random_reference,5501,feature_road_lane,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,5501,feature_road_surface,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,5501,feature_street_light,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,5501,feature_traffic_control,categorical_native,8,0,0,0,training categories plus __UNSEEN__
+random_reference,5501,feature_urban,categorical_native,2,0,0,0,training categories plus __UNSEEN__
+random_reference,5501,feature_weather_primary,categorical_native,7,0,0,0,training categories plus __UNSEEN__
+random_reference,5501,feature_weather_secondary,categorical_native,4,0,0,0,training categories plus __UNSEEN__
+random_reference,5501,feature_advisory_speed,numeric_native,,,21525,4660,none; NaN retained
+random_reference,5501,feature_speed_limit,numeric_native,,,365,102,none; NaN retained
+random_reference,5501,feature_temporary_speed_limit,numeric_native,,,22000,4719,none; NaN retained

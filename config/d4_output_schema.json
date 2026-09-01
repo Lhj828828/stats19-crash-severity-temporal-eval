@@ -1,0 +1,78 @@
+{
+  "version": "D4_V1",
+  "status": "GENERATED_NOT_D5_CLEANED",
+  "file": "data/interim/d4_modeling_table.csv.gz",
+  "compression": "gzip",
+  "sha256": "2277e47fd899c15116bfa2e62eca9f9c7ea9d45d08d1b5cda2027724c843021e",
+  "row_count": 743646,
+  "metadata_columns": [
+    "meta_collision_index",
+    "meta_collision_year",
+    "meta_date",
+    "meta_police_force",
+    "meta_injury_based"
+  ],
+  "metadata_roles": {
+    "meta_collision_index": "record trace and audit only",
+    "meta_collision_year": "temporal split only",
+    "meta_date": "chronological ordering only",
+    "meta_police_force": "regional grouping and sensitivity analysis only",
+    "meta_injury_based": "reporting-system sensitivity analysis only"
+  },
+  "target_column": "target_severity",
+  "feature_prefix": "feature_",
+  "feature_columns": [
+    "feature_day_of_week",
+    "feature_first_road_class",
+    "feature_road_type",
+    "feature_junction_detail",
+    "feature_junction_control",
+    "feature_second_road_class",
+    "feature_pedestrian_crossing",
+    "feature_light_conditions",
+    "feature_weather_conditions",
+    "feature_road_surface_conditions",
+    "feature_special_conditions_at_site",
+    "feature_carriageway_hazards",
+    "feature_urban_or_rural_area",
+    "feature_trunk_road_flag",
+    "feature_speed_limit",
+    "feature_month",
+    "feature_hour"
+  ],
+  "feature_selection_policy": "Model code must select exactly feature_columns from this schema; metadata and target columns are never selected by exclusion logic.",
+  "categorical_feature_columns": [
+    "feature_day_of_week",
+    "feature_first_road_class",
+    "feature_road_type",
+    "feature_junction_detail",
+    "feature_junction_control",
+    "feature_second_road_class",
+    "feature_pedestrian_crossing",
+    "feature_light_conditions",
+    "feature_weather_conditions",
+    "feature_road_surface_conditions",
+    "feature_special_conditions_at_site",
+    "feature_carriageway_hazards",
+    "feature_urban_or_rural_area",
+    "feature_trunk_road_flag",
+    "feature_month",
+    "feature_hour"
+  ],
+  "numeric_feature_columns": [
+    "feature_speed_limit"
+  ],
+  "guide_speed_unknown_codes": [
+    -1,
+    99
+  ],
+  "observed_speed_unknown_codes": [
+    -1
+  ],
+  "missing_value_policy": {
+    "LightGBM": "native missing-value handling",
+    "multinomial_logistic": "imputation fitted within each training fold only",
+    "ordered_logit": "imputation fitted within each training fold only"
+  },
+  "row_policy": "No rows dropped at D4"
+}

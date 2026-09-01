@@ -1,0 +1,162 @@
+{
+  "folderId": null,
+  "source": "PAGEEDITOR",
+  "values": {
+    "layout": {
+      "sections": [
+        {
+          "containment": "fixed",
+          "isFooter": false,
+          "rows": [
+            {
+              "cards": [
+                {
+                  "component": {
+                    "name": "markdown-card",
+                    "settings": {
+                      "markdown": "<h2 id=\"-font-color-afbd21-crash-analysis-system-data-field-descriptions-font-\"><font color=\"afbd21\">Crash Analysis System data - field descriptions</font></h2>\n<p><b><a href=\"https://opendata-nzta.opendata.arcgis.com/search?q=CAS\">Crash Analysis Systems data, map and user guides</a>.</b></p>",
+                      "schemaVersion": 2.1
+                    }
+                  },
+                  "showEditor": false,
+                  "width": 12
+                }
+              ]
+            }
+          ],
+          "style": {
+            "background": {
+              "color": "transparent",
+              "display": {},
+              "isFile": false,
+              "isUrl": true,
+              "position": {
+                "x": "center",
+                "y": "center"
+              },
+              "state": "",
+              "transparency": 0
+            },
+            "color": "#afbd21"
+          }
+        },
+        {
+          "containment": "fixed",
+          "isFooter": false,
+          "rows": [
+            {
+              "cards": [
+                {
+                  "component": {
+                    "name": "markdown-card",
+                    "settings": {
+                      "markdown": "<p><style>\n    table,th,td {\n        border: 1px solid black;\n    }\n    p {\n        margin-left: 10px;\n    }\n    </style></p>\n    <table><thead><tr><th>    <p>    Attribute Name    </p>    </th><th>    <p>    Alias Name    </p>    </th><th>    <p>    Description    </p>    </th></tr></thead> <tbody>\n    <tr><td>    <p>    advisorySpeed</p>    </td><td>    <p>    Advisory Speed    </p>    </td><td>    <p>    The advisory (adv) speed (spd) at the crash site at the time of the crash.    </p>    </td></tr>\n    \n    <tr><td>    <p>    areaUnitID</p>    </td><td>    <p>    Area Unit ID    </p>    </td><td>    <p>    The unique identifier of an area unit.    </p>    </td></tr>\n    <tr><td>    <p>    bicycle    </p>    </td><td>    <p>        Bicycle    </p>    </td><td>    <p>        Derived variable to indicate how many bicycles were involved in the crash.    </p>    </td></tr>\n    <tr><td>    <p>    bridge    </p>    </td><td>    <p>    Bridge    </p>    </td><td>    <p>    Derived variable to indicate how many times a bridge, tunnel, the abutments, handrails were struck in the crash.    </p>    </td></tr>\n    <tr><td>    <p>    bus    </p>    </td><td>    <p>        Bus    </p>    </td><td>    <p>    Derived variable to indicate how many buses were involved in the crash (excluding school buses which are counted in the SCHOOL_BUS field).    </p>    </td></tr>\n    <tr><td>    <p>    carStationWagon</p>    </td><td>    <p>        Car/Station Wagon    </p>    </td><td>    <p>        Derived variable to indicate how many cars or station wagons were involved in the crash.    </p>    </td></tr>\n    <tr><td>    <p>    cliffBank    </p>    </td><td>    <p>    Cliff or Bank    </p>    </td><td>    <p>    Derived variable to indicate how many times a 'cliff' or 'bank' was struck in the crash. This includes retaining walls    </p>    </td></tr>\n    <tr><td>    <p>    crashDirectionDescription    </p>    </td><td>    <p>    Crash Direction Description    </p>    </td><td>    <p>    The direction (dirn) of the crash from the reference point. Values possible are 'North', 'East', 'South' or 'West'.    </p>    </td></tr>\n    <tr><td>    <p>    crashDistance    </p>    </td><td>    <p>    Crash Distance    </p>    </td><td>    <p>    The distance (dist) of the crash from the reference point for the crash. The reference point is often the intersection of 'crash road' and 'side road' (refer to 'cr_rd_sd_rd' variable).    </p>    </td></tr>\n    <tr><td>    <p>    crashFinancialYear    </p>    </td><td>    <p>    Crash Financial Year    </p>    </td><td>    <p>    The financial (fin) year in which a crash occurred, if known. This is displayed as a string field. eg 2004/2005</p>    </td></tr>\n    <tr><td>    <p>    crashLocation1    </p>    </td><td>    <p>    Crash Location 1    </p>    </td><td>    <p>    Part 1 of the 'crash location' (crash_locn). May be a road name, route position (RP), landmark, or other, e.g. 'Ninety Mile Beach'. Used for location descriptions in reports etc.    </p>    </td></tr>\n    <tr><td>    <p>    crashLocation2    </p>    </td><td>    <p>    Crash Location 2    </p>    </td><td>    <p>    Part 2 of the 'crash location' (crash_locn). May be a side road name, landmark etc. Used for location descriptions in reports etc.    </p>    </td></tr>\n    <tr><td>    <p>    crashSeverity    </p>    </td><td>    <p>    Crash Severity    </p>    </td><td>    <p>    The severity of a crash. Possible values are 'F' (fatal), 'S' (serious), 'M' (minor), 'N' (non-injury). This is determined by the worst injury sustained in the crash at time of entry.    </p>    </td></tr>\n    <tr><td>    <p>    crashSHDescription<sup>1</sup> </p>    </td><td>    <p>    Crash SH Description    </p>    </td><td>    <p>Indicates where a crash is reported to have occurred on a State Highway (SH) marked ‘1’, or on another road type marked ‘2’.&nbsp;</p>    </td></tr>\n    <tr><td>    <p>    crashYear    </p>    </td><td>    <p>    Crash Year    </p>    </td><td>    <p>    The year in which a crash occurred, if known.     </p>    </td></tr>\n    <tr><td>    <p>    debris    </p>    </td><td>    <p>    Debris    </p>    </td><td>    <p>    Derived variable to indicate how many times debris, boulders or items dropped or thrown from a vehicle(s) were struck in the crash     </p>    </td></tr>\n    <tr><td>    <p>    directionRoleDescription    </p>    </td><td>    <p>    Direction Role Description    </p>    </td><td>    <p>    The direction (dirn) of the principal vehicle involved in the crash. Possible values are North, South, East or West.    </p>    </td></tr>\n    <tr><td>    <p>    ditch    </p>    </td><td>    <p>    Ditch    </p>    </td><td>    <p>    Derived variable to indicate how many times a 'ditch' or 'waterable drainage channel' was struck in a crash.    </p>    </td></tr>\n    <tr><td>    <p>    easting    </p>    </td><td>    <p>    Easting    </p>    </td><td>    <p>    The easting coordinate of an object (usually a crash) expressed in NZMG referred to the WGS84 datum to a precision of 1m. Please note, in some instances crashes are not able to be assigned to GPS co-ordinates. These crashes have been assigned eastings and northings of ‘0,0’ in this dataset. There are two main reasons that a GPS coordinate cannot be allocated to a crash. Firstly, that the crash has been reported but the location was unknown. Secondly in a small number of instances, a crash may have occurred on a road which is not yet captured on the CAS spatial layer.</p>    </td></tr>\n    <tr><td>    <p>    fatalCount    </p>    </td><td>    <p>    Fatal Count    </p>    </td><td>    <p>    A count of the number of fatal casualties associated with this crash.    </p>    </td></tr>\n    <tr><td>    <p>    fence    </p>    </td><td>    <p>    Fence    </p>    </td><td>    <p>    Derived variable to indicate how many times a 'fence' was struck in the crash. This includes letterbox(es), hoardings, private roadside furniture, hedges, sight rails, etc.    </p>    </td></tr>\n    <tr><td>    <p>    flatHill    </p>    </td><td>    <p>    Flat Hill    </p>    </td><td>    <p>    Whether the road is flat or sloped. Possible values include 'Flat or 'Hill'.    </p>    </td></tr>\n    <tr><td>    <p>    guardRail    </p>    </td><td>    <p>    Guard Rail    </p>    </td><td>    <p>    Derived variable to indicate how many times a guard or guard rail was struck in the crash. This includes 'New Jersey' barriers, 'ARMCO', sand filled barriers, wire catch fences, etc.    </p>    </td></tr>\n    <tr><td>    <p>    holiday    </p>    </td><td>    <p>    Holiday    </p>    </td><td>    <p>    Indicates where a crash occurred during a 'Christmas/New Year', 'Easter', 'Queens Birthday' or 'Labour Weekend' holiday period, otherwise 'None'.     </p>    </td></tr>\n    <tr><td>    <p>    houseOrBuilding    </p>    </td><td>    <p>    House or Building    </p>    </td><td>    <p>    Derived variable to indicate how many times a houses, garages, sheds or other buildings(Bldg) were struck in the crash    </p>    </td></tr>\n    <tr><td>    <p>    intersectionMidblock    </p>    </td><td>    <p>    Intersection Midblock    </p>    </td><td>    <p>    A derived variable to indicate if a crash occured at an intersection (intsn) or not. The 'intsn_midblock' variable is calculated using the 'intersection' and 'junction_type' variables. Values are  'Intersection' (where intersection variable = 'Intersection' or {'Intersection' = 'At Landmark' and junction_type is not in ('Unknown' or 'Driveway')} OR {Intersection = 'Unknown' and crash_dist &lt;= 10}), otherwise 'Midblock' for crashes not meeting the criteria for 'Intersection').    </p>    </td></tr>\n    \n    <tr><td>    <p>    kerb    </p>    </td><td>    <p>    Kerb    </p>    </td><td>    <p>    Derived variable to indicate how many times a kerb was struck in the crash, that contributed directly to the crash.     </p>    </td></tr>\n    <tr><td>    <p>    light    </p>    </td><td>    <p>    Light    </p>    </td><td>    <p>    The light at the time and place of the crash. Possible values: 'Bright Sun', 'Overcast', 'Twilight, 'Dark' or ' Unknown'.    </p>    </td></tr>\n    <tr><td>    <p>    meshblockId    </p>    </td><td>    <p>    Meshblock ID    </p>    </td><td>    <p>    The unique identifier of a meshblock.    </p>    </td></tr>\n    <tr><td>    <p>    minorInjuryCount    </p>    </td><td>    <p>    Minor Injury Count    </p>    </td><td>    <p>    A count of the number of minor injuries (inj) associated with this crash.    </p>    </td></tr>\n    <tr><td>    <p>    moped    </p>    </td><td>    <p>        Moped    </p>    </td><td>    <p>        Derived variable to indicate how many mopeds were involved in the crash.    </p>    </td></tr>\n    <tr><td>    <p>    motorcycle    </p>    </td><td>    <p>        Motorcycle    </p>    </td><td>    <p>        Derived variable to indicate how many motorcycles were involved in the crash.    </p>    </td></tr>\n    <tr><td>    <p>    northing    </p>    </td><td>    <p>    Northing    </p>    </td><td>    <p>The northing coordinate of an object (usually a crash) expressed in NZMG referred to the WGS84 datum to a precision of 1m. Please note, in some instances crashes are not able to be assigned to GPS co-ordinates. These crashes have been assigned eastings and northings of ‘0,0’ in this dataset. There are two main reasons that a GPS coordinate cannot be allocated to a crash. Firstly, that the crash has been reported but the location was unknown. Secondly in a small number of instances, a crash may have occurred on a road which is not yet captured on the CAS spatial layer.</p>    </td></tr>\n    <tr><td>    <p>    NumberOfLanes    </p>    </td><td>    <p>    Number of Lanes    </p>    </td><td>    <p>    The number(num) of lanes on the crash road.    </p>    </td></tr>\n    <tr><td>    <p>    objectThrownOrDropped    </p>    </td><td>    <p>    Object thrown or dropped    </p>    </td><td>    <p>    Derived variable to indicate how many times objects were thrown at or dropped on vehicles in the crash.     </p>    </td></tr>\n    \n    <tr><td>    <p>    otherObject    </p>    </td><td>    <p>    Other Object </p>    </td><td>    <p>    Derived variable to indicate how many times an object was struck in a crash and the object struck was not pre-defined. This variable includes stockpiled materials, rubbish bins, fallen poles, fallen trees, etc.    </p>    </td></tr>\n    <tr><td>    <p>    otherVehicleType    </p>    </td><td>    <p>        Other Vehicle Type    </p>    </td><td>    <p>        Derived variable to indicate how many other vehicles (not included in any other category) were involved in the crash.    </p>    </td></tr>\n    <tr><td>    <p>    overBank    </p>    </td><td>    <p>    Over Bank    </p>    </td><td>    <p>    Derived variable to indicate how many times an embankment was struck or driven over during a crash. This variable includes other vertical drops driven over during a crash.    </p>    </td></tr>\n    <tr><td>    <p>    parkedVehicle    </p>    </td><td>    <p>    Parked Vehicle    </p>    </td><td>    <p>    Derived variable to indicate how many times a parked or unattended vehicle was struck in the crash. This variable can include trailers.    </p>    </td></tr>\n    <tr><td>    <p>    phoneBoxEtc    </p>    </td><td>    <p>    Phone Box etc.    </p>    </td><td>    <p>    Derived variable to indicate how many times a telephone kiosk traffic signal controllers, bus shelters or other public furniture was struck in the crash    </p>    </td></tr>\n    <tr><td>    <p>    pedestrian    </p>    </td><td>    <p>    Pedestrian    </p>    </td><td>    <p>    Derived variable to indicate how many pedestrians were involved in the crash. This includes pedestrians on  skateboards, scooters and wheelchairs.     </p>    </td></tr>\n    <tr><td>    <p>    postOrPole    </p>    </td><td>    <p>    Post or Pole    </p>    </td><td>    <p>    Derived variable to indicate how many times a post or pole was struck in the crash. This includes light, power, phone, utility poles and objects practically forming part of a pole (i.e. 'Transformer Guy' wires)    </p>    </td></tr>\n    <tr><td>    <p>    region    </p>    </td><td>    <p>    Region    </p>    </td><td>    <p> Identifies the local government (LG) region. The boundaries match territorial local authority (TLA) boundaries         </p>    </td></tr>\n    <tr><td>    <p>    roadCharacter<sup>1</sup> </p>    </td><td>    <p>    Road Character    </p>    </td><td>    <p>    The general nature of the road. Possible values include 'Bridge', 'Motorway Ramp', ‘Rail crossing’&nbsp; or  'Nil'.    </p>    </td></tr>\n    \n    <tr><td>    <p>    roadLane    </p>    </td><td>    <p>    Road Lane    </p>    </td><td>    <p>    The lane configuration of the road. Possible values : '1' (one way), '2' (two way), 'M' (for where a median exists), 'O' (for off-road lane configuations), ' ' ( for unknown or invalid configuarations).    </p>    </td></tr>\n    <tr><td>    <p>    roadMarkings    </p>    </td><td>    <p>    Road Markings    </p>    </td><td>    <p>    The road markings at the crash site. Possible values: 'Ped Crossing' (for pedestrian crossings), 'Raised Island', 'Painted Island', 'No Passing Lanes', 'Centre Line', 'No Marks' or ' Unknown'.    </p>    </td></tr>\n    <tr><td>    <p>    roadSurface    </p>    </td><td>    <p>    Road Surface    </p>    </td><td>    <p>    The road surface description applying at the crash site. Possible values: 'Sealed' or 'Unsealed'.    </p>    </td></tr>\n    <tr><td>    <p>    roadworks    </p>    </td><td>    <p>    Road works    </p>    </td><td>    <p>    Derived variable to indicate how many times an object associated with 'roadworks' (including signs, cones, drums, barriers, but not roadwork vehicles) was struck during the crash    </p>    </td></tr>\n    <tr><td>    <p>    schoolBus    </p>    </td><td>    <p>        School Bus    </p>    </td><td>    <p>        Derived variable to indicate how many school buses were involved in the crash.    </p>    </td></tr>\n    <tr><td>    <p>    seriousInjuryCount    </p>    </td><td>    <p>    Serious Injury Count    </p>    </td><td>    <p>    A count of the number of serious injuries (inj) associated with this crash.    </p>    </td></tr>\n    <tr><td>    <p>    slipOrFlood    </p>    </td><td>    <p>    Slip or Flood    </p>    </td><td>    <p>    Derived variable to indicate how many times landslips, washouts or floods (excluding rivers) were objects struck in the crash    </p>    </td></tr>\n    <tr><td>    <p>    speedLimit    </p>    </td><td>    <p>    Speed Limit    </p>    </td><td>    <p>    The speed (spd) limit (lim)  in force at the crash site at the time of the crash. May be a number, or 'LSZ' for a limited speed zone.    </p>    </td></tr>\n    <tr><td>    <p>    strayAnimal    </p>    </td><td>    <p>    Stray Animal    </p>    </td><td>    <p>    Derived variable to indicate how many times a stray animal(s) was struck in the crash. This variable includes wild animals such as pigs, goats, deer, straying farm animals, house pets and birds.    </p>    </td></tr>\n    <tr><td>    <p>    streetLight    </p>    </td><td>    <p>    Street Light    </p>    </td><td>    <p>    The street lighting at the time of the crash. Possible values 'On', 'Off', 'None' or ' Unknown'.    </p>    </td></tr>\n    <tr><td>    <p>    suv    </p>    </td><td>    <p>        SUV    </p>    </td><td>    <p>        Derived variable to indicate how many SUVs were involved in the crash.    </p>    </td></tr>\n    <tr><td>    <p>    taxi    </p>    </td><td>    <p>        Taxi    </p>    </td><td>    <p>        Derived variable to indicate how many taxis were involved in the crash.    </p>    </td></tr>\n    <tr><td>    <p>    tlaId    </p>    </td><td>    <p>    TLA ID    </p>    </td><td>    <p>    The unique identifier for a territorial local authority (TLA). Each crash is assigned a TLA based on where the crash occurred.    </p>    </td></tr>\n    <tr><td>    <p>    tlaName    </p>    </td><td>    <p>    TLA Name    </p>    </td><td>    <p>    The name of the territorial local authority (TLA) the crash has been attributed.    </p>    </td></tr>\n    <tr><td>    <p>    temporarySpeedLimit    </p>    </td><td>    <p>    Temporary Speed Limit    </p>    </td><td>    <p>    The temporary (temp) speed (spd) limit (lim) at the crash site if one exists (e.g. for road works).    </p>    </td></tr>\n    <tr><td>    <p>    trafficControl    </p>    </td><td>    <p>    Traffic Control    </p>    </td><td>    <p>    The traffic control (ctrl) signals at the crash site. Possible values are 'Traffic Signals', 'Stop Sign', 'Give Way Sign', 'Pointsman', 'School Patrol', 'Nil' or ' N/A'.    </p>    </td></tr>\n    <tr><td>    <p>    trafficIsland    </p>    </td><td>    <p>    Traffic Island    </p>    </td><td>    <p>    Derived variable to indicate how many times a traffic island, medians (excluding barriers)was struck in the crash.    </p>    </td></tr>\n    <tr><td>    <p>    trafficSign    </p>    </td><td>    <p>    Traffic Sign    </p>    </td><td>    <p>    Derived variable to indicate how many times 'traffic signage' (including traffic signals, their poles, bollards or roadside delineators) was struck in the crash.    </p>    </td></tr>\n    <tr><td>    <p>    train</p>    </td><td>    <p>    Train    </p>    </td><td>    <p>    Derived variable to indicate how many times a train, rolling stock or jiggers was struck in the crash, whether stationary or moving    </p>    </td></tr>\n    <tr><td>    <p>    tree</p>    </td><td>    <p>    Tree    </p>    </td><td>    <p>    Derived variable to indicate how many times trees or other growing items were struck during the crash.     </p>    </td></tr>\n    <tr><td>    <p>    truck</p>    </td><td>    <p>        Truck    </p>    </td><td>    <p>        Derived variable to indicate how many trucks were involved in the crash.    </p>    </td></tr>\n    <tr><td>    <p>    unknownVehicleType    </p>    </td><td>    <p>        Unknown Vehicle Type    </p>    </td><td>    <p>        Derived variable to indicate how many vehicles were involved in the crash (where the vehicle type is unknown).    </p>    </td></tr>\n    <tr><td>    <p>    urban    </p>    </td><td>    <p>    Urban    </p>    </td><td>    <p>    A derived variable using the 'spd_lim' variable. Possible values are 'Urban' (urban, spd_lim &lt; 80) or 'Open Road' (open road, spd_lim &gt;=80 or 'LSZ').    </p>    </td></tr>\n    <tr><td>    <p>    vanOrUtility    </p>    </td><td>    <p>        Van or Utility    </p>    </td><td>    <p>        Derived variable to indicate how many vans or utes were involved in the crash.    </p>    </td></tr>\n    <tr><td>    <p>    vehicle    </p>    </td><td>    <p>    Vehicle    </p>    </td><td>    <p>    Derived variable to indicate how many times a stationary attended vehicle was struck in the crash. This includes broken down vehicles, workmen's vehicles, taxis, buses.    </p>    </td></tr>\n    <tr><td>    <p>    waterRiver    </p>    </td><td>    <p>    Water River    </p>    </td><td>    <p>    Derived variable to indicate how many times a body of water (including rivers, streams, lakes, the sea, tidal flates, canals, watercourses or swanps) was struck in the crash.    </p>    </td></tr>\n    <tr><td>    <p>    weatherA    </p>    </td><td>    <p>    Weather A    </p>    </td><td>    <p>    Indicates weather at the crash time/place. See wthr_b. Values that are possible are 'Fine', 'Mist', 'Light Rain', 'Heavy Rain', 'Snow', 'Unknown'.    </p>    </td></tr>\n    <tr><td>    <p>    weatherB    </p>    </td><td>    <p>    Weather B    </p>    </td><td>    <p>    The weather at the crash time/place. See weather_a. Values 'Frost', 'Strong Wind' or 'Unknown'.    </p>    </td></tr>\n    </tbody></table>",
+                      "schemaVersion": 2.1
+                    }
+                  },
+                  "showEditor": false,
+                  "width": 12
+                }
+              ]
+            }
+          ],
+          "style": {
+            "background": {
+              "color": "transparent",
+              "display": {},
+              "isFile": false,
+              "isUrl": true,
+              "position": {
+                "x": "center",
+                "y": "center"
+              },
+              "state": "",
+              "transparency": 0
+            },
+            "color": "#1c66a6",
+            "rowLayout": "box"
+          }
+        },
+        {
+          "containment": "fixed",
+          "isFooter": false,
+          "rows": [
+            {
+              "cards": [
+                {
+                  "component": {
+                    "name": "markdown-card",
+                    "settings": {
+                      "markdown": "<p><em><strong>1. </strong>December 17th 2019: Changes have been made to the data recorded in this field</em></p>",
+                      "schemaVersion": 1
+                    }
+                  },
+                  "width": 12
+                }
+              ]
+            }
+          ],
+          "style": {
+            "background": {
+              "color": "transparent",
+              "display": {},
+              "isFile": false,
+              "isUrl": true,
+              "position": {
+                "x": "center",
+                "y": "center"
+              },
+              "state": "",
+              "transparency": 0
+            },
+            "rowLayout": "box"
+          }
+        }
+      ]
+    },
+    "sites": [
+      {
+        "id": "53a23a1df35f438fbbc8faf0a817c1e3",
+        "title": "New Zealand Transport Agency"
+      },
+      {
+        "id": "981cebe38af0441e80fb37b301c3777c",
+        "title": "New Zealand Transport Agency - Copied"
+      },
+      {
+        "id": "d98741d6fce344c188626e0fc024ee9c",
+        "title": "New Zealand Transport Agency - Copied"
+      },
+      {
+        "id": "1643554b2a294c8499e868c15193d196",
+        "title": "New Zealand Transport Agency - Copied"
+      },
+      {
+        "id": "7eeedc49099c42ac989230159ffc1bfc",
+        "title": "New Zealand Transport Agency - Copied"
+      },
+      {
+        "id": "375ea966243c4ff9916f282f294fcdc1",
+        "title": "New Zealand Transport Agency - Copied"
+      },
+      {
+        "id": "8360d7c611064b7397e61c7768f10359",
+        "title": "New Zealand Transport Agency - Copied"
+      },
+      {
+        "id": "a104b4ef3ca0453bb2a867cc6d811ff6",
+        "title": "Open Data | NZ Transport Agency - Copied"
+      },
+      {
+        "id": "458b1f0c1974459d8d25162b437a20c1",
+        "title": "Open Data | NZ Transport Agency - Copied"
+      },
+      {
+        "id": "9cf44a0be71d4f3696cb6b2881c076f2",
+        "title": "Open Data | NZ Transport Agency - Copied"
+      }
+    ],
+    "updatedAt": "2023-07-11T02:20:10.703Z",
+    "updatedBy": "Open.Data_WakaKotahi"
+  }
+}

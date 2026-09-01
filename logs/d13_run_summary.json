@@ -1,0 +1,15 @@
+{
+  "version": "D13_V1",
+  "completed_local": "2026-08-31",
+  "status": "D13_PERFORMANCE_CHECKPOINT_COMPLETE_H3_PENDING",
+  "main_table_rows": 35,
+  "H1_table_rows": 14,
+  "H2_table_rows": 7,
+  "model_fits": 0,
+  "new_bootstrap_draws": 0,
+  "threshold_changes": 0,
+  "hypothesis_rewrites": 0,
+  "H1_branch": "METRIC_DEPENDENT_MIXED_GENERALIZATION_GAP",
+  "H2_joint_rule": "FAIL",
+  "H3_status": "PENDING_NOT_EVALUATED"
+}

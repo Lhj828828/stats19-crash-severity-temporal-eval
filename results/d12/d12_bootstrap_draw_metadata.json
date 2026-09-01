@@ -1,0 +1,239 @@
+{
+  "version": "D12_V1",
+  "draw_file": "results/d12/d12_bootstrap_draws.npz",
+  "array_shape_per_group": [
+    2000,
+    5,
+    7
+  ],
+  "axis_order": [
+    "bootstrap_iteration",
+    "model",
+    "metric"
+  ],
+  "draw_key_map": {
+    "group_00": "temporal_test_2024",
+    "group_01": "random_seed_1103__internal_test",
+    "group_02": "random_seed_1103__2024_diagnostic",
+    "group_03": "random_seed_2207__internal_test",
+    "group_04": "random_seed_2207__2024_diagnostic",
+    "group_05": "random_seed_3301__internal_test",
+    "group_06": "random_seed_3301__2024_diagnostic",
+    "group_07": "random_seed_4409__internal_test",
+    "group_08": "random_seed_4409__2024_diagnostic",
+    "group_09": "random_seed_5501__internal_test",
+    "group_10": "random_seed_5501__2024_diagnostic"
+  },
+  "streams": [
+    {
+      "group_key": "temporal_test_2024",
+      "entropy": [
+        20260828,
+        3381351919,
+        3855012864,
+        3228657856,
+        1674654499
+      ],
+      "spawn_key": [],
+      "bit_generator": "PCG64",
+      "sample_role": "strict_temporal_test",
+      "rows": 100927,
+      "class_counts": [
+        75858,
+        23567,
+        1502
+      ]
+    },
+    {
+      "group_key": "random_seed_1103__internal_test",
+      "entropy": [
+        20260828,
+        1733096203,
+        2485655089,
+        4070439414,
+        1496915970
+      ],
+      "spawn_key": [],
+      "bit_generator": "PCG64",
+      "sample_role": "random_internal_test",
+      "rows": 96408,
+      "class_counts": [
+        75156,
+        19854,
+        1398
+      ]
+    },
+    {
+      "group_key": "random_seed_1103__2024_diagnostic",
+      "entropy": [
+        20260828,
+        3416850591,
+        1462883128,
+        1267273947,
+        2530609330
+      ],
+      "spawn_key": [],
+      "bit_generator": "PCG64",
+      "sample_role": "random_model_future_test",
+      "rows": 100927,
+      "class_counts": [
+        75858,
+        23567,
+        1502
+      ]
+    },
+    {
+      "group_key": "random_seed_2207__internal_test",
+      "entropy": [
+        20260828,
+        188503569,
+        207084131,
+        2397023452,
+        1198579280
+      ],
+      "spawn_key": [],
+      "bit_generator": "PCG64",
+      "sample_role": "random_internal_test",
+      "rows": 96408,
+      "class_counts": [
+        75156,
+        19854,
+        1398
+      ]
+    },
+    {
+      "group_key": "random_seed_2207__2024_diagnostic",
+      "entropy": [
+        20260828,
+        3531836645,
+        2059139899,
+        1236081739,
+        644262038
+      ],
+      "spawn_key": [],
+      "bit_generator": "PCG64",
+      "sample_role": "random_model_future_test",
+      "rows": 100927,
+      "class_counts": [
+        75858,
+        23567,
+        1502
+      ]
+    },
+    {
+      "group_key": "random_seed_3301__internal_test",
+      "entropy": [
+        20260828,
+        3389236656,
+        107848949,
+        1542826111,
+        289800345
+      ],
+      "spawn_key": [],
+      "bit_generator": "PCG64",
+      "sample_role": "random_internal_test",
+      "rows": 96408,
+      "class_counts": [
+        75157,
+        19854,
+        1397
+      ]
+    },
+    {
+      "group_key": "random_seed_3301__2024_diagnostic",
+      "entropy": [
+        20260828,
+        1540021639,
+        1393051606,
+        722284736,
+        2879007325
+      ],
+      "spawn_key": [],
+      "bit_generator": "PCG64",
+      "sample_role": "random_model_future_test",
+      "rows": 100927,
+      "class_counts": [
+        75858,
+        23567,
+        1502
+      ]
+    },
+    {
+      "group_key": "random_seed_4409__internal_test",
+      "entropy": [
+        20260828,
+        3791098569,
+        3886171828,
+        2537897044,
+        2765820770
+      ],
+      "spawn_key": [],
+      "bit_generator": "PCG64",
+      "sample_role": "random_internal_test",
+      "rows": 96408,
+      "class_counts": [
+        75157,
+        19854,
+        1397
+      ]
+    },
+    {
+      "group_key": "random_seed_4409__2024_diagnostic",
+      "entropy": [
+        20260828,
+        600067526,
+        4033000013,
+        2965957170,
+        3476132836
+      ],
+      "spawn_key": [],
+      "bit_generator": "PCG64",
+      "sample_role": "random_model_future_test",
+      "rows": 100927,
+      "class_counts": [
+        75858,
+        23567,
+        1502
+      ]
+    },
+    {
+      "group_key": "random_seed_5501__internal_test",
+      "entropy": [
+        20260828,
+        1664985524,
+        1680286526,
+        351974169,
+        2093182577
+      ],
+      "spawn_key": [],
+      "bit_generator": "PCG64",
+      "sample_role": "random_internal_test",
+      "rows": 96408,
+      "class_counts": [
+        75157,
+        19854,
+        1397
+      ]
+    },
+    {
+      "group_key": "random_seed_5501__2024_diagnostic",
+      "entropy": [
+        20260828,
+        3028715872,
+        4260811341,
+        916953343,
+        3717293912
+      ],
+      "spawn_key": [],
+      "bit_generator": "PCG64",
+      "sample_role": "random_model_future_test",
+      "rows": 100927,
+      "class_counts": [
+        75858,
+        23567,
+        1502
+      ]
+    }
+  ],
+  "pairing_note": "Models within a group share draws; different groups use independent streams."
+}

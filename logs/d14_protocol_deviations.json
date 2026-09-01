@@ -1,0 +1,47 @@
+{
+  "version": "D14_CLOSEOUT_V2",
+  "status": "ONE_MATERIAL_PLANNED_ANALYSIS_NOT_EXECUTED",
+  "created_local": "2026-08-31",
+  "deviations": [
+    {
+      "analysis": "prespecified regional police-force holdout",
+      "planned_in_outline": true,
+      "executed": false,
+      "discovery_time": "D14 closeout after D11-D13 outcomes were known",
+      "evidence": {
+        "D2_police_force_d2_role": "not_yet_decided",
+        "D2_police_force_final_D3_decision": "PENDING",
+        "concrete_region_in_frozen_configs": false,
+        "frozen_config_inventory": [
+          "d10_execution_amendment.json",
+          "d10_lightgbm_protocol.json",
+          "d10_selected_lightgbm.json",
+          "d10b_tree_sensitivity_protocol.json",
+          "d11_evaluation_protocol.json",
+          "d12_bootstrap_protocol.json",
+          "d13_positioning_protocol.json",
+          "d14_closeout_protocol.json",
+          "d14_closeout_protocol_v2.json",
+          "d14_exclude2020_protocol.json",
+          "d14_exclude2020_protocol_v2.json",
+          "d14_shap_protocol.json",
+          "d3_feature_manifest.json",
+          "d4_output_schema.json",
+          "d5_cleaning_rules.json",
+          "d5_dataset_schema.json",
+          "d6_analysis_protocol.json",
+          "d7_training_inputs.json",
+          "d8_baseline_protocol.json",
+          "d9_ordered_logit_protocol.json",
+          "d9s1_matched_subset_protocol.json"
+        ]
+      },
+      "reason": "The outline required a concrete police-force combination to be frozen before modeling, but no such choice was made. Selecting one after seeing outcomes would be post-hoc and cannot be represented as prespecified.",
+      "corrective_action": "Omit the regional-holdout result and state that spatial generalization was not empirically evaluated. A future post-hoc analysis may be exploratory only.",
+      "affected_claims": [
+        "no claim of prespecified regional generalization",
+        "no claim that performance transfers across police forces"
+      ]
+    }
+  ]
+}

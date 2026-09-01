@@ -1,0 +1,37 @@
+{
+  "version": "D9_SMOKE_V1",
+  "status": "PASS",
+  "protocol_sha256": "017be6c9314a1ab74a039c984e67b7e4fbbe6d1b6488e6645264fbbd5e12853d",
+  "training_rows": 10000,
+  "validation_rows": 5000,
+  "training_years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "validation_years": [
+    2023
+  ],
+  "encoded_features": 117,
+  "removed_unidentified_columns": 16,
+  "removed_linear_dependencies": 5,
+  "preprocessing_seconds": 0.21372020000126213,
+  "fit_seconds": 71.21420139999827,
+  "converged": false,
+  "iterations": 300,
+  "warning_count": 1,
+  "warning_messages": [
+    "Maximum Likelihood optimization failed to converge. Check mle_retvals"
+  ],
+  "optimizer_return": {
+    "fopt": 0.5527927930172634,
+    "fcalls": 327,
+    "warnflag": 1,
+    "converged": false,
+    "iterations": 300
+  },
+  "no_2024": true,
+  "validation_performance_inspected": false
+}

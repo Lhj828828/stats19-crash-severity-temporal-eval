@@ -1,0 +1,9 @@
+{
+  "version": "CAS_LIGHTGBM_V1",
+  "status": "PASS",
+  "threads": 8,
+  "training_rows": 5000,
+  "validation_rows": 2000,
+  "probability_rows": 2000,
+  "test_performance_used": false
+}

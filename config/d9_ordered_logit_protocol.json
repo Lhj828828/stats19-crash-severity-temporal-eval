@@ -1,0 +1,129 @@
+{
+  "version": "D9_V3",
+  "status": "SPECIFICATION_FROZEN_AFTER_RUNTIME_PREFLIGHT",
+  "freeze_date_local": "2026-08-29",
+  "upstream": {
+    "D5_schema": "config/d5_dataset_schema.json",
+    "D5_schema_sha256": "cea222466650a095170a66a3d094eba76b3cdf71c22bc6bcb61054152969030b",
+    "D6_protocol": "config/d6_analysis_protocol.json",
+    "D6_protocol_sha256": "5040fa8b1c2d4d33304af371cfec91b0bc8fcf49b8d872ca473ea00e2d31a3f8",
+    "D7_training_inputs": "config/d7_training_inputs.json",
+    "D7_training_inputs_sha256": "232962cc1ba5cf61504a6bf5b151f484cb9c7c0e5c8b45164e952132601599cb",
+    "D8_baseline_protocol": "config/d8_baseline_protocol.json",
+    "D8_baseline_protocol_sha256": "7b4a1c487334827799169f88342bbac49559f2a1c7bad8412558e958501114c5",
+    "D6_assignments_sha256": "5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076"
+  },
+  "evaluation_scope": {
+    "allowed": "training and validation roles from 2018-2023 only",
+    "forbidden": "all temporal/random test performance and all 2024 performance",
+    "temporal_training_years": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "temporal_validation_years": [
+      2023
+    ],
+    "random_seeds": [
+      1103,
+      2207,
+      3301,
+      4409,
+      5501
+    ]
+  },
+  "features": {
+    "allowlist": [
+      "feature_day_of_week",
+      "feature_first_road_class",
+      "feature_road_type",
+      "feature_junction_detail",
+      "feature_junction_control",
+      "feature_second_road_class",
+      "feature_pedestrian_crossing",
+      "feature_light_conditions",
+      "feature_weather_conditions",
+      "feature_road_surface_conditions",
+      "feature_special_conditions_at_site",
+      "feature_carriageway_hazards",
+      "feature_urban_or_rural_area",
+      "feature_trunk_road_flag",
+      "feature_speed_limit",
+      "feature_month",
+      "feature_hour"
+    ],
+    "categorical": [
+      "feature_day_of_week",
+      "feature_first_road_class",
+      "feature_road_type",
+      "feature_junction_detail",
+      "feature_junction_control",
+      "feature_second_road_class",
+      "feature_pedestrian_crossing",
+      "feature_light_conditions",
+      "feature_weather_conditions",
+      "feature_road_surface_conditions",
+      "feature_special_conditions_at_site",
+      "feature_carriageway_hazards",
+      "feature_urban_or_rural_area",
+      "feature_trunk_road_flag",
+      "feature_month",
+      "feature_hour"
+    ],
+    "numeric": [
+      "feature_speed_limit"
+    ],
+    "metadata_excluded": [
+      "meta_collision_index",
+      "meta_collision_year",
+      "meta_date",
+      "meta_police_force",
+      "meta_injury_based"
+    ],
+    "target_excluded": "target_severity"
+  },
+  "encoding": {
+    "fit_scope": "each training partition only",
+    "categorical": "training vocabulary with one reference level dropped per feature; __UNSEEN__ is explicit during mapping but its unidentified all-zero training column is removed",
+    "numeric": "training median imputation and training-fitted standardization",
+    "reason": "OrderedModel is unpenalized and must not receive a constant or full-dummy collinearity",
+    "rank_reduction": "training-design QR with column pivoting removes exact linear dependencies; the target and validation performance are not used"
+  },
+  "model": {
+    "name": "ordered_logit_unweighted",
+    "implementation": "statsmodels.miscmodels.ordinal_model.OrderedModel",
+    "distribution": "logit",
+    "link": "proportional odds",
+    "class_weight": null,
+    "weight_note": "OrderedModel has no class-weight interface; this is an unweighted explanatory baseline",
+    "optimizer": "lbfgs",
+    "max_iter": 200,
+    "pgtol": 0.0001,
+    "factr": 10000000.0,
+    "prediction_rule": "argmax over three ordered-class probabilities; no threshold tuning"
+  },
+  "runtime_gate": {
+    "benchmark_training_rows": 100000,
+    "benchmark_validation_rows": 25000,
+    "benchmark_split": "temporal",
+    "full_fit_if": "converged and fit_seconds <= 180 on the fixed benchmark",
+    "fallback": "fixed stratified training subset of 100000 rows per split; evaluate the complete validation partition",
+    "subset_seed": 20260829,
+    "decision_basis": "runtime and convergence only, never validation performance"
+  },
+  "role_in_paper": "secondary ordinal baseline for interpretive hierarchy; not the primary comparison against weighted LightGBM",
+  "runtime_preflight_amendment": {
+    "reason": [
+      "D9_V1 smoke fitting identified five exact linear dependencies in the reference-coded design (rank 117 of 122; condition number approximately 1.8e17)",
+      "After QR reduction, pgtol=1e-6 reached 300 iterations without convergence; a runtime-only trial with pgtol=1e-4 converged in 100 iterations without warnings"
+    ],
+    "change": "add training-only QR rank reduction and use the pre-specified practical L-BFGS convergence settings pgtol=1e-4 and max_iter=200",
+    "information_used": "design matrix rank, convergence status and runtime only; no validation metric"
+  },
+  "test_embargo": {
+    "year": 2024,
+    "rule": "No preprocessing fit, tuning, threshold choice, model selection or intermediate performance inspection before the one-time D11 evaluation."
+  }
+}

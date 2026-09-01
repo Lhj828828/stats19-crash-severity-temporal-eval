@@ -1,0 +1,25 @@
+{
+  "version": "D10_SMOKE_V1",
+  "status": "PASS",
+  "protocol_sha256": "079aad5af8e95360b60b17b664c847336db66b4712811bac17b67ce5a9d5c963",
+  "candidate_id": "C01",
+  "training_rows": 20000,
+  "validation_rows": 5000,
+  "feature_count": 17,
+  "categorical_feature_count": 16,
+  "numeric_missing_policy": "native_nan",
+  "probability_rows": 5000,
+  "probability_columns": 3,
+  "no_2024": true,
+  "metrics_for_pipeline_check_only": {
+    "macro_f1": 0.3423820427674192,
+    "qwk": 0.09916159594077645,
+    "ordinal_mae": 0.6234,
+    "accuracy": 0.5194,
+    "slight_recall": 0.583749671312122,
+    "serious_recall": 0.30782918149466193,
+    "fatal_recall": 0.4246575342465753,
+    "serious_or_fatal_recall": 0.570593149540518,
+    "mean_asymmetric_cost": 0.743
+  }
+}

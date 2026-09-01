@@ -1,0 +1,64 @@
+{
+  "version": "D16_V2",
+  "status": "FROZEN_AFTER_PIPELINE_BEFORE_FINAL_COMPARISON",
+  "created_local": "2026-09-01T09:20:45+0800",
+  "timing": "Post-execution and post-initial-comparison; this is a transparent classification amendment, not a preregistered scientific protocol.",
+  "execution": {
+    "workspace": "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction",
+    "pipeline_state": "COMPLETE",
+    "pipeline_state_sha256": "4ee56767c0acacbdbc82894974db9b36130ab5704315273061d65b1e4d163113",
+    "execution_protocol_sha256": "6c54871b70d967bbf0cfd9fcadeaa2b472a823d85aa7f239e17b77fb4ac5073d",
+    "source_execution_protocol_unchanged": true,
+    "thread_cap": 4
+  },
+  "initial_comparison": {
+    "archived_report": "logs/d16_initial_comparison_report.json",
+    "archived_report_sha256": "25edf3f6c26c2d0e6e8152f358417436b0e1f06ab06e3d1d7244ef19c159050f",
+    "status": "D16_FULL_REPRODUCTION_FAIL",
+    "summary": {
+      "passed": 189,
+      "failed": 8,
+      "deviations": 16,
+      "total": 213
+    }
+  },
+  "reason": "The initial comparator correctly exposed numerical differences but classified runtime metadata, Ordered-driven joint-bootstrap propagation and a four-thread probability-only sensitivity drift as primary failures. The final rules separate exact scientific invariants from documented numerical deviations.",
+  "strict_invariants": {
+    "generated_data_and_split_files": "byte-identical SHA-256",
+    "primary_Logistic_and_LightGBM_predictions": "identity, target, labels and probabilities under frozen tolerance",
+    "D12_primary_point_estimates": "exact value equality",
+    "D12_bootstrap_array_contract": "array names, model/metric identifiers, shapes and dtypes exact",
+    "D14_exclude2020_prediction": "identity, target and predicted labels exact",
+    "H1_H2_decision_tables_and_SHAP_arrays": "strict comparison retained"
+  },
+  "documented_deviations": {
+    "Ordered_Logit": "numerical drift remains DEVIATION and is never coerced to equality",
+    "D12_bootstrap_propagation": "joint draw-stream and resulting interval/figure changes remain DEVIATION while primary point estimates are exact",
+    "D14_four_thread_probability": "probability-only drift remains DEVIATION while all labels are exact"
+  },
+  "non_scientific_fields_excluded": [
+    "wall-clock timing columns/keys",
+    "compressed prediction file byte count"
+  ],
+  "tolerances": {
+    "floating_absolute": 1e-10,
+    "floating_relative": 1e-08,
+    "probability_absolute": 1e-12,
+    "PNG_pixel_absolute": 0.00784313725490196,
+    "changed_after_initial_comparison": false
+  },
+  "scientific_outputs_changed": false,
+  "frozen_D1_D15_artifacts": {
+    "files": 197,
+    "set_sha256": "b8e2bbbf718b4bf8f9f3cba0b8e1b2b608622510cefea4fecec7110e8a60fe87",
+    "seconds": 2.26
+  },
+  "comparator_source": {
+    "path": "code/d16_reproduce.py",
+    "sha256": "d9e21f20ddc710e85efff8fdb48a521141f85acff451c59c643d399354410515"
+  },
+  "final_test_source": {
+    "path": "code/test_d16_reproduction.py",
+    "sha256": "783aa543363012070c2e190fe89c8b9fedf40a02de892d660d156a40e25c874e"
+  }
+}

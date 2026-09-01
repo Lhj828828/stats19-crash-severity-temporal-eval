@@ -1,0 +1,58 @@
+{
+  "version": "CAS_LIGHTGBM_V1",
+  "status": "HYPERPARAMETERS_SELECTED_ON_2024_VALIDATION",
+  "created_local": "2026-09-01T11:53:52+08:00",
+  "protocol": "config/cas/cas_lightgbm_protocol.json",
+  "protocol_sha256": "a086baf7facdbdb94dee34e28507eb848fe749b6750e4806b88e24c037d3c695",
+  "tuning_results": "results/cas_lightgbm/tuning_results.csv",
+  "tuning_results_sha256": "b9824b3b6380943a91a16d242953537b37302a9981624332fc55040f17c6bb52",
+  "selection_constraints_met": false,
+  "selected_candidate_id": "C06",
+  "selected_complexity_rank": 4,
+  "selected_candidate_parameters": {
+    "num_leaves": 31,
+    "max_depth": -1,
+    "min_child_samples": 100,
+    "min_split_gain": 0.0,
+    "reg_alpha": 0.0,
+    "reg_lambda": 5.0,
+    "colsample_bytree": 0.8,
+    "subsample": 0.8,
+    "subsample_freq": 1
+  },
+  "selected_n_estimators": 1000,
+  "selected_validation_metrics": {
+    "macro_f1": 0.32741543399333184,
+    "qwk": 0.08154462987057465,
+    "fatal_recall": 0.46586345381526106,
+    "serious_recall": 0.27416267942583733,
+    "minor_recall": 0.539850710329882,
+    "ordinal_mae": 0.7085955847815876,
+    "mean_asymmetric_cost": 0.8217003287928605
+  },
+  "boundary_extension_triggered": false,
+  "selection_rule": {
+    "primary_metric": "Macro-F1 on 2024 temporal validation",
+    "constraint_reference": {
+      "model": "temporal weighted multinomial Logistic",
+      "macro_f1": 0.3258240642895635,
+      "qwk": 0.0908132338150008,
+      "fatal_recall": 0.6224899598393574
+    },
+    "eligibility_constraints": {
+      "minimum_qwk": 0.0808132338150008,
+      "minimum_fatal_recall": 0.5724899598393574
+    },
+    "ranking": [
+      "eligible candidates only",
+      "highest Macro-F1",
+      "highest QWK if tied",
+      "highest fatal recall if tied",
+      "lowest pre-frozen complexity_rank if tied",
+      "lexicographically smallest candidate_id if tied"
+    ],
+    "fallback_if_none_eligible": "apply the same ranking to all candidates and explicitly record that constraints were unmet"
+  },
+  "test_data_used": false,
+  "threads": 8
+}

@@ -1,0 +1,80 @@
+{
+  "version": "D14_CLOSEOUT_V2",
+  "revision": {
+    "supersedes_protocol": "config/d14_closeout_protocol.json",
+    "supersedes_protocol_sha256": "2566757791a443426eef77a5bd3caef9f632dca0157456c32d70bed26e340eef",
+    "reason": "Corrected a verification assertion that searched for an overly narrow wording. No data, model, sample, metric, extraction or scientific conclusion changed."
+  },
+  "status": "FROZEN_BEFORE_D14_ERROR_CASE_EXTRACTION",
+  "created_local": "2026-08-31",
+  "timing_disclosure": "D14 closeout is a post-result descriptive audit. Its rules were frozen after D11-D14 model and SHAP results were known, and it performs no model selection, threshold tuning or inferential hypothesis test.",
+  "upstream_sha256": {
+    "data/processed/stats19_modeling_dataset.csv.gz": "2277e47fd899c15116bfa2e62eca9f9c7ea9d45d08d1b5cda2027724c843021e",
+    "logs/d2_field_mapping.csv": "09d2487ba2dc6290544c64630867458865daf67e1323ee510ba463e22cdfae5a",
+    "config/d6_analysis_protocol.json": "5040fa8b1c2d4d33304af371cfec91b0bc8fcf49b8d872ca473ea00e2d31a3f8",
+    "logs/d11_artifact_manifest.csv": "dda41121012a5926e6e8c80132a65293f1572fb7ad4e15f050b158aa1de85182",
+    "logs/d13_positioning_decision.json": "0d8876677ee5bf5f5e5730a209d2fe1ad73b5ac7b6822ca4a01cf5ed5bbea749",
+    "config/d14_shap_protocol.json": "25442cc216ee80a7b84f859371b18ddd93df98e958f9c7a1b6318b884d46bb22",
+    "logs/d14_shap_artifact_manifest.csv": "33c3c360689a7a42942c83a84e0a28bda6936498a02f8ef129cb0d6a6db5446d",
+    "logs/d14_shap_run_summary.json": "6620af0f5641f3e67a113f11fdd49e5eb5fa72ee5c5142c7f79bd75c66ddb373",
+    "config/d14_exclude2020_protocol_v2.json": "2db671ca62f91fb0b061f06c471ef0d625f8770563d12c9f1fe3374d81ee6cba",
+    "logs/d14_exclude2020_artifact_manifest.csv": "044ab51968bc331992f2bed9ff92c8a290d531c0bc8203088618abf90d340266",
+    "logs/d14_exclude2020_run_summary.json": "50c88efb19deeac6bbfebc297bdffbcf995b0ef674cbe3a9e16aeee9c83ec4c6",
+    "config/d14_closeout_protocol.json": "2566757791a443426eef77a5bd3caef9f632dca0157456c32d70bed26e340eef",
+    "results/d11/predictions/temporal__logistic_weighted__test.csv.gz": "8d47b66a6d1e964fbd4c9cd4c285fa37fe17aa4f8dab2bf6e5b9012872e25892",
+    "results/d11/predictions/temporal__lightgbm_weighted__test.csv.gz": "2d5d656bbd1e8919ea0a7ad4c7adbcb0ec758ed5129236c05c8cf067d516980b",
+    "code/baseline_modeling.py": "34c024f461ad3c6a083e5e2ea16e911ae96b2bb6a75151dd3ece11f7005f79ec",
+    "code/d14_closeout.py": "dd8b4a73dbaa7a140599598909707157928a92ec9eddc616eb246fa404334996",
+    "code/test_d14_closeout.py": "c28776bacb0f07c02bbbd9e5d1f7ddfec6e86628c4b9379229055b70bdbb0a85"
+  },
+  "error_audit": {
+    "models": [
+      "logistic_weighted",
+      "lightgbm_weighted"
+    ],
+    "cohort": "all 100,927 collisions in the frozen 2024 temporal test",
+    "aggregate_error_structure": "all six off-diagonal true-to-predicted transitions, with count, within-true share, confidence summaries, ordinal distance and frozen asymmetric cost",
+    "paired_outcomes": [
+      "both_correct",
+      "logistic_only_correct",
+      "lightgbm_only_correct",
+      "both_wrong_same_prediction",
+      "both_wrong_different_predictions"
+    ],
+    "paired_scopes": [
+      "all",
+      "Slight",
+      "Serious",
+      "Fatal"
+    ],
+    "illustrative_cases": {
+      "purpose": "appendix illustration only; not representative and not inferential",
+      "safety_error_types": [
+        "Fatal_to_Slight",
+        "Fatal_to_Serious",
+        "Serious_to_Slight",
+        "Slight_to_Fatal"
+      ],
+      "rows_per_model_error_type": 3,
+      "selection": "highest probability assigned to the incorrect predicted class; descending confidence, then ascending collision_index; no manual substitution",
+      "feature_values": "frozen processed feature labels/codes; no causal interpretation"
+    }
+  },
+  "regional_holdout_deviation": {
+    "planned": true,
+    "concrete_police_force_frozen_before_modeling": false,
+    "evidence": "logs/d2_field_mapping.csv records police_force as d2_role=not_yet_decided and final_D3_decision=PENDING; no frozen config names a police-force combination",
+    "decision": "do not execute or describe a region as prespecified after outcomes are known",
+    "impact": "no empirical spatial-generalization claim is allowed"
+  },
+  "outputs": {
+    "error_structure": "results/d14/d14_error_structure.csv",
+    "paired_errors": "results/d14/d14_paired_error_outcomes.csv",
+    "illustrative_errors": "results/d14/d14_illustrative_high_confidence_errors.csv",
+    "protocol_deviations": "logs/d14_protocol_deviations.json",
+    "limitations": "logs/d14_limitations_and_boundaries.md",
+    "checkpoint": "logs/d14_final_checkpoint.md",
+    "summary": "logs/d14_final_summary.json",
+    "manifest": "logs/d14_artifact_manifest.csv"
+  }
+}

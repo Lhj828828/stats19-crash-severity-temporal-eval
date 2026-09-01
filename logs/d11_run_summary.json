@@ -1,0 +1,17 @@
+{
+  "version": "D11_V1",
+  "status": "PASS_ONE_TIME_TEST_EVALUATION_COMPLETED",
+  "protocol_sha256": "3bfb1617463df61c08123f5638535a39b335675c875bb88e15c6485b343befa5",
+  "completed_local": "2026-08-30",
+  "main_evaluations": 30,
+  "secondary_2024_diagnostics": 25,
+  "prediction_files": 55,
+  "prediction_rows_main": 2914835,
+  "prediction_rows_secondary_2024": 2523175,
+  "fit_operations": 0,
+  "preprocessor_fit_operations": 0,
+  "test_based_selection_operations": 0,
+  "runtime_seconds": 293.13165459997253,
+  "D11_primary_model_lock": "D10 C03-1200",
+  "D12_input": "results/d11/predictions"
+}

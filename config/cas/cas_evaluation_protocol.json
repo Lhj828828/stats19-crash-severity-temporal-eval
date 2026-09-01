@@ -1,0 +1,246 @@
+{
+  "version": "CAS_EVALUATION_V1",
+  "status": "FROZEN_BEFORE_FIRST_CAS_TEST_PREDICTION",
+  "created_local": "2026-09-01T12:02:55+08:00",
+  "upstream": {
+    "modeling_schema": "config/cas/cas_modeling_schema.json",
+    "modeling_schema_sha256": "44ca815864e8919a46feb993e931da4e9435467db5722382c831228d2e220bba",
+    "analysis_protocol": "config/cas/cas_analysis_protocol.json",
+    "analysis_protocol_sha256": "8c864a216aa9f1a27d970de17d005bdcfa0aa56512b95f12dff7eddbd5aeb134",
+    "training_inputs": "config/cas/cas_training_inputs.json",
+    "training_inputs_sha256": "d951705e72f3c01fd131bfa63d5a74ffcfb47765ef1999b8083effb3efaf1924",
+    "split_assignments": "data/processed/cas_split_assignments.csv.gz",
+    "split_assignments_sha256": "69309305340f25c6bfb6fee7474b47bf015eba28d3c3627f081becc3d0ebdf32",
+    "baseline_models_frozen": "config/cas/cas_baseline_models_frozen.json",
+    "baseline_models_frozen_sha256": "fa60a65025f07f3df8dae80fb07f576fca9def185d07ff40f83de52ec1e8f640",
+    "lightgbm_models_frozen": "config/cas/cas_lightgbm_models_frozen.json",
+    "lightgbm_models_frozen_sha256": "4c18187bf04da8c35a190fcc0192a77d106cfdeaab84b9f0960597a5b8fe9b29",
+    "lightgbm_selected": "config/cas/cas_lightgbm_selected.json",
+    "lightgbm_selected_sha256": "baf3376508ddf5c825120e8ae848faa5f8daf0524bdd9aa83c2c40c5f0053d82"
+  },
+  "models": [
+    "dummy_most_frequent",
+    "logistic_weighted",
+    "lightgbm_weighted"
+  ],
+  "evaluation_groups": [
+    {
+      "evaluation_group": "temporal_2025",
+      "evaluation_design": "temporal_test",
+      "model_split_slug": "temporal",
+      "model_protocol": "temporal",
+      "seed": "year_based",
+      "role_column": "temporal_role",
+      "role_value": "test",
+      "expected_rows": 10542,
+      "expected_years": [
+        2025
+      ],
+      "interpretation": "primary deployment-oriented temporal test"
+    },
+    {
+      "evaluation_group": "random_seed_1103_internal_test",
+      "evaluation_design": "random_internal_test",
+      "model_split_slug": "random_seed_1103",
+      "model_protocol": "random_reference",
+      "seed": "1103",
+      "role_column": "random_role_seed_1103",
+      "role_value": "test",
+      "expected_rows": 4887,
+      "expected_years": [
+        2022,
+        2023,
+        2024
+      ],
+      "interpretation": "same-period optimistic reference"
+    },
+    {
+      "evaluation_group": "random_seed_1103_2025_diagnostic",
+      "evaluation_design": "random_2025_diagnostic",
+      "model_split_slug": "random_seed_1103",
+      "model_protocol": "random_reference",
+      "seed": "1103",
+      "role_column": "random_role_seed_1103",
+      "role_value": "locked_temporal_test",
+      "expected_rows": 10542,
+      "expected_years": [
+        2025
+      ],
+      "interpretation": "same frozen random model applied to 2025 without retuning"
+    },
+    {
+      "evaluation_group": "random_seed_2207_internal_test",
+      "evaluation_design": "random_internal_test",
+      "model_split_slug": "random_seed_2207",
+      "model_protocol": "random_reference",
+      "seed": "2207",
+      "role_column": "random_role_seed_2207",
+      "role_value": "test",
+      "expected_rows": 4887,
+      "expected_years": [
+        2022,
+        2023,
+        2024
+      ],
+      "interpretation": "same-period optimistic reference"
+    },
+    {
+      "evaluation_group": "random_seed_2207_2025_diagnostic",
+      "evaluation_design": "random_2025_diagnostic",
+      "model_split_slug": "random_seed_2207",
+      "model_protocol": "random_reference",
+      "seed": "2207",
+      "role_column": "random_role_seed_2207",
+      "role_value": "locked_temporal_test",
+      "expected_rows": 10542,
+      "expected_years": [
+        2025
+      ],
+      "interpretation": "same frozen random model applied to 2025 without retuning"
+    },
+    {
+      "evaluation_group": "random_seed_3301_internal_test",
+      "evaluation_design": "random_internal_test",
+      "model_split_slug": "random_seed_3301",
+      "model_protocol": "random_reference",
+      "seed": "3301",
+      "role_column": "random_role_seed_3301",
+      "role_value": "test",
+      "expected_rows": 4887,
+      "expected_years": [
+        2022,
+        2023,
+        2024
+      ],
+      "interpretation": "same-period optimistic reference"
+    },
+    {
+      "evaluation_group": "random_seed_3301_2025_diagnostic",
+      "evaluation_design": "random_2025_diagnostic",
+      "model_split_slug": "random_seed_3301",
+      "model_protocol": "random_reference",
+      "seed": "3301",
+      "role_column": "random_role_seed_3301",
+      "role_value": "locked_temporal_test",
+      "expected_rows": 10542,
+      "expected_years": [
+        2025
+      ],
+      "interpretation": "same frozen random model applied to 2025 without retuning"
+    },
+    {
+      "evaluation_group": "random_seed_4409_internal_test",
+      "evaluation_design": "random_internal_test",
+      "model_split_slug": "random_seed_4409",
+      "model_protocol": "random_reference",
+      "seed": "4409",
+      "role_column": "random_role_seed_4409",
+      "role_value": "test",
+      "expected_rows": 4887,
+      "expected_years": [
+        2022,
+        2023,
+        2024
+      ],
+      "interpretation": "same-period optimistic reference"
+    },
+    {
+      "evaluation_group": "random_seed_4409_2025_diagnostic",
+      "evaluation_design": "random_2025_diagnostic",
+      "model_split_slug": "random_seed_4409",
+      "model_protocol": "random_reference",
+      "seed": "4409",
+      "role_column": "random_role_seed_4409",
+      "role_value": "locked_temporal_test",
+      "expected_rows": 10542,
+      "expected_years": [
+        2025
+      ],
+      "interpretation": "same frozen random model applied to 2025 without retuning"
+    },
+    {
+      "evaluation_group": "random_seed_5501_internal_test",
+      "evaluation_design": "random_internal_test",
+      "model_split_slug": "random_seed_5501",
+      "model_protocol": "random_reference",
+      "seed": "5501",
+      "role_column": "random_role_seed_5501",
+      "role_value": "test",
+      "expected_rows": 4887,
+      "expected_years": [
+        2022,
+        2023,
+        2024
+      ],
+      "interpretation": "same-period optimistic reference"
+    },
+    {
+      "evaluation_group": "random_seed_5501_2025_diagnostic",
+      "evaluation_design": "random_2025_diagnostic",
+      "model_split_slug": "random_seed_5501",
+      "model_protocol": "random_reference",
+      "seed": "5501",
+      "role_column": "random_role_seed_5501",
+      "role_value": "locked_temporal_test",
+      "expected_rows": 10542,
+      "expected_years": [
+        2025
+      ],
+      "interpretation": "same frozen random model applied to 2025 without retuning"
+    }
+  ],
+  "group_count": 11,
+  "metric_rows_expected": 33,
+  "prediction_rule": "frozen argmax; no threshold tuning",
+  "preprocessing_rule": "load split-specific frozen preprocessing; never refit",
+  "one_time_rule": "generate each frozen model/cohort prediction once; any rerun requires explicit reproducibility verification and must not change model selection",
+  "reporting": {
+    "selection_metric": "Macro-F1 on validation data",
+    "required_reporting": [
+      "Macro-F1",
+      "quadratic weighted kappa",
+      "ordinal MAE",
+      "accuracy",
+      "class-specific recall",
+      "serious-or-fatal recall",
+      "pre-specified asymmetric error cost"
+    ],
+    "asymmetric_cost_matrix": [
+      [
+        0.0,
+        1.0,
+        2.0
+      ],
+      [
+        2.0,
+        0.0,
+        1.0
+      ],
+      [
+        5.0,
+        3.0,
+        0.0
+      ]
+    ],
+    "cost_matrix_note": "Rows are true Minor/Serious/Fatal and columns are predicted Minor/Serious/Fatal; descriptive, not a tuning target.",
+    "bootstrap_iterations": 2000,
+    "bootstrap_seed": 20260901,
+    "bootstrap_unit": "crash record, stratified by true class"
+  },
+  "test_boundary_before_freeze": {
+    "year": 2025,
+    "prior_access": "Schema, target counts, missingness/category coverage and drift were inspected during feasibility auditing.",
+    "prohibited_before_model_freeze": [
+      "preprocessing fit",
+      "hyperparameter tuning",
+      "threshold choice",
+      "model selection",
+      "model performance inspection"
+    ]
+  },
+  "prior_2025_access_disclosure": "schema, target counts, missingness, category coverage and drift were inspected during feasibility auditing; no model performance existed before this protocol",
+  "frozen_payload_status": {
+    "baseline": "BASELINE_MODELS_FROZEN_BEFORE_2025_EVALUATION",
+    "lightgbm": "LIGHTGBM_MODELS_FROZEN_BEFORE_2025_EVALUATION"
+  }
+}

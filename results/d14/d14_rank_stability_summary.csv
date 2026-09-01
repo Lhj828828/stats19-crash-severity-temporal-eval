@@ -1,0 +1,5 @@
+﻿output_scope,seed_count,mean_spearman_rho,sd_spearman_rho,min_spearman_rho,max_spearman_rho,inference
+overall_equal_class_mean,5,0.6058823529411765,0.02725992688901821,0.5710784313725491,0.6323529411764707,descriptive_across_overlapping_random_splits
+Slight,5,0.5661764705882354,0.06137247071347504,0.5049019607843138,0.6519607843137255,descriptive_across_overlapping_random_splits
+Serious,5,0.8926470588235296,0.056860632144650626,0.8284313725490197,0.9460784313725492,descriptive_across_overlapping_random_splits
+Fatal,5,0.7024509803921569,0.051254213731371075,0.6200980392156864,0.7549019607843138,descriptive_across_overlapping_random_splits

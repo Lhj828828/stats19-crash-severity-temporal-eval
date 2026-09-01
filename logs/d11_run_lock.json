@@ -1,0 +1,10 @@
+{
+  "version": "D11_RUN_LOCK_V1",
+  "status": "SEALED_AFTER_SUCCESSFUL_ONE_TIME_EVALUATION",
+  "protocol_sha256": "3bfb1617463df61c08123f5638535a39b335675c875bb88e15c6485b343befa5",
+  "metrics_sha256": "d0755ce6feffb0bd6150dacbf87e2632472199d3928b5664f06a6bf1c96745b6",
+  "confusion_sha256": "6b27e4a73d751c8565a5b45b75254567f7fcadce29371acb5b3f4e0f6812e354",
+  "prediction_file_count": 55,
+  "created_local": "2026-08-30",
+  "rerun_policy": "No second test evaluation under D11_V1."
+}

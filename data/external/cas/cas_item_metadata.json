@@ -1,0 +1,73 @@
+{
+  "access": "public",
+  "accessInformation": "Waka Kotahi NZ Transport Agency",
+  "advancedSettings": null,
+  "apiToken1ExpirationDate": -1,
+  "apiToken2ExpirationDate": -1,
+  "appCategories": [],
+  "avgRating": 0,
+  "banner": null,
+  "categories": [],
+  "classification": null,
+  "commentsEnabled": true,
+  "created": 1585077808000,
+  "culture": "en-us",
+  "description": "<p>See our: <a href='https://sway.office.com/wdD0YYkdOqysqaQm?ref=Link' rel='nofollow ugc'>Crash Analysis System (CAS) data user guide</a></p>\n\n<p><span style='color:inherit; font-size:inherit; font-family:var(--fontsBaseFamily),Avenir Next;'>This data comes from the Waka Kotahi Crash Analysis System\n(CAS), which records all traffic crashes reported to us by the NZ Police. CAS\ncovers crashes on all New Zealand roadways or places where the public have\nlegal access with a motor vehicle.</span><br /></p>\n\n<p>The data updates monthly, in the first\nweek of each month.</p>\n\n<p>Data is currently available from 1 January 2000. The\ndataset includes crash variables that are non-personal data.</p>\n\n<p>To give you a quick overview of the data, see the charts in\nthe ‘Attributes’ section below. These will give you information about each of\nthe attributes (variables) in the dataset. </p>\n\n<p>Each chart is specific to a variable, and shows all data\n(without any filters applied). </p>\n\n<p><a href='https://opendata-nzta.opendata.arcgis.com/pages/cas-data-field-descriptions' rel='nofollow ugc'>Crash\nAnalysis System data - field descriptions</a></p><p></p>\n\n<p> </p>\n\n<p><b>Data reuse caveats</b>: we’ve taken reasonable care in compiling this information,\nand provide it on an ‘as is, where is’ basis. We're not liable for any action\ntaken on the basis of the information. For further information see the terms of the CC-BY 4.0 International license.</p>\n\n<p><a href='https://creativecommons.org/licenses/by/4.0/legalcode' rel='nofollow ugc'>CC-BY 4.0\nInternational licence details</a></p>\n\n<p>Variables in the dataset are formatted for analytical use. This\ncan result in attribute charts that may not appear meaningful, and are not\nsuitable for broader analysis or use. In addition, some variables aren't mutually exclusive – do not consider them in isolation.</p>  \n\n<p>You must not take and use these charts directly as analysis of the overall data.</p>\n\n<p> </p>\n\n<p><b>Data quality statement</b>: we aim to process all fatal crashes within one working day of receiving the crash report from NZ Police.</p>\n\n<p>We aim to process all injury crashes (serious and minor injury) within 4 weeks of receiving the crash report.</p>\n\n<p>It may take up to seven months for non-injury crashes to be processed into CAS.</p>\n\n<p><a href='https://www.nzta.govt.nz/safety/partners/crash-analysis-system/' rel='nofollow ugc'>Up-to-date information on current number of outstanding crash reports</a></p>\n\n<p>Most unprocessed crash reports will be for crashes where there weren’t any injuries.</p>\n\n<p> </p>\n\n<p><b>Data quality caveats</b>: this data comes from the road traffic crash database Crash Analysis System (CAS) version 2.1.0. As the data is live, data can sometimes change after we receive it – that is, the data is not static after we publish it.</p> \n\n<p>Waka Kotahi NZ Transport Agency maintains the Crash Analysis System. This open data is an appropriately confidentialised version of that.</p> \n\n<p>After a crash, NZ Police send us a Traffic Crash Report (TCR). This may not happen immediately.</p> \n\n<p>A crash must have happened on a road to be recorded in CAS. The CAS definition of a road is any street, motorway or beach, or a place that people can access with a motor vehicle.</p> \n\n<p>There is a lag between the time of a crash to CAS having full and correct crash records. This is due to the police reporting time frame, and data processing.</p> \n\n<p>People don’t report all crashes to the NZ Police. The level of reporting increases with the severity of the crash.</p> \n\n<p>Crash severity is the severity of the worst injury in the crash. There may be more than one injury in a crash.</p> \n\n<p>2020 and 2021 data is incomplete.</p>\n\n<p><b>For API explorer users</b>, there is a known issue with number-based attribute filters where the “AND” operator is used instead of the “BETWEEN” operator. Substituting “BETWEEN” for “AND” manually in the query URL will resolve this.</p><p><span style='font-weight:600;'>Update 13/07/2021: previously, there was a 5 month buffer between our internal CAS data and our CAS open data.</span> We have reduced this buffer to 1 month, due to user demand and improved systems.</p><p><span style='font-weight:600;'>Update 10/12/2020: field type change.</span> The field type for ‘crashFinancialYear’ has changed from <i>integer </i>to <i>text. </i></p>",
+  "documentation": null,
+  "extent": [
+    [
+      -180,
+      -47.008233
+    ],
+    [
+      180,
+      -34.071453
+    ]
+  ],
+  "groupDesignations": null,
+  "guid": null,
+  "id": "8d684f1841fa4dbea6afaefc8a1ba0fc",
+  "industries": [],
+  "languages": [],
+  "largeThumbnail": null,
+  "lastViewed": 1787929200000,
+  "licenseInfo": "<br />This work is licensed under a <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank' rel='nofollow ugc noopener noreferrer'>Creative Commons Attribution 4.0 International License</a>.",
+  "listed": false,
+  "modified": 1787564046000,
+  "name": "CAS_Data_Public",
+  "numComments": 0,
+  "numRatings": 0,
+  "numViews": 211824,
+  "orgId": "CXBb7LAjgIIdcsPt",
+  "owner": "Open.Data_NZTA",
+  "ownerId": "f4e41f2203be54ab1ba58ed0ceb82767",
+  "properties": {
+    "boundary": "item"
+  },
+  "proxyFilter": null,
+  "scoreCompleteness": 91,
+  "screenshots": [],
+  "size": 652738560,
+  "snippet": "Data about all traffic crashes reported to us by the NZ Police",
+  "spatialReference": "2193",
+  "subInfo": 0,
+  "tags": [
+    "crashes",
+    "safety"
+  ],
+  "thumbnail": "thumbnail/thumbnail.JPEG",
+  "title": "Crash Analysis System (CAS) data",
+  "type": "Feature Service",
+  "typeKeywords": [
+    "ArcGIS API for JavaScript",
+    "ArcGIS Server",
+    "Data",
+    "Feature Access",
+    "Feature Service",
+    "Metadata",
+    "Service",
+    "Singlelayer",
+    "Hosted Service"
+  ],
+  "url": "https://services.arcgis.com/CXBb7LAjgIIdcsPt/arcgis/rest/services/CAS_Data_Public/FeatureServer"
+}

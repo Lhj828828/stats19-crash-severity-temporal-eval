@@ -1,0 +1,73 @@
+{
+  "version": "CAS_SHAP_V1",
+  "status": "H3_SHAP_COMPLETE",
+  "created_local": "2026-09-01T15:24:57+08:00",
+  "protocol": "config/cas/cas_post_analysis_protocol.json",
+  "protocol_sha256": "28f992843313d305d24e35c7f10f5096c45bf39f582e5e2bfc7e4297fd6fdc7e",
+  "frozen_models_explained": 5,
+  "model_fits": 0,
+  "explanation_cohorts": 10,
+  "rows_per_cohort": 4887,
+  "feature_count": 15,
+  "raw_shap_shape": [
+    5,
+    2,
+    4887,
+    3,
+    15
+  ],
+  "raw_shap_axis_order": [
+    "random_seed",
+    "cohort",
+    "record",
+    "output_class",
+    "feature"
+  ],
+  "raw_shap_seed_order": [
+    1103,
+    2207,
+    3301,
+    4409,
+    5501
+  ],
+  "raw_shap_cohort_order": [
+    "random_internal_test",
+    "matched_2025"
+  ],
+  "raw_shap_class_order": [
+    "Minor",
+    "Serious",
+    "Fatal"
+  ],
+  "raw_shap_feature_order": [
+    "feature_number_of_lanes",
+    "feature_state_highway",
+    "feature_terrain",
+    "feature_light",
+    "feature_road_character",
+    "feature_road_lane",
+    "feature_road_surface",
+    "feature_street_light",
+    "feature_traffic_control",
+    "feature_urban",
+    "feature_weather_primary",
+    "feature_weather_secondary",
+    "feature_advisory_speed",
+    "feature_speed_limit",
+    "feature_temporary_speed_limit"
+  ],
+  "bootstrap_iterations": 2000,
+  "threads": 8,
+  "h3_status": "RANK_CHANGE_QUANTIFIED_NO_BINARY_MATERIALITY_THRESHOLD",
+  "rho_mean": 0.9964285714285713,
+  "rho_sd": 0.0035714285714286143,
+  "rho_range": [
+    0.9928571428571428,
+    1.0
+  ],
+  "causal_claim_allowed": false,
+  "post_test_model_selection": false,
+  "artifact_manifest": "logs/cas/cas_h3_shap_artifact_manifest.csv",
+  "artifact_manifest_sha256": "f574a0411348c7f78a6768c32defc76eba1bc553e44feb1c4b5c01ef4fa3af91",
+  "runtime_seconds": 335.9653078999836
+}

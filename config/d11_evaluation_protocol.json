@@ -1,0 +1,239 @@
+{
+  "version": "D11_V1",
+  "status": "FROZEN_BEFORE_D11_TEST_ACCESS",
+  "created_local": "2026-08-30",
+  "purpose": "One-time evaluation of frozen STATS19 models on frozen test partitions.",
+  "scientific_lock": {
+    "no_model_reselection": true,
+    "no_threshold_tuning": true,
+    "no_test_based_preprocessing_fit": true,
+    "no_test_based_hyperparameter_tuning": true,
+    "d10b_does_not_change_d11": true,
+    "d9s1_excluded_from_d11": "appendix matched-subset sensitivity only"
+  },
+  "upstream_sha256": {
+    "data/processed/stats19_modeling_dataset.csv.gz": "2277e47fd899c15116bfa2e62eca9f9c7ea9d45d08d1b5cda2027724c843021e",
+    "data/processed/d6_split_assignments.csv.gz": "5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076",
+    "config/d5_dataset_schema.json": "cea222466650a095170a66a3d094eba76b3cdf71c22bc6bcb61054152969030b",
+    "config/d6_analysis_protocol.json": "5040fa8b1c2d4d33304af371cfec91b0bc8fcf49b8d872ca473ea00e2d31a3f8",
+    "config/d7_training_inputs.json": "232962cc1ba5cf61504a6bf5b151f484cb9c7c0e5c8b45164e952132601599cb",
+    "config/d8_baseline_protocol.json": "7b4a1c487334827799169f88342bbac49559f2a1c7bad8412558e958501114c5",
+    "config/d9_ordered_logit_protocol.json": "7faf663b170ac078cb4bbd3a091c04e60225b955239c22d25e7dc2d3284805fc",
+    "config/d9s1_matched_subset_protocol.json": "a1b498d06d11696ed204643bde517aa1d216b63ce5d1748938dde6a18038fee4",
+    "config/d10_lightgbm_protocol.json": "079aad5af8e95360b60b17b664c847336db66b4712811bac17b67ce5a9d5c963",
+    "config/d10_execution_amendment.json": "f3b37e07125e6069de9699420402c51381e8f1d9d7fd3f8a827d5d8a41183108",
+    "config/d10_selected_lightgbm.json": "b822cf2c8e68d447b3636103f3d929e2209bf402b9ae01acf4a94d16e6f43444",
+    "config/d10b_tree_sensitivity_protocol.json": "64b83c5980313e86d9ef73f81b67d6a806482d16e9d6a49a15046d96c18c1da4",
+    "logs/d10b_checkpoint.md": "dde2fd3499baa1101c66171da7051cb386f1afb8d0a8e31c49a02a32790786ed",
+    "results/d10b/d10b_checkpoint_metrics.csv": "964f8efc10e1c0c3da78656741b5a3b518c9e684331d16db262cd6e7943a3f51",
+    "code/baseline_modeling.py": "34c024f461ad3c6a083e5e2ea16e911ae96b2bb6a75151dd3ece11f7005f79ec",
+    "code/modeling_data.py": "ec28dc9c8cc83ad7609be3ba1710b167c3886746a76903136c5e49914f44fbbf",
+    "code/d8_train_baselines.py": "a891ca24566d579e8e12708fe2b7b8608111a10d6b5b7de9308b36d1cf98f1ca",
+    "code/d9_train_ordered_logit.py": "2ad90b59a28e18a68146759931151db4db4d11e279e32461f8cf947e29c726c3",
+    "code/d9s1_matched_subset_logistic.py": "c7e874325b089583a72e0bb261a43f17b36786ebaa8f33343668a6d9e43fb71a",
+    "code/d10_tune_lightgbm.py": "ba584669cedc84c7095cf2385ecdce815a6d8ccbf75ab9538f12bc0468178cc1",
+    "code/d10b_tree_sensitivity.py": "f0285be37c76fe4a19afabec5581e2ef064461c5de4211295e6b641aea13d758",
+    "code/test_d10_lightgbm.py": "aa4a20e31c515d34971e40c84bb2a03b0e27201e1401e4d2883ad13d55535a87",
+    "code/test_d10b_tree_sensitivity.py": "0026ed3ab79451b706345f39c7602998c3d653a51a9ba3d941ead6425c2561d1",
+    "code/d11_evaluate_frozen_models.py": "7cc6ffcb554f5b86efc68a8a17fd5f4601f253111d0926de048ede585b5d4b3c",
+    "code/test_d11_evaluation.py": "651f4cc1699279043ee514b199a52a70bb9329ae6683fc3d934d64db9f7d2c12",
+    "requirements.txt": "4a34009a43f2f0407dcfd4c5692d9b79fd60f68ace0db2bc49942bb9f3a5898f",
+    "models/d8/temporal/preprocessing_bundle.joblib": "65889479a9a901b0b7d4cab326a8bd7b81a2c66e4ca174c32ab963fc86f6a8f5",
+    "models/d8/temporal/dummy_most_frequent.joblib": "ee128bcd1ef1557d828bb93808f101ff99bc949423bbd325838e9a6cae113fa7",
+    "results/d8/validation_predictions/temporal__dummy_most_frequent.csv.gz": "4485acdf97abcd3e5ff7eaf34d9316636324c1d0a7d979b524ca48ee3483bcef",
+    "models/d8/temporal/logistic_unweighted.joblib": "797c8f0da9115803dcf930e6258e88c54b3f375c618a6d9b03d4d48498f740ec",
+    "results/d8/validation_predictions/temporal__logistic_unweighted.csv.gz": "8513e212b6e28dd2ec42352a53ba93f911dc69145873aff292a3736eb8f1d2d4",
+    "models/d8/temporal/logistic_weighted.joblib": "c37b82462221b6cb3227d0b5ec1e7c7d581435b9a786802d18aedb9e9895f297",
+    "results/d8/validation_predictions/temporal__logistic_weighted.csv.gz": "fa49e9c96d87a3262c81004f22b51ad3de07cb61fdb314b455ea3bdef3e7bc1b",
+    "models/d9/temporal/preprocessing_bundle.joblib": "2b0d94335d20812c88241550c22c6a9b1aff27b8d4ae61a08c0002e4ae8b719e",
+    "models/d9/temporal/ordered_logit_unweighted.joblib": "416353627c88735b935bbf9b5b0e433ea46c99c21b2265e340a02d3ddf7c8399",
+    "results/d9/validation_predictions/temporal__ordered_logit_unweighted.csv.gz": "d9c234d881f87102c2978357a230cd1e4dc91cc8d1a492333c7fed7019a244c9",
+    "models/d10/temporal/preprocessing_bundle.joblib": "7afcb5db97fd633104bd6d92f9f6194398c264eea49905f9494d19f9231939cc",
+    "models/d10/temporal/lightgbm_weighted.joblib": "c55af9eabc0ede58128b4f9157375dcbe9892471ee86f9943268f074518b2b7e",
+    "results/d10/validation_predictions/temporal__lightgbm_weighted.csv.gz": "ee51b82ed80b13d3047c4231428c40f252ff0a04050e871b7180c2d9640762b1",
+    "models/d8/random_seed_1103/preprocessing_bundle.joblib": "eeb2cc18a7e458f2385c9c67eb5189ad430355cbace12b213fd474c1ab4e14c2",
+    "models/d8/random_seed_1103/dummy_most_frequent.joblib": "60afa1e9deca50c05b7dc4470061a72eba781fd18fdb09cf1dd5bb2a9e24dd90",
+    "results/d8/validation_predictions/random_seed_1103__dummy_most_frequent.csv.gz": "ebbd81b2342192b2ea1ecd5c26d2d5c49c73183c05324a2a8e17f7d2ec87b6e4",
+    "models/d8/random_seed_1103/logistic_unweighted.joblib": "5b61e8b2dbcbabc29d19474c125b59b311a5c6a661cf31c056255e72bf321f06",
+    "results/d8/validation_predictions/random_seed_1103__logistic_unweighted.csv.gz": "e86d43f89fc02f66750888da205693f8b3ba190fb1fa70ab272db9538d35aa87",
+    "models/d8/random_seed_1103/logistic_weighted.joblib": "24edc0582f7244f323a5adcfdfe4f208154904b1e540c6b1005f465decf0141a",
+    "results/d8/validation_predictions/random_seed_1103__logistic_weighted.csv.gz": "6acc743ab72d28d9736d1ba6129506ab76f43cdfdc9cb2159db5dd4612f0fb00",
+    "models/d9/random_seed_1103/preprocessing_bundle.joblib": "1970ee41179894c085b7bec3fd3e451f4bba38d48accd83f25972afc802815bb",
+    "models/d9/random_seed_1103/ordered_logit_unweighted.joblib": "702f0266091e6f0e70a3bc5523c8ba9a82e696d7b24eada262663b8c5366a2e8",
+    "results/d9/validation_predictions/random_seed_1103__ordered_logit_unweighted.csv.gz": "d56a1bbb712836b98d775ddfc0d003bb2f33a061775782230264760f76ee2c61",
+    "models/d10/random_seed_1103/preprocessing_bundle.joblib": "3e3ec3c1c7251c7bcc8b6a8b2a0ff495c91d3bef11e6ae939b909cd03c5e592c",
+    "models/d10/random_seed_1103/lightgbm_weighted.joblib": "a70a7345f22a2e18655539dcfa175a4b20309247f7dac4ce2ba87b5a9de1c450",
+    "results/d10/validation_predictions/random_seed_1103__lightgbm_weighted.csv.gz": "db0c579ddde1ab1b605c3c082e1161e123f3be9f1a7554a1d33cc5740f89832e",
+    "models/d8/random_seed_2207/preprocessing_bundle.joblib": "034e4f96ef6f5931160d1b32396a8517c9d7f7f391e2364b482d877fb9a44069",
+    "models/d8/random_seed_2207/dummy_most_frequent.joblib": "303d5ce41c4450d879bc9619c7c54835bb7717b404dd58914e753c29ff338657",
+    "results/d8/validation_predictions/random_seed_2207__dummy_most_frequent.csv.gz": "8f895f2094315dee77677d830f739598425a4b3fd48e19513854799a7aa3d753",
+    "models/d8/random_seed_2207/logistic_unweighted.joblib": "6095aec18df5065a2eca82b65f365dd6e706a60608867f375e1702b04a7a5146",
+    "results/d8/validation_predictions/random_seed_2207__logistic_unweighted.csv.gz": "900ea15bb4864ee88cae7166385b98e275fb1c8366f7c332de522b3c5ce453ff",
+    "models/d8/random_seed_2207/logistic_weighted.joblib": "2ba4c02b0309d1bddae174197bafd96048bee59abf08a2ce8d546db115ff67e2",
+    "results/d8/validation_predictions/random_seed_2207__logistic_weighted.csv.gz": "8e7623f6c1cbb60db0cbd941bf6705e75bd43d48668263580b71a5aa3adc0c1f",
+    "models/d9/random_seed_2207/preprocessing_bundle.joblib": "9f54ea1579beb1f0ebd5d8b13a834afcb3a7b76b148b757cdec79d83bc0c44de",
+    "models/d9/random_seed_2207/ordered_logit_unweighted.joblib": "77170143076864fa44d99daef0ee125cabc954dada2091c2e4269de74e7d3da8",
+    "results/d9/validation_predictions/random_seed_2207__ordered_logit_unweighted.csv.gz": "bd7d1e1ff099c31c6c877b8c19368b54b7cd36088b69dbd9d937a6f2d29deb1d",
+    "models/d10/random_seed_2207/preprocessing_bundle.joblib": "5f58c5fbfb2940c04e0433cf18a23ea2e84df2b95aa88f46886ce7e7746ba5a9",
+    "models/d10/random_seed_2207/lightgbm_weighted.joblib": "601e4d649407686ee129e8eaf94f102f18601461fd8c827da4aa5e51307c8341",
+    "results/d10/validation_predictions/random_seed_2207__lightgbm_weighted.csv.gz": "a27e4c5067a992090db9895304dbdc1477745c8fed14146f058505dc95a21330",
+    "models/d8/random_seed_3301/preprocessing_bundle.joblib": "d383023832438c1b7f3348d2644fbd0945dab47886e034f2dbc24ed7e8101ec3",
+    "models/d8/random_seed_3301/dummy_most_frequent.joblib": "f63f7a9ae5afeeb28df80e49e1f72e785a373a1f15f7c63acdf6095fcfa547b8",
+    "results/d8/validation_predictions/random_seed_3301__dummy_most_frequent.csv.gz": "b77073d72fa576da090f639b700280e3a4dda3ca380e26215090e769725f8aa5",
+    "models/d8/random_seed_3301/logistic_unweighted.joblib": "c6038f18adc2d37f8812f257b3b7d94a768f305235ef9f1740adcfb63d8bc24e",
+    "results/d8/validation_predictions/random_seed_3301__logistic_unweighted.csv.gz": "ac28aa9475c61c9a6b08c58bae8c21ade55fbc7010bd47f2fa55933de657bb3a",
+    "models/d8/random_seed_3301/logistic_weighted.joblib": "c286c2ff88c8c5488a73c10060626419387388c6f673573d0c4582cdcb86503b",
+    "results/d8/validation_predictions/random_seed_3301__logistic_weighted.csv.gz": "dec05b0aeb890ff7cf31b03b1d9a97d420d397cd8b8413854e3d5ce5e5e88930",
+    "models/d9/random_seed_3301/preprocessing_bundle.joblib": "419b77c4ec0fa5ec5740cbc88a794f845a1d48af4aa72b21ffd8fe14307a8541",
+    "models/d9/random_seed_3301/ordered_logit_unweighted.joblib": "b426555e05584b6a2f5c2003fac0c02d0a26547a7cb30c42dcb8a86054c80051",
+    "results/d9/validation_predictions/random_seed_3301__ordered_logit_unweighted.csv.gz": "cb2a83e842289f1740c25dbe44a1410c70ea31ce124a5b54aec0e6e4089fa73d",
+    "models/d10/random_seed_3301/preprocessing_bundle.joblib": "5446386287f16447cff0d7c6499428a1dc8b95bcf0f3368aca8e8b6ee0df85aa",
+    "models/d10/random_seed_3301/lightgbm_weighted.joblib": "ae3a02b1967297535a33de9e72720944adc66bcc8ee6e968e18233ae20896408",
+    "results/d10/validation_predictions/random_seed_3301__lightgbm_weighted.csv.gz": "ac4673fb0242feabfd37d235717e3099ac7f098c300beda273567c9bc0512441",
+    "models/d8/random_seed_4409/preprocessing_bundle.joblib": "d448c1dd9813f2fef3a7b421656410975694b95661f3aad071b29b68db63c903",
+    "models/d8/random_seed_4409/dummy_most_frequent.joblib": "989528c9d27e76b236cf40766fa5d1c07cff564af72dfc5bd8bdfa30f2fab4b5",
+    "results/d8/validation_predictions/random_seed_4409__dummy_most_frequent.csv.gz": "fa6abf1c11c7425d601bbdb1bebfd9ba5a146e5cd18dd83ca77cf6734cc11e0d",
+    "models/d8/random_seed_4409/logistic_unweighted.joblib": "22e3aeb02bf1a624b808d81c97a9d3e4ca2961b578210e7ce9474aaca1d53e78",
+    "results/d8/validation_predictions/random_seed_4409__logistic_unweighted.csv.gz": "7c85e393bc9a725a2af0aadf7a41d5d4962dbabb75110f81991c1d86d10eb0b4",
+    "models/d8/random_seed_4409/logistic_weighted.joblib": "431fae213d9a366d7a524f1d079207653167098f5427b2c06b34d7803fc52ac4",
+    "results/d8/validation_predictions/random_seed_4409__logistic_weighted.csv.gz": "0616c324964e7b6c45ba7e62f659bd5aae5dd9a517099da94cb4a415a240e238",
+    "models/d9/random_seed_4409/preprocessing_bundle.joblib": "9ddd685d64523e0adf1adec96dd1b559114a77f8f9299dcb8fa4eec179ce2f4d",
+    "models/d9/random_seed_4409/ordered_logit_unweighted.joblib": "cdf41aad87ee17fa44fc7bb373335f7d5bef34c4c51d2ab5afab80c9bcca776b",
+    "results/d9/validation_predictions/random_seed_4409__ordered_logit_unweighted.csv.gz": "167ffa2b2af486ba31c8129c61d6d32ebc42bfa9fae4801529580a18f7290b45",
+    "models/d10/random_seed_4409/preprocessing_bundle.joblib": "5a0599e45a0c3db8c7975098e4f77ded31111ee05f933a8d6d88441c10fcf1ec",
+    "models/d10/random_seed_4409/lightgbm_weighted.joblib": "bf52eaf1012463dc6df19a521db661898cfb949b660cb7993a5fa1fd69aa8527",
+    "results/d10/validation_predictions/random_seed_4409__lightgbm_weighted.csv.gz": "f2f27180291fa90cbb43858f490659252e3f8b5b5d16112a8981500a8bc72ece",
+    "models/d8/random_seed_5501/preprocessing_bundle.joblib": "2b2d7c83dc6004f2eaf1010174a838853622c9d2906734dbdaf4c9941426607b",
+    "models/d8/random_seed_5501/dummy_most_frequent.joblib": "e33bceeeef6c6b65f55bf1b789999ae3243bfc6e386ac439891b19f8b7ef2cbc",
+    "results/d8/validation_predictions/random_seed_5501__dummy_most_frequent.csv.gz": "49ca859151720f8f7a98f7716fd79f784623a451611d05a4fd4870887c74c127",
+    "models/d8/random_seed_5501/logistic_unweighted.joblib": "a06659cee96bf6422ab3077cc43f8cadd3535ca90dd16950f73b8a76ac641c36",
+    "results/d8/validation_predictions/random_seed_5501__logistic_unweighted.csv.gz": "61b8f8e16c426c333b2c42ecb64edfbe3e8233ccf14b4c91d740ee484059fdd9",
+    "models/d8/random_seed_5501/logistic_weighted.joblib": "5684f3f889f5c22bf24b59c92d079ba81369eb7b6d0aa62a07e875f8b4cbfa81",
+    "results/d8/validation_predictions/random_seed_5501__logistic_weighted.csv.gz": "7e93a70e79418e058022dbe8d7cf2fcdc0425e2fbe48b69a84fda195db5794a2",
+    "models/d9/random_seed_5501/preprocessing_bundle.joblib": "06e57c9ff5e1cb167974a49a6dfd16da26156dc391ee6c2e05cc1d8ec3db30be",
+    "models/d9/random_seed_5501/ordered_logit_unweighted.joblib": "a23c2e15633f511426c7dbe5304af1fb88dca4f87596fa0ed038384f08c95314",
+    "results/d9/validation_predictions/random_seed_5501__ordered_logit_unweighted.csv.gz": "f9c5216b2242d0993f143078150fa502257582e468f8da8860473e1a208fc9de",
+    "models/d10/random_seed_5501/preprocessing_bundle.joblib": "bb53aef3f70b82610dbad4f3d03b5e7f6bf1ca69ce1dd846f14890316dc9303a",
+    "models/d10/random_seed_5501/lightgbm_weighted.joblib": "d0dee068da3bc34822173a3a5d9a5ded4be57216f7a26d3441e339e1d2d05e25",
+    "results/d10/validation_predictions/random_seed_5501__lightgbm_weighted.csv.gz": "7e1262f9477981d895ca0878475ad1a373bb2fa6b5e7b02e4895b81d73692fc0"
+  },
+  "data_and_splits": {
+    "statistical_unit": "one police-reported personal-injury collision",
+    "temporal_test": {
+      "role_column": "temporal_role",
+      "test_role": "test",
+      "years": [
+        2024
+      ],
+      "rows": 100927
+    },
+    "random_reference_tests": {
+      "role": "test",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "rows_per_seed": 96408,
+      "seeds": [
+        1103,
+        2207,
+        3301,
+        4409,
+        5501
+      ]
+    }
+  },
+  "models": [
+    {
+      "model_id": "dummy_most_frequent",
+      "family": "D8",
+      "reporting_role": "primary_floor"
+    },
+    {
+      "model_id": "logistic_unweighted",
+      "family": "D8",
+      "reporting_role": "secondary_linear_baseline"
+    },
+    {
+      "model_id": "logistic_weighted",
+      "family": "D8",
+      "reporting_role": "primary_linear_comparator"
+    },
+    {
+      "model_id": "ordered_logit_unweighted",
+      "family": "D9",
+      "reporting_role": "secondary_ordinal_baseline"
+    },
+    {
+      "model_id": "lightgbm_weighted",
+      "family": "D10",
+      "reporting_role": "primary_nonlinear_comparator"
+    }
+  ],
+  "evaluation_matrix": {
+    "main_rows": 30,
+    "secondary_2024_diagnostic": {
+      "enabled": true,
+      "purpose": "Apply each already-fitted random model to 2024 without refitting or selection.",
+      "rows": 25,
+      "seeds": [
+        1103,
+        2207,
+        3301,
+        4409,
+        5501
+      ]
+    }
+  },
+  "metrics": {
+    "classification": [
+      "macro_f1",
+      "qwk",
+      "ordinal_mae",
+      "accuracy",
+      "slight_recall",
+      "serious_recall",
+      "fatal_recall",
+      "serious_or_fatal_recall",
+      "mean_asymmetric_cost",
+      "slight_precision",
+      "serious_precision",
+      "fatal_precision"
+    ],
+    "probability_metric": "multiclass_logloss",
+    "confusion_matrix": "3x3; rows true and columns predicted",
+    "uncertainty": "D12 uses saved row-level predictions; D11 selects no interval"
+  },
+  "prediction_rule": "argmax over Slight, Serious, Fatal probabilities",
+  "preprocessing_rule": {
+    "D8": "load training-fitted vocabulary and preprocessor; transform only",
+    "D9": "load training-fitted vocabulary, preprocessor and QR mask; transform only",
+    "D10": "load training-fitted native-category vocabulary; transform only",
+    "all": "zero fit operations on test rows"
+  },
+  "runtime": {
+    "native_thread_limit": 4,
+    "package_versions_at_freeze": {
+      "python": "3.13.15",
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scipy": "1.18.1",
+      "scikit_learn": "1.9.0",
+      "lightgbm": "4.7.0",
+      "statsmodels": "0.15.0",
+      "platform": "Windows-11-10.0.26200-SP0"
+    }
+  },
+  "output_contract": {
+    "metrics": "results/d11/d11_test_metrics.csv",
+    "confusion": "results/d11/d11_test_confusion_matrices.csv",
+    "predictions": "results/d11/predictions",
+    "preprocessing_audit": "logs/d11_preprocessing_audit.csv",
+    "summary": "logs/d11_run_summary.json",
+    "manifest": "logs/d11_artifact_manifest.csv"
+  }
+}

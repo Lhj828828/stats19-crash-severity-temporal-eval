@@ -1,0 +1,135 @@
+{
+  "version": "CAS_BASELINE_V1",
+  "status": "BASELINE_MODELS_FROZEN_BEFORE_2025_EVALUATION",
+  "created_local": "2026-09-01T11:41:57+08:00",
+  "protocol": "config/cas/cas_baseline_protocol.json",
+  "protocol_sha256": "a742946b90e270603f5f4fbaced51adc1445441b04a511be338b141c3c501bbd",
+  "artifact_manifest": "logs/cas/cas_baseline_artifact_manifest.csv",
+  "artifact_manifest_sha256": "17a696fd2e3bd290f400ba8ed3f199d3c5ba3bdd023d03ee9c485ae2eecc0cf6",
+  "models": [
+    {
+      "file": "models/cas_baseline/random_seed_1103/dummy_most_frequent.joblib",
+      "sha256": "27ef5d8b1037a54e5ec3ace24a5d24e3132d11fe9cf99a36ee0cd01a93ea7660"
+    },
+    {
+      "file": "models/cas_baseline/random_seed_1103/logistic_weighted.joblib",
+      "sha256": "e0811d272013c906dd422a4811953f5b4e7096bdb9277f5676aa8f628f6ce4c8"
+    },
+    {
+      "file": "models/cas_baseline/random_seed_1103/preprocessing_bundle.joblib",
+      "sha256": "f0534f04cbf707c3897348a438b2f1315a76aff71e44931bb9e1d27bb4d051ea"
+    },
+    {
+      "file": "models/cas_baseline/random_seed_2207/dummy_most_frequent.joblib",
+      "sha256": "8be158bc8952e17037e533bf8e27e6c0cc8157a4994f7bbdb844578e3e47bd60"
+    },
+    {
+      "file": "models/cas_baseline/random_seed_2207/logistic_weighted.joblib",
+      "sha256": "e3292bb224f0c584c51cc1c53541dd92baa1bf115b7423b5cf00fe50ca4a0315"
+    },
+    {
+      "file": "models/cas_baseline/random_seed_2207/preprocessing_bundle.joblib",
+      "sha256": "6c99d278b616240b5358b05245cfc96ac681df9748d5743cf9d3cc7f2fbbc906"
+    },
+    {
+      "file": "models/cas_baseline/random_seed_3301/dummy_most_frequent.joblib",
+      "sha256": "9c84105d8d7266a8233e97d102e0dc33dcd9f87575cdbcdc2c05825df5b30da1"
+    },
+    {
+      "file": "models/cas_baseline/random_seed_3301/logistic_weighted.joblib",
+      "sha256": "6e97e84de4aee4d05f7e6d1fbcedb0974c5da4c78c7b6b853d80e98f1616fef4"
+    },
+    {
+      "file": "models/cas_baseline/random_seed_3301/preprocessing_bundle.joblib",
+      "sha256": "8ae41b23684659b199cf8e9df2fb03180badb57b7b01efb4ff07350039a62afb"
+    },
+    {
+      "file": "models/cas_baseline/random_seed_4409/dummy_most_frequent.joblib",
+      "sha256": "9c7d99d2f3d53ffaea27bb29d739772e80469f35dc3cb8670df2649f15511c92"
+    },
+    {
+      "file": "models/cas_baseline/random_seed_4409/logistic_weighted.joblib",
+      "sha256": "c77bcebb4683f3178b4e9054f67dc55c24e0ece544c139968a099e20fd3465ca"
+    },
+    {
+      "file": "models/cas_baseline/random_seed_4409/preprocessing_bundle.joblib",
+      "sha256": "f002832eaf414ebda78e814f1b67d01a28e950d3b9bd015f253910cec918188e"
+    },
+    {
+      "file": "models/cas_baseline/random_seed_5501/dummy_most_frequent.joblib",
+      "sha256": "48224af1665cab11aceb75d7f67d1a50d13e201947bcbb4dbed73fa11394c7fe"
+    },
+    {
+      "file": "models/cas_baseline/random_seed_5501/logistic_weighted.joblib",
+      "sha256": "4daeac1d956399048d68e6c3e19b9449ad968eb10ddff7ee39784b029978dc1d"
+    },
+    {
+      "file": "models/cas_baseline/random_seed_5501/preprocessing_bundle.joblib",
+      "sha256": "e821127cacd29635b5901a154520ff7837fd50784c9d2328dcb7ab74ecad62ea"
+    },
+    {
+      "file": "models/cas_baseline/temporal/dummy_most_frequent.joblib",
+      "sha256": "1857f77e4e16e6e93c1bfe398050ec1ed084f4ba09f64d1b73df6cd55bbeaebf"
+    },
+    {
+      "file": "models/cas_baseline/temporal/logistic_weighted.joblib",
+      "sha256": "7b330d73f1a26b8778817aa35973c5f5f246ccfcd75ff989a59542421c6b88bb"
+    },
+    {
+      "file": "models/cas_baseline/temporal/preprocessing_bundle.joblib",
+      "sha256": "697072c585708d9368e5655267f3856d21756a0b3f8036a0d606c111f0575a7a"
+    }
+  ],
+  "validation_predictions": [
+    {
+      "file": "results/cas_baseline/validation_predictions/random_seed_1103__dummy_most_frequent.csv.gz",
+      "sha256": "0d56f91aecbef476040d8d5ed2be6affc3c5aecd16db76007c30b8bf76519ba6"
+    },
+    {
+      "file": "results/cas_baseline/validation_predictions/random_seed_1103__logistic_weighted.csv.gz",
+      "sha256": "c9ffaeb2e04dc9113df67b79be6479e76564bb6401b9e7d57942d70a91ca9be4"
+    },
+    {
+      "file": "results/cas_baseline/validation_predictions/random_seed_2207__dummy_most_frequent.csv.gz",
+      "sha256": "04002f9bc869268a1eae7aa91bad9f6eadd583b4e5b0b9e0f210a28598a2eddb"
+    },
+    {
+      "file": "results/cas_baseline/validation_predictions/random_seed_2207__logistic_weighted.csv.gz",
+      "sha256": "2626d5fdcd40e067a4d8273523bb5535d487259c436b970ef5ce88b013a605b8"
+    },
+    {
+      "file": "results/cas_baseline/validation_predictions/random_seed_3301__dummy_most_frequent.csv.gz",
+      "sha256": "cc1a466fded6ff8d34253f15349df0a379d88df2ed2475efd3866c5b284ff8d0"
+    },
+    {
+      "file": "results/cas_baseline/validation_predictions/random_seed_3301__logistic_weighted.csv.gz",
+      "sha256": "af0abb7fa21bb551d4023d0d85f2b502e4c36814c92bcbf356320dc40b42ca28"
+    },
+    {
+      "file": "results/cas_baseline/validation_predictions/random_seed_4409__dummy_most_frequent.csv.gz",
+      "sha256": "2d1017c0c493e1d0b35a36b1001464f0a60b8760c66edcc42501c0e5cb85d6e1"
+    },
+    {
+      "file": "results/cas_baseline/validation_predictions/random_seed_4409__logistic_weighted.csv.gz",
+      "sha256": "0d0163ebe245bc6a3bcc47a27b952ba0eda24ea5851a98358b0785f4a3bf96d4"
+    },
+    {
+      "file": "results/cas_baseline/validation_predictions/random_seed_5501__dummy_most_frequent.csv.gz",
+      "sha256": "f24c0f9e9a57d0b5d71ff9c9d891cb14230f2227f163fefca43c0c72d6b73d4d"
+    },
+    {
+      "file": "results/cas_baseline/validation_predictions/random_seed_5501__logistic_weighted.csv.gz",
+      "sha256": "be2f09ebfb691f9cd608b9fb040a880d515e274d943c92ca65e1148343500e61"
+    },
+    {
+      "file": "results/cas_baseline/validation_predictions/temporal__dummy_most_frequent.csv.gz",
+      "sha256": "adf3728a062c0c98b88f874274d406995c3e1fb78232247b30e89cb2176c8072"
+    },
+    {
+      "file": "results/cas_baseline/validation_predictions/temporal__logistic_weighted.csv.gz",
+      "sha256": "8ed26680ba128f2b52c9b0209186f53bdddf89eb297875b5ffb965a09a4030f9"
+    }
+  ],
+  "test_performance_used": false,
+  "threads": 8
+}

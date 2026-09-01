@@ -1,0 +1,2027 @@
+{
+  "version": "D16_V2",
+  "status": "D16_FULL_REPRODUCTION_FAIL",
+  "completed_local": "2026-08-31T22:41:46+0800",
+  "source_project": "C:\\Users\\Administrator\\Desktop\\STATS19论文",
+  "workspace": "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction",
+  "protocol_sha256": "6c54871b70d967bbf0cfd9fcadeaa2b472a823d85aa7f239e17b77fb4ac5073d",
+  "clean_environment_python": "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+  "thread_cap": 4,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "pipeline_state": {
+    "version": "D16_V2",
+    "status": "COMPLETE",
+    "workspace": "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction",
+    "stages": [
+      {
+        "name": "D1_acquire_and_audit",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d1_acquire_and_audit.py"
+        ],
+        "seconds": 10.599,
+        "log": "logs/d16_stage_logs/01_D1_acquire_and_audit.log"
+      },
+      {
+        "name": "D2_schema_and_codes",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d2_audit_schema_and_codes.py"
+        ],
+        "seconds": 8.064,
+        "log": "logs/d16_stage_logs/02_D2_schema_and_codes.log"
+      },
+      {
+        "name": "D3_leakage_audit",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d3_build_leakage_audit.py"
+        ],
+        "seconds": 0.105,
+        "log": "logs/d16_stage_logs/03_D3_leakage_audit.log"
+      },
+      {
+        "name": "D4_feature_table",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d4_build_features.py"
+        ],
+        "seconds": 15.725,
+        "log": "logs/d16_stage_logs/04_D4_feature_table.log"
+      },
+      {
+        "name": "D5_quality_control",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d5_quality_control.py"
+        ],
+        "seconds": 6.182,
+        "log": "logs/d16_stage_logs/05_D5_quality_control.log"
+      },
+      {
+        "name": "D6_protocol_and_splits",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d6_freeze_protocol_and_plot.py"
+        ],
+        "seconds": 10.521,
+        "log": "logs/d16_stage_logs/06_D6_protocol_and_splits.log"
+      },
+      {
+        "name": "D7_training_inputs",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d7_finalize_training_inputs.py"
+        ],
+        "seconds": 3.679,
+        "log": "logs/d16_stage_logs/07_D7_training_inputs.log"
+      },
+      {
+        "name": "D8_full_baselines",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d8_train_baselines.py",
+          "--full"
+        ],
+        "seconds": 135.427,
+        "log": "logs/d16_stage_logs/08_D8_full_baselines.log"
+      },
+      {
+        "name": "D9_ordered_logit_subset",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d9_train_ordered_logit.py",
+          "--run",
+          "--mode",
+          "subset"
+        ],
+        "seconds": 3028.827,
+        "log": "logs/d16_stage_logs/09_D9_ordered_logit_subset.log"
+      },
+      {
+        "name": "D9S1_prepare_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "--internal-protocol",
+          "d9s1"
+        ],
+        "seconds": 0.582,
+        "log": "logs/d16_stage_logs/10_D9S1_prepare_protocol.log"
+      },
+      {
+        "name": "D9S1_freeze_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d9s1_matched_subset_logistic.py",
+          "--freeze"
+        ],
+        "seconds": 1.609,
+        "log": "logs/d16_stage_logs/11_D9S1_freeze_protocol.log"
+      },
+      {
+        "name": "D9S1_matched_subset",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d9s1_matched_subset_logistic.py",
+          "--run"
+        ],
+        "seconds": 24.013,
+        "log": "logs/d16_stage_logs/12_D9S1_matched_subset.log"
+      },
+      {
+        "name": "D10_prepare_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "--internal-protocol",
+          "d10"
+        ],
+        "seconds": 0.612,
+        "log": "logs/d16_stage_logs/13_D10_prepare_protocol.log"
+      },
+      {
+        "name": "D10_tune",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d10_tune_lightgbm.py",
+          "--tune"
+        ],
+        "seconds": 294.968,
+        "log": "logs/d16_stage_logs/14_D10_tune.log"
+      },
+      {
+        "name": "D10_fit_all",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d10_tune_lightgbm.py",
+          "--fit-all"
+        ],
+        "seconds": 270.597,
+        "log": "logs/d16_stage_logs/15_D10_fit_all.log"
+      },
+      {
+        "name": "D10B_rebase_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "--internal-protocol",
+          "d10b"
+        ],
+        "seconds": 0.881,
+        "log": "logs/d16_stage_logs/16_D10B_rebase_protocol.log"
+      },
+      {
+        "name": "D10B_tree_sensitivity",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "--internal-protocol",
+          "d10b_execute"
+        ],
+        "seconds": 5.164,
+        "log": "logs/d16_stage_logs/17_D10B_tree_sensitivity.log"
+      },
+      {
+        "name": "D11_prepare_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "--internal-protocol",
+          "d11"
+        ],
+        "seconds": 0.55,
+        "log": "logs/d16_stage_logs/18_D11_prepare_protocol.log"
+      },
+      {
+        "name": "D11_freeze_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d11_evaluate_frozen_models.py",
+          "--freeze"
+        ],
+        "seconds": 2.086,
+        "log": "logs/d16_stage_logs/19_D11_freeze_protocol.log"
+      },
+      {
+        "name": "D11_preflight",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d11_evaluate_frozen_models.py",
+          "--preflight"
+        ],
+        "seconds": 10.36,
+        "log": "logs/d16_stage_logs/20_D11_preflight.log"
+      },
+      {
+        "name": "D11_one_time_evaluation",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d11_evaluate_frozen_models.py",
+          "--run"
+        ],
+        "seconds": 126.95,
+        "log": "logs/d16_stage_logs/21_D11_one_time_evaluation.log"
+      },
+      {
+        "name": "D12_prepare_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "--internal-protocol",
+          "d12"
+        ],
+        "seconds": 0.668,
+        "log": "logs/d16_stage_logs/22_D12_prepare_protocol.log"
+      },
+      {
+        "name": "D12_freeze_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d12_bootstrap_uncertainty.py",
+          "--freeze-protocol"
+        ],
+        "seconds": 1.857,
+        "log": "logs/d16_stage_logs/23_D12_freeze_protocol.log"
+      },
+      {
+        "name": "D12_bootstrap",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d12_bootstrap_uncertainty.py",
+          "--run"
+        ],
+        "seconds": 14.708,
+        "log": "logs/d16_stage_logs/24_D12_bootstrap.log"
+      },
+      {
+        "name": "D13_prepare_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "--internal-protocol",
+          "d13"
+        ],
+        "seconds": 0.572,
+        "log": "logs/d16_stage_logs/25_D13_prepare_protocol.log"
+      },
+      {
+        "name": "D13_freeze_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d13_freeze_results.py",
+          "--freeze-protocol"
+        ],
+        "seconds": 0.926,
+        "log": "logs/d16_stage_logs/26_D13_freeze_protocol.log"
+      },
+      {
+        "name": "D13_freeze_results",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d13_freeze_results.py",
+          "--run"
+        ],
+        "seconds": 1.032,
+        "log": "logs/d16_stage_logs/27_D13_freeze_results.log"
+      },
+      {
+        "name": "D14_SHAP_prepare_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "--internal-protocol",
+          "d14_shap"
+        ],
+        "seconds": 0.628,
+        "log": "logs/d16_stage_logs/28_D14_SHAP_prepare_protocol.log"
+      },
+      {
+        "name": "D14_SHAP_freeze_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d14_shap_stability.py",
+          "--freeze"
+        ],
+        "seconds": 2.513,
+        "log": "logs/d16_stage_logs/29_D14_SHAP_freeze_protocol.log"
+      },
+      {
+        "name": "D14_SHAP",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d14_shap_stability.py",
+          "--run"
+        ],
+        "seconds": 1281.615,
+        "log": "logs/d16_stage_logs/30_D14_SHAP.log"
+      },
+      {
+        "name": "D14_exclude_2020_prepare_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "--internal-protocol",
+          "d14_exclude2020"
+        ],
+        "seconds": 0.755,
+        "log": "logs/d16_stage_logs/31_D14_exclude_2020_prepare_protocol.log"
+      },
+      {
+        "name": "D14_exclude_2020_freeze_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "--internal-protocol",
+          "d14_exclude2020_freeze"
+        ],
+        "seconds": 1.709,
+        "log": "logs/d16_stage_logs/32_D14_exclude_2020_freeze_protocol.log"
+      },
+      {
+        "name": "D14_exclude_2020",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "--internal-protocol",
+          "d14_exclude2020_run"
+        ],
+        "seconds": 77.213,
+        "log": "logs/d16_stage_logs/33_D14_exclude_2020.log"
+      },
+      {
+        "name": "D14_closeout_prepare_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "--internal-protocol",
+          "d14_closeout"
+        ],
+        "seconds": 0.75,
+        "log": "logs/d16_stage_logs/34_D14_closeout_prepare_protocol.log"
+      },
+      {
+        "name": "D14_closeout_freeze_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d14_closeout.py",
+          "--freeze"
+        ],
+        "seconds": 1.482,
+        "log": "logs/d16_stage_logs/35_D14_closeout_freeze_protocol.log"
+      },
+      {
+        "name": "D14_closeout",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d14_closeout.py",
+          "--run"
+        ],
+        "seconds": 4.189,
+        "log": "logs/d16_stage_logs/36_D14_closeout.log"
+      },
+      {
+        "name": "TEST_test_d6_protocol",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d6_protocol.py"
+        ],
+        "seconds": 2.456,
+        "log": "logs/d16_stage_logs/37_TEST_test_d6_protocol.log"
+      },
+      {
+        "name": "TEST_test_d7_training_inputs",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d7_training_inputs.py"
+        ],
+        "seconds": 2.092,
+        "log": "logs/d16_stage_logs/38_TEST_test_d7_training_inputs.log"
+      },
+      {
+        "name": "TEST_test_d8_baselines",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d8_baselines.py"
+        ],
+        "seconds": 3.372,
+        "log": "logs/d16_stage_logs/39_TEST_test_d8_baselines.log"
+      },
+      {
+        "name": "TEST_test_d9_ordered_logit",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d9_ordered_logit.py"
+        ],
+        "seconds": 2.176,
+        "log": "logs/d16_stage_logs/40_TEST_test_d9_ordered_logit.log"
+      },
+      {
+        "name": "TEST_test_d9s1_matched_subset",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d9s1_matched_subset.py"
+        ],
+        "seconds": 7.612,
+        "log": "logs/d16_stage_logs/41_TEST_test_d9s1_matched_subset.log"
+      },
+      {
+        "name": "TEST_test_d10_lightgbm",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d10_lightgbm.py"
+        ],
+        "seconds": 4.727,
+        "log": "logs/d16_stage_logs/42_TEST_test_d10_lightgbm.log"
+      },
+      {
+        "name": "TEST_test_d10b_tree_sensitivity",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d10b_tree_sensitivity.py"
+        ],
+        "seconds": 3.267,
+        "log": "logs/d16_stage_logs/43_TEST_test_d10b_tree_sensitivity.log"
+      },
+      {
+        "name": "TEST_test_d11_evaluation",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d11_evaluation.py"
+        ],
+        "seconds": 15.244,
+        "log": "logs/d16_stage_logs/44_TEST_test_d11_evaluation.log"
+      },
+      {
+        "name": "TEST_test_d12_bootstrap",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d12_bootstrap.py"
+        ],
+        "seconds": 2.619,
+        "log": "logs/d16_stage_logs/45_TEST_test_d12_bootstrap.log"
+      },
+      {
+        "name": "TEST_test_d13_checkpoint",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d13_checkpoint.py"
+        ],
+        "seconds": 1.038,
+        "log": "logs/d16_stage_logs/46_TEST_test_d13_checkpoint.log"
+      },
+      {
+        "name": "TEST_test_d14_shap",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d14_shap.py"
+        ],
+        "seconds": 2.811,
+        "log": "logs/d16_stage_logs/47_TEST_test_d14_shap.log"
+      },
+      {
+        "name": "TEST_test_d16_d14_exclude2020",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d16_d14_exclude2020.py"
+        ],
+        "seconds": 2.422,
+        "log": "logs/d16_stage_logs/48_TEST_test_d16_d14_exclude2020.log"
+      },
+      {
+        "name": "TEST_test_d14_closeout",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d14_closeout.py"
+        ],
+        "seconds": 1.539,
+        "log": "logs/d16_stage_logs/49_TEST_test_d14_closeout.log"
+      },
+      {
+        "name": "TEST_test_environment",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_environment.py"
+        ],
+        "seconds": 2.585,
+        "log": "logs/d16_stage_logs/50_TEST_test_environment.log"
+      },
+      {
+        "name": "D15_post_reproduction_audit",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d15_reproducibility.py"
+        ],
+        "seconds": 8.02,
+        "log": "logs/d16_stage_logs/35_D15_audit.log"
+      },
+      {
+        "name": "TEST_test_d15_reproducibility",
+        "status": "PASS",
+        "command": [
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d15_reproducibility.py"
+        ],
+        "seconds": 4.398,
+        "log": "logs/d16_stage_logs/36_TEST_D15.log"
+      }
+    ],
+    "migration": {
+      "from_version": "D16_V1",
+      "to_version": "D16_V2",
+      "migrated_local": "2026-08-31T21:40:33+0800",
+      "retained_passed_stages": [
+        "D1_acquire_and_audit",
+        "D2_schema_and_codes",
+        "D3_leakage_audit",
+        "D4_feature_table",
+        "D5_quality_control",
+        "D6_protocol_and_splits",
+        "D7_training_inputs",
+        "D8_full_baselines",
+        "D9_ordered_logit_subset"
+      ],
+      "previous_failure": {
+        "stage": "D9S1_matched_subset",
+        "type": "CalledProcessError",
+        "message": "Command '['C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\.venv\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\code\\\\d9s1_matched_subset_logistic.py', '--run']' returned non-zero exit status 1."
+      },
+      "reason": "D9 Ordered Logit showed a documented secondary numerical deviation; V2 continues the strict primary-model reproduction."
+    },
+    "resume_history": [
+      {
+        "resumed_local": "2026-08-31T21:45:24+0800",
+        "previous_failure": {
+          "stage": "D10_tune",
+          "type": "CalledProcessError",
+          "message": "Command '['C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\.venv\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\code\\\\d10_tune_lightgbm.py', '--tune']' returned non-zero exit status 1."
+        }
+      },
+      {
+        "resumed_local": "2026-08-31T22:01:59+0800",
+        "previous_failure": {
+          "stage": "D10B_tree_sensitivity",
+          "type": "CalledProcessError",
+          "message": "Command '['C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\.venv\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\code\\\\d10b_tree_sensitivity.py']' returned non-zero exit status 1."
+        }
+      },
+      {
+        "resumed_local": "2026-08-31T22:37:14+0800",
+        "previous_failure": {
+          "stage": "D14_exclude_2020_freeze_protocol",
+          "type": "CalledProcessError",
+          "message": "Command '['C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\.venv\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\code\\\\d14_exclude2020_sensitivity.py', '--freeze']' returned non-zero exit status 1."
+        }
+      },
+      {
+        "resumed_local": "2026-08-31T22:38:58+0800",
+        "previous_failure": {
+          "stage": "D14_exclude_2020_freeze_protocol",
+          "type": "CalledProcessError",
+          "message": "Command '['C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\.venv\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\code\\\\d16_reproduce.py', '--internal-protocol', 'd14_exclude2020_freeze']' returned non-zero exit status 1."
+        }
+      }
+    ],
+    "completed_local": "2026-08-31T22:41:30+0800"
+  },
+  "comparison_checks": [
+    {
+      "name": "exact:config/d3_feature_manifest.json",
+      "status": "PASS",
+      "detail": "reference=90d5c738096726524b6cfaa8eb886043265617deec84bca51189d351b4aceee3; reproduced=90d5c738096726524b6cfaa8eb886043265617deec84bca51189d351b4aceee3",
+      "seconds": 0.014
+    },
+    {
+      "name": "exact:config/d4_output_schema.json",
+      "status": "PASS",
+      "detail": "reference=6e3ce09d4f23d5b47cbbe9a83b6a766cec412b0c52529178fda1bcd36e5f868b; reproduced=6e3ce09d4f23d5b47cbbe9a83b6a766cec412b0c52529178fda1bcd36e5f868b",
+      "seconds": 0.006
+    },
+    {
+      "name": "exact:config/d5_cleaning_rules.json",
+      "status": "PASS",
+      "detail": "reference=a6305a6e9a79ac5f01a900ce6e901bbd834e7cd434af7579d198fe286cc2dac0; reproduced=a6305a6e9a79ac5f01a900ce6e901bbd834e7cd434af7579d198fe286cc2dac0",
+      "seconds": 0.006
+    },
+    {
+      "name": "exact:config/d5_dataset_schema.json",
+      "status": "PASS",
+      "detail": "reference=cea222466650a095170a66a3d094eba76b3cdf71c22bc6bcb61054152969030b; reproduced=cea222466650a095170a66a3d094eba76b3cdf71c22bc6bcb61054152969030b",
+      "seconds": 0.007
+    },
+    {
+      "name": "exact:config/d6_analysis_protocol.json",
+      "status": "PASS",
+      "detail": "reference=5040fa8b1c2d4d33304af371cfec91b0bc8fcf49b8d872ca473ea00e2d31a3f8; reproduced=5040fa8b1c2d4d33304af371cfec91b0bc8fcf49b8d872ca473ea00e2d31a3f8",
+      "seconds": 0.006
+    },
+    {
+      "name": "exact:config/d7_training_inputs.json",
+      "status": "PASS",
+      "detail": "reference=232962cc1ba5cf61504a6bf5b151f484cb9c7c0e5c8b45164e952132601599cb; reproduced=232962cc1ba5cf61504a6bf5b151f484cb9c7c0e5c8b45164e952132601599cb",
+      "seconds": 0.006
+    },
+    {
+      "name": "exact:data/interim/d4_modeling_table.csv.gz",
+      "status": "PASS",
+      "detail": "reference=2277e47fd899c15116bfa2e62eca9f9c7ea9d45d08d1b5cda2027724c843021e; reproduced=2277e47fd899c15116bfa2e62eca9f9c7ea9d45d08d1b5cda2027724c843021e",
+      "seconds": 0.037
+    },
+    {
+      "name": "exact:data/processed/stats19_modeling_dataset.csv.gz",
+      "status": "PASS",
+      "detail": "reference=2277e47fd899c15116bfa2e62eca9f9c7ea9d45d08d1b5cda2027724c843021e; reproduced=2277e47fd899c15116bfa2e62eca9f9c7ea9d45d08d1b5cda2027724c843021e",
+      "seconds": 0.035
+    },
+    {
+      "name": "exact:data/processed/d6_split_assignments.csv.gz",
+      "status": "PASS",
+      "detail": "reference=5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076; reproduced=5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076",
+      "seconds": 0.015
+    },
+    {
+      "name": "exact:data/raw/collisions/collision_2018.csv",
+      "status": "PASS",
+      "detail": "reference=843061a73214ba8832ed4ca78292c0f0c6686444927b0fc47c9207e4e5985f4f; reproduced=843061a73214ba8832ed4ca78292c0f0c6686444927b0fc47c9207e4e5985f4f",
+      "seconds": 0.043
+    },
+    {
+      "name": "exact:data/raw/collisions/collision_2019.csv",
+      "status": "PASS",
+      "detail": "reference=548b97c6afd3d6466779f7a36272f5674f0228e9b820b8d4a4a28c8b4c14b31a; reproduced=548b97c6afd3d6466779f7a36272f5674f0228e9b820b8d4a4a28c8b4c14b31a",
+      "seconds": 0.039
+    },
+    {
+      "name": "exact:data/raw/collisions/collision_2020.csv",
+      "status": "PASS",
+      "detail": "reference=49072103f337a9017aef8cab858463c636b33758fec68664592943d1e1d33f93; reproduced=49072103f337a9017aef8cab858463c636b33758fec68664592943d1e1d33f93",
+      "seconds": 0.034
+    },
+    {
+      "name": "exact:data/raw/collisions/collision_2021.csv",
+      "status": "PASS",
+      "detail": "reference=01442848b43bd89d6e9e0f21f17087c974f853ba9220dd8e6cc271b4a9d738de; reproduced=01442848b43bd89d6e9e0f21f17087c974f853ba9220dd8e6cc271b4a9d738de",
+      "seconds": 0.037
+    },
+    {
+      "name": "exact:data/raw/collisions/collision_2022.csv",
+      "status": "PASS",
+      "detail": "reference=89b2f1460698e471858b3bf1c36a737f632d40c74bfe75aa8964d4260b118dbf; reproduced=89b2f1460698e471858b3bf1c36a737f632d40c74bfe75aa8964d4260b118dbf",
+      "seconds": 0.036
+    },
+    {
+      "name": "exact:data/raw/collisions/collision_2023.csv",
+      "status": "PASS",
+      "detail": "reference=ec28a1792ac22ff3382b8d0b3549dc07c9c57d9f8d94b5be0084def09aef47e6; reproduced=ec28a1792ac22ff3382b8d0b3549dc07c9c57d9f8d94b5be0084def09aef47e6",
+      "seconds": 0.036
+    },
+    {
+      "name": "exact:data/raw/collisions/collision_2024.csv",
+      "status": "PASS",
+      "detail": "reference=ad02c026d0f87074800bd26fbca0e51b7b18eacc3e541fb869c091604b6a8b20; reproduced=ad02c026d0f87074800bd26fbca0e51b7b18eacc3e541fb869c091604b6a8b20",
+      "seconds": 0.035
+    },
+    {
+      "name": "result CSV file set",
+      "status": "PASS",
+      "detail": "139 files",
+      "seconds": 0.0
+    },
+    {
+      "name": "csv:data/processed/d9s1_matched_subsets/random_seed_1103.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.015
+    },
+    {
+      "name": "csv:data/processed/d9s1_matched_subsets/random_seed_2207.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.008
+    },
+    {
+      "name": "csv:data/processed/d9s1_matched_subsets/random_seed_3301.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:data/processed/d9s1_matched_subsets/random_seed_4409.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:data/processed/d9s1_matched_subsets/random_seed_5501.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:data/processed/d9s1_matched_subsets/temporal.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.008
+    },
+    {
+      "name": "csv:results/d10/d10_tuning_confusion_matrices.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "csv:results/d10/d10_tuning_results.csv",
+      "status": "PASS",
+      "detail": "semantic match; rows=6; max_abs_diff=0",
+      "seconds": 0.017
+    },
+    {
+      "name": "csv:results/d10/d10_validation_confusion_matrices.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "csv:results/d10/d10_validation_metrics.csv",
+      "status": "PASS",
+      "detail": "semantic match; rows=6; max_abs_diff=0",
+      "seconds": 0.013
+    },
+    {
+      "name": "csv:results/d10/validation_predictions/random_seed_1103__lightgbm_weighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d10/validation_predictions/random_seed_2207__lightgbm_weighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d10/validation_predictions/random_seed_3301__lightgbm_weighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d10/validation_predictions/random_seed_4409__lightgbm_weighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.009
+    },
+    {
+      "name": "csv:results/d10/validation_predictions/random_seed_5501__lightgbm_weighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.009
+    },
+    {
+      "name": "csv:results/d10/validation_predictions/temporal__lightgbm_weighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d10b/d10b_checkpoint_metrics.csv",
+      "status": "FAIL",
+      "detail": "column fit_seconds_full_2000 differs after 0 rows",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d10b/d10b_logloss_history.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "csv:results/d10b/validation_predictions/temporal__c03__1200_trees.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d10b/validation_predictions/temporal__c03__1500_trees.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d10b/validation_predictions/temporal__c03__2000_trees.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "primary filtered:results/d11/d11_test_confusion_matrices.csv",
+      "status": "PASS",
+      "detail": "semantic match; rows=396; max_abs_diff=0",
+      "seconds": 0.013
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/d11_test_confusion_matrices.csv",
+      "status": "DEVIATION",
+      "detail": "column count differs after 0 rows",
+      "seconds": 0.015
+    },
+    {
+      "name": "primary filtered:results/d11/d11_test_metrics.csv",
+      "status": "PASS",
+      "detail": "semantic match; rows=44; max_abs_diff=0",
+      "seconds": 0.01
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/d11_test_metrics.csv",
+      "status": "DEVIATION",
+      "detail": "column macro_f1 differs after 0 rows",
+      "seconds": 0.013
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_1103__dummy_most_frequent__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_1103__dummy_most_frequent__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_1103__lightgbm_weighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.011
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_1103__lightgbm_weighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_1103__logistic_unweighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_1103__logistic_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_1103__logistic_weighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.011
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_1103__logistic_weighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "primary identity:results/d11/predictions/random_seed_1103__ordered_logit_unweighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=100,927; max_abs_diff=0",
+      "seconds": 0.44
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/random_seed_1103__ordered_logit_unweighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "label_differences=0/100927; max_probability_difference=0",
+      "seconds": 0.284
+    },
+    {
+      "name": "primary identity:results/d11/predictions/random_seed_1103__ordered_logit_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=96,408; max_abs_diff=0",
+      "seconds": 0.419
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/random_seed_1103__ordered_logit_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "label_differences=0/96408; max_probability_difference=0",
+      "seconds": 0.272
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_2207__dummy_most_frequent__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_2207__dummy_most_frequent__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_2207__lightgbm_weighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_2207__lightgbm_weighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_2207__logistic_unweighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_2207__logistic_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_2207__logistic_weighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_2207__logistic_weighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "primary identity:results/d11/predictions/random_seed_2207__ordered_logit_unweighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=100,927; max_abs_diff=0",
+      "seconds": 0.447
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/random_seed_2207__ordered_logit_unweighted__2024_diagnostic.csv.gz",
+      "status": "DEVIATION",
+      "detail": "label_differences=1/100927; max_probability_difference=0.02049160073",
+      "seconds": 0.28
+    },
+    {
+      "name": "primary identity:results/d11/predictions/random_seed_2207__ordered_logit_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=96,408; max_abs_diff=0",
+      "seconds": 0.418
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/random_seed_2207__ordered_logit_unweighted__test.csv.gz",
+      "status": "DEVIATION",
+      "detail": "label_differences=6/96408; max_probability_difference=0.02140353766",
+      "seconds": 0.273
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_3301__dummy_most_frequent__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_3301__dummy_most_frequent__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_3301__lightgbm_weighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_3301__lightgbm_weighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_3301__logistic_unweighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.011
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_3301__logistic_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_3301__logistic_weighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.011
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_3301__logistic_weighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "primary identity:results/d11/predictions/random_seed_3301__ordered_logit_unweighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=100,927; max_abs_diff=0",
+      "seconds": 0.446
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/random_seed_3301__ordered_logit_unweighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "label_differences=0/100927; max_probability_difference=0",
+      "seconds": 0.284
+    },
+    {
+      "name": "primary identity:results/d11/predictions/random_seed_3301__ordered_logit_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=96,408; max_abs_diff=0",
+      "seconds": 0.419
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/random_seed_3301__ordered_logit_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "label_differences=0/96408; max_probability_difference=0",
+      "seconds": 0.261
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_4409__dummy_most_frequent__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_4409__dummy_most_frequent__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_4409__lightgbm_weighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_4409__lightgbm_weighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_4409__logistic_unweighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_4409__logistic_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_4409__logistic_weighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_4409__logistic_weighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "primary identity:results/d11/predictions/random_seed_4409__ordered_logit_unweighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=100,927; max_abs_diff=0",
+      "seconds": 0.436
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/random_seed_4409__ordered_logit_unweighted__2024_diagnostic.csv.gz",
+      "status": "DEVIATION",
+      "detail": "label_differences=1/100927; max_probability_difference=0.04394813989",
+      "seconds": 0.279
+    },
+    {
+      "name": "primary identity:results/d11/predictions/random_seed_4409__ordered_logit_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=96,408; max_abs_diff=0",
+      "seconds": 0.408
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/random_seed_4409__ordered_logit_unweighted__test.csv.gz",
+      "status": "DEVIATION",
+      "detail": "label_differences=1/96408; max_probability_difference=0.001053173624",
+      "seconds": 0.257
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_5501__dummy_most_frequent__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_5501__dummy_most_frequent__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_5501__lightgbm_weighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_5501__lightgbm_weighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_5501__logistic_unweighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_5501__logistic_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_5501__logistic_weighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/random_seed_5501__logistic_weighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.011
+    },
+    {
+      "name": "primary identity:results/d11/predictions/random_seed_5501__ordered_logit_unweighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=100,927; max_abs_diff=0",
+      "seconds": 0.439
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/random_seed_5501__ordered_logit_unweighted__2024_diagnostic.csv.gz",
+      "status": "PASS",
+      "detail": "label_differences=0/100927; max_probability_difference=0",
+      "seconds": 0.276
+    },
+    {
+      "name": "primary identity:results/d11/predictions/random_seed_5501__ordered_logit_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=96,408; max_abs_diff=0",
+      "seconds": 0.408
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/random_seed_5501__ordered_logit_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "label_differences=0/96408; max_probability_difference=0",
+      "seconds": 0.257
+    },
+    {
+      "name": "csv:results/d11/predictions/temporal__dummy_most_frequent__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "csv:results/d11/predictions/temporal__lightgbm_weighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/temporal__logistic_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d11/predictions/temporal__logistic_weighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "primary identity:results/d11/predictions/temporal__ordered_logit_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=100,927; max_abs_diff=0",
+      "seconds": 0.439
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/temporal__ordered_logit_unweighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "label_differences=0/100927; max_probability_difference=0",
+      "seconds": 0.273
+    },
+    {
+      "name": "csv:results/d12/d12_model_gain_summary.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "primary filtered:results/d12/d12_model_metric_intervals.csv",
+      "status": "FAIL",
+      "detail": "column ci_lower differs",
+      "seconds": 0.019
+    },
+    {
+      "name": "secondary Ordered Logit:results/d12/d12_model_metric_intervals.csv",
+      "status": "DEVIATION",
+      "detail": "column point_estimate differs after 0 rows",
+      "seconds": 0.017
+    },
+    {
+      "name": "csv:results/d12/d12_pairwise_model_differences.csv",
+      "status": "FAIL",
+      "detail": "column raw_delta_ci_lower differs after 0 rows",
+      "seconds": 0.014
+    },
+    {
+      "name": "primary filtered:results/d12/d12_random_optimism_gaps.csv",
+      "status": "FAIL",
+      "detail": "column optimism_gap_ci_lower differs",
+      "seconds": 0.007
+    },
+    {
+      "name": "secondary Ordered Logit:results/d12/d12_random_optimism_gaps.csv",
+      "status": "DEVIATION",
+      "detail": "column random_internal_point differs after 0 rows",
+      "seconds": 0.012
+    },
+    {
+      "name": "primary filtered:results/d12/d12_random_optimism_summary.csv",
+      "status": "PASS",
+      "detail": "semantic match; rows=28; max_abs_diff=0",
+      "seconds": 0.006
+    },
+    {
+      "name": "secondary Ordered Logit:results/d12/d12_random_optimism_summary.csv",
+      "status": "DEVIATION",
+      "detail": "column mean_optimism_gap differs after 0 rows",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d13/d13_h1_primary_model_gaps.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.005
+    },
+    {
+      "name": "csv:results/d13/d13_h2_temporal_comparison.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.005
+    },
+    {
+      "name": "primary filtered:results/d13/d13_main_performance_table.csv",
+      "status": "PASS",
+      "detail": "semantic match; rows=28; max_abs_diff=0",
+      "seconds": 0.007
+    },
+    {
+      "name": "secondary Ordered Logit:results/d13/d13_main_performance_table.csv",
+      "status": "DEVIATION",
+      "detail": "column random_internal_mean_5_seeds differs after 0 rows",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d14/d14_error_structure.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "csv:results/d14/d14_explanation_samples.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "csv:results/d14/d14_illustrative_high_confidence_errors.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "csv:results/d14/d14_paired_error_outcomes.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.005
+    },
+    {
+      "name": "csv:results/d14/d14_rank_stability.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.005
+    },
+    {
+      "name": "csv:results/d14/d14_rank_stability_summary.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.005
+    },
+    {
+      "name": "csv:results/d14/d14_shap_additivity_audit.csv",
+      "status": "PASS",
+      "detail": "semantic match; rows=11; max_abs_diff=0",
+      "seconds": 0.011
+    },
+    {
+      "name": "csv:results/d14/d14_shap_importance.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "csv:results/d14/exclude2020/d14_exclude2020_comparisons.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:results/d14/exclude2020/d14_exclude2020_confusion_matrices.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "csv:results/d14/exclude2020/d14_exclude2020_test_metrics.csv",
+      "status": "PASS",
+      "detail": "semantic match; rows=2; max_abs_diff=2.09e-09",
+      "seconds": 0.013
+    },
+    {
+      "name": "csv:results/d14/exclude2020/d14_exclude2020_validation_metrics.csv",
+      "status": "PASS",
+      "detail": "semantic match; rows=2; max_abs_diff=0",
+      "seconds": 0.013
+    },
+    {
+      "name": "csv:results/d14/exclude2020/predictions/lightgbm_weighted__test.csv.gz",
+      "status": "FAIL",
+      "detail": "column prob_slight differs after 50,000 rows",
+      "seconds": 0.294
+    },
+    {
+      "name": "csv:results/d14/exclude2020/predictions/lightgbm_weighted__validation.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=104,258; max_abs_diff=2.5e-15",
+      "seconds": 0.327
+    },
+    {
+      "name": "csv:results/d14/exclude2020/predictions/logistic_weighted__test.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d14/exclude2020/predictions/logistic_weighted__validation.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "csv:results/d8/d8_validation_confusion_matrices.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:results/d8/d8_validation_metrics.csv",
+      "status": "PASS",
+      "detail": "semantic match; rows=18; max_abs_diff=0",
+      "seconds": 0.014
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_1103__dummy_most_frequent.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.015
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_1103__logistic_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_1103__logistic_weighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_2207__dummy_most_frequent.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_2207__logistic_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.011
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_2207__logistic_weighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_3301__dummy_most_frequent.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_3301__logistic_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_3301__logistic_weighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.013
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_4409__dummy_most_frequent.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_4409__logistic_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_4409__logistic_weighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_5501__dummy_most_frequent.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_5501__logistic_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/random_seed_5501__logistic_weighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/temporal__dummy_most_frequent.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.007
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/temporal__logistic_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d8/validation_predictions/temporal__logistic_weighted.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.013
+    },
+    {
+      "name": "secondary Ordered Logit:results/d9/d9_validation_confusion_matrices.csv",
+      "status": "DEVIATION",
+      "detail": "column count differs after 0 rows",
+      "seconds": 0.011
+    },
+    {
+      "name": "secondary Ordered Logit:results/d9/d9_validation_metrics.csv",
+      "status": "DEVIATION",
+      "detail": "column n_iter differs after 0 rows",
+      "seconds": 0.013
+    },
+    {
+      "name": "primary identity:results/d9/validation_predictions/random_seed_1103__ordered_logit_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=96,408; max_abs_diff=0",
+      "seconds": 0.236
+    },
+    {
+      "name": "secondary Ordered Logit:results/d9/validation_predictions/random_seed_1103__ordered_logit_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "label_differences=0/96408; max_probability_difference=2.775557562e-16",
+      "seconds": 0.185
+    },
+    {
+      "name": "primary identity:results/d9/validation_predictions/random_seed_2207__ordered_logit_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=96,408; max_abs_diff=0",
+      "seconds": 0.24
+    },
+    {
+      "name": "secondary Ordered Logit:results/d9/validation_predictions/random_seed_2207__ordered_logit_unweighted.csv.gz",
+      "status": "DEVIATION",
+      "detail": "label_differences=4/96408; max_probability_difference=0.02156138079",
+      "seconds": 0.189
+    },
+    {
+      "name": "primary identity:results/d9/validation_predictions/random_seed_3301__ordered_logit_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=96,408; max_abs_diff=0",
+      "seconds": 0.234
+    },
+    {
+      "name": "secondary Ordered Logit:results/d9/validation_predictions/random_seed_3301__ordered_logit_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "label_differences=0/96408; max_probability_difference=0",
+      "seconds": 0.194
+    },
+    {
+      "name": "primary identity:results/d9/validation_predictions/random_seed_4409__ordered_logit_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=96,408; max_abs_diff=0",
+      "seconds": 0.243
+    },
+    {
+      "name": "secondary Ordered Logit:results/d9/validation_predictions/random_seed_4409__ordered_logit_unweighted.csv.gz",
+      "status": "DEVIATION",
+      "detail": "label_differences=0/96408; max_probability_difference=0.00101150409",
+      "seconds": 0.19
+    },
+    {
+      "name": "primary identity:results/d9/validation_predictions/random_seed_5501__ordered_logit_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=96,408; max_abs_diff=0",
+      "seconds": 0.241
+    },
+    {
+      "name": "secondary Ordered Logit:results/d9/validation_predictions/random_seed_5501__ordered_logit_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "label_differences=0/96408; max_probability_difference=0",
+      "seconds": 0.181
+    },
+    {
+      "name": "primary identity:results/d9/validation_predictions/temporal__ordered_logit_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "semantic match; rows=104,258; max_abs_diff=0",
+      "seconds": 0.265
+    },
+    {
+      "name": "secondary Ordered Logit:results/d9/validation_predictions/temporal__ordered_logit_unweighted.csv.gz",
+      "status": "PASS",
+      "detail": "label_differences=0/104258; max_probability_difference=0",
+      "seconds": 0.214
+    },
+    {
+      "name": "primary filtered:results/d9s1/d9s1_matched_comparison.csv",
+      "status": "PASS",
+      "detail": "semantic match; rows=6; max_abs_diff=0",
+      "seconds": 0.006
+    },
+    {
+      "name": "secondary Ordered Logit:results/d9s1/d9s1_matched_comparison.csv",
+      "status": "DEVIATION",
+      "detail": "column ordered_logit_macro_f1 differs after 0 rows",
+      "seconds": 0.013
+    },
+    {
+      "name": "csv:results/d9s1/d9s1_validation_confusion_matrices.csv",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "csv:results/d9s1/d9s1_validation_metrics.csv",
+      "status": "PASS",
+      "detail": "semantic match; rows=6; max_abs_diff=0",
+      "seconds": 0.015
+    },
+    {
+      "name": "csv:results/d9s1/validation_predictions/random_seed_1103__logistic_unweighted_matched_100k.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d9s1/validation_predictions/random_seed_2207__logistic_unweighted_matched_100k.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d9s1/validation_predictions/random_seed_3301__logistic_unweighted_matched_100k.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d9s1/validation_predictions/random_seed_4409__logistic_unweighted_matched_100k.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d9s1/validation_predictions/random_seed_5501__logistic_unweighted_matched_100k.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "csv:results/d9s1/validation_predictions/temporal__logistic_unweighted_matched_100k.csv.gz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.012
+    },
+    {
+      "name": "result NPZ file set",
+      "status": "PASS",
+      "detail": "14 files",
+      "seconds": 0.0
+    },
+    {
+      "name": "primary filtered:results/d12/d12_bootstrap_draws.npz",
+      "status": "FAIL",
+      "detail": "primary model draws differ: group_03",
+      "seconds": 0.018
+    },
+    {
+      "name": "secondary Ordered Logit:results/d12/d12_bootstrap_draws.npz",
+      "status": "DEVIATION",
+      "detail": "floating array differs: group_03",
+      "seconds": 0.025
+    },
+    {
+      "name": "npz:results/d14/d14_rank_bootstrap_draws.npz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "npz:results/d14/exclude2020/d14_exclude2020_bootstrap_draws.npz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.006
+    },
+    {
+      "name": "npz:results/d14/shap_values/random_seed_1103__future_2024.npz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.011
+    },
+    {
+      "name": "npz:results/d14/shap_values/random_seed_1103__random_internal_test.npz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.011
+    },
+    {
+      "name": "npz:results/d14/shap_values/random_seed_2207__future_2024.npz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "npz:results/d14/shap_values/random_seed_2207__random_internal_test.npz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "npz:results/d14/shap_values/random_seed_3301__future_2024.npz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "npz:results/d14/shap_values/random_seed_3301__random_internal_test.npz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.011
+    },
+    {
+      "name": "npz:results/d14/shap_values/random_seed_4409__future_2024.npz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.011
+    },
+    {
+      "name": "npz:results/d14/shap_values/random_seed_4409__random_internal_test.npz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.01
+    },
+    {
+      "name": "npz:results/d14/shap_values/random_seed_5501__future_2024.npz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.011
+    },
+    {
+      "name": "npz:results/d14/shap_values/random_seed_5501__random_internal_test.npz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.011
+    },
+    {
+      "name": "npz:results/d14/shap_values/temporal__future_2024.npz",
+      "status": "PASS",
+      "detail": "byte-identical",
+      "seconds": 0.011
+    },
+    {
+      "name": "json:config/d10_selected_lightgbm.json",
+      "status": "PASS",
+      "detail": "semantic JSON match",
+      "seconds": 0.001
+    },
+    {
+      "name": "json:results/d12/d12_bootstrap_draw_metadata.json",
+      "status": "PASS",
+      "detail": "semantic JSON match",
+      "seconds": 0.001
+    },
+    {
+      "name": "json:logs/d11_run_summary.json",
+      "status": "PASS",
+      "detail": "semantic JSON match",
+      "seconds": 0.0
+    },
+    {
+      "name": "json:logs/d12_run_summary.json",
+      "status": "FAIL",
+      "detail": "numeric JSON difference at root.D11_input_audit.prediction_bytes: 161001199 vs 160999673",
+      "seconds": 0.0
+    },
+    {
+      "name": "json:logs/d13_positioning_decision.json",
+      "status": "PASS",
+      "detail": "semantic JSON match",
+      "seconds": 0.001
+    },
+    {
+      "name": "json:logs/d14_shap_run_summary.json",
+      "status": "PASS",
+      "detail": "semantic JSON match",
+      "seconds": 0.0
+    },
+    {
+      "name": "json:logs/d14_exclude2020_run_summary.json",
+      "status": "PASS",
+      "detail": "semantic JSON match",
+      "seconds": 0.0
+    },
+    {
+      "name": "json:logs/d14_final_summary.json",
+      "status": "PASS",
+      "detail": "semantic JSON match",
+      "seconds": 0.001
+    },
+    {
+      "name": "PNG figure set",
+      "status": "PASS",
+      "detail": "6 files",
+      "seconds": 0.0
+    },
+    {
+      "name": "png:figures/d10b_validation_logloss_curve.png",
+      "status": "PASS",
+      "detail": "pixel dimensions=(1440, 2460, 4); max_abs_diff=0",
+      "seconds": 0.435
+    },
+    {
+      "name": "png:figures/d11_test_metric_overview.png",
+      "status": "PASS",
+      "detail": "pixel dimensions=(1380, 3150, 4); max_abs_diff=0",
+      "seconds": 0.272
+    },
+    {
+      "name": "png:figures/d12_h1_optimism_gaps.png",
+      "status": "FAIL",
+      "detail": "pixel max_abs_diff=1 exceeds 0.00784314",
+      "seconds": 0.268
+    },
+    {
+      "name": "png:figures/d12_h2_temporal_differences.png",
+      "status": "PASS",
+      "detail": "pixel dimensions=(1560, 2460, 4); max_abs_diff=0",
+      "seconds": 0.225
+    },
+    {
+      "name": "png:figures/d14_shap_rank_stability.png",
+      "status": "PASS",
+      "detail": "pixel dimensions=(1327, 3914, 4); max_abs_diff=0",
+      "seconds": 0.313
+    },
+    {
+      "name": "png:figures/figure2_dataset_overview.png",
+      "status": "PASS",
+      "detail": "pixel dimensions=(1170, 2210, 4); max_abs_diff=0",
+      "seconds": 0.13
+    },
+    {
+      "name": "PDF figure existence",
+      "status": "PASS",
+      "detail": "reference_bytes=25031; reproduced_bytes=25031",
+      "seconds": 0.0
+    },
+    {
+      "name": "source frozen artifacts unchanged",
+      "status": "PASS",
+      "detail": "197 files; set_sha256=b8e2bbbf718b4bf8f9f3cba0b8e1b2b608622510cefea4fecec7110e8a60fe87",
+      "seconds": 2.086
+    }
+  ],
+  "comparison_summary": {
+    "passed": 189,
+    "failed": 8,
+    "deviations": 16,
+    "total": 213
+  },
+  "secondary_deviations": [
+    {
+      "name": "secondary Ordered Logit:results/d11/d11_test_confusion_matrices.csv",
+      "status": "DEVIATION",
+      "detail": "column count differs after 0 rows",
+      "seconds": 0.015
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/d11_test_metrics.csv",
+      "status": "DEVIATION",
+      "detail": "column macro_f1 differs after 0 rows",
+      "seconds": 0.013
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/random_seed_2207__ordered_logit_unweighted__2024_diagnostic.csv.gz",
+      "status": "DEVIATION",
+      "detail": "label_differences=1/100927; max_probability_difference=0.02049160073",
+      "seconds": 0.28
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/random_seed_2207__ordered_logit_unweighted__test.csv.gz",
+      "status": "DEVIATION",
+      "detail": "label_differences=6/96408; max_probability_difference=0.02140353766",
+      "seconds": 0.273
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/random_seed_4409__ordered_logit_unweighted__2024_diagnostic.csv.gz",
+      "status": "DEVIATION",
+      "detail": "label_differences=1/100927; max_probability_difference=0.04394813989",
+      "seconds": 0.279
+    },
+    {
+      "name": "secondary Ordered Logit:results/d11/predictions/random_seed_4409__ordered_logit_unweighted__test.csv.gz",
+      "status": "DEVIATION",
+      "detail": "label_differences=1/96408; max_probability_difference=0.001053173624",
+      "seconds": 0.257
+    },
+    {
+      "name": "secondary Ordered Logit:results/d12/d12_model_metric_intervals.csv",
+      "status": "DEVIATION",
+      "detail": "column point_estimate differs after 0 rows",
+      "seconds": 0.017
+    },
+    {
+      "name": "secondary Ordered Logit:results/d12/d12_random_optimism_gaps.csv",
+      "status": "DEVIATION",
+      "detail": "column random_internal_point differs after 0 rows",
+      "seconds": 0.012
+    },
+    {
+      "name": "secondary Ordered Logit:results/d12/d12_random_optimism_summary.csv",
+      "status": "DEVIATION",
+      "detail": "column mean_optimism_gap differs after 0 rows",
+      "seconds": 0.01
+    },
+    {
+      "name": "secondary Ordered Logit:results/d13/d13_main_performance_table.csv",
+      "status": "DEVIATION",
+      "detail": "column random_internal_mean_5_seeds differs after 0 rows",
+      "seconds": 0.01
+    },
+    {
+      "name": "secondary Ordered Logit:results/d9/d9_validation_confusion_matrices.csv",
+      "status": "DEVIATION",
+      "detail": "column count differs after 0 rows",
+      "seconds": 0.011
+    },
+    {
+      "name": "secondary Ordered Logit:results/d9/d9_validation_metrics.csv",
+      "status": "DEVIATION",
+      "detail": "column n_iter differs after 0 rows",
+      "seconds": 0.013
+    },
+    {
+      "name": "secondary Ordered Logit:results/d9/validation_predictions/random_seed_2207__ordered_logit_unweighted.csv.gz",
+      "status": "DEVIATION",
+      "detail": "label_differences=4/96408; max_probability_difference=0.02156138079",
+      "seconds": 0.189
+    },
+    {
+      "name": "secondary Ordered Logit:results/d9/validation_predictions/random_seed_4409__ordered_logit_unweighted.csv.gz",
+      "status": "DEVIATION",
+      "detail": "label_differences=0/96408; max_probability_difference=0.00101150409",
+      "seconds": 0.19
+    },
+    {
+      "name": "secondary Ordered Logit:results/d9s1/d9s1_matched_comparison.csv",
+      "status": "DEVIATION",
+      "detail": "column ordered_logit_macro_f1 differs after 0 rows",
+      "seconds": 0.013
+    },
+    {
+      "name": "secondary Ordered Logit:results/d12/d12_bootstrap_draws.npz",
+      "status": "DEVIATION",
+      "detail": "floating array differs: group_03",
+      "seconds": 0.025
+    }
+  ],
+  "interpretation": {
+    "scientific_result": "At least one primary D16 reproduction check failed; investigate before release.",
+    "CAS": "not executed in D16",
+    "GitHub_Zenodo": "not created by D16; publication packaging remains separate"
+  }
+}

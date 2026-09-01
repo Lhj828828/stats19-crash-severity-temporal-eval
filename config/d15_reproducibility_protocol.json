@@ -1,0 +1,97 @@
+{
+  "version": "D15_V1",
+  "status": "REPRODUCIBILITY_PROTOCOL_FROZEN",
+  "created_local": "2026-08-31",
+  "purpose": "Read-only verification and packaging of the frozen D1-D14 STATS19 analysis.",
+  "entrypoint": "code/d15_reproducibility.py",
+  "powershell_runner": "run_d15_reproducibility.ps1",
+  "runtime": {
+    "python": "3.13.15",
+    "platform": "Windows 11 x64",
+    "model_execution_thread_cap": 4,
+    "thread_environment_variables": [
+      "OMP_NUM_THREADS",
+      "OPENBLAS_NUM_THREADS",
+      "MKL_NUM_THREADS",
+      "NUMEXPR_NUM_THREADS"
+    ],
+    "note": "D15 audit does not refit models; the cap documents the frozen D10-D11 execution setting."
+  },
+  "dependency_files": {
+    "historical_unpinned_requirements": "requirements.txt",
+    "locked_direct_dependencies": "requirements-lock.txt",
+    "environment_snapshot": "logs/environment_info.txt"
+  },
+  "frozen_data_contract": {
+    "modeling_dataset": "data/processed/stats19_modeling_dataset.csv.gz",
+    "rows": 743646,
+    "feature_count": 17,
+    "metadata_count": 5,
+    "target": "target_severity",
+    "target_codes": [0, 1, 2],
+    "temporal_split": {
+      "train": 538461,
+      "validation": 104258,
+      "test": 100927,
+      "test_year": 2024
+    },
+    "random_reference_split": {
+      "seeds": [1103, 2207, 3301, 4409, 5501],
+      "train": 449903,
+      "validation": 96408,
+      "test": 96408,
+      "development_years": [2018, 2019, 2020, 2021, 2022, 2023]
+    },
+    "metadata_policy": "Metadata and target columns are excluded by the frozen allowlist and never selected by exclusion logic.",
+    "2024_embargo": "The 2024 rows are test-only for the temporal protocol and are never used for fitting, tuning, preprocessing or threshold choice."
+  },
+  "frozen_model_contract": {
+    "primary_lightgbm_candidate": "C03-1200",
+    "primary_comparator": "weighted multinomial Logistic",
+    "ordered_logit_scope": "Matched 100000-row sensitivity baseline; not a full-data primary model.",
+    "prediction_rule": "Argmax over the three class probabilities",
+    "bootstrap": {
+      "iterations": 2000,
+      "seed": 20260828,
+      "unit": "collision record",
+      "class_stratified": true
+    }
+  },
+  "frozen_reporting_boundaries": {
+    "H1": "Metric-dependent generalization gap; no uniform random-split optimism claim.",
+    "H2": "LightGBM improves some metrics but has a fatal-recall trade-off; no uniform superiority claim.",
+    "H3": "SHAP rank change is quantified descriptively; no binary instability or causal claim.",
+    "regional_holdout": "Not executed because no police-force combination was frozen before outcomes were known; spatial generalization is unverified.",
+    "2020_sensitivity": "Re-train on 2018-2019 and 2021-2022, validate on 2023 and test on the same 2024 cohort; it is not a causal pandemic analysis."
+  },
+  "independent_test_runner": {
+    "mode": "standalone_python_scripts",
+    "pytest_required": false,
+    "files": [
+      "code/test_cas_feasibility_audit.py",
+      "code/test_d10_lightgbm.py",
+      "code/test_d10b_tree_sensitivity.py",
+      "code/test_d11_evaluation.py",
+      "code/test_d12_bootstrap.py",
+      "code/test_d13_checkpoint.py",
+      "code/test_d14_closeout.py",
+      "code/test_d14_exclude2020.py",
+      "code/test_d14_shap.py",
+      "code/test_d6_protocol.py",
+      "code/test_d7_training_inputs.py",
+      "code/test_d8_baselines.py",
+      "code/test_d9_ordered_logit.py",
+      "code/test_d9s1_matched_subset.py",
+      "code/test_environment.py"
+    ],
+    "writes_allowed": [
+      "logs/environment_info.txt",
+      "logs/d15_*"
+    ]
+  },
+  "audit_outputs": {
+    "report": "logs/d15_reproducibility_report.json",
+    "manifest": "logs/d15_artifact_manifest.csv",
+    "checkpoint": "logs/d15_checkpoint.md"
+  }
+}

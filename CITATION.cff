@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software or computational supplement, please cite this repository and its archived release."
+title: "Time-aware crash-severity modelling: STATS19 and CAS"
+type: software
+authors:
+  - name: Lhj828828
+    email: 18255884865@163.com
+repository-code: "https://github.com/Lhj828828/stats19-crash-severity-temporal-eval"
+license: MIT
+version: 1.0.0
+date-released: 2026-09-01
+keywords:
+  - crash severity classification
+  - temporal generalization
+  - data leakage
+  - reproducible machine learning
+  - STATS19
+  - Crash Analysis System

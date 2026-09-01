@@ -1,0 +1,258 @@
+{
+  "version": "D10_V1",
+  "status": "PROTOCOL_FROZEN_BEFORE_D10_VALIDATION_INSPECTION",
+  "created_local": "2026-08-30",
+  "purpose": "Small-range tuning of a class-weighted LightGBM comparator without test-set access.",
+  "upstream": {
+    "D5_schema": "config/d5_dataset_schema.json",
+    "D5_schema_sha256": "cea222466650a095170a66a3d094eba76b3cdf71c22bc6bcb61054152969030b",
+    "D6_protocol": "config/d6_analysis_protocol.json",
+    "D6_protocol_sha256": "5040fa8b1c2d4d33304af371cfec91b0bc8fcf49b8d872ca473ea00e2d31a3f8",
+    "D7_training_inputs": "config/d7_training_inputs.json",
+    "D7_training_inputs_sha256": "232962cc1ba5cf61504a6bf5b151f484cb9c7c0e5c8b45164e952132601599cb",
+    "D8_protocol": "config/d8_baseline_protocol.json",
+    "D8_protocol_sha256": "7b4a1c487334827799169f88342bbac49559f2a1c7bad8412558e958501114c5",
+    "D8_validation_metrics": "results/d8/d8_validation_metrics.csv",
+    "D8_validation_metrics_sha256": "a76aeb569ba73ad9681f89f9016d744d4ac0eaeba09be7eae31151d094bb7836",
+    "D6_assignments_sha256": "5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076"
+  },
+  "evaluation_scope": {
+    "tuning_train_years": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "tuning_validation_years": [
+      2023
+    ],
+    "tuning_protocol": "temporal only",
+    "post_selection_validation_models": "temporal plus five frozen random-reference splits",
+    "random_split_rule": "reuse the temporal-selected candidate and iteration count; no random-specific tuning",
+    "forbidden": "all temporal/random test performance and all 2024 performance"
+  },
+  "features": {
+    "allowlist": [
+      "feature_day_of_week",
+      "feature_first_road_class",
+      "feature_road_type",
+      "feature_junction_detail",
+      "feature_junction_control",
+      "feature_second_road_class",
+      "feature_pedestrian_crossing",
+      "feature_light_conditions",
+      "feature_weather_conditions",
+      "feature_road_surface_conditions",
+      "feature_special_conditions_at_site",
+      "feature_carriageway_hazards",
+      "feature_urban_or_rural_area",
+      "feature_trunk_road_flag",
+      "feature_speed_limit",
+      "feature_month",
+      "feature_hour"
+    ],
+    "categorical": [
+      "feature_day_of_week",
+      "feature_first_road_class",
+      "feature_road_type",
+      "feature_junction_detail",
+      "feature_junction_control",
+      "feature_second_road_class",
+      "feature_pedestrian_crossing",
+      "feature_light_conditions",
+      "feature_weather_conditions",
+      "feature_road_surface_conditions",
+      "feature_special_conditions_at_site",
+      "feature_carriageway_hazards",
+      "feature_urban_or_rural_area",
+      "feature_trunk_road_flag",
+      "feature_month",
+      "feature_hour"
+    ],
+    "numeric": [
+      "feature_speed_limit"
+    ],
+    "metadata_excluded": [
+      "meta_collision_index",
+      "meta_collision_year",
+      "meta_date",
+      "meta_police_force",
+      "meta_injury_based"
+    ],
+    "target_excluded": "target_severity"
+  },
+  "preprocessing": {
+    "fit_scope": "separately within each training partition",
+    "categorical": "LightGBM-native pandas categorical data with training vocabulary and explicit __UNSEEN__ level",
+    "numeric": "numeric type retained; NaN handled natively by LightGBM",
+    "numeric_training_median": "stored for audit only and never applied",
+    "one_hot_encoding": false,
+    "scaling": false,
+    "rare_pooling": false
+  },
+  "class_weighting": {
+    "rule": {
+      "name": "balanced",
+      "formula": "n_training / (n_classes * n_training_in_class)",
+      "n_classes": 3,
+      "source_rows": "training role only, calculated separately per split",
+      "target_labels": {
+        "0": "Slight",
+        "1": "Serious",
+        "2": "Fatal"
+      }
+    },
+    "application": "split-specific D7 balanced weights applied to training rows only",
+    "validation_metrics": "unweighted natural-prevalence metrics"
+  },
+  "common_model_parameters": {
+    "boosting_type": "gbdt",
+    "objective": "multiclass",
+    "num_class": 3,
+    "learning_rate": 0.05,
+    "max_bin": 255,
+    "random_state": 20260830,
+    "n_jobs": -1,
+    "deterministic": true,
+    "force_col_wise": true,
+    "verbosity": -1
+  },
+  "tuning": {
+    "maximum_estimators": 1200,
+    "early_stopping_rounds": 75,
+    "early_stopping_metric": "unweighted multiclass log loss on 2023 validation",
+    "candidates": [
+      {
+        "candidate_id": "C01",
+        "complexity_rank": 1,
+        "parameters": {
+          "num_leaves": 15,
+          "max_depth": -1,
+          "min_child_samples": 100,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C02",
+        "complexity_rank": 3,
+        "parameters": {
+          "num_leaves": 31,
+          "max_depth": -1,
+          "min_child_samples": 100,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C03",
+        "complexity_rank": 6,
+        "parameters": {
+          "num_leaves": 63,
+          "max_depth": -1,
+          "min_child_samples": 100,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C04",
+        "complexity_rank": 5,
+        "parameters": {
+          "num_leaves": 31,
+          "max_depth": -1,
+          "min_child_samples": 50,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C05",
+        "complexity_rank": 2,
+        "parameters": {
+          "num_leaves": 31,
+          "max_depth": -1,
+          "min_child_samples": 250,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C06",
+        "complexity_rank": 4,
+        "parameters": {
+          "num_leaves": 31,
+          "max_depth": -1,
+          "min_child_samples": 100,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 5.0,
+          "colsample_bytree": 0.8,
+          "subsample": 0.8,
+          "subsample_freq": 1
+        }
+      }
+    ]
+  },
+  "selection_rule": {
+    "primary_metric": "Macro-F1 on 2023 validation",
+    "constraint_reference": {
+      "model": "D8 temporal weighted multinomial Logistic",
+      "macro_f1": 0.3308461967671416,
+      "qwk": 0.1011534344981255,
+      "fatal_recall": 0.6018396846254928
+    },
+    "eligibility_constraints": {
+      "minimum_qwk": 0.0911534344981255,
+      "minimum_fatal_recall": 0.5518396846254927,
+      "rationale": "avoid selecting a Macro-F1 gain that materially sacrifices ordinal agreement or fatal-case sensitivity relative to the fixed weighted linear comparator"
+    },
+    "ranking": [
+      "eligible candidates only",
+      "highest Macro-F1",
+      "highest QWK if Macro-F1 is exactly tied",
+      "highest fatal recall if still tied",
+      "lowest pre-frozen complexity_rank if still tied",
+      "lexicographically smallest candidate_id if still tied"
+    ],
+    "fallback_if_none_eligible": "apply the same ranking to all candidates and explicitly record that constraints were unmet"
+  },
+  "final_validation_fit": {
+    "n_estimators": "the temporal selected candidate's best_iteration",
+    "early_stopping": false,
+    "same_parameters_for_all_splits": true,
+    "prediction_rule": "argmax over class probabilities; no threshold tuning"
+  },
+  "random_seeds": [
+    1103,
+    2207,
+    3301,
+    4409,
+    5501
+  ],
+  "test_embargo": {
+    "year": 2024,
+    "rule": "No preprocessing fit, tuning, threshold choice, model selection or intermediate performance inspection before the one-time D11 evaluation."
+  }
+}

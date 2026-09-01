@@ -1,0 +1,20 @@
+{
+  "version": "D10B_EXECUTION_INCIDENT_V1",
+  "created_local": "2026-08-30",
+  "attempt": 1,
+  "outcome": "FAILED_BEFORE_PRIMARY_OUTPUTS_WERE_SAVED",
+  "failure_stage": "1200-tree frozen-D10 reproduction check",
+  "cause": "The in-memory collision-ID Series used object dtype while the frozen CSV Series used pandas string dtype. Series.equals treated the dtype mismatch as unequal although all 104258 identifier values and their order were identical.",
+  "independent_confirmation": {
+    "rows_compared": 104258,
+    "identifier_value_and_order_equality": true,
+    "first_identifier_match": true
+  },
+  "code_correction": "Compare identifier arrays after explicit conversion to pandas string dtype.",
+  "scientific_design_changed": false,
+  "model_parameters_changed": false,
+  "checkpoint_set_changed": false,
+  "reproduction_tolerances_changed": false,
+  "result_access_disclosure": "The 2000-tree fit and its in-memory loss history completed, but no D10b metric, loss value, prediction file, model, figure, or checkpoint result was printed, saved, or inspected. The checkpoint loop stopped during the 1200-tree ID assertion before 1500- or 2000-tree predictions were requested.",
+  "rerun_rule": "Rerun the full 2000-tree fit from the beginning under the unchanged frozen protocol."
+}

@@ -1,0 +1,80 @@
+{
+  "version": "D10B_V1",
+  "status": "FROZEN_BEFORE_D10B_1500_OR_2000_VALIDATION_INSPECTION",
+  "created_local": "2026-08-30",
+  "purpose": "Post-D10 diagnostic of whether the pre-frozen 1200-tree upper boundary was still improving on temporal validation.",
+  "timing_disclosure": "This diagnostic was specified after all six D10 candidates reached the pre-frozen 1200-tree ceiling, but before any 1500- or 2000-tree result was generated or inspected.",
+  "upstream": {
+    "D5_schema": "config/d5_dataset_schema.json",
+    "D5_schema_sha256": "cea222466650a095170a66a3d094eba76b3cdf71c22bc6bcb61054152969030b",
+    "D6_protocol": "config/d6_analysis_protocol.json",
+    "D6_protocol_sha256": "5040fa8b1c2d4d33304af371cfec91b0bc8fcf49b8d872ca473ea00e2d31a3f8",
+    "D6_assignments": "data/processed/d6_split_assignments.csv.gz",
+    "D6_assignments_sha256": "5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076",
+    "D7_training_inputs": "config/d7_training_inputs.json",
+    "D7_training_inputs_sha256": "232962cc1ba5cf61504a6bf5b151f484cb9c7c0e5c8b45164e952132601599cb",
+    "D10_protocol": "config/d10_lightgbm_protocol.json",
+    "D10_protocol_sha256": "079aad5af8e95360b60b17b664c847336db66b4712811bac17b67ce5a9d5c963",
+    "D10_execution_amendment": "config/d10_execution_amendment.json",
+    "D10_execution_amendment_sha256": "f3b37e07125e6069de9699420402c51381e8f1d9d7fd3f8a827d5d8a41183108",
+    "D10_selected_model": "config/d10_selected_lightgbm.json",
+    "D10_selected_model_sha256": "b822cf2c8e68d447b3636103f3d929e2209bf402b9ae01acf4a94d16e6f43444",
+    "D10_tuning_results": "results/d10/d10_tuning_results.csv",
+    "D10_tuning_results_sha256": "cfe28e4331add713163e9c309544ed8b0009620e8dd374affc8f155fc8ca13c6",
+    "D10_source_sha256": "ba584669cedc84c7095cf2385ecdce815a6d8ccbf75ab9538f12bc0468178cc1",
+    "baseline_modeling_source_sha256": "34c024f461ad3c6a083e5e2ea16e911ae96b2bb6a75151dd3ece11f7005f79ec",
+    "modeling_data_source_sha256": "ec28dc9c8cc83ad7609be3ba1710b167c3886746a76903136c5e49914f44fbbf"
+  },
+  "data_scope": {
+    "protocol": "temporal only",
+    "training_role": "temporal_role=train",
+    "training_years": [2018, 2019, 2020, 2021, 2022],
+    "training_rows": 538461,
+    "validation_role": "temporal_role=validation",
+    "validation_years": [2023],
+    "validation_rows": 104258,
+    "forbidden": "No random-reference test row and no 2024 row may be fitted, predicted, or evaluated in D10b."
+  },
+  "model_lock": {
+    "candidate_id": "C03",
+    "parameters_source": "config/d10_selected_lightgbm.json",
+    "class_weights_source": "config/d7_training_inputs.json temporal training partition",
+    "feature_and_preprocessing_source": "frozen D10 native-categorical pipeline",
+    "random_state": 20260830,
+    "n_jobs": 4,
+    "thread_environment_limit": 4,
+    "threshold_rule": "argmax; no threshold tuning",
+    "early_stopping": false
+  },
+  "diagnostic": {
+    "single_fit_estimators": 2000,
+    "checkpoints": [1200, 1500, 2000],
+    "validation_loss_history": "record every iteration from 1 through 2000 using unweighted validation multiclass log loss",
+    "metrics": [
+      "macro_f1",
+      "qwk",
+      "ordinal_mae",
+      "accuracy",
+      "slight_recall",
+      "serious_recall",
+      "fatal_recall",
+      "serious_or_fatal_recall",
+      "mean_asymmetric_cost"
+    ],
+    "boundary_summary": "Report observed log-loss changes from 1200 to 1500 and from 1500 to 2000 without creating a post-hoc plateau threshold.",
+    "required_reproduction_check": "The 1200-tree checkpoint must reproduce the frozen D10 temporal validation output before D10b outputs are accepted.",
+    "reproduction_tolerances": {
+      "collision_ids_targets_and_predicted_labels": "exact row-wise equality",
+      "class_probabilities_absolute": 2e-14,
+      "reported_metrics_absolute": 1e-14,
+      "relative_tolerance": 0.0
+    }
+  },
+  "decision_lock": {
+    "D11_primary_model": "C03 with 1200 trees as frozen in D10",
+    "D10b_role": "validation-boundary sensitivity analysis only",
+    "model_reselection_allowed": false,
+    "threshold_reselection_allowed": false,
+    "D11_change_allowed_from_D10b": false
+  }
+}

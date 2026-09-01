@@ -1,0 +1,721 @@
+﻿year,field_name,raw_code,official_label,count,pct_of_year,handling
+2018,day_of_week,6,Friday,20021,0.16325681901577854,explicit_category
+2018,day_of_week,5,Thursday,18656,0.15212622823826802,explicit_category
+2018,day_of_week,4,Wednesday,18397,0.1500142699881763,explicit_category
+2018,day_of_week,3,Tuesday,17950,0.14636930729400252,explicit_category
+2018,day_of_week,2,Monday,17740,0.14465690871284706,explicit_category
+2018,day_of_week,7,Saturday,16070,0.1310392628531822,explicit_category
+2018,day_of_week,1,Sunday,13801,0.11253720389774534,explicit_category
+2018,first_road_class,3,A,53499,0.4362457699677906,explicit_category
+2018,first_road_class,6,Unclassified,43355,0.3535287642190239,explicit_category
+2018,first_road_class,4,B,14210,0.11587230399151954,explicit_category
+2018,first_road_class,5,C,7005,0.05712072409997146,explicit_category
+2018,first_road_class,1,Motorway,4225,0.034451828597056304,explicit_category
+2018,first_road_class,2,A(M),341,0.002780609124638154,explicit_category
+2018,road_type,6,Single carriageway,88323,0.7202103803971134,explicit_category
+2018,road_type,3,Dual carriageway,19473,0.15878827414685856,explicit_category
+2018,road_type,1,Roundabout,7573,0.06175235454804909,explicit_category
+2018,road_type,2,One way street,3366,0.02744730297223468,explicit_category
+2018,road_type,9,Unknown,2392,0.01950503526725649,explicit_unknown_or_not_applicable_category
+2018,road_type,7,Slip road,1508,0.01229665266848779,explicit_category
+2018,junction_detail,0,Not at junction or within 20 metres,65445,0.5336567863986627,explicit_category
+2018,junction_detail,13,T or staggered junction,35958,0.2932115627675623,explicit_category
+2018,junction_detail,16,Crossroads,11422,0.09313817425694133,explicit_category
+2018,junction_detail,19,Other junction,4650,0.037917397154156644,explicit_category
+2018,junction_detail,18,Using private drive or entrance,2801,0.0228401353610307,explicit_category
+2018,junction_detail,17,Junction with more than four arms (not roundabout),1587,0.012940840706160557,explicit_category
+2018,junction_detail,-1,Data missing or out of range,772,0.006295103355485791,explicit_unknown_or_not_applicable_category
+2018,junction_control,4,Give way or uncontrolled,53259,0.43428874301789866,explicit_category
+2018,junction_control,-1,Data missing or out of range,52351,0.42688465772414075,explicit_unknown_or_not_applicable_category
+2018,junction_control,2,Auto traffic signal,13323,0.1086394585558772,explicit_category
+2018,junction_control,9,unknown (self reported),2491,0.020312308884086926,explicit_unknown_or_not_applicable_category
+2018,junction_control,3,Stop sign,750,0.0061157092184123615,explicit_category
+2018,junction_control,1,Authorised person,461,0.0037591225995841316,explicit_category
+2018,second_road_class,0,Not at junction or within 20 metres,52047,0.4244057569209443,explicit_category
+2018,second_road_class,6,Unclassified,48631,0.3965507400008154,explicit_category
+2018,second_road_class,3,A,12213,0.0995882089126269,explicit_category
+2018,second_road_class,4,B,4662,0.03801524850165124,explicit_category
+2018,second_road_class,5,C,4168,0.03398703469645697,explicit_category
+2018,second_road_class,1,Motorway,677,0.005520446854486892,explicit_category
+2018,second_road_class,-1,Data missing or out of range,163,0.0013291474701349532,explicit_unknown_or_not_applicable_category
+2018,second_road_class,2,A(M),73,0.0005952623639254699,explicit_category
+2018,second_road_class,9,Unknown (self rep only),1,8.154278957883149e-06,explicit_unknown_or_not_applicable_category
+2018,pedestrian_crossing,0,No physical crossing facility within 50m,95274,0.7768907734333591,explicit_category
+2018,pedestrian_crossing,15,Pedestrian phase at traffic signal,9306,0.07588371998206059,explicit_category
+2018,pedestrian_crossing,14,Pedestrian light crossing (pelican or puffin or toucan or similar),6742,0.05497614873404819,explicit_category
+2018,pedestrian_crossing,13,Zebra crossing,4316,0.035193867982223674,explicit_category
+2018,pedestrian_crossing,17,Central refuge - no other controls,3065,0.024992865005911854,explicit_category
+2018,pedestrian_crossing,99,unknown (self reported),2035,0.01659395767929221,explicit_unknown_or_not_applicable_category
+2018,pedestrian_crossing,12,Human crossing control by other authorised person,1116,0.009100175316997595,explicit_category
+2018,pedestrian_crossing,11,Human crossing control by school crossing patrol,422,0.003441105720226689,explicit_category
+2018,pedestrian_crossing,16,Footbridge or subway,268,0.002185346760712684,explicit_category
+2018,pedestrian_crossing,-1,Data missing or out of range,91,0.0007420393851673665,explicit_unknown_or_not_applicable_category
+2018,light_conditions,1,Daylight,88435,0.7211236596403963,explicit_category
+2018,light_conditions,4,Darkness - lights lit,24746,0.20178578709177641,explicit_category
+2018,light_conditions,6,Darkness - no lighting,6120,0.04990418722224487,explicit_category
+2018,light_conditions,7,Darkness - lighting unknown,2477,0.02019814897867656,explicit_unknown_or_not_applicable_category
+2018,light_conditions,5,Darkness - lights unlit,857,0.006988217066905859,explicit_category
+2018,weather_conditions,1,Fine no high winds,99221,0.809075712480124,explicit_category
+2018,weather_conditions,2,Raining no high winds,12789,0.10428507359236759,explicit_category
+2018,weather_conditions,9,Unknown,3666,0.029893586659599625,explicit_unknown_or_not_applicable_category
+2018,weather_conditions,8,Other,2603,0.021225588127369837,explicit_category
+2018,weather_conditions,5,Raining + high winds,1277,0.010413014229216781,explicit_category
+2018,weather_conditions,4,Fine + high winds,1134,0.009246952338239491,explicit_category
+2018,weather_conditions,3,Snowing no high winds,1075,0.008765849879724385,explicit_category
+2018,weather_conditions,7,Fog or mist,449,0.003661271252089534,explicit_category
+2018,weather_conditions,6,Snowing + high winds,402,0.003278020141069026,explicit_category
+2018,weather_conditions,-1,Data missing or out of range,19,0.00015493130019977983,explicit_unknown_or_not_applicable_category
+2018,road_surface_conditions,1,Dry,90546,0.7383373425204877,explicit_category
+2018,road_surface_conditions,2,Wet or damp,28215,0.23007298079667304,explicit_category
+2018,road_surface_conditions,4,Frost or ice,1417,0.011554613283320423,explicit_category
+2018,road_surface_conditions,3,Snow,1099,0.008961552574713582,explicit_category
+2018,road_surface_conditions,9,unknown (self reported),1035,0.00843967872140906,explicit_unknown_or_not_applicable_category
+2018,road_surface_conditions,-1,Data missing or out of range,188,0.0015330044440820321,explicit_unknown_or_not_applicable_category
+2018,road_surface_conditions,5,Flood over 3cm. deep,135,0.0011008276593142251,explicit_category
+2018,special_conditions_at_site,0,None,118495,0.9662412851143638,explicit_category
+2018,special_conditions_at_site,9,unknown (self reported),1415,0.011538304725404656,explicit_unknown_or_not_applicable_category
+2018,special_conditions_at_site,4,Roadworks,1372,0.01118767073021568,explicit_category
+2018,special_conditions_at_site,1,Auto traffic signal - out,284,0.0023158152240388146,explicit_category
+2018,special_conditions_at_site,5,Road surface defective,282,0.002299506666123048,explicit_category
+2018,special_conditions_at_site,7,Mud,276,0.002250580992375749,explicit_category
+2018,special_conditions_at_site,3,Road sign or marking defective or obscured,183,0.0014922330492926164,explicit_category
+2018,special_conditions_at_site,6,Oil or diesel,177,0.0014433073755453175,explicit_category
+2018,special_conditions_at_site,-1,Data missing or out of range,109,0.0008888164064092633,explicit_unknown_or_not_applicable_category
+2018,special_conditions_at_site,2,Auto signal part defective,42,0.00034247971623109226,explicit_category
+2018,carriageway_hazards,0,None,117063,0.9545643576466751,explicit_category
+2018,carriageway_hazards,13,Roadworks,1372,0.01118767073021568,explicit_category
+2018,carriageway_hazards,17,Other object in carriageway,907,0.007395931014800016,explicit_category
+2018,carriageway_hazards,99,unknown (self reported),906,0.007387776735842133,explicit_unknown_or_not_applicable_category
+2018,carriageway_hazards,20,Any animal in carriageway (except ridden horse),370,0.003017083214416765,explicit_category
+2018,carriageway_hazards,11,Defective traffic signals,325,0.0026501406613120234,explicit_category
+2018,carriageway_hazards,21,Poor or defective road surface,282,0.002299506666123048,explicit_category
+2018,carriageway_hazards,15,Mud,276,0.002250580992375749,explicit_category
+2018,carriageway_hazards,16,Dislodged vehicle load in carriageway,240,0.0019570269498919556,explicit_category
+2018,carriageway_hazards,19,Pedestrian in carriageway - not injured,230,0.0018754841603131243,explicit_category
+2018,carriageway_hazards,14,Oil or diesel,214,0.0017450156969869939,explicit_category
+2018,carriageway_hazards,18,Involvement with previous collision,186,0.0015166958861662658,explicit_category
+2018,carriageway_hazards,12,Permanent road signing or markings defective or obscured or inadequate,183,0.0014922330492926164,explicit_category
+2018,carriageway_hazards,-1,Data missing or out of range,81,0.0006604965955885351,explicit_unknown_or_not_applicable_category
+2018,urban_or_rural_area,1,Urban,82583,0.6734048191788641,explicit_category
+2018,urban_or_rural_area,2,Rural,39996,0.3261385411994944,explicit_category
+2018,urban_or_rural_area,3,Unallocated,55,0.0004484853426835732,explicit_category
+2018,urban_or_rural_area,-1,Data missing or out of range,1,8.154278957883149e-06,explicit_unknown_or_not_applicable_category
+2018,trunk_road_flag,2,Non-trunk,103556,0.8444245117625474,explicit_category
+2018,trunk_road_flag,-1,Data missing or out of range,10619,0.08659028825376117,explicit_unknown_or_not_applicable_category
+2018,trunk_road_flag,1,Trunk (Roads managed by Highways England),8460,0.06898519998369144,explicit_category
+2019,day_of_week,6,Friday,19056,0.16212904982303294,explicit_category
+2019,day_of_week,5,Thursday,17973,0.1529148516199292,explicit_category
+2019,day_of_week,4,Wednesday,17775,0.1512302613667302,explicit_category
+2019,day_of_week,3,Tuesday,17598,0.14972433977674926,explicit_category
+2019,day_of_week,2,Monday,16643,0.14159916961611763,explicit_category
+2019,day_of_week,7,Saturday,15556,0.13235093928668662,explicit_category
+2019,day_of_week,1,Sunday,12935,0.11005138851075415,explicit_category
+2019,first_road_class,3,A,52342,0.4453273890552682,explicit_category
+2019,first_road_class,6,Unclassified,40459,0.3442264497685815,explicit_category
+2019,first_road_class,4,B,14538,0.12368976313640076,explicit_category
+2019,first_road_class,5,C,6067,0.05161822760686088,explicit_category
+2019,first_road_class,1,Motorway,3810,0.03241560032670841,explicit_category
+2019,first_road_class,2,A(M),320,0.002722570106180234,explicit_category
+2019,road_type,6,Single carriageway,85320,0.725905254560305,explicit_category
+2019,road_type,3,Dual carriageway,18590,0.15816430710590798,explicit_category
+2019,road_type,1,Roundabout,6880,0.058535257282875036,explicit_category
+2019,road_type,2,One way street,2664,0.02266539613395045,explicit_category
+2019,road_type,9,Unknown,2143,0.018232711679825757,explicit_unknown_or_not_applicable_category
+2019,road_type,7,Slip road,1939,0.016497073237135857,explicit_category
+2019,junction_detail,0,Not at junction or within 20 metres,61391,0.5223165668390961,explicit_category
+2019,junction_detail,13,T or staggered junction,33660,0.28638034304383336,explicit_category
+2019,junction_detail,16,Crossroads,11221,0.09546862237952627,explicit_category
+2019,junction_detail,19,Other junction,5666,0.04820650694255377,explicit_category
+2019,junction_detail,18,Using private drive or entrance,2722,0.023158861965695617,explicit_category
+2019,junction_detail,17,Junction with more than four arms (not roundabout),1479,0.012583378709501769,explicit_category
+2019,junction_detail,-1,Data missing or out of range,1397,0.011885720119793084,explicit_unknown_or_not_applicable_category
+2019,junction_control,4,Give way or uncontrolled,50882,0.43290566294582083,explicit_category
+2019,junction_control,-1,Data missing or out of range,49366,0.420007487067792,explicit_unknown_or_not_applicable_category
+2019,junction_control,2,Auto traffic signal,13122,0.11164239041655323,explicit_category
+2019,junction_control,9,unknown (self reported),3010,0.025609175061257827,explicit_unknown_or_not_applicable_category
+2019,junction_control,3,Stop sign,773,0.006576708412741628,explicit_category
+2019,junction_control,1,Authorised person,379,0.003224543969507215,explicit_category
+2019,junction_control,0,Not at junction or within 20 metres,4,3.403212632725293e-05,explicit_category
+2019,second_road_class,0,Not at junction or within 20 metres,48991,0.41681697522461203,explicit_category
+2019,second_road_class,6,Unclassified,46782,0.3980227334603866,explicit_category
+2019,second_road_class,3,A,12520,0.10652055540430166,explicit_category
+2019,second_road_class,4,B,4778,0.040651374897903624,explicit_category
+2019,second_road_class,5,C,3763,0.03201572284236319,explicit_category
+2019,second_road_class,1,Motorway,522,0.004441192485706507,explicit_category
+2019,second_road_class,-1,Data missing or out of range,115,0.0009784236319085216,explicit_unknown_or_not_applicable_category
+2019,second_road_class,2,A(M),65,0.00055302205281786,explicit_category
+2019,pedestrian_crossing,0,No physical crossing facility within 50m,90637,0.7711424584808059,explicit_category
+2019,pedestrian_crossing,15,Pedestrian phase at traffic signal,9095,0.07738054723659134,explicit_category
+2019,pedestrian_crossing,14,Pedestrian light crossing (pelican or puffin or toucan or similar),6088,0.051796896270078954,explicit_category
+2019,pedestrian_crossing,13,Zebra crossing,4491,0.03820956983392322,explicit_category
+2019,pedestrian_crossing,17,Central refuge - no other controls,2907,0.024732847808331064,explicit_category
+2019,pedestrian_crossing,99,unknown (self reported),2205,0.018760209637898175,explicit_unknown_or_not_applicable_category
+2019,pedestrian_crossing,12,Human crossing control by other authorised person,1241,0.01055846719303022,explicit_category
+2019,pedestrian_crossing,11,Human crossing control by school crossing patrol,477,0.0040583310645249115,explicit_category
+2019,pedestrian_crossing,16,Footbridge or subway,252,0.002144023958616934,explicit_category
+2019,pedestrian_crossing,-1,Data missing or out of range,143,0.0012166485161992922,explicit_unknown_or_not_applicable_category
+2019,light_conditions,1,Daylight,83511,0.7105142254288048,explicit_category
+2019,light_conditions,4,Darkness - lights lit,24407,0.20765552681731556,explicit_category
+2019,light_conditions,6,Darkness - no lighting,6092,0.051830928396406205,explicit_category
+2019,light_conditions,7,Darkness - lighting unknown,2634,0.022410155186496052,explicit_unknown_or_not_applicable_category
+2019,light_conditions,5,Darkness - lights unlit,891,0.0075806561393955895,explicit_category
+2019,light_conditions,-1,Data missing or out of range,1,8.508031581813232e-06,explicit_unknown_or_not_applicable_category
+2019,weather_conditions,1,Fine no high winds,92316,0.7854274435066703,explicit_category
+2019,weather_conditions,2,Raining no high winds,15294,0.13012183501225155,explicit_category
+2019,weather_conditions,9,Unknown,3436,0.029233596515110264,explicit_unknown_or_not_applicable_category
+2019,weather_conditions,8,Other,3043,0.025889940103457663,explicit_category
+2019,weather_conditions,5,Raining + high winds,1430,0.012166485161992922,explicit_category
+2019,weather_conditions,4,Fine + high winds,1230,0.010464878845630275,explicit_category
+2019,weather_conditions,7,Fog or mist,394,0.003352164443234413,explicit_category
+2019,weather_conditions,3,Snowing no high winds,353,0.0030033351483800706,explicit_category
+2019,weather_conditions,6,Snowing + high winds,40,0.00034032126327252925,explicit_category
+2019,road_surface_conditions,1,Dry,82321,0.7003896678464471,explicit_category
+2019,road_surface_conditions,2,Wet or damp,32259,0.27446059079771307,explicit_category
+2019,road_surface_conditions,4,Frost or ice,1185,0.01008201742444868,explicit_category
+2019,road_surface_conditions,9,unknown (self reported),1050,0.008933433160903894,explicit_unknown_or_not_applicable_category
+2019,road_surface_conditions,-1,Data missing or out of range,299,0.0025439014429621564,explicit_unknown_or_not_applicable_category
+2019,road_surface_conditions,3,Snow,245,0.002084467737544242,explicit_category
+2019,road_surface_conditions,5,Flood over 3cm. deep,177,0.001505921589980942,explicit_category
+2019,special_conditions_at_site,0,None,113157,0.9627433297032398,explicit_category
+2019,special_conditions_at_site,9,unknown (self reported),1579,0.013434181867683094,explicit_unknown_or_not_applicable_category
+2019,special_conditions_at_site,4,Roadworks,1328,0.011298665940647972,explicit_category
+2019,special_conditions_at_site,7,Mud,295,0.0025098693166349033,explicit_category
+2019,special_conditions_at_site,1,Auto traffic signal - out,276,0.002348216716580452,explicit_category
+2019,special_conditions_at_site,5,Road surface defective,240,0.0020419275796351756,explicit_category
+2019,special_conditions_at_site,-1,Data missing or out of range,240,0.0020419275796351756,explicit_unknown_or_not_applicable_category
+2019,special_conditions_at_site,3,Road sign or marking defective or obscured,200,0.0017016063163626464,explicit_category
+2019,special_conditions_at_site,6,Oil or diesel,183,0.0015569697794718214,explicit_category
+2019,special_conditions_at_site,2,Auto signal part defective,38,0.0003233052001089028,explicit_category
+2019,carriageway_hazards,0,None,111885,0.9519211135311735,explicit_category
+2019,carriageway_hazards,13,Roadworks,1328,0.011298665940647972,explicit_category
+2019,carriageway_hazards,99,unknown (self reported),987,0.00839742717124966,explicit_unknown_or_not_applicable_category
+2019,carriageway_hazards,17,Other object in carriageway,896,0.007623196297304655,explicit_category
+2019,carriageway_hazards,20,Any animal in carriageway (except ridden horse),339,0.0028842227062346854,explicit_category
+2019,carriageway_hazards,11,Defective traffic signals,314,0.0026715219166893547,explicit_category
+2019,carriageway_hazards,15,Mud,295,0.0025098693166349033,explicit_category
+2019,carriageway_hazards,16,Dislodged vehicle load in carriageway,261,0.0022205962428532536,explicit_category
+2019,carriageway_hazards,21,Poor or defective road surface,240,0.0020419275796351756,explicit_category
+2019,carriageway_hazards,19,Pedestrian in carriageway - not injured,212,0.001803702695344405,explicit_category
+2019,carriageway_hazards,12,Permanent road signing or markings defective or obscured or inadequate,200,0.0017016063163626464,explicit_category
+2019,carriageway_hazards,18,Involvement with previous collision,199,0.0016930982847808331,explicit_category
+2019,carriageway_hazards,-1,Data missing or out of range,197,0.0016760822216172065,explicit_unknown_or_not_applicable_category
+2019,carriageway_hazards,14,Oil or diesel,183,0.0015569697794718214,explicit_category
+2019,urban_or_rural_area,1,Urban,79533,0.6766692757963517,explicit_category
+2019,urban_or_rural_area,2,Rural,37975,0.32309249931935746,explicit_category
+2019,urban_or_rural_area,3,Unallocated,28,0.00023822488429077048,explicit_category
+2019,trunk_road_flag,2,Non-trunk,99630,0.8476551864960523,explicit_category
+2019,trunk_road_flag,-1,Data missing or out of range,10001,0.08508882384971413,explicit_unknown_or_not_applicable_category
+2019,trunk_road_flag,1,Trunk (Roads managed by Highways England),7905,0.0672559896542336,explicit_category
+2020,day_of_week,6,Friday,14889,0.16325836906106428,explicit_category
+2020,day_of_week,5,Thursday,14056,0.15412449697913355,explicit_category
+2020,day_of_week,4,Wednesday,13564,0.14872970098356342,explicit_category
+2020,day_of_week,3,Tuesday,13267,0.14547308632770095,explicit_category
+2020,day_of_week,2,Monday,12772,0.14004539523459686,explicit_category
+2020,day_of_week,7,Saturday,12336,0.13526464105966074,explicit_category
+2020,day_of_week,1,Sunday,10315,0.1131043103542802,explicit_category
+2020,first_road_class,3,A,40604,0.44522418008969394,explicit_category
+2020,first_road_class,6,Unclassified,31709,0.34769021590149013,explicit_category
+2020,first_road_class,4,B,11490,0.12598822355508285,explicit_category
+2020,first_road_class,5,C,4815,0.05279663154201252,explicit_category
+2020,first_road_class,1,Motorway,2374,0.026030987181876995,explicit_category
+2020,first_road_class,2,A(M),207,0.002269761729843529,explicit_category
+2020,road_type,6,Single carriageway,66929,0.7338786609502297,explicit_category
+2020,road_type,3,Dual carriageway,13206,0.14480421934451035,explicit_category
+2020,road_type,1,Roundabout,5580,0.06118488141317339,explicit_category
+2020,road_type,9,Unknown,2006,0.02199585521771072,explicit_unknown_or_not_applicable_category
+2020,road_type,2,One way street,1966,0.021557253917257865,explicit_category
+2020,road_type,7,Slip road,1512,0.016579129157117952,explicit_category
+2020,junction_detail,0,Not at junction or within 20 metres,47763,0.5237228478382439,explicit_category
+2020,junction_detail,13,T or staggered junction,25626,0.2809899231351221,explicit_category
+2020,junction_detail,16,Crossroads,8429,0.09242425903792804,explicit_category
+2020,junction_detail,19,Other junction,4705,0.05159047796576717,explicit_category
+2020,junction_detail,18,Using private drive or entrance,1887,0.020691016348863476,explicit_category
+2020,junction_detail,-1,Data missing or out of range,1510,0.01655719909209531,explicit_unknown_or_not_applicable_category
+2020,junction_detail,17,Junction with more than four arms (not roundabout),1279,0.014024276581980065,explicit_category
+2020,junction_control,4,Give way or uncontrolled,39998,0.4385793703878332,explicit_category
+2020,junction_control,-1,Data missing or out of range,38298,0.41993881511858683,explicit_unknown_or_not_applicable_category
+2020,junction_control,2,Auto traffic signal,10407,0.11411309334532177,explicit_category
+2020,junction_control,9,unknown (self reported),1536,0.016842289937389666,explicit_unknown_or_not_applicable_category
+2020,junction_control,3,Stop sign,583,0.0063926139541003735,explicit_category
+2020,junction_control,1,Authorised person,377,0.004133817256768166,explicit_category
+2020,second_road_class,0,Not at junction or within 20 metres,37956,0.41618877399971493,explicit_category
+2020,second_road_class,6,Unclassified,36435,0.39951095954999505,explicit_category
+2020,second_road_class,3,A,9566,0.10489150100330047,explicit_category
+2020,second_road_class,4,B,3656,0.04008815886139103,explicit_category
+2020,second_road_class,5,C,3154,0.03458371254070768,explicit_category
+2020,second_road_class,1,Motorway,314,0.0034430202085549183,explicit_category
+2020,second_road_class,-1,Data missing or out of range,82,0.0008991326659283545,explicit_unknown_or_not_applicable_category
+2020,second_road_class,2,A(M),36,0.00039474117040757026,explicit_category
+2020,pedestrian_crossing,0,No physical crossing facility within 50m,69735,0.7646465421769976,explicit_category
+2020,pedestrian_crossing,15,Pedestrian phase at traffic signal,7080,0.07763243018015549,explicit_category
+2020,pedestrian_crossing,14,Pedestrian light crossing (pelican or puffin or toucan or similar),4552,0.04991282799153499,explicit_category
+2020,pedestrian_crossing,13,Zebra crossing,3582,0.03927674645555324,explicit_category
+2020,pedestrian_crossing,17,Central refuge - no other controls,2396,0.026272217897126065,explicit_category
+2020,pedestrian_crossing,99,unknown (self reported),2161,0.023695435256965536,explicit_unknown_or_not_applicable_category
+2020,pedestrian_crossing,12,Human crossing control by other authorised person,980,0.010745731861094968,explicit_category
+2020,pedestrian_crossing,11,Human crossing control by school crossing patrol,386,0.004232502549370059,explicit_category
+2020,pedestrian_crossing,16,Footbridge or subway,195,0.0021381813397076724,explicit_category
+2020,pedestrian_crossing,-1,Data missing or out of range,132,0.0014473842914944242,explicit_unknown_or_not_applicable_category
+2020,light_conditions,1,Daylight,64458,0.7067840656147546,explicit_category
+2020,light_conditions,4,Darkness - lights lit,19026,0.20862070856040088,explicit_category
+2020,light_conditions,6,Darkness - no lighting,4835,0.05301593219223895,explicit_category
+2020,light_conditions,7,Darkness - lighting unknown,2194,0.024057281329839142,explicit_unknown_or_not_applicable_category
+2020,light_conditions,5,Darkness - lights unlit,685,0.007511047270255157,explicit_category
+2020,light_conditions,-1,Data missing or out of range,1,1.0965032511321396e-05,explicit_unknown_or_not_applicable_category
+2020,weather_conditions,1,Fine no high winds,70729,0.7755457844932511,explicit_category
+2020,weather_conditions,2,Raining no high winds,11583,0.12700797157863572,explicit_category
+2020,weather_conditions,8,Other,2629,0.02882707047226395,explicit_category
+2020,weather_conditions,9,Unknown,2423,0.026568273774931744,explicit_unknown_or_not_applicable_category
+2020,weather_conditions,5,Raining + high winds,1665,0.018256779131350126,explicit_category
+2020,weather_conditions,4,Fine + high winds,1401,0.015362010548361275,explicit_category
+2020,weather_conditions,7,Fog or mist,510,0.005592166580773912,explicit_category
+2020,weather_conditions,3,Snowing no high winds,185,0.002028531014594458,explicit_category
+2020,weather_conditions,6,Snowing + high winds,73,0.0008004473733264619,explicit_category
+2020,weather_conditions,-1,Data missing or out of range,1,1.0965032511321396e-05,explicit_unknown_or_not_applicable_category
+2020,road_surface_conditions,1,Dry,62698,0.6874856083948289,explicit_category
+2020,road_surface_conditions,2,Wet or damp,26240,0.28772245309707345,explicit_category
+2020,road_surface_conditions,9,unknown (self reported),847,0.009287382537089222,explicit_unknown_or_not_applicable_category
+2020,road_surface_conditions,4,Frost or ice,764,0.008377284838649546,explicit_category
+2020,road_surface_conditions,-1,Data missing or out of range,316,0.0034649502735775613,explicit_unknown_or_not_applicable_category
+2020,road_surface_conditions,5,Flood over 3cm. deep,184,0.002017565982083137,explicit_category
+2020,road_surface_conditions,3,Snow,150,0.0016447548766982095,explicit_category
+2020,special_conditions_at_site,0,None,87309,0.9573460235309598,explicit_category
+2020,special_conditions_at_site,9,unknown (self reported),1452,0.015921227206438668,explicit_unknown_or_not_applicable_category
+2020,special_conditions_at_site,4,Roadworks,1106,0.012127325957521464,explicit_category
+2020,special_conditions_at_site,7,Mud,317,0.0034759153060888825,explicit_category
+2020,special_conditions_at_site,5,Road surface defective,228,0.0025000274125812783,explicit_category
+2020,special_conditions_at_site,-1,Data missing or out of range,218,0.0023903770874680644,explicit_unknown_or_not_applicable_category
+2020,special_conditions_at_site,1,Auto traffic signal - out,213,0.0023355519249114573,explicit_category
+2020,special_conditions_at_site,3,Road sign or marking defective or obscured,158,0.0017324751367887806,explicit_category
+2020,special_conditions_at_site,6,Oil or diesel,151,0.0016557199092095307,explicit_category
+2020,special_conditions_at_site,2,Auto signal part defective,47,0.0005153565280321056,explicit_category
+2020,carriageway_hazards,0,None,86179,0.9449555367931666,explicit_category
+2020,carriageway_hazards,13,Roadworks,1106,0.012127325957521464,explicit_category
+2020,carriageway_hazards,17,Other object in carriageway,926,0.010153620105483614,explicit_category
+2020,carriageway_hazards,99,unknown (self reported),873,0.00957247338238358,explicit_unknown_or_not_applicable_category
+2020,carriageway_hazards,15,Mud,317,0.0034759153060888825,explicit_category
+2020,carriageway_hazards,20,Any animal in carriageway (except ridden horse),306,0.0033552999484643474,explicit_category
+2020,carriageway_hazards,11,Defective traffic signals,260,0.002850908452943563,explicit_category
+2020,carriageway_hazards,21,Poor or defective road surface,228,0.0025000274125812783,explicit_category
+2020,carriageway_hazards,16,Dislodged vehicle load in carriageway,206,0.0022587966973322076,explicit_category
+2020,carriageway_hazards,-1,Data missing or out of range,196,0.0021491463722189937,explicit_unknown_or_not_applicable_category
+2020,carriageway_hazards,12,Permanent road signing or markings defective or obscured or inadequate,158,0.0017324751367887806,explicit_category
+2020,carriageway_hazards,14,Oil or diesel,151,0.0016557199092095307,explicit_category
+2020,carriageway_hazards,19,Pedestrian in carriageway - not injured,147,0.0016118597791642453,explicit_category
+2020,carriageway_hazards,18,Involvement with previous collision,146,0.0016008947466529238,explicit_category
+2020,urban_or_rural_area,1,Urban,61737,0.6769482121514491,explicit_category
+2020,urban_or_rural_area,2,Rural,29448,0.3228982773933925,explicit_category
+2020,urban_or_rural_area,3,Unallocated,14,0.00015351045515849955,explicit_category
+2020,trunk_road_flag,2,Non-trunk,79222,0.8686718056119036,explicit_category
+2020,trunk_road_flag,-1,Data missing or out of range,6710,0.07357536815096656,explicit_unknown_or_not_applicable_category
+2020,trunk_road_flag,1,Trunk (Roads managed by Highways England),5267,0.057752826237129795,explicit_category
+2021,day_of_week,6,Friday,17027,0.16843906733803554,explicit_category
+2021,day_of_week,5,Thursday,15125,0.14962359155974556,explicit_category
+2021,day_of_week,4,Wednesday,14901,0.14740767853433182,explicit_category
+2021,day_of_week,3,Tuesday,14603,0.14445972281302244,explicit_category
+2021,day_of_week,2,Monday,13974,0.13823735989790972,explicit_category
+2021,day_of_week,7,Saturday,13961,0.1381087578026848,explicit_category
+2021,day_of_week,1,Sunday,11496,0.11372382205427009,explicit_category
+2021,first_road_class,3,A,45054,0.4456952921740679,explicit_category
+2021,first_road_class,6,Unclassified,35596,0.35213232166351754,explicit_category
+2021,first_road_class,4,B,12611,0.12475392483702158,explicit_category
+2021,first_road_class,5,C,4438,0.04390277681600997,explicit_category
+2021,first_road_class,1,Motorway,3105,0.030716115821025455,explicit_category
+2021,first_road_class,2,A(M),283,0.0027995686883575534,explicit_category
+2021,road_type,6,Single carriageway,73054,0.722684420350787,explicit_category
+2021,road_type,3,Dual carriageway,15299,0.1513448811419866,explicit_category
+2021,road_type,1,Roundabout,5947,0.05883051233096244,explicit_category
+2021,road_type,9,Unknown,2607,0.025789666327025236,explicit_unknown_or_not_applicable_category
+2021,road_type,2,One way street,2300,0.02275267838594478,explicit_category
+2021,road_type,7,Slip road,1880,0.018597841463293994,explicit_category
+2021,junction_detail,0,Not at junction or within 20 metres,52176,0.5161494554195891,explicit_category
+2021,junction_detail,13,T or staggered junction,27699,0.27401149504881933,explicit_category
+2021,junction_detail,16,Crossroads,9371,0.0927023257194298,explicit_category
+2021,junction_detail,19,Other junction,6051,0.05985932909276168,explicit_category
+2021,junction_detail,18,Using private drive or entrance,2209,0.021852463719370444,explicit_category
+2021,junction_detail,-1,Data missing or out of range,2061,0.020388378327579212,explicit_unknown_or_not_applicable_category
+2021,junction_detail,17,Junction with more than four arms (not roundabout),1520,0.015036552672450463,explicit_category
+2021,junction_control,4,Give way or uncontrolled,44789,0.4430737879252525,explicit_category
+2021,junction_control,-1,Data missing or out of range,42057,0.4160475629902955,explicit_unknown_or_not_applicable_category
+2021,junction_control,2,Auto traffic signal,11302,0.11180468309475997,explicit_category
+2021,junction_control,9,unknown (self reported),1890,0.018696766151928536,explicit_unknown_or_not_applicable_category
+2021,junction_control,3,Stop sign,651,0.006439997230108718,explicit_category
+2021,junction_control,1,Authorised person,398,0.003937202607654793,explicit_category
+2021,second_road_class,6,Unclassified,41646,0.4119817582874158,explicit_category
+2021,second_road_class,0,Not at junction or within 20 metres,41538,0.41091337165016273,explicit_category
+2021,second_road_class,3,A,10783,0.1066704917546272,explicit_category
+2021,second_road_class,4,B,3923,0.03880815535133103,explicit_category
+2021,second_road_class,5,C,2782,0.02752084837812973,explicit_category
+2021,second_road_class,1,Motorway,337,0.003333762006984083,explicit_category
+2021,second_road_class,-1,Data missing or out of range,55,0.0005440857874899838,explicit_unknown_or_not_applicable_category
+2021,second_road_class,2,A(M),23,0.0002275267838594478,explicit_category
+2021,pedestrian_crossing,0,No physical crossing facility within 50m,76990,0.7616211777973428,explicit_category
+2021,pedestrian_crossing,15,Pedestrian phase at traffic signal,7606,0.07524211817543304,explicit_category
+2021,pedestrian_crossing,14,Pedestrian light crossing (pelican or puffin or toucan or similar),5303,0.0524597623828979,explicit_category
+2021,pedestrian_crossing,13,Zebra crossing,4220,0.04174621860377695,explicit_category
+2021,pedestrian_crossing,17,Central refuge - no other controls,2435,0.024088161682511103,explicit_category
+2021,pedestrian_crossing,99,unknown (self reported),2395,0.023692462927972936,explicit_unknown_or_not_applicable_category
+2021,pedestrian_crossing,12,Human crossing control by other authorised person,1217,0.012039134606823826,explicit_category
+2021,pedestrian_crossing,11,Human crossing control by school crossing patrol,438,0.004332901362192962,explicit_category
+2021,pedestrian_crossing,16,Footbridge or subway,258,0.002552256966771197,explicit_category
+2021,pedestrian_crossing,-1,Data missing or out of range,225,0.002225805494277207,explicit_unknown_or_not_applicable_category
+2021,light_conditions,1,Daylight,73627,0.7283528050095462,explicit_category
+2021,light_conditions,4,Darkness - lights lit,19876,0.19662271113001673,explicit_category
+2021,light_conditions,6,Darkness - no lighting,4878,0.04825546311592984,explicit_category
+2021,light_conditions,7,Darkness - lighting unknown,1984,0.019626658225093237,explicit_unknown_or_not_applicable_category
+2021,light_conditions,5,Darkness - lights unlit,711,0.007033545361915973,explicit_category
+2021,light_conditions,-1,Data missing or out of range,11,0.00010881715749799678,explicit_unknown_or_not_applicable_category
+2021,weather_conditions,1,Fine no high winds,81658,0.8077992224519474,explicit_category
+2021,weather_conditions,2,Raining no high winds,10425,0.10312898790151058,explicit_category
+2021,weather_conditions,8,Other,3213,0.03178450245827851,explicit_category
+2021,weather_conditions,9,Unknown,2746,0.02716471949904538,explicit_unknown_or_not_applicable_category
+2021,weather_conditions,5,Raining + high winds,1034,0.010228812804811697,explicit_category
+2021,weather_conditions,4,Fine + high winds,875,0.00865591025552247,explicit_category
+2021,weather_conditions,3,Snowing no high winds,606,0.005994836131253277,explicit_category
+2021,weather_conditions,7,Fog or mist,427,0.004224084204694965,explicit_category
+2021,weather_conditions,6,Snowing + high winds,91,0.0009002146665743369,explicit_category
+2021,weather_conditions,-1,Data missing or out of range,12,0.00011870962636145103,explicit_unknown_or_not_applicable_category
+2021,road_surface_conditions,1,Dry,75221,0.7441214003778923,explicit_category
+2021,road_surface_conditions,2,Wet or damp,22592,0.22349065656315847,explicit_category
+2021,road_surface_conditions,4,Frost or ice,1208,0.011950102387052736,explicit_category
+2021,road_surface_conditions,9,unknown (self reported),1024,0.010129888116177155,explicit_unknown_or_not_applicable_category
+2021,road_surface_conditions,3,Snow,476,0.0047088151790042245,explicit_category
+2021,road_surface_conditions,-1,Data missing or out of range,431,0.004263654080148783,explicit_unknown_or_not_applicable_category
+2021,road_surface_conditions,5,Flood over 3cm. deep,135,0.001335483296566324,explicit_category
+2021,special_conditions_at_site,0,None,96444,0.9540692670669819,explicit_category
+2021,special_conditions_at_site,9,unknown (self reported),1774,0.017549239763767842,explicit_unknown_or_not_applicable_category
+2021,special_conditions_at_site,4,Roadworks,1410,0.013948381097470496,explicit_category
+2021,special_conditions_at_site,-1,Data missing or out of range,351,0.0034722565710724428,explicit_unknown_or_not_applicable_category
+2021,special_conditions_at_site,1,Auto traffic signal - out,319,0.0031556975674419067,explicit_category
+2021,special_conditions_at_site,5,Road surface defective,248,0.0024533322781366547,explicit_category
+2021,special_conditions_at_site,7,Mud,203,0.002008171179281213,explicit_category
+2021,special_conditions_at_site,3,Road sign or marking defective or obscured,157,0.0015531176115623176,explicit_category
+2021,special_conditions_at_site,6,Oil or diesel,130,0.0012860209522490527,explicit_category
+2021,special_conditions_at_site,2,Auto signal part defective,51,0.0005045159120361668,explicit_category
+2021,carriageway_hazards,0,None,95154,0.941307982233126,explicit_category
+2021,carriageway_hazards,13,Roadworks,1410,0.013948381097470496,explicit_category
+2021,carriageway_hazards,99,unknown (self reported),1136,0.01123784462888403,explicit_unknown_or_not_applicable_category
+2021,carriageway_hazards,17,Other object in carriageway,1015,0.010040855896406065,explicit_category
+2021,carriageway_hazards,11,Defective traffic signals,370,0.0036602134794780734,explicit_category
+2021,carriageway_hazards,20,Any animal in carriageway (except ridden horse),342,0.003383224351301354,explicit_category
+2021,carriageway_hazards,-1,Data missing or out of range,325,0.003215052380622632,explicit_unknown_or_not_applicable_category
+2021,carriageway_hazards,21,Poor or defective road surface,248,0.0024533322781366547,explicit_category
+2021,carriageway_hazards,16,Dislodged vehicle load in carriageway,236,0.0023346226517752034,explicit_category
+2021,carriageway_hazards,15,Mud,203,0.002008171179281213,explicit_category
+2021,carriageway_hazards,19,Pedestrian in carriageway - not injured,189,0.0018696766151928537,explicit_category
+2021,carriageway_hazards,18,Involvement with previous collision,172,0.0017015046445141315,explicit_category
+2021,carriageway_hazards,12,Permanent road signing or markings defective or obscured or inadequate,157,0.0015531176115623176,explicit_category
+2021,carriageway_hazards,14,Oil or diesel,130,0.0012860209522490527,explicit_category
+2021,urban_or_rural_area,1,Urban,68787,0.6804732557104276,explicit_category
+2021,urban_or_rural_area,2,Rural,32283,0.31935857231889364,explicit_category
+2021,urban_or_rural_area,3,Unallocated,17,0.0001681719706787223,explicit_category
+2021,trunk_road_flag,2,Non-trunk,87345,0.8640576928784117,explicit_category
+2021,trunk_road_flag,-1,Data missing or out of range,7203,0.07125545322346098,explicit_unknown_or_not_applicable_category
+2021,trunk_road_flag,1,Trunk (Roads managed by Highways England),6539,0.06468685389812735,explicit_category
+2022,day_of_week,6,Friday,17911,0.16896532206331835,explicit_category
+2022,day_of_week,5,Thursday,16273,0.15351307497830272,explicit_category
+2022,day_of_week,4,Wednesday,15737,0.14845666201275423,explicit_category
+2022,day_of_week,3,Tuesday,15018,0.14167389909814723,explicit_category
+2022,day_of_week,7,Saturday,15009,0.14158899664163616,explicit_category
+2022,day_of_week,2,Monday,14055,0.13258933625146221,explicit_category
+2022,day_of_week,1,Sunday,12001,0.11321270895437908,explicit_category
+2022,first_road_class,3,A,46935,0.4427663107052564,explicit_category
+2022,first_road_class,6,Unclassified,37932,0.35783555337534434,explicit_category
+2022,first_road_class,4,B,13072,0.12331610127919701,explicit_category
+2022,first_road_class,5,C,4630,0.04367759707180861,explicit_category
+2022,first_road_class,1,Motorway,3143,0.02964982453492321,explicit_category
+2022,first_road_class,2,A(M),292,0.002754613033470435,explicit_category
+2022,road_type,6,Single carriageway,76558,0.7222180295083205,explicit_category
+2022,road_type,3,Dual carriageway,16127,0.15213576846156748,explicit_category
+2022,road_type,1,Roundabout,6285,0.059290215463567414,explicit_category
+2022,road_type,9,Unknown,2755,0.025989585298667975,explicit_unknown_or_not_applicable_category
+2022,road_type,2,One way street,2392,0.022565186219387946,explicit_category
+2022,road_type,7,Slip road,1887,0.017801215048488736,explicit_category
+2022,junction_detail,0,Not at junction or within 20 metres,55139,0.5201596166182408,explicit_category
+2022,junction_detail,13,T or staggered junction,29657,0.2797724614165503,explicit_category
+2022,junction_detail,16,Crossroads,9743,0.09191162597637825,explicit_category
+2022,junction_detail,19,Other junction,5743,0.054177200860344894,explicit_category
+2022,junction_detail,18,Using private drive or entrance,2275,0.021461454284743973,explicit_category
+2022,junction_detail,-1,Data missing or out of range,1817,0.01714086260895815,explicit_unknown_or_not_applicable_category
+2022,junction_detail,17,Junction with more than four arms (not roundabout),1630,0.015376778234783593,explicit_category
+2022,junction_control,4,Give way or uncontrolled,46338,0.4371344477566884,explicit_category
+2022,junction_control,-1,Data missing or out of range,44977,0.42429530961095807,explicit_unknown_or_not_applicable_category
+2022,junction_control,2,Auto traffic signal,11873,0.11200520735066602,explicit_category
+2022,junction_control,9,unknown (self reported),1662,0.01567865363571186,explicit_unknown_or_not_applicable_category
+2022,junction_control,3,Stop sign,760,0.007169540772046338,explicit_category
+2022,junction_control,1,Authorised person,394,0.0037168408739292856,explicit_category
+2022,second_road_class,0,Not at junction or within 20 metres,44250,0.417437077846119,explicit_category
+2022,second_road_class,6,Unclassified,43546,0.4107958190256971,explicit_category
+2022,second_road_class,3,A,10793,0.101816912569337,explicit_category
+2022,second_road_class,4,B,4052,0.038224972642541793,explicit_category
+2022,second_road_class,5,C,2921,0.02755556394098336,explicit_category
+2022,second_road_class,1,Motorway,325,0.0030659220406777103,explicit_category
+2022,second_road_class,-1,Data missing or out of range,89,0.0008395909588317422,explicit_unknown_or_not_applicable_category
+2022,second_road_class,2,A(M),28,0.0002641409758122335,explicit_category
+2022,pedestrian_crossing,0,No physical crossing facility within 50m,80150,0.7561035432625184,explicit_category
+2022,pedestrian_crossing,15,Pedestrian phase at traffic signal,7802,0.07360099618882307,explicit_category
+2022,pedestrian_crossing,14,Pedestrian light crossing (pelican or puffin or toucan or similar),5913,0.05578091392777631,explicit_category
+2022,pedestrian_crossing,13,Zebra crossing,4304,0.040602241424851894,explicit_category
+2022,pedestrian_crossing,17,Central refuge - no other controls,2574,0.024282102562167465,explicit_category
+2022,pedestrian_crossing,99,unknown (self reported),2434,0.0229613976831063,explicit_unknown_or_not_applicable_category
+2022,pedestrian_crossing,12,Human crossing control by other authorised person,1388,0.013093845515263575,explicit_category
+2022,pedestrian_crossing,-1,Data missing or out of range,684,0.006452586694841704,explicit_unknown_or_not_applicable_category
+2022,pedestrian_crossing,11,Human crossing control by school crossing patrol,488,0.0046035998641560695,explicit_category
+2022,pedestrian_crossing,16,Footbridge or subway,267,0.0025187728764952265,explicit_category
+2022,light_conditions,1,Daylight,75961,0.7165861665597525,explicit_category
+2022,light_conditions,4,Darkness - lights lit,22009,0.20762424059469453,explicit_category
+2022,light_conditions,6,Darkness - no lighting,5555,0.052403682879891327,explicit_category
+2022,light_conditions,7,Darkness - lighting unknown,1710,0.01613146673710426,explicit_unknown_or_not_applicable_category
+2022,light_conditions,5,Darkness - lights unlit,768,0.007245009622278404,explicit_category
+2022,light_conditions,-1,Data missing or out of range,1,9.43360627900834e-06,explicit_unknown_or_not_applicable_category
+2022,weather_conditions,1,Fine no high winds,86939,0.820148296290706,explicit_category
+2022,weather_conditions,2,Raining no high winds,10011,0.09443983245915248,explicit_category
+2022,weather_conditions,8,Other,3295,0.03108373268933248,explicit_category
+2022,weather_conditions,9,Unknown,2955,0.027876306554469644,explicit_unknown_or_not_applicable_category
+2022,weather_conditions,4,Fine + high winds,970,0.009150598090638088,explicit_category
+2022,weather_conditions,5,Raining + high winds,909,0.00857514810761858,explicit_category
+2022,weather_conditions,7,Fog or mist,552,0.005207350666012603,explicit_category
+2022,weather_conditions,3,Snowing no high winds,312,0.002943285159050602,explicit_category
+2022,weather_conditions,6,Snowing + high winds,61,0.0005754499830195087,explicit_category
+2022,road_surface_conditions,1,Dry,78784,0.743217237085393,explicit_category
+2022,road_surface_conditions,2,Wet or damp,23369,0.22045394513414587,explicit_category
+2022,road_surface_conditions,4,Frost or ice,1723,0.016254103618731367,explicit_category
+2022,road_surface_conditions,9,unknown (self reported),1068,0.010075091505980906,explicit_unknown_or_not_applicable_category
+2022,road_surface_conditions,-1,Data missing or out of range,694,0.006546922757631787,explicit_unknown_or_not_applicable_category
+2022,road_surface_conditions,3,Snow,235,0.0022168974755669597,explicit_category
+2022,road_surface_conditions,5,Flood over 3cm. deep,131,0.0012358024225500924,explicit_category
+2022,special_conditions_at_site,0,None,101033,0.9531055431870495,explicit_category
+2022,special_conditions_at_site,9,unknown (self reported),1917,0.018084223236858987,explicit_unknown_or_not_applicable_category
+2022,special_conditions_at_site,4,Roadworks,1225,0.011556167691785215,explicit_category
+2022,special_conditions_at_site,-1,Data missing or out of range,746,0.007037470284140221,explicit_unknown_or_not_applicable_category
+2022,special_conditions_at_site,1,Auto traffic signal - out,297,0.002801781064865477,explicit_category
+2022,special_conditions_at_site,5,Road surface defective,224,0.002113127806497868,explicit_category
+2022,special_conditions_at_site,7,Mud,213,0.0020093581374287764,explicit_category
+2022,special_conditions_at_site,3,Road sign or marking defective or obscured,173,0.0016320138862684426,explicit_category
+2022,special_conditions_at_site,6,Oil or diesel,122,0.0011508999660390174,explicit_category
+2022,special_conditions_at_site,2,Auto signal part defective,54,0.0005094147390664503,explicit_category
+2022,carriageway_hazards,0,None,99640,0.9399645296403909,explicit_category
+2022,carriageway_hazards,99,unknown (self reported),1348,0.01271650126410324,explicit_unknown_or_not_applicable_category
+2022,carriageway_hazards,13,Roadworks,1225,0.011556167691785215,explicit_category
+2022,carriageway_hazards,17,Other object in carriageway,1017,0.00959397758575148,explicit_category
+2022,carriageway_hazards,-1,Data missing or out of range,713,0.006726161276932946,explicit_unknown_or_not_applicable_category
+2022,carriageway_hazards,11,Defective traffic signals,351,0.003311195803931927,explicit_category
+2022,carriageway_hazards,20,Any animal in carriageway (except ridden horse),333,0.003141390890909777,explicit_category
+2022,carriageway_hazards,16,Dislodged vehicle load in carriageway,240,0.0022640655069620015,explicit_category
+2022,carriageway_hazards,19,Pedestrian in carriageway - not injured,235,0.0022168974755669597,explicit_category
+2022,carriageway_hazards,21,Poor or defective road surface,224,0.002113127806497868,explicit_category
+2022,carriageway_hazards,15,Mud,213,0.0020093581374287764,explicit_category
+2022,carriageway_hazards,12,Permanent road signing or markings defective or obscured or inadequate,173,0.0016320138862684426,explicit_category
+2022,carriageway_hazards,18,Involvement with previous collision,170,0.0016037130674314178,explicit_category
+2022,carriageway_hazards,14,Oil or diesel,122,0.0011508999660390174,explicit_category
+2022,urban_or_rural_area,1,Urban,71763,0.6769838874004754,explicit_category
+2022,urban_or_rural_area,2,Rural,34219,0.32280857326138634,explicit_category
+2022,urban_or_rural_area,3,Unallocated,22,0.00020753933813818346,explicit_category
+2022,trunk_road_flag,2,Non-trunk,91793,0.8659390211690124,explicit_category
+2022,trunk_road_flag,-1,Data missing or out of range,7440,0.07018603071582205,explicit_unknown_or_not_applicable_category
+2022,trunk_road_flag,1,Trunk (Roads managed by Highways England),6771,0.06387494811516546,explicit_category
+2023,day_of_week,6,Friday,17118,0.16418883922576685,explicit_category
+2023,day_of_week,5,Thursday,15791,0.1514607991712866,explicit_category
+2023,day_of_week,4,Wednesday,15749,0.15105795238734676,explicit_category
+2023,day_of_week,3,Tuesday,15431,0.14800782673751656,explicit_category
+2023,day_of_week,2,Monday,14288,0.13704463926029659,explicit_category
+2023,day_of_week,7,Saturday,14182,0.13602793071035316,explicit_category
+2023,day_of_week,1,Sunday,11699,0.11221201250743348,explicit_category
+2023,first_road_class,3,A,45872,0.4399854207830574,explicit_category
+2023,first_road_class,6,Unclassified,37315,0.3579101843503616,explicit_category
+2023,first_road_class,4,B,13117,0.12581288726045003,explicit_category
+2023,first_road_class,5,C,4596,0.04408294807113123,explicit_category
+2023,first_road_class,1,Motorway,3121,0.02993535268276775,explicit_category
+2023,first_road_class,2,A(M),237,0.0022732068522319632,explicit_category
+2023,road_type,6,Single carriageway,75685,0.7259394962496882,explicit_category
+2023,road_type,3,Dual carriageway,15412,0.14782558652573424,explicit_category
+2023,road_type,1,Roundabout,5947,0.057041186287862804,explicit_category
+2023,road_type,9,Unknown,3177,0.030472481728020872,explicit_unknown_or_not_applicable_category
+2023,road_type,2,One way street,2236,0.02144679544974966,explicit_category
+2023,road_type,7,Slip road,1801,0.017274453758944156,explicit_category
+2023,junction_detail,0,Not at junction or within 20 metres,53234,0.5105987070536554,explicit_category
+2023,junction_detail,13,T or staggered junction,29039,0.2785301847340252,explicit_category
+2023,junction_detail,16,Crossroads,9507,0.09118724702181127,explicit_category
+2023,junction_detail,19,Other junction,6183,0.05930480155000096,explicit_category
+2023,junction_detail,-1,Data missing or out of range,2398,0.023000633044946192,explicit_unknown_or_not_applicable_category
+2023,junction_detail,18,Using private drive or entrance,2263,0.021705768382282414,explicit_category
+2023,junction_detail,17,Junction with more than four arms (not roundabout),1634,0.0156726582132786,explicit_category
+2023,junction_control,4,Give way or uncontrolled,45208,0.4336166049607704,explicit_category
+2023,junction_control,-1,Data missing or out of range,43795,0.42006368815822287,explicit_unknown_or_not_applicable_category
+2023,junction_control,2,Auto traffic signal,11649,0.1117324330027432,explicit_category
+2023,junction_control,9,unknown (self reported),2224,0.02133169636862399,explicit_unknown_or_not_applicable_category
+2023,junction_control,3,Stop sign,763,0.007318383241573788,explicit_category
+2023,junction_control,1,Authorised person,619,0.00593719426806576,explicit_category
+2023,second_road_class,6,Unclassified,43596,0.4181549617295555,explicit_category
+2023,second_road_class,0,Not at junction or within 20 metres,42962,0.4120738936100827,explicit_category
+2023,second_road_class,3,A,10277,0.0985727713940417,explicit_category
+2023,second_road_class,4,B,4005,0.03841431832569203,explicit_category
+2023,second_road_class,5,C,2978,0.028563755299353528,explicit_category
+2023,second_road_class,1,Motorway,312,0.0029925761092673944,explicit_category
+2023,second_road_class,-1,Data missing or out of range,84,0.0008056935678796831,explicit_unknown_or_not_applicable_category
+2023,second_road_class,2,A(M),44,0.00042202996412745304,explicit_category
+2023,pedestrian_crossing,0,No physical crossing facility within 50m,74925,0.7186498877783959,explicit_category
+2023,pedestrian_crossing,15,Pedestrian phase at traffic signal,7583,0.07273302768132901,explicit_category
+2023,pedestrian_crossing,14,Pedestrian light crossing (pelican or puffin or toucan or similar),5703,0.0547008383049742,explicit_category
+2023,pedestrian_crossing,99,unknown (self reported),4510,0.04325807132306394,explicit_unknown_or_not_applicable_category
+2023,pedestrian_crossing,13,Zebra crossing,4204,0.040323044754359376,explicit_category
+2023,pedestrian_crossing,-1,Data missing or out of range,2768,0.026549521379654318,explicit_unknown_or_not_applicable_category
+2023,pedestrian_crossing,17,Central refuge - no other controls,2585,0.024794260392487867,explicit_category
+2023,pedestrian_crossing,12,Human crossing control by other authorised person,1295,0.012421109171478447,explicit_category
+2023,pedestrian_crossing,11,Human crossing control by school crossing patrol,435,0.004172341690805502,explicit_category
+2023,pedestrian_crossing,16,Footbridge or subway,250,0.002397897523451438,explicit_category
+2023,light_conditions,1,Daylight,74241,0.7120892401542328,explicit_category
+2023,light_conditions,4,Darkness - lights lit,22003,0.21104375683400795,explicit_category
+2023,light_conditions,6,Darkness - no lighting,5628,0.05398146904793877,explicit_category
+2023,light_conditions,7,Darkness - lighting unknown,1635,0.015682249803372402,explicit_unknown_or_not_applicable_category
+2023,light_conditions,5,Darkness - lights unlit,751,0.007203284160448119,explicit_category
+2023,weather_conditions,1,Fine no high winds,82029,0.7867885438047919,explicit_category
+2023,weather_conditions,2,Raining no high winds,12840,0.12315601680446585,explicit_category
+2023,weather_conditions,9,Unknown,3335,0.03198795296284218,explicit_unknown_or_not_applicable_category
+2023,weather_conditions,8,Other,3081,0.02955168907901552,explicit_category
+2023,weather_conditions,5,Raining + high winds,1225,0.011749697864912045,explicit_category
+2023,weather_conditions,4,Fine + high winds,977,0.009370983521648219,explicit_category
+2023,weather_conditions,3,Snowing no high winds,396,0.0037982696771470775,explicit_category
+2023,weather_conditions,7,Fog or mist,333,0.003193999501237315,explicit_category
+2023,weather_conditions,6,Snowing + high winds,42,0.00040284678393984153,explicit_category
+2023,road_surface_conditions,1,Dry,72752,0.697807362504556,explicit_category
+2023,road_surface_conditions,2,Wet or damp,26944,0.25843580348750217,explicit_category
+2023,road_surface_conditions,9,unknown (self reported),1617,0.0155096011816839,explicit_unknown_or_not_applicable_category
+2023,road_surface_conditions,4,Frost or ice,1461,0.014013313127050203,explicit_category
+2023,road_surface_conditions,-1,Data missing or out of range,1064,0.01020545185980932,explicit_unknown_or_not_applicable_category
+2023,road_surface_conditions,3,Snow,241,0.002311573212607186,explicit_category
+2023,road_surface_conditions,5,Flood over 3cm. deep,179,0.0017168946267912294,explicit_category
+2023,special_conditions_at_site,0,None,94834,0.9096088549559747,explicit_category
+2023,special_conditions_at_site,9,unknown (self reported),3969,0.038069021082315024,explicit_unknown_or_not_applicable_category
+2023,special_conditions_at_site,-1,Data missing or out of range,3116,0.02988739473229872,explicit_unknown_or_not_applicable_category
+2023,special_conditions_at_site,4,Roadworks,1225,0.011749697864912045,explicit_category
+2023,special_conditions_at_site,1,Auto traffic signal - out,297,0.002848702257860308,explicit_category
+2023,special_conditions_at_site,7,Mud,258,0.0024746302442018838,explicit_category
+2023,special_conditions_at_site,5,Road surface defective,242,0.0023211648027009917,explicit_category
+2023,special_conditions_at_site,3,Road sign or marking defective or obscured,156,0.0014962880546336972,explicit_category
+2023,special_conditions_at_site,6,Oil or diesel,116,0.0011126244508814671,explicit_category
+2023,special_conditions_at_site,2,Auto signal part defective,45,0.0004316215542212588,explicit_category
+2023,carriageway_hazards,0,None,93634,0.8980989468434077,explicit_category
+2023,carriageway_hazards,99,unknown (self reported),3331,0.03194958660246696,explicit_unknown_or_not_applicable_category
+2023,carriageway_hazards,-1,Data missing or out of range,3086,0.029599647029484547,explicit_unknown_or_not_applicable_category
+2023,carriageway_hazards,13,Roadworks,1225,0.011749697864912045,explicit_category
+2023,carriageway_hazards,17,Other object in carriageway,934,0.008958545147614572,explicit_category
+2023,carriageway_hazards,11,Defective traffic signals,342,0.003280323812081567,explicit_category
+2023,carriageway_hazards,20,Any animal in carriageway (except ridden horse),275,0.0026376872757965814,explicit_category
+2023,carriageway_hazards,15,Mud,258,0.0024746302442018838,explicit_category
+2023,carriageway_hazards,21,Poor or defective road surface,242,0.0023211648027009917,explicit_category
+2023,carriageway_hazards,16,Dislodged vehicle load in carriageway,239,0.0022923900324195745,explicit_category
+2023,carriageway_hazards,19,Pedestrian in carriageway - not injured,224,0.002148516181012488,explicit_category
+2023,carriageway_hazards,18,Involvement with previous collision,196,0.0018799516583859273,explicit_category
+2023,carriageway_hazards,12,Permanent road signing or markings defective or obscured or inadequate,156,0.0014962880546336972,explicit_category
+2023,carriageway_hazards,14,Oil or diesel,116,0.0011126244508814671,explicit_category
+2023,urban_or_rural_area,1,Urban,70312,0.67440388267567,explicit_category
+2023,urban_or_rural_area,2,Rural,33934,0.32548101824320436,explicit_category
+2023,urban_or_rural_area,-1,Data missing or out of range,8,7.6732720750446e-05,explicit_unknown_or_not_applicable_category
+2023,urban_or_rural_area,3,Unallocated,4,3.8366360375223e-05,explicit_category
+2023,trunk_road_flag,2,Non-trunk,90194,0.8651038769207159,explicit_category
+2023,trunk_road_flag,-1,Data missing or out of range,7487,0.07181223503232366,explicit_unknown_or_not_applicable_category
+2023,trunk_road_flag,1,Trunk (Roads managed by Highways England),6577,0.06308388804696043,explicit_category
+2024,day_of_week,6,Friday,16444,0.16292964221665163,explicit_category
+2024,day_of_week,5,Thursday,15461,0.15318992935488027,explicit_category
+2024,day_of_week,4,Wednesday,14915,0.1477800786707224,explicit_category
+2024,day_of_week,3,Tuesday,14897,0.14760173194487106,explicit_category
+2024,day_of_week,2,Monday,14051,0.1392194358298572,explicit_category
+2024,day_of_week,7,Saturday,13771,0.13644515342772498,explicit_category
+2024,day_of_week,1,Sunday,11388,0.11283402855529244,explicit_category
+2024,first_road_class,3,A,44142,0.4373656206961467,explicit_category
+2024,first_road_class,6,Unclassified,36466,0.3613106502719788,explicit_category
+2024,first_road_class,4,B,12677,0.1256056357565369,explicit_category
+2024,first_road_class,5,C,4384,0.04343733589624184,explicit_category
+2024,first_road_class,1,Motorway,3029,0.03001179070020906,explicit_category
+2024,first_road_class,2,A(M),229,0.00226896667888672,explicit_category
+2024,road_type,6,Single carriageway,73618,0.7294182924291814,explicit_category
+2024,road_type,3,Dual carriageway,14671,0.1453624897202929,explicit_category
+2024,road_type,1,Roundabout,6204,0.06147017151010136,explicit_category
+2024,road_type,9,Unknown,2568,0.025444132888127063,explicit_unknown_or_not_applicable_category
+2024,road_type,2,One way street,2224,0.02203572879407889,explicit_category
+2024,road_type,7,Slip road,1642,0.016269184658218316,explicit_category
+2024,junction_detail,0,Not at junction or within 20 metres,46139,0.4571521991142113,explicit_category
+2024,junction_detail,13,T or staggered junction,28004,0.2774678728189682,explicit_category
+2024,junction_detail,16,Crossroads,9495,0.0940778978865913,explicit_category
+2024,junction_detail,-1,Data missing or out of range,7005,0.06940660081048679,explicit_unknown_or_not_applicable_category
+2024,junction_detail,19,Other junction,6357,0.0629861186798379,explicit_category
+2024,junction_detail,18,Using private drive or entrance,2256,0.022352789640036858,explicit_category
+2024,junction_detail,17,Junction with more than four arms (not roundabout),1669,0.016536704746995354,explicit_category
+2024,junction_detail,99,unknown (self reported),2,1.98163028723731e-05,explicit_unknown_or_not_applicable_category
+2024,junction_control,4,Give way or uncontrolled,44332,0.4392481694690222,explicit_category
+2024,junction_control,-1,Data missing or out of range,42581,0.42189899630425953,explicit_unknown_or_not_applicable_category
+2024,junction_control,2,Auto traffic signal,11027,0.10925718588682909,explicit_category
+2024,junction_control,9,unknown (self reported),1908,0.01890475294024394,explicit_unknown_or_not_applicable_category
+2024,junction_control,3,Stop sign,661,0.00654928809931931,explicit_category
+2024,junction_control,1,Authorised person,418,0.004141607300325978,explicit_category
+2024,second_road_class,6,Unclassified,56939,0.564160234625026,explicit_category
+2024,second_road_class,0,Not at junction or within 20 metres,12848,0.1272999296521248,explicit_category
+2024,second_road_class,3,A,11899,0.11789709393918377,explicit_category
+2024,second_road_class,-1,Data missing or out of range,11167,0.1106443270878952,explicit_unknown_or_not_applicable_category
+2024,second_road_class,4,B,4478,0.04436870213124337,explicit_category
+2024,second_road_class,5,C,2773,0.027475303932545304,explicit_category
+2024,second_road_class,1,Motorway,747,0.007401389122831353,explicit_category
+2024,second_road_class,2,A(M),76,0.0007530195091501778,explicit_category
+2024,pedestrian_crossing,0,No physical crossing facility within 50m,74788,0.7410108296095198,explicit_category
+2024,pedestrian_crossing,15,Pedestrian phase at traffic signal,7342,0.07274564784448166,explicit_category
+2024,pedestrian_crossing,14,Pedestrian light crossing (pelican or puffin or toucan or similar),6273,0.06215383395919823,explicit_category
+2024,pedestrian_crossing,13,Zebra crossing,4115,0.04077204315990766,explicit_category
+2024,pedestrian_crossing,99,unknown (self reported),3012,0.02984335212579389,explicit_unknown_or_not_applicable_category
+2024,pedestrian_crossing,17,Central refuge - no other controls,2744,0.027187967540895894,explicit_category
+2024,pedestrian_crossing,-1,Data missing or out of range,1034,0.010245028585016894,explicit_unknown_or_not_applicable_category
+2024,pedestrian_crossing,12,Human crossing control by other authorised person,1001,0.009918059587622737,explicit_category
+2024,pedestrian_crossing,11,Human crossing control by school crossing patrol,377,0.0037353730914423296,explicit_category
+2024,pedestrian_crossing,16,Footbridge or subway,241,0.0023878644961209585,explicit_category
+2024,light_conditions,1,Daylight,71550,0.7089282352591477,explicit_category
+2024,light_conditions,4,Darkness - lights lit,21241,0.2104590446560385,explicit_category
+2024,light_conditions,6,Darkness - no lighting,5695,0.056426922429082406,explicit_category
+2024,light_conditions,7,Darkness - lighting unknown,1679,0.01663578626135722,explicit_unknown_or_not_applicable_category
+2024,light_conditions,5,Darkness - lights unlit,756,0.007490562485757032,explicit_category
+2024,light_conditions,-1,Data missing or out of range,6,5.9448908617119306e-05,explicit_unknown_or_not_applicable_category
+2024,weather_conditions,1,Fine no high winds,79601,0.7886987624718856,explicit_category
+2024,weather_conditions,2,Raining no high winds,12328,0.12214769090530779,explicit_category
+2024,weather_conditions,9,Unknown,3145,0.0311611362668067,explicit_unknown_or_not_applicable_category
+2024,weather_conditions,8,Other,3052,0.03023967818324135,explicit_category
+2024,weather_conditions,5,Raining + high winds,1125,0.01114667036570987,explicit_category
+2024,weather_conditions,4,Fine + high winds,935,0.009264121592834424,explicit_category
+2024,weather_conditions,7,Fog or mist,474,0.004696463780752425,explicit_category
+2024,weather_conditions,3,Snowing no high winds,242,0.0023977726475571453,explicit_category
+2024,weather_conditions,6,Snowing + high winds,25,0.00024770378590466377,explicit_category
+2024,road_surface_conditions,1,Dry,71832,0.7117223339641523,explicit_category
+2024,road_surface_conditions,2,Wet or damp,25355,0.25122117966451,explicit_category
+2024,road_surface_conditions,9,unknown (self reported),1670,0.01654661289843154,explicit_unknown_or_not_applicable_category
+2024,road_surface_conditions,4,Frost or ice,1015,0.010056773707729349,explicit_category
+2024,road_surface_conditions,-1,Data missing or out of range,704,0.006975338611075332,explicit_unknown_or_not_applicable_category
+2024,road_surface_conditions,5,Flood over 3cm. deep,192,0.0019023650757478178,explicit_category
+2024,road_surface_conditions,3,Snow,159,0.0015753960783536616,explicit_category
+2024,special_conditions_at_site,-1,Data missing or out of range,59299,0.5875434720144262,explicit_unknown_or_not_applicable_category
+2024,special_conditions_at_site,0,None,38039,0.3768961724811002,explicit_category
+2024,special_conditions_at_site,9,unknown (self reported),2672,0.026474580637490464,explicit_unknown_or_not_applicable_category
+2024,special_conditions_at_site,4,Roadworks,466,0.004617198569262932,explicit_category
+2024,special_conditions_at_site,1,Auto traffic signal - out,134,0.0013276922924489979,explicit_category
+2024,special_conditions_at_site,5,Road surface defective,93,0.0009214580835653492,explicit_category
+2024,special_conditions_at_site,7,Mud,78,0.0007728358120225509,explicit_category
+2024,special_conditions_at_site,3,Road sign or marking defective or obscured,78,0.0007728358120225509,explicit_category
+2024,special_conditions_at_site,6,Oil or diesel,42,0.00041614236031983515,explicit_category
+2024,special_conditions_at_site,2,Auto signal part defective,26,0.0002576119373408503,explicit_category
+2024,carriageway_hazards,0,None,93522,0.9266301386150386,explicit_category
+2024,carriageway_hazards,99,unknown (self reported),2662,0.026375499123128598,explicit_unknown_or_not_applicable_category
+2024,carriageway_hazards,13,Roadworks,1196,0.011850149117679114,explicit_category
+2024,carriageway_hazards,17,Other object in carriageway,943,0.009343386804323917,explicit_category
+2024,carriageway_hazards,-1,Data missing or out of range,421,0.0041713317546345375,explicit_unknown_or_not_applicable_category
+2024,carriageway_hazards,21,Poor or defective road surface,331,0.0032795981253777484,explicit_category
+2024,carriageway_hazards,11,Defective traffic signals,310,0.003071526945217831,explicit_category
+2024,carriageway_hazards,15,Mud,305,0.003021986188036898,explicit_category
+2024,carriageway_hazards,20,Any animal in carriageway (except ridden horse),265,0.002625660130589436,explicit_category
+2024,carriageway_hazards,19,Pedestrian in carriageway - not injured,249,0.0024671297076104513,explicit_category
+2024,carriageway_hazards,12,Permanent road signing or markings defective or obscured or inadequate,209,0.002070803650162989,explicit_category
+2024,carriageway_hazards,16,Dislodged vehicle load in carriageway,199,0.001971722135801124,explicit_category
+2024,carriageway_hazards,18,Involvement with previous collision,191,0.0018924569243116312,explicit_category
+2024,carriageway_hazards,14,Oil or diesel,124,0.0012286107780871323,explicit_category
+2024,urban_or_rural_area,1,Urban,67304,0.6668582242610996,explicit_category
+2024,urban_or_rural_area,2,Rural,33620,0.3331120512845918,explicit_category
+2024,urban_or_rural_area,3,Unallocated,3,2.9724454308559653e-05,explicit_category
+2024,trunk_road_flag,2,Non-trunk,87352,0.8654968442537676,explicit_category
+2024,trunk_road_flag,-1,Data missing or out of range,7080,0.07014971216820078,explicit_unknown_or_not_applicable_category
+2024,trunk_road_flag,1,Trunk (Roads managed by Highways England),6495,0.06435344357803165,explicit_category

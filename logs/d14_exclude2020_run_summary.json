@@ -1,0 +1,27 @@
+{
+  "version": "D14_EXCLUDE2020_V2",
+  "status": "D14_EXCLUDE2020_SENSITIVITY_COMPLETE",
+  "protocol_sha256": "2db671ca62f91fb0b061f06c471ef0d625f8770563d12c9f1fe3374d81ee6cba",
+  "training_rows": 447262,
+  "excluded_training_year": 2020,
+  "model_fits": 2,
+  "test_rows": 100927,
+  "bootstrap_iterations": 2000,
+  "sensitivity_H2_macro_f1_delta": 0.020623367567970008,
+  "sensitivity_H2_macro_f1_ci": [
+    0.017397641318130277,
+    0.023891514662172018
+  ],
+  "sensitivity_H2_fatal_recall_delta": -0.09187749667110519,
+  "sensitivity_H2_fatal_recall_ci": [
+    -0.10652463382157125,
+    -0.07656458055925433
+  ],
+  "macro_f1_H2_contrast_change": 0.006727728321751558,
+  "macro_f1_H2_contrast_change_ci": [
+    0.003924435118324875,
+    0.009489722968151206
+  ],
+  "H1_pandemic_driver_claim_allowed": false,
+  "runtime_seconds": 153.66560820001177
+}

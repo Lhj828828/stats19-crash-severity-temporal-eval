@@ -1,0 +1,86 @@
+{
+  "version": "CAS_POST_ANALYSIS_V1",
+  "status": "OPERATIONAL_SUPPLEMENT_FROZEN_BEFORE_BOOTSTRAP_OR_SHAP_RESULTS",
+  "created_local": "2026-09-01T14:40:25+08:00",
+  "freeze_timing_disclosure": "The parent analysis protocol fixed the bootstrap count, seed, metrics and H1-H3 questions before modeling. This operational supplement was frozen after test point estimates existed but before any CAS bootstrap interval or SHAP result was computed.",
+  "upstream": {
+    "parent_analysis_protocol": "config/cas/cas_analysis_protocol.json",
+    "parent_analysis_protocol_sha256": "8c864a216aa9f1a27d970de17d005bdcfa0aa56512b95f12dff7eddbd5aeb134",
+    "evaluation_protocol": "config/cas/cas_evaluation_protocol.json",
+    "evaluation_protocol_sha256": "da60f0f54165d79e2af3bcde8075d4ee0d90199b6e63be20d987fc2b4f2c8993",
+    "evaluation_complete": "config/cas/cas_evaluation_complete.json",
+    "evaluation_complete_sha256": "88750a5ef5a62379d311d94078685e4a621e9626dfe9edb810ce11e0ee3359f0",
+    "evaluation_metrics": "results/cas_evaluation/test_metrics.csv",
+    "evaluation_metrics_sha256": "f7cab0cdb94100387482cdcc089d96629ccda108471c74651f48ffc840ad6ac4",
+    "lightgbm_models_frozen": "config/cas/cas_lightgbm_models_frozen.json",
+    "lightgbm_models_frozen_sha256": "4c18187bf04da8c35a190fcc0192a77d106cfdeaab84b9f0960597a5b8fe9b29"
+  },
+  "common": {
+    "iterations": 2000,
+    "confidence_level": 0.95,
+    "interval": "percentile",
+    "base_seed": 20260901,
+    "stratification": "true severity class",
+    "metrics": [
+      "macro_f1",
+      "qwk",
+      "ordinal_mae",
+      "accuracy",
+      "minor_recall",
+      "serious_recall",
+      "fatal_recall",
+      "serious_or_fatal_recall",
+      "mean_asymmetric_cost"
+    ],
+    "higher_is_better": {
+      "macro_f1": true,
+      "qwk": true,
+      "ordinal_mae": false,
+      "accuracy": true,
+      "minor_recall": true,
+      "serious_recall": true,
+      "fatal_recall": true,
+      "serious_or_fatal_recall": true,
+      "mean_asymmetric_cost": false
+    }
+  },
+  "H1": {
+    "models": [
+      "dummy_most_frequent",
+      "logistic_weighted",
+      "lightgbm_weighted"
+    ],
+    "seeds": [
+      1103,
+      2207,
+      3301,
+      4409,
+      5501
+    ],
+    "contrast": "random internal test minus same frozen model on 2025",
+    "bootstrap": "independent class-stratified resampling of the two cohorts",
+    "within_seed_reporting": "point gap and percentile interval",
+    "across_seed_reporting": "point-gap mean, sample SD, minimum and maximum; no five-seed normal-theory significance test"
+  },
+  "H2": {
+    "groups": 11,
+    "contrast": "weighted LightGBM minus weighted Logistic",
+    "bootstrap": "paired class-stratified resampling of shared records within each evaluation group",
+    "reporting": "point difference and percentile interval"
+  },
+  "H3": {
+    "models": "five frozen random-reference LightGBM models",
+    "contrast": "random internal test versus same model on 2025",
+    "internal_sample": "all 4,887 internal-test rows",
+    "future_sample": "4,887 rows sampled without replacement from 2025, exactly matching that seed's internal-test class counts",
+    "future_sample_seed_rule": "base_seed + random_split_seed",
+    "shap_engine": "LightGBM pred_contrib=True on frozen boosters",
+    "class_aggregation": "mean absolute SHAP over records and all three output classes",
+    "ranking_unit": "15 frozen input features",
+    "stability_metric": "Spearman rank correlation",
+    "bootstrap": "independent class-stratified record resampling of precomputed absolute SHAP contributions",
+    "threads": 8,
+    "causal_boundary": "SHAP is descriptive model attribution, not causal evidence"
+  },
+  "cross_dataset_boundary": "Report direction and uncertainty separately for CAS and STATS19. Do not pool records or absolute metrics and do not claim cross-national generalizability."
+}

@@ -1,0 +1,42 @@
+{
+  "version": "CAS_MODELING_V1",
+  "status": "FROZEN_BEFORE_MODELING",
+  "created_local": "2026-09-01T11:01:21+08:00",
+  "source": "data/raw/cas/cas_injury_2022_2025_snapshot.jsonl.gz",
+  "source_sha256": "7db99dd4ba92716d751dabbc08b03f72373c635025b7d5335cf0b6705a7bd7f3",
+  "row_policy": "No rows dropped; frozen snapshot already excludes non-injury crashes.",
+  "categorical_policy": {
+    "actual_null_or_empty": "__SOURCE_MISSING__",
+    "literal_None_and_Null": "preserve as source categories",
+    "whitespace": "reject surrounding whitespace rather than silently normalize",
+    "training_vocabulary": "fit on each training partition only",
+    "unseen_category": "map to __UNSEEN__ at model preprocessing time"
+  },
+  "numeric_policy": {
+    "storage": "numeric value or NaN; no imputation in the modeling table",
+    "LightGBM": "native missing-value handling",
+    "linear_and_ordered_models": "training-only observed-value imputation plus an explicit missing indicator; no ordinary mean imputation for structurally sparse fields",
+    "structurally_sparse_features": [
+      "feature_advisory_speed",
+      "feature_temporary_speed_limit"
+    ]
+  },
+  "target_policy": {
+    "order": [
+      "Minor",
+      "Serious",
+      "Fatal"
+    ],
+    "codes": {
+      "0": "Minor",
+      "1": "Serious",
+      "2": "Fatal"
+    },
+    "source_mapping": {
+      "Fatal Crash": "Fatal",
+      "Minor Crash": "Minor",
+      "Serious Crash": "Serious"
+    }
+  },
+  "test_boundary": "2025 schema, target counts and feature coverage were feasibility-audited, but no preprocessing fit or model performance is permitted before model/protocol freeze."
+}

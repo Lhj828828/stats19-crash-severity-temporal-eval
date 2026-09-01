@@ -1,0 +1,41 @@
+{
+  "version": "D5_V1",
+  "status": "FROZEN_BEFORE_MODELING",
+  "input_file": "data/interim/d4_modeling_table.csv.gz",
+  "input_sha256": "2277e47fd899c15116bfa2e62eca9f9c7ea9d45d08d1b5cda2027724c843021e",
+  "prediction_scope": "collision table only; conditional severity prediction",
+  "hard_fail_rules": {
+    "schema": "exact D4 schema and column order required",
+    "row_count": "must match the frozen D4 row count",
+    "collision_index": "must be nonmissing and globally unique",
+    "target": "must be nonmissing and restricted to 0, 1, 2",
+    "date_year": "meta_date must parse and match meta_collision_year",
+    "categorical_features": "must be nonmissing because official unknown/not-applicable values are explicit labels",
+    "speed_limit": "nonmissing values must be one of 20, 30, 40, 50, 60, 70"
+  },
+  "row_retention": {
+    "duplicates": "do not auto-delete; fail and investigate if collision identifiers repeat",
+    "unknown_categories": "retain all records and explicit official categories",
+    "speed_limit_missing": "retain as NaN",
+    "rare_categories": "retain at D5; do not pool using the full dataset"
+  },
+  "split_aware_category_policy": {
+    "fit_scope": "fit category vocabulary on each training partition only",
+    "unseen_validation_or_test": "map to __UNSEEN__",
+    "rare_audit_threshold": 100,
+    "rare_regular_categories": "if pooling is used, map training categories below the threshold to __RARE__ using training counts only",
+    "official_unknown_or_not_applicable": "retain the original semantic label in frozen data and exempt it from generic rare pooling when observed in training; if absent from training, the model encoder maps it to __UNSEEN__ while the audit preserves the original label",
+    "latest_year_check": "2018-2023 versus 2024 is diagnostic only; D6 freezes the final temporal split"
+  },
+  "missing_value_policy": {
+    "LightGBM": "native missing-value handling for speed_limit",
+    "multinomial_logistic": "fit numeric imputation within each training fold only",
+    "ordered_logit": "fit numeric imputation within each training fold only"
+  },
+  "class_imbalance_policy": {
+    "D5": "no over-sampling, under-sampling, class weighting or synthetic data",
+    "primary_modeling": "class weights are computed from each training partition only",
+    "SMOTENC": "optional sensitivity analysis only and training-fold only"
+  },
+  "feature_selection": "use only the exact feature_columns allowlist in the frozen schema"
+}

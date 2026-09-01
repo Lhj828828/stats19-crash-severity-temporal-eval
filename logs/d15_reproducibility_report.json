@@ -1,0 +1,78 @@
+{
+  "version": "D15_V1",
+  "status": "D15_REPRODUCIBILITY_AUDIT_PASS",
+  "created_local": "2026-08-31T16:26:25+0800",
+  "project_root_resolution": "code/d15_reproducibility.py parent directory",
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\Administrator\\Desktop\\STATS19论文\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "thread_environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4"
+  },
+  "checks": [
+    {
+      "name": "protocol contract",
+      "status": "PASS",
+      "detail": "D6-D14 statuses, selection lock, reporting boundaries and D15 handoff are consistent",
+      "seconds": 0.002
+    },
+    {
+      "name": "data and split contract",
+      "status": "PASS",
+      "detail": "743646 rows, 17 features, 5 metadata columns and all six frozen role columns match the contract",
+      "seconds": 4.209
+    },
+    {
+      "name": "primary prediction contract",
+      "status": "PASS",
+      "detail": "Primary 2024 prediction tables and recomputed metrics agree; logistic_weighted: macro_f1=0.348337, fatal_recall=0.217710; lightgbm_weighted: macro_f1=0.362233, fatal_recall=0.117177",
+      "seconds": 0.877
+    },
+    {
+      "name": "frozen model smoke test",
+      "status": "PASS",
+      "detail": "Frozen temporal C03-1200 LightGBM loaded and predicted 64 records with a valid 3-class probability matrix",
+      "seconds": 0.671
+    },
+    {
+      "name": "dependency contract",
+      "status": "PASS",
+      "detail": "Python 3.13.15; 14 locked package versions match",
+      "seconds": 0.117
+    },
+    {
+      "name": "path portability contract",
+      "status": "PASS",
+      "detail": "D15 runtime files resolve paths from the project root; historical absolute provenance records remain archival only",
+      "seconds": 0.003
+    },
+    {
+      "name": "artifact hash manifest",
+      "status": "PASS",
+      "detail": "411 files and 2152733124 bytes checked",
+      "seconds": 5.48
+    }
+  ],
+  "independent_tests": [],
+  "manifest": {
+    "files": 411,
+    "bytes": 2152733124,
+    "seconds": 5.48,
+    "manifest_sha256": "0bae0c55eca3c4917dbe8bc3aa40696defedbd108a80d2326c63c8190ccf1424",
+    "mismatches": 0
+  },
+  "elapsed_seconds": 13.931,
+  "write_scope": [
+    "logs/d15_reproducibility_report.json",
+    "logs/d15_artifact_manifest.csv",
+    "logs/d15_checkpoint.md",
+    "logs/environment_info.txt when --run-tests is used"
+  ],
+  "interpretation": {
+    "data_and_models": "Frozen artifacts were verified; no new model fit was performed.",
+    "regional_holdout": "Not executed; spatial generalization remains unverified."
+  }
+}

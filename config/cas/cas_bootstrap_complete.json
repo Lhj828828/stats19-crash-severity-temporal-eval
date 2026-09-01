@@ -1,0 +1,14 @@
+{
+  "version": "CAS_BOOTSTRAP_V1",
+  "status": "H1_H2_BOOTSTRAP_COMPLETE",
+  "created_local": "2026-09-01T14:43:48+08:00",
+  "protocol": "config/cas/cas_post_analysis_protocol.json",
+  "protocol_sha256": "28f992843313d305d24e35c7f10f5096c45bf39f582e5e2bfc7e4297fd6fdc7e",
+  "h1_rows": 135,
+  "h1_summary_rows": 27,
+  "h2_rows": 99,
+  "h2_summary_rows": 27,
+  "artifact_manifest": "logs/cas/cas_bootstrap_artifact_manifest.csv",
+  "artifact_manifest_sha256": "81c5d9a177d068b54772c8aadaddb01c34852bce1d76ea883d1fe73134b891b9",
+  "post_test_model_selection": false
+}

@@ -1,0 +1,160 @@
+{
+  "version": "CAS_BASELINE_V1",
+  "status": "FROZEN_BEFORE_CAS_VALIDATION_PERFORMANCE_INSPECTION",
+  "created_local": "2026-09-01T11:39:00+08:00",
+  "upstream": {
+    "modeling_schema": "config/cas/cas_modeling_schema.json",
+    "modeling_schema_sha256": "44ca815864e8919a46feb993e931da4e9435467db5722382c831228d2e220bba",
+    "analysis_protocol": "config/cas/cas_analysis_protocol.json",
+    "analysis_protocol_sha256": "8c864a216aa9f1a27d970de17d005bdcfa0aa56512b95f12dff7eddbd5aeb134",
+    "training_inputs": "config/cas/cas_training_inputs.json",
+    "training_inputs_sha256": "d951705e72f3c01fd131bfa63d5a74ffcfb47765ef1999b8083effb3efaf1924",
+    "split_assignments": "data/processed/cas_split_assignments.csv.gz",
+    "split_assignments_sha256": "69309305340f25c6bfb6fee7474b47bf015eba28d3c3627f081becc3d0ebdf32"
+  },
+  "evaluation_scope": {
+    "allowed": "training and validation roles only",
+    "forbidden": "2025, random internal tests, and locked_temporal_test model-performance inspection",
+    "temporal_training_years": [
+      2022,
+      2023
+    ],
+    "temporal_validation_years": [
+      2024
+    ],
+    "random_seeds": [
+      1103,
+      2207,
+      3301,
+      4409,
+      5501
+    ]
+  },
+  "features": {
+    "allowlist": [
+      "feature_number_of_lanes",
+      "feature_state_highway",
+      "feature_terrain",
+      "feature_light",
+      "feature_road_character",
+      "feature_road_lane",
+      "feature_road_surface",
+      "feature_street_light",
+      "feature_traffic_control",
+      "feature_urban",
+      "feature_weather_primary",
+      "feature_weather_secondary",
+      "feature_advisory_speed",
+      "feature_speed_limit",
+      "feature_temporary_speed_limit"
+    ],
+    "categorical": [
+      "feature_number_of_lanes",
+      "feature_state_highway",
+      "feature_terrain",
+      "feature_light",
+      "feature_road_character",
+      "feature_road_lane",
+      "feature_road_surface",
+      "feature_street_light",
+      "feature_traffic_control",
+      "feature_urban",
+      "feature_weather_primary",
+      "feature_weather_secondary"
+    ],
+    "numeric": [
+      "feature_advisory_speed",
+      "feature_speed_limit",
+      "feature_temporary_speed_limit"
+    ],
+    "metadata_excluded": [
+      "meta_crash_id",
+      "meta_crash_year",
+      "meta_region"
+    ],
+    "target_excluded": "target_severity"
+  },
+  "preprocessing": {
+    "fit_scope": "separately within each training partition",
+    "categorical": "training-only vocabulary, explicit __UNSEEN__, one-hot encoding without dropping a level",
+    "numeric": "training-only median imputation plus missingness indicators, then training-fitted standardization",
+    "structural_missingness": "sparse speed fields retain explicit missingness indicators",
+    "rare_pooling": "disabled"
+  },
+  "models": {
+    "dummy_most_frequent": {
+      "strategy": "most_frequent",
+      "class_weight": null
+    },
+    "logistic_weighted": {
+      "solver": "lbfgs",
+      "penalty": "l2",
+      "C": 1.0,
+      "max_iter": 1000,
+      "tol": 0.0001,
+      "class_weight": "split-specific frozen balanced weights"
+    }
+  },
+  "execution": {
+    "threads": 8,
+    "scientific_interpretation": "thread count is a compute setting, not a selected model hyperparameter",
+    "random_state": 20260901
+  },
+  "prediction_rule": "argmax over class probabilities; no threshold tuning",
+  "validation_reporting": [
+    "Macro-F1",
+    "quadratic weighted kappa",
+    "ordinal MAE",
+    "accuracy",
+    "class-specific recall",
+    "serious-or-fatal recall",
+    "pre-specified asymmetric error cost"
+  ],
+  "asymmetric_cost_matrix": {
+    "class_order": [
+      "Minor",
+      "Serious",
+      "Fatal"
+    ],
+    "rows_true_columns_predicted": [
+      [
+        0.0,
+        1.0,
+        2.0
+      ],
+      [
+        2.0,
+        0.0,
+        1.0
+      ],
+      [
+        5.0,
+        3.0,
+        0.0
+      ]
+    ],
+    "purpose": "descriptive only; never a tuning target"
+  },
+  "class_weight_rule": {
+    "name": "balanced",
+    "formula": "n_training / (n_classes * n_training_in_class)",
+    "n_classes": 3,
+    "source_rows": "training role only, calculated separately per split",
+    "target_labels": {
+      "0": "Minor",
+      "1": "Serious",
+      "2": "Fatal"
+    }
+  },
+  "test_boundary": {
+    "year": 2025,
+    "prior_access": "Schema, target counts, missingness/category coverage and drift were inspected during feasibility auditing.",
+    "prohibited_before_model_freeze": [
+      "preprocessing fit",
+      "hyperparameter tuning",
+      "threshold choice",
+      "model selection",
+      "model performance inspection"
+    ]
+  }
+}

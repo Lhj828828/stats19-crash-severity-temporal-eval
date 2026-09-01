@@ -1,0 +1,168 @@
+{
+  "version": "D6_V2",
+  "status": "FROZEN_BEFORE_MODEL_TRAINING",
+  "freeze_date_local": "2026-08-28",
+  "decision_basis": "Protocol frozen before any model fitting or performance inspection. Only target counts were inspected for descriptive reporting and the pre-specified fatal-class feasibility check.",
+  "parent_artifacts": {
+    "D5_dataset": "data/processed/stats19_modeling_dataset.csv.gz",
+    "D5_dataset_sha256": "2277e47fd899c15116bfa2e62eca9f9c7ea9d45d08d1b5cda2027724c843021e",
+    "D5_schema": "config/d5_dataset_schema.json",
+    "D5_schema_sha256": "cea222466650a095170a66a3d094eba76b3cdf71c22bc6bcb61054152969030b",
+    "D5_cleaning_rules": "config/d5_cleaning_rules.json",
+    "D5_cleaning_rules_sha256": "a6305a6e9a79ac5f01a900ce6e901bbd834e7cd434af7579d198fe286cc2dac0"
+  },
+  "frozen_population": {
+    "years": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "row_count": 743646,
+    "statistical_unit": "police-reported personal-injury collision",
+    "prediction_scope": "collision table only; conditional severity prediction"
+  },
+  "frozen_schema": {
+    "target": "target_severity",
+    "target_order": [
+      "Slight",
+      "Serious",
+      "Fatal"
+    ],
+    "feature_count": 17,
+    "feature_columns": [
+      "feature_day_of_week",
+      "feature_first_road_class",
+      "feature_road_type",
+      "feature_junction_detail",
+      "feature_junction_control",
+      "feature_second_road_class",
+      "feature_pedestrian_crossing",
+      "feature_light_conditions",
+      "feature_weather_conditions",
+      "feature_road_surface_conditions",
+      "feature_special_conditions_at_site",
+      "feature_carriageway_hazards",
+      "feature_urban_or_rural_area",
+      "feature_trunk_road_flag",
+      "feature_speed_limit",
+      "feature_month",
+      "feature_hour"
+    ],
+    "metadata_columns": [
+      "meta_collision_index",
+      "meta_collision_year",
+      "meta_date",
+      "meta_police_force",
+      "meta_injury_based"
+    ],
+    "feature_selection_rule": "Model code must select exactly feature_columns from this schema; metadata and target columns are never selected by exclusion logic."
+  },
+  "frozen_cleaning": {
+    "row_deletions_at_D5": 0,
+    "speed_limit_missing": "retain NaN",
+    "categorical_unknowns": "retain explicit official categories",
+    "unseen_categories": "map to __UNSEEN__ using training vocabulary only",
+    "rare_category_pooling": "off by default; if used, thresholds are learned on training data only"
+  },
+  "temporal_protocol": {
+    "purpose": "primary deployment-oriented evaluation",
+    "train_years": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "validation_years": [
+      2023
+    ],
+    "test_years": [
+      2024
+    ],
+    "row_counts": {
+      "train": 538461,
+      "validation": 104258,
+      "test": 100927
+    },
+    "model_selection": "training and validation only",
+    "final_test_rule": "2024 remains untouched by preprocessing fit, hyperparameter tuning, threshold choice and model selection; evaluate once after freezing."
+  },
+  "random_reference_protocol": {
+    "purpose": "optimistic same-distribution reference, not a deployment estimate",
+    "pool_years": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "pool_row_count": 642719,
+    "ratios": {
+      "train": 0.7,
+      "validation": 0.15,
+      "test": 0.15
+    },
+    "row_counts_per_seed": {
+      "train": 449903,
+      "validation": 96408,
+      "test": 96408
+    },
+    "stratify_by": "target_severity",
+    "seeds": [
+      1103,
+      2207,
+      3301,
+      4409,
+      5501
+    ],
+    "second_stage_seed_rule": "seed + 1000003",
+    "random_test_rule": "Random test partitions are not used for preprocessing, tuning or model selection. Report mean and standard deviation across five seeds.",
+    "secondary_2024_diagnostic": "Pre-registered optional diagnostic: apply each already-fitted random split model to 2024 without retuning; report separately from the strict temporal protocol."
+  },
+  "class_feasibility_preflight": {
+    "year": 2024,
+    "fatal_count": 1502,
+    "fatal_pct": 0.014882043457152199,
+    "screening_threshold": 50,
+    "decision": "proceed",
+    "interpretation": "The threshold checks only that the class is not extremely sparse; it does not guarantee narrow confidence intervals. Fatal recall and all primary test metrics still require bootstrap confidence intervals."
+  },
+  "training_only_operations": [
+    "category vocabulary fitting",
+    "unseen and optional rare-category mapping",
+    "numeric imputation for non-LightGBM models",
+    "class-weight calculation",
+    "optional resampling sensitivity analysis",
+    "hyperparameter tuning"
+  ],
+  "frozen_metrics": {
+    "model_selection": "Macro-F1 on validation data",
+    "required_test_reporting": [
+      "Macro-F1",
+      "quadratic weighted kappa",
+      "fatal recall",
+      "serious-or-fatal recall",
+      "pre-specified asymmetric error cost"
+    ],
+    "uncertainty": "paired, class-stratified nonparametric bootstrap over collision records within each test set; 2,000 iterations with random seed 20260828",
+    "bootstrap_iterations": 2000,
+    "bootstrap_seed": 20260828
+  },
+  "split_assignment_artifact": {
+    "file": "data/processed/d6_split_assignments.csv.gz",
+    "sha256": "5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076",
+    "role_columns": [
+      "temporal_role",
+      "random_role_seed_1103",
+      "random_role_seed_2207",
+      "random_role_seed_3301",
+      "random_role_seed_4409",
+      "random_role_seed_5501"
+    ]
+  }
+}
