@@ -49,6 +49,11 @@ third-party reconstruction package because the fixed raw snapshots are not in
 that software archive and the retained D16 comparator expects excluded local
 artifacts.
 
+The development branch now contains an isolated public STATS19 runner. It has
+passed a fresh annual-input-to-D7 execution without author artifacts. This is
+an implementation milestone, not yet evidence that the entire public workflow
+is complete.
+
 The planned `v1.1.0` release may be described as a third-party reproduction
 workflow only after all of the following pass from a clean downloaded release:
 

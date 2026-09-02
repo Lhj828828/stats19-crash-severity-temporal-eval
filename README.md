@@ -51,12 +51,12 @@ not as universal validation.
 
 ## Data and provenance
 
-Raw data are intentionally excluded from Git by default. The STATS19 complete
-source file is about 1.46 GB, and CAS is a live service whose records may
-change after publication. Exact source URLs, retrieval dates, licenses or
-source terms, file names and SHA-256 checksums are recorded in
-`DATA_SOURCES.md`, `logs/d1_file_manifest.csv` and
-`logs/cas/cas_source_manifest.csv`.
+Raw data are intentionally excluded from Git. The planned separate data
+archive contains seven annual STATS19 analysis files plus the fixed CAS JSONL
+and inspection CSV, approximately 146 MB in total. It does not need the 1.53 GB
+all-years STATS19 source. Exact provenance, paths, byte sizes and SHA-256
+checksums are recorded in `DATA_SOURCES.md` and
+`config/public_data_manifest.json`.
 
 Download the required inputs into the paths documented in `DATA_SOURCES.md`
 before running a fresh pipeline. Do not commit access tokens, raw data copied
@@ -78,18 +78,27 @@ as silent replacements for the paper snapshots.
 The validated environment used Python 3.13.15. Direct and serialized-model
 dependencies are pinned in `requirements-lock.txt`.
 
-Install the environment from the project root:
+The public STATS19 entry point creates an isolated sibling workspace and, by
+default, a clean environment:
 
 ```text
-python -m venv .venv
-python -m pip install -r requirements-lock.txt
+python run_public_reproduction.py --self-test
+python run_public_reproduction.py --all
 ```
 
-The repository distinguishes the public reconstruction workflow from the
-retained author-side forensic comparison. Their exact boundaries are recorded
-in `docs/REPRODUCIBILITY_BOUNDARY.md`.
+Resume an interrupted run with:
 
-The retained author-side D16 entry point is:
+```text
+python run_public_reproduction.py --all --resume
+```
+
+The public runner starts from the seven verified annual files, recreates the
+D1-compatible input audit, and does not copy existing models, predictions,
+intermediate data or D16 artifacts. The development version has been exercised
+through D7; a clean D8-D14 run and immutable data URLs remain `v1.1.0` release
+gates. Detailed commands and current limitations are in `REPRODUCING.md`.
+
+The retained author-side forensic entry point is:
 
 ```text
 python run_d16_reproduction.py --all
@@ -101,19 +110,9 @@ On Windows, the convenience wrapper is:
 .\run_d16_reproduction.ps1
 ```
 
-The D16 runner uses a separate sibling workspace and a four-thread cap. It
-does not overwrite the frozen source project. It requires the exact frozen raw
-source and large comparison artifacts that are intentionally excluded from the
-public software archive. Therefore, in `v1.0.2`, this is evidence of the
-author's isolated verification rather than a public one-command entry point.
-After an author-side interruption, use
-`python run_d16_reproduction.py --all --resume`.
-
-A separate third-party entry point will be released only after it passes from a
-clean downloaded package using permanently identifiable input snapshots. Until
-then, the public archive supports code and protocol inspection, compact-result
-verification and reconstruction attempts with the documented source data, but
-not a claim of permanent exact numerical reproduction.
+It requires the 1.53 GB frozen source and large author artifacts that are not
+part of the public archives. Therefore it documents the original forensic
+comparison but is not a command for third-party use.
 
 For the retained STATS19 audit and independent checks:
 
@@ -159,6 +158,8 @@ rerun rather than changing a test result in place.
 - `results/`: compact summary tables; record-level outputs are excluded by
   default.
 - `DATA_SOURCES.md`: source attribution, snapshot hashes and data layout.
+- `REPRODUCING.md`: public reconstruction commands, resume behavior and
+  verification limits.
 - `RELEASE_NOTES_v1.0.0.md`: the first public version boundary.
 - `RELEASE_NOTES_v1.0.1.md`: metadata-only Zenodo archival follow-up to the
   frozen `v1.0.0` materials.

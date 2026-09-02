@@ -8,9 +8,10 @@ exact files used in the completed analyses.
 
 The machine-readable public input contract is
 `config/public_data_manifest.json`. It identifies seven annual STATS19 files
-and two CAS snapshot files by path, byte size and SHA-256. Together these are
-the intended compact data archive; the 1.53 GB full-history STATS19 source file
-is retained as provenance and is not required by the planned public workflow.
+and two CAS snapshot files by path, row count where applicable, byte size and
+SHA-256. Together these are the intended compact data archive; the 1.53 GB
+full-history STATS19 source file is retained only as provenance and is not
+required by the public workflow.
 
 Until an immutable data record has passed the final redistribution review and
 has been published, its download URLs remain deliberately unset. The following
@@ -40,13 +41,15 @@ for the snapshots used in the paper.
 - Analysis years: 2018-2024. The source file contains additional years.
 
 The annual files in `data/raw/collisions/` were copied byte-for-byte from the
-complete source file. Their individual checksums and row counts are recorded
-in `logs/d1_file_manifest.csv`. The DfT/GOV.UK source terms in force at the
-time of reuse apply; check the current landing page before redistributing a
-fresh copy.
+complete source file. Their individual checksums, sizes and row counts are
+frozen in `config/public_data_manifest.json`; the original extraction record
+is retained in `logs/d1_file_manifest.csv`. The DfT/GOV.UK source terms in
+force at the time of reuse apply. Redistribution remains pending final review,
+so immutable archive URLs are not yet published.
 
-Required documentation snapshots are listed in the same manifest and are
-downloaded by `code/d1_acquire_and_audit.py` when absent.
+Required DfT documentation snapshots are included in the software repository
+under `data/external/documentation/`. The public workflow does not run the
+original all-years extraction script.
 
 ## New Zealand CAS (independent replication)
 
@@ -75,13 +78,19 @@ pooled.
 
 ## Recreating the local data layout
 
-1. Download the STATS19 complete collision file to
-   `data/raw/downloads/` using the exact filename above.
-2. Run `python code/d1_acquire_and_audit.py` to extract the annual files and
-   refresh the D1 provenance log.
-3. Download the CAS snapshot from the documented endpoint, or use the
-   archived snapshot supplied with a future DOI release, and place it at the
-   exact path above.
-4. Verify SHA-256 values against the manifests before running later stages.
+1. Obtain the fixed data archive after its DOI and immutable file URLs are
+   published. Do not substitute a current live response.
+2. Run `python download_and_verify_data.py download --dataset stats19` and
+   `python download_and_verify_data.py verify --dataset stats19`.
+3. Run `python run_public_reproduction.py --all`; the runner builds an isolated
+   workspace and recreates the D1 audit directly from the seven verified
+   annual files.
+4. Obtain and verify the CAS snapshot separately. CAS must use its own public
+   entry once that entry passes the clean-release gate.
+
+Before publication of the immutable data record, a researcher who already has
+the exact files may place them at the manifest paths and run `verify`. The
+mutable DfT complete-file URL and live CAS API remain provenance links, not
+exact-snapshot fallbacks.
 
 Do not combine the two datasets or treat their class labels as exchangeable.
