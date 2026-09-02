@@ -1,0 +1,30 @@
+# Keep reproducibility inputs byte-stable across operating systems.
+* text=auto
+
+*.py text eol=lf
+*.ps1 text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.cff text eol=lf
+*.csv text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.ini text eol=lf
+*.cfg text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.doc binary
+*.docx binary
+*.xls binary
+*.xlsx binary
+*.gz binary
+*.npz binary
+*.npy binary
+*.joblib binary
+*.zip binary
+*.7z binary

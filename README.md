@@ -74,7 +74,11 @@ python -m venv .venv
 python -m pip install -r requirements-lock.txt
 ```
 
-The D16 cross-platform entry point is:
+The repository distinguishes the public reconstruction workflow from the
+retained author-side forensic comparison. Their exact boundaries are recorded
+in `docs/REPRODUCIBILITY_BOUNDARY.md`.
+
+The retained author-side D16 entry point is:
 
 ```text
 python run_d16_reproduction.py --all
@@ -87,8 +91,18 @@ On Windows, the convenience wrapper is:
 ```
 
 The D16 runner uses a separate sibling workspace and a four-thread cap. It
-does not overwrite the frozen source project. After an interruption, use
+does not overwrite the frozen source project. It requires the exact frozen raw
+source and large comparison artifacts that are intentionally excluded from the
+public software archive. Therefore, in `v1.0.2`, this is evidence of the
+author's isolated verification rather than a public one-command entry point.
+After an author-side interruption, use
 `python run_d16_reproduction.py --all --resume`.
+
+A separate third-party entry point will be released only after it passes from a
+clean downloaded package using permanently identifiable input snapshots. Until
+then, the public archive supports code and protocol inspection, compact-result
+verification and reconstruction attempts with the documented source data, but
+not a claim of permanent exact numerical reproduction.
 
 For the retained STATS19 audit and independent checks:
 
