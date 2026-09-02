@@ -43,6 +43,25 @@ identifiable and obtainable under their applicable source terms.
 The public workflow must not require author-local paths, untracked reference
 files or byte hashes that change solely because of Git line-ending conversion.
 
+## Author-local path normalization
+
+Tracked text uses repository-relative paths or explicit placeholders such as
+`PUBLIC_SOFTWARE_PROJECT` and
+`AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED`. These placeholders record
+that an author-side location existed without exposing a workstation username,
+drive layout or desktop folder.
+
+SHA-256 values retained inside historical D14-D16 execution reports describe
+the author-side artifacts used when those reports were created, before public
+path normalization. They are provenance records, not claims that the current
+path-normalized text files have the same byte hashes. Fresh public runs bind
+newly generated protocols and manifests to their current hashes. The CAS
+cross-dataset protocol instead uses the portable STATS19 copies under
+`references/stats19_upstream/` and verifies those copies directly.
+
+Path normalization changes location strings and therefore file bytes, but it
+does not change samples, predictions, metrics, uncertainty estimates, model
+parameters or scientific conclusions.
 ## Version claims
 
 The `v1.0.2` archive records the frozen code, protocols and compact results and

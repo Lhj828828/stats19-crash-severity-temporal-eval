@@ -13,7 +13,7 @@ from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor, Twips
 
 
-PROJECT = Path(r"C:\Users\Administrator\Desktop\STATS19论文")
+PROJECT = Path(__file__).resolve().parents[1]
 OUTPUT = PROJECT / "manuscript" / "D14问题确认与补充说明.docx"
 
 
@@ -590,7 +590,7 @@ def build_document():
         add_text(p, item)
 
     add_heading(doc, "七、核查依据", 1)
-    add_body(doc, "本说明基于项目中以下冻结协议、结果文件和自检记录整理。路径以项目根目录 C:\\Users\\Administrator\\Desktop\\STATS19论文 为基准。")
+    add_body(doc, "本说明基于项目中以下冻结协议、结果文件和自检记录整理。路径均以仓库根目录为基准。")
     sources = [
         "config/d14_shap_protocol.json；results/d14/d14_explanation_samples.csv.gz；results/d14/d14_shap_importance.csv；results/d14/d14_rank_stability.csv",
         "results/d14/d14_rank_stability_summary.csv；results/d14/d14_error_structure.csv；results/d14/d14_paired_error_outcomes.csv",

@@ -3,7 +3,7 @@
   "status": "CAS_REPLICATION_ANALYSIS_COMPLETE",
   "created_local": "2026-09-01T15:57:13+08:00",
   "protocol": "config/cas/cas_cross_dataset_reporting_protocol.json",
-  "protocol_sha256": "8022dd11b8a7251ec842b889ad5cd8a3c047eb28a97a6a50d8f727bed86ad879",
+  "protocol_sha256": "bd0f94bab7463b6ebc4e40bbd22f36986eddfa6d8581301960b01a15ed39b72d",
   "comparison_rows": 8,
   "replication_label_counts": {
     "broad_pattern_agreement": 1,
@@ -20,15 +20,15 @@
   "records_pooled": false,
   "cross_national_generalizability_claim_allowed": false,
   "artifact_manifest": "logs/cas/cas_replication_artifact_manifest.csv",
-  "artifact_manifest_sha256": "eb7770c43e4955d87b76900f841418861e1600193a921a6badf857f977d1812e",
+  "artifact_manifest_sha256": "17235a02005ea8f18e97b0806a8206a59d177ac805a4548b2ddb2bf05001363d",
   "external_upstream": {
     "final_summary": {
-      "path": "../STATS19论文/logs/d14_final_summary.json",
+      "path": "references/stats19_upstream/d14_final_summary.json",
       "sha256": "20b7d749d826e95c3d5e76fc35207854954f79c4c318fdf8b4bcae596d873433"
     },
     "final_comparison_protocol": {
-      "path": "../STATS19论文/config/d16_final_comparison_protocol.json",
-      "sha256": "ccae94276f7e45e4eb4ca746d0c52ed562ef5dda197a2d1f87eb74df916c0f09"
+      "path": "references/stats19_upstream/d16_final_comparison_protocol.json",
+      "sha256": "da4a5ed5c33ac7abeb9e6ac5eebeea8e361e123bfaeec22aaaa86cc353a47d67"
     }
   }
 }

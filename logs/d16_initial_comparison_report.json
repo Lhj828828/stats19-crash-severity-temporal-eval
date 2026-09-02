@@ -2,23 +2,23 @@
   "version": "D16_V2",
   "status": "D16_FULL_REPRODUCTION_FAIL",
   "completed_local": "2026-08-31T22:41:46+0800",
-  "source_project": "C:\\Users\\Administrator\\Desktop\\STATS19论文",
-  "workspace": "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction",
+  "source_project": "PUBLIC_SOFTWARE_PROJECT",
+  "workspace": "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED",
   "protocol_sha256": "6c54871b70d967bbf0cfd9fcadeaa2b472a823d85aa7f239e17b77fb4ac5073d",
-  "clean_environment_python": "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
+  "clean_environment_python": "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
   "thread_cap": 4,
   "platform": "Windows-11-10.0.26200-SP0",
   "pipeline_state": {
     "version": "D16_V2",
     "status": "COMPLETE",
-    "workspace": "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction",
+    "workspace": "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED",
     "stages": [
       {
         "name": "D1_acquire_and_audit",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d1_acquire_and_audit.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d1_acquire_and_audit.py"
         ],
         "seconds": 10.599,
         "log": "logs/d16_stage_logs/01_D1_acquire_and_audit.log"
@@ -27,8 +27,8 @@
         "name": "D2_schema_and_codes",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d2_audit_schema_and_codes.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d2_audit_schema_and_codes.py"
         ],
         "seconds": 8.064,
         "log": "logs/d16_stage_logs/02_D2_schema_and_codes.log"
@@ -37,8 +37,8 @@
         "name": "D3_leakage_audit",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d3_build_leakage_audit.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d3_build_leakage_audit.py"
         ],
         "seconds": 0.105,
         "log": "logs/d16_stage_logs/03_D3_leakage_audit.log"
@@ -47,8 +47,8 @@
         "name": "D4_feature_table",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d4_build_features.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d4_build_features.py"
         ],
         "seconds": 15.725,
         "log": "logs/d16_stage_logs/04_D4_feature_table.log"
@@ -57,8 +57,8 @@
         "name": "D5_quality_control",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d5_quality_control.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d5_quality_control.py"
         ],
         "seconds": 6.182,
         "log": "logs/d16_stage_logs/05_D5_quality_control.log"
@@ -67,8 +67,8 @@
         "name": "D6_protocol_and_splits",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d6_freeze_protocol_and_plot.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d6_freeze_protocol_and_plot.py"
         ],
         "seconds": 10.521,
         "log": "logs/d16_stage_logs/06_D6_protocol_and_splits.log"
@@ -77,8 +77,8 @@
         "name": "D7_training_inputs",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d7_finalize_training_inputs.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d7_finalize_training_inputs.py"
         ],
         "seconds": 3.679,
         "log": "logs/d16_stage_logs/07_D7_training_inputs.log"
@@ -87,8 +87,8 @@
         "name": "D8_full_baselines",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d8_train_baselines.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d8_train_baselines.py",
           "--full"
         ],
         "seconds": 135.427,
@@ -98,8 +98,8 @@
         "name": "D9_ordered_logit_subset",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d9_train_ordered_logit.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d9_train_ordered_logit.py",
           "--run",
           "--mode",
           "subset"
@@ -111,8 +111,8 @@
         "name": "D9S1_prepare_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d16_reproduce.py",
           "--internal-protocol",
           "d9s1"
         ],
@@ -123,8 +123,8 @@
         "name": "D9S1_freeze_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d9s1_matched_subset_logistic.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d9s1_matched_subset_logistic.py",
           "--freeze"
         ],
         "seconds": 1.609,
@@ -134,8 +134,8 @@
         "name": "D9S1_matched_subset",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d9s1_matched_subset_logistic.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d9s1_matched_subset_logistic.py",
           "--run"
         ],
         "seconds": 24.013,
@@ -145,8 +145,8 @@
         "name": "D10_prepare_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d16_reproduce.py",
           "--internal-protocol",
           "d10"
         ],
@@ -157,8 +157,8 @@
         "name": "D10_tune",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d10_tune_lightgbm.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d10_tune_lightgbm.py",
           "--tune"
         ],
         "seconds": 294.968,
@@ -168,8 +168,8 @@
         "name": "D10_fit_all",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d10_tune_lightgbm.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d10_tune_lightgbm.py",
           "--fit-all"
         ],
         "seconds": 270.597,
@@ -179,8 +179,8 @@
         "name": "D10B_rebase_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d16_reproduce.py",
           "--internal-protocol",
           "d10b"
         ],
@@ -191,8 +191,8 @@
         "name": "D10B_tree_sensitivity",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d16_reproduce.py",
           "--internal-protocol",
           "d10b_execute"
         ],
@@ -203,8 +203,8 @@
         "name": "D11_prepare_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d16_reproduce.py",
           "--internal-protocol",
           "d11"
         ],
@@ -215,8 +215,8 @@
         "name": "D11_freeze_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d11_evaluate_frozen_models.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d11_evaluate_frozen_models.py",
           "--freeze"
         ],
         "seconds": 2.086,
@@ -226,8 +226,8 @@
         "name": "D11_preflight",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d11_evaluate_frozen_models.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d11_evaluate_frozen_models.py",
           "--preflight"
         ],
         "seconds": 10.36,
@@ -237,8 +237,8 @@
         "name": "D11_one_time_evaluation",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d11_evaluate_frozen_models.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d11_evaluate_frozen_models.py",
           "--run"
         ],
         "seconds": 126.95,
@@ -248,8 +248,8 @@
         "name": "D12_prepare_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d16_reproduce.py",
           "--internal-protocol",
           "d12"
         ],
@@ -260,8 +260,8 @@
         "name": "D12_freeze_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d12_bootstrap_uncertainty.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d12_bootstrap_uncertainty.py",
           "--freeze-protocol"
         ],
         "seconds": 1.857,
@@ -271,8 +271,8 @@
         "name": "D12_bootstrap",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d12_bootstrap_uncertainty.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d12_bootstrap_uncertainty.py",
           "--run"
         ],
         "seconds": 14.708,
@@ -282,8 +282,8 @@
         "name": "D13_prepare_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d16_reproduce.py",
           "--internal-protocol",
           "d13"
         ],
@@ -294,8 +294,8 @@
         "name": "D13_freeze_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d13_freeze_results.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d13_freeze_results.py",
           "--freeze-protocol"
         ],
         "seconds": 0.926,
@@ -305,8 +305,8 @@
         "name": "D13_freeze_results",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d13_freeze_results.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d13_freeze_results.py",
           "--run"
         ],
         "seconds": 1.032,
@@ -316,8 +316,8 @@
         "name": "D14_SHAP_prepare_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d16_reproduce.py",
           "--internal-protocol",
           "d14_shap"
         ],
@@ -328,8 +328,8 @@
         "name": "D14_SHAP_freeze_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d14_shap_stability.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d14_shap_stability.py",
           "--freeze"
         ],
         "seconds": 2.513,
@@ -339,8 +339,8 @@
         "name": "D14_SHAP",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d14_shap_stability.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d14_shap_stability.py",
           "--run"
         ],
         "seconds": 1281.615,
@@ -350,8 +350,8 @@
         "name": "D14_exclude_2020_prepare_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d16_reproduce.py",
           "--internal-protocol",
           "d14_exclude2020"
         ],
@@ -362,8 +362,8 @@
         "name": "D14_exclude_2020_freeze_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d16_reproduce.py",
           "--internal-protocol",
           "d14_exclude2020_freeze"
         ],
@@ -374,8 +374,8 @@
         "name": "D14_exclude_2020",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d16_reproduce.py",
           "--internal-protocol",
           "d14_exclude2020_run"
         ],
@@ -386,8 +386,8 @@
         "name": "D14_closeout_prepare_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d16_reproduce.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d16_reproduce.py",
           "--internal-protocol",
           "d14_closeout"
         ],
@@ -398,8 +398,8 @@
         "name": "D14_closeout_freeze_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d14_closeout.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d14_closeout.py",
           "--freeze"
         ],
         "seconds": 1.482,
@@ -409,8 +409,8 @@
         "name": "D14_closeout",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d14_closeout.py",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d14_closeout.py",
           "--run"
         ],
         "seconds": 4.189,
@@ -420,8 +420,8 @@
         "name": "TEST_test_d6_protocol",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d6_protocol.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_d6_protocol.py"
         ],
         "seconds": 2.456,
         "log": "logs/d16_stage_logs/37_TEST_test_d6_protocol.log"
@@ -430,8 +430,8 @@
         "name": "TEST_test_d7_training_inputs",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d7_training_inputs.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_d7_training_inputs.py"
         ],
         "seconds": 2.092,
         "log": "logs/d16_stage_logs/38_TEST_test_d7_training_inputs.log"
@@ -440,8 +440,8 @@
         "name": "TEST_test_d8_baselines",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d8_baselines.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_d8_baselines.py"
         ],
         "seconds": 3.372,
         "log": "logs/d16_stage_logs/39_TEST_test_d8_baselines.log"
@@ -450,8 +450,8 @@
         "name": "TEST_test_d9_ordered_logit",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d9_ordered_logit.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_d9_ordered_logit.py"
         ],
         "seconds": 2.176,
         "log": "logs/d16_stage_logs/40_TEST_test_d9_ordered_logit.log"
@@ -460,8 +460,8 @@
         "name": "TEST_test_d9s1_matched_subset",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d9s1_matched_subset.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_d9s1_matched_subset.py"
         ],
         "seconds": 7.612,
         "log": "logs/d16_stage_logs/41_TEST_test_d9s1_matched_subset.log"
@@ -470,8 +470,8 @@
         "name": "TEST_test_d10_lightgbm",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d10_lightgbm.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_d10_lightgbm.py"
         ],
         "seconds": 4.727,
         "log": "logs/d16_stage_logs/42_TEST_test_d10_lightgbm.log"
@@ -480,8 +480,8 @@
         "name": "TEST_test_d10b_tree_sensitivity",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d10b_tree_sensitivity.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_d10b_tree_sensitivity.py"
         ],
         "seconds": 3.267,
         "log": "logs/d16_stage_logs/43_TEST_test_d10b_tree_sensitivity.log"
@@ -490,8 +490,8 @@
         "name": "TEST_test_d11_evaluation",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d11_evaluation.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_d11_evaluation.py"
         ],
         "seconds": 15.244,
         "log": "logs/d16_stage_logs/44_TEST_test_d11_evaluation.log"
@@ -500,8 +500,8 @@
         "name": "TEST_test_d12_bootstrap",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d12_bootstrap.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_d12_bootstrap.py"
         ],
         "seconds": 2.619,
         "log": "logs/d16_stage_logs/45_TEST_test_d12_bootstrap.log"
@@ -510,8 +510,8 @@
         "name": "TEST_test_d13_checkpoint",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d13_checkpoint.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_d13_checkpoint.py"
         ],
         "seconds": 1.038,
         "log": "logs/d16_stage_logs/46_TEST_test_d13_checkpoint.log"
@@ -520,8 +520,8 @@
         "name": "TEST_test_d14_shap",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d14_shap.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_d14_shap.py"
         ],
         "seconds": 2.811,
         "log": "logs/d16_stage_logs/47_TEST_test_d14_shap.log"
@@ -530,8 +530,8 @@
         "name": "TEST_test_d16_d14_exclude2020",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d16_d14_exclude2020.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_d16_d14_exclude2020.py"
         ],
         "seconds": 2.422,
         "log": "logs/d16_stage_logs/48_TEST_test_d16_d14_exclude2020.log"
@@ -540,8 +540,8 @@
         "name": "TEST_test_d14_closeout",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d14_closeout.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_d14_closeout.py"
         ],
         "seconds": 1.539,
         "log": "logs/d16_stage_logs/49_TEST_test_d14_closeout.log"
@@ -550,8 +550,8 @@
         "name": "TEST_test_environment",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_environment.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_environment.py"
         ],
         "seconds": 2.585,
         "log": "logs/d16_stage_logs/50_TEST_test_environment.log"
@@ -560,8 +560,8 @@
         "name": "D15_post_reproduction_audit",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\d15_reproducibility.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\d15_reproducibility.py"
         ],
         "seconds": 8.02,
         "log": "logs/d16_stage_logs/35_D15_audit.log"
@@ -570,8 +570,8 @@
         "name": "TEST_test_d15_reproducibility",
         "status": "PASS",
         "command": [
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\.venv\\Scripts\\python.exe",
-          "C:\\Users\\Administrator\\Desktop\\STATS19论文_D16_reproduction\\code\\test_d15_reproducibility.py"
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\.venv\\Scripts\\python.exe",
+          "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\code\\test_d15_reproducibility.py"
         ],
         "seconds": 4.398,
         "log": "logs/d16_stage_logs/36_TEST_D15.log"
@@ -595,7 +595,7 @@
       "previous_failure": {
         "stage": "D9S1_matched_subset",
         "type": "CalledProcessError",
-        "message": "Command '['C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\.venv\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\code\\\\d9s1_matched_subset_logistic.py', '--run']' returned non-zero exit status 1."
+        "message": "Command '['AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\\\.venv\\\\Scripts\\\\python.exe', 'AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\\\code\\\\d9s1_matched_subset_logistic.py', '--run']' returned non-zero exit status 1."
       },
       "reason": "D9 Ordered Logit showed a documented secondary numerical deviation; V2 continues the strict primary-model reproduction."
     },
@@ -605,7 +605,7 @@
         "previous_failure": {
           "stage": "D10_tune",
           "type": "CalledProcessError",
-          "message": "Command '['C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\.venv\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\code\\\\d10_tune_lightgbm.py', '--tune']' returned non-zero exit status 1."
+          "message": "Command '['AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\\\.venv\\\\Scripts\\\\python.exe', 'AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\\\code\\\\d10_tune_lightgbm.py', '--tune']' returned non-zero exit status 1."
         }
       },
       {
@@ -613,7 +613,7 @@
         "previous_failure": {
           "stage": "D10B_tree_sensitivity",
           "type": "CalledProcessError",
-          "message": "Command '['C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\.venv\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\code\\\\d10b_tree_sensitivity.py']' returned non-zero exit status 1."
+          "message": "Command '['AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\\\.venv\\\\Scripts\\\\python.exe', 'AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\\\code\\\\d10b_tree_sensitivity.py']' returned non-zero exit status 1."
         }
       },
       {
@@ -621,7 +621,7 @@
         "previous_failure": {
           "stage": "D14_exclude_2020_freeze_protocol",
           "type": "CalledProcessError",
-          "message": "Command '['C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\.venv\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\code\\\\d14_exclude2020_sensitivity.py', '--freeze']' returned non-zero exit status 1."
+          "message": "Command '['AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\\\.venv\\\\Scripts\\\\python.exe', 'AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\\\code\\\\d14_exclude2020_sensitivity.py', '--freeze']' returned non-zero exit status 1."
         }
       },
       {
@@ -629,7 +629,7 @@
         "previous_failure": {
           "stage": "D14_exclude_2020_freeze_protocol",
           "type": "CalledProcessError",
-          "message": "Command '['C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\.venv\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\Administrator\\\\Desktop\\\\STATS19论文_D16_reproduction\\\\code\\\\d16_reproduce.py', '--internal-protocol', 'd14_exclude2020_freeze']' returned non-zero exit status 1."
+          "message": "Command '['AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\\\.venv\\\\Scripts\\\\python.exe', 'AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\\\\code\\\\d16_reproduce.py', '--internal-protocol', 'd14_exclude2020_freeze']' returned non-zero exit status 1."
         }
       }
     ],

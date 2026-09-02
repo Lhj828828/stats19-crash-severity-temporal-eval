@@ -27,12 +27,12 @@
   },
   "stats19_upstream": {
     "final_summary": {
-      "path": "../STATS19论文/logs/d14_final_summary.json",
+      "path": "references/stats19_upstream/d14_final_summary.json",
       "sha256": "20b7d749d826e95c3d5e76fc35207854954f79c4c318fdf8b4bcae596d873433"
     },
     "final_comparison_protocol": {
-      "path": "../STATS19论文/config/d16_final_comparison_protocol.json",
-      "sha256": "ccae94276f7e45e4eb4ca746d0c52ed562ef5dda197a2d1f87eb74df916c0f09"
+      "path": "references/stats19_upstream/d16_final_comparison_protocol.json",
+      "sha256": "da4a5ed5c33ac7abeb9e6ac5eebeea8e361e123bfaeec22aaaa86cc353a47d67"
     }
   },
   "comparison_questions": {

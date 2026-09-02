@@ -3,8 +3,8 @@
   "status": "CAS_REPLICATION_ANALYSIS_COMPLETE",
   "created_local": "2026-09-01",
   "updated_local": "2026-09-01",
-  "workspace": "C:/Users/Administrator/Desktop/CAS验证",
-  "source_project": "C:/Users/Administrator/Desktop/STATS19论文",
+  "workspace": "AUTHOR_SIDE_CAS_WORKSPACE_NOT_DISTRIBUTED",
+  "source_project": "PUBLIC_SOFTWARE_PROJECT",
   "separation_policy": {
     "source_action": "copy_only",
     "stats19_frozen_project_modified": false,

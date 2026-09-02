@@ -5,8 +5,8 @@ Completed: 2026-09-01T09:21:15+0800
 
 ## Execution
 
-- Isolated workspace: `C:\Users\Administrator\Desktop\STATS19论文_D16_reproduction`
-- Clean Python environment: `C:\Users\Administrator\Desktop\STATS19论文_D16_reproduction\.venv\Scripts\python.exe`
+- Isolated workspace: `AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED`
+- Clean Python environment: `AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED\.venv\Scripts\python.exe`
 - Thread cap: **4**
 - Completed pipeline/test stages: **52**
 - Execution protocol SHA-256: `6c54871b70d967bbf0cfd9fcadeaa2b472a823d85aa7f239e17b77fb4ac5073d`

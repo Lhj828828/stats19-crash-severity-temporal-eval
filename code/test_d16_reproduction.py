@@ -64,9 +64,15 @@ def main() -> None:
     ]["status"] == "PASS"
     assert len(report["execution_protocol_sha256"]) == 64
     assert len(report["final_comparison_protocol_sha256"]) == 64
-    environment = Path(report["clean_environment_python"]).resolve()
-    workspace = Path(report["workspace"]).resolve()
-    assert workspace in environment.parents
+    workspace_value = report["workspace"]
+    environment_value = report["clean_environment_python"]
+    if workspace_value == "AUTHOR_SIDE_REPRODUCTION_WORKSPACE_NOT_DISTRIBUTED":
+        assert report["source_project"] == "PUBLIC_SOFTWARE_PROJECT"
+        assert environment_value.startswith(workspace_value)
+    else:
+        environment = Path(environment_value).resolve()
+        workspace = Path(workspace_value).resolve()
+        assert workspace in environment.parents
     print("D16_REPRODUCTION_TEST=PASS")
 
 
