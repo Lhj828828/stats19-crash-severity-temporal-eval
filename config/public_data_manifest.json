@@ -1,0 +1,130 @@
+{
+  "schema_version": "PUBLIC_DATA_V1",
+  "status": "AWAITING_IMMUTABLE_DATA_ARCHIVE",
+  "purpose": "Exact analysis-input manifest for the public third-party reconstruction workflow.",
+  "archive_policy": {
+    "software_archive_contains_raw_data": false,
+    "immutable_data_record_doi": null,
+    "mutable_source_urls_are_not_exact_snapshot_urls": true,
+    "download_urls_must_remain_null_until_license_review_and_archive_publication": true
+  },
+  "datasets": {
+    "stats19": {
+      "title": "UK STATS19 collision records used in the primary analysis",
+      "analysis_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "snapshot_description": "Seven annual collision files copied byte-for-byte from the frozen complete DfT source file.",
+      "source_landing_page": "https://www.gov.uk/government/statistical-data-sets/road-safety-open-data",
+      "source_terms_review": "PENDING_FINAL_REDISTRIBUTION_REVIEW",
+      "provenance": {
+        "complete_source_filename": "dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
+        "complete_source_size_bytes": 1534937928,
+        "complete_source_sha256": "4b60aac426b8fb7771dc9a3fc3e383399e88c9a49041544926aec4bea409e366",
+        "retrieved_local": "2026-08-27T20:15:19+08:00",
+        "note": "The mutable latest-published-year URL is provenance only and must not be used as an exact snapshot fallback after its bytes change."
+      },
+      "files": [
+        {
+          "relative_path": "data/raw/collisions/collision_2018.csv",
+          "size_bytes": 23546899,
+          "sha256": "843061a73214ba8832ed4ca78292c0f0c6686444927b0fc47c9207e4e5985f4f",
+          "role": "analysis_input",
+          "source_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
+          "immutable_download_url": null
+        },
+        {
+          "relative_path": "data/raw/collisions/collision_2019.csv",
+          "size_bytes": 22503365,
+          "sha256": "548b97c6afd3d6466779f7a36272f5674f0228e9b820b8d4a4a28c8b4c14b31a",
+          "role": "analysis_input",
+          "source_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
+          "immutable_download_url": null
+        },
+        {
+          "relative_path": "data/raw/collisions/collision_2020.csv",
+          "size_bytes": 17427393,
+          "sha256": "49072103f337a9017aef8cab858463c636b33758fec68664592943d1e1d33f93",
+          "role": "analysis_input",
+          "source_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
+          "immutable_download_url": null
+        },
+        {
+          "relative_path": "data/raw/collisions/collision_2021.csv",
+          "size_bytes": 19208797,
+          "sha256": "01442848b43bd89d6e9e0f21f17087c974f853ba9220dd8e6cc271b4a9d738de",
+          "role": "analysis_input",
+          "source_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
+          "immutable_download_url": null
+        },
+        {
+          "relative_path": "data/raw/collisions/collision_2022.csv",
+          "size_bytes": 20116923,
+          "sha256": "89b2f1460698e471858b3bf1c36a737f632d40c74bfe75aa8964d4260b118dbf",
+          "role": "analysis_input",
+          "source_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
+          "immutable_download_url": null
+        },
+        {
+          "relative_path": "data/raw/collisions/collision_2023.csv",
+          "size_bytes": 19790001,
+          "sha256": "ec28a1792ac22ff3382b8d0b3549dc07c9c57d9f8d94b5be0084def09aef47e6",
+          "role": "analysis_input",
+          "source_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
+          "immutable_download_url": null
+        },
+        {
+          "relative_path": "data/raw/collisions/collision_2024.csv",
+          "size_bytes": 19208488,
+          "sha256": "ad02c026d0f87074800bd26fbca0e51b7b18eacc3e541fb869c091604b6a8b20",
+          "role": "analysis_input",
+          "source_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
+          "immutable_download_url": null
+        }
+      ]
+    },
+    "cas": {
+      "title": "New Zealand Crash Analysis System replication snapshot",
+      "analysis_years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "snapshot_description": "Attribute-only injury-crash snapshot; the lossless JSONL is authoritative and the CSV is retained for transparent inspection.",
+      "source_landing_page": "https://opendata-nzta.opendata.arcgis.com/datasets/NZTA::crash-analysis-system-cas-data-1/about",
+      "source_terms_review": "SOURCE_METADATA_REPORTS_CC_BY_4_0; PENDING_FINAL_REDISTRIBUTION_REVIEW",
+      "provenance": {
+        "query_endpoint": "https://services.arcgis.com/CXBb7LAjgIIdcsPt/arcgis/rest/services/CAS_Data_Public/FeatureServer/0/query",
+        "query_scope": "crashYear BETWEEN 2022 AND 2025 AND crashSeverity <> 'Non-Injury Crash'",
+        "retrieved_local": "2026-08-28T23:15:56+08:00",
+        "row_count": 43121,
+        "note": "The live API is provenance only. A fresh query must not replace the fixed paper snapshot."
+      },
+      "files": [
+        {
+          "relative_path": "data/raw/cas/cas_injury_2022_2025_snapshot.jsonl.gz",
+          "size_bytes": 2771733,
+          "sha256": "7db99dd4ba92716d751dabbc08b03f72373c635025b7d5335cf0b6705a7bd7f3",
+          "role": "authoritative_analysis_input",
+          "source_url": "https://services.arcgis.com/CXBb7LAjgIIdcsPt/arcgis/rest/services/CAS_Data_Public/FeatureServer/0/query",
+          "immutable_download_url": null
+        },
+        {
+          "relative_path": "data/raw/cas/cas_injury_2022_2025_snapshot.csv.gz",
+          "size_bytes": 1867440,
+          "sha256": "cc554366351cf4d5ccc7207f583c8ff1437036a615f1bac4dcdcccac76d1745c",
+          "role": "inspection_copy",
+          "source_url": "https://services.arcgis.com/CXBb7LAjgIIdcsPt/arcgis/rest/services/CAS_Data_Public/FeatureServer/0/query",
+          "immutable_download_url": null
+        }
+      ]
+    }
+  }
+}

@@ -68,6 +68,7 @@ _qa_*/
 tmp_docx/
 tmp/
 *.tmp
+*.part
 *_D16_reproduction/
 
 # Local manuscript drafts and journal-specific templates

@@ -6,6 +6,25 @@ are intentionally excluded from the Git repository because the STATS19 source
 file is large and the CAS service is live. The checksums below identify the
 exact files used in the completed analyses.
 
+The machine-readable public input contract is
+`config/public_data_manifest.json`. It identifies seven annual STATS19 files
+and two CAS snapshot files by path, byte size and SHA-256. Together these are
+the intended compact data archive; the 1.53 GB full-history STATS19 source file
+is retained as provenance and is not required by the planned public workflow.
+
+Until an immutable data record has passed the final redistribution review and
+has been published, its download URLs remain deliberately unset. The following
+commands are already available:
+
+```text
+python download_and_verify_data.py list
+python download_and_verify_data.py verify --dataset all
+```
+
+The `download` command fails closed while immutable URLs are unset. It never
+silently substitutes the mutable STATS19 `latest` file or a fresh CAS API query
+for the snapshots used in the paper.
+
 ## UK STATS19 (primary analysis)
 
 - Maintainer/source: UK Department for Transport (DfT), Road Safety Open Data.

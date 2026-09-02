@@ -62,6 +62,17 @@ Download the required inputs into the paths documented in `DATA_SOURCES.md`
 before running a fresh pipeline. Do not commit access tokens, raw data copied
 under different names, or unreviewed local files.
 
+Inspect or verify the fixed public input contract with:
+
+```text
+python download_and_verify_data.py list
+python download_and_verify_data.py verify --dataset all
+```
+
+Immutable download URLs will be enabled only after the separate data archive
+passes its final source-terms review. Mutable upstream data are never accepted
+as silent replacements for the paper snapshots.
+
 ## Environment and reproduction
 
 The validated environment used Python 3.13.15. Direct and serialized-model
