@@ -1,0 +1,145 @@
+{
+  "schema_version": "PUBLIC_RESULT_CONTRACT_V1",
+  "status": "FROZEN_COMPACT_SCIENTIFIC_VERIFICATION_SURFACE",
+  "purpose": "Compare regenerated compact STATS19 outputs without author models, record-level predictions, SHAP arrays, bootstrap arrays, or D16 artifacts.",
+  "reference_root": "config/public_result_reference",
+  "tolerances": {
+    "absolute": 1e-10,
+    "relative": 1e-8
+  },
+  "known_exclusions": {
+    "ordered_logit": "Secondary Ordered Logit numerical drift is documented by D16 and is not a public pass/fail invariant.",
+    "runtime_fields": "Wall-clock and prediction timing are hardware dependent.",
+    "protocol_hashes": "Fresh runtime protocols bind to regenerated upstream files and therefore have run-specific hashes.",
+    "large_artifacts": "Models, record-level predictions, SHAP arrays and bootstrap arrays are regenerated but not reference inputs."
+  },
+  "comparisons": [
+    {
+      "path": "logs/d1_initial_audit.csv",
+      "kind": "csv",
+      "key_columns": ["year"]
+    },
+    {
+      "path": "logs/d5_sample_flow.csv",
+      "kind": "csv",
+      "key_columns": ["year"]
+    },
+    {
+      "path": "logs/d6_temporal_split_audit.csv",
+      "kind": "csv",
+      "key_columns": ["seed", "split"]
+    },
+    {
+      "path": "logs/d6_random_split_audit.csv",
+      "kind": "csv",
+      "key_columns": ["seed", "split"]
+    },
+    {
+      "path": "results/d10/d10_tuning_results.csv",
+      "kind": "csv",
+      "key_columns": ["candidate_id"],
+      "ignore_columns": ["fit_seconds"]
+    },
+    {
+      "path": "config/d10_selected_lightgbm.json",
+      "kind": "json",
+      "ignore_keys": ["created_local", "protocol_sha256", "tuning_results_sha256"]
+    },
+    {
+      "path": "results/d10b/d10b_checkpoint_metrics.csv",
+      "kind": "csv",
+      "key_columns": ["checkpoint_trees"],
+      "ignore_columns": ["fit_seconds_full_2000"]
+    },
+    {
+      "path": "results/d10b/d10b_logloss_history.csv",
+      "kind": "csv",
+      "key_columns": ["iteration"]
+    },
+    {
+      "path": "results/d11/d11_test_metrics.csv",
+      "kind": "csv",
+      "key_columns": ["evaluation_scope", "split_slug", "model"],
+      "ignore_columns": ["transform_seconds", "prediction_seconds"],
+      "filter": {
+        "column": "model",
+        "include": [
+          "dummy_most_frequent",
+          "logistic_unweighted",
+          "logistic_weighted",
+          "lightgbm_weighted"
+        ]
+      }
+    },
+    {
+      "path": "results/d12/d12_model_gain_summary.csv",
+      "kind": "csv",
+      "key_columns": ["metric"]
+    },
+    {
+      "path": "results/d13/d13_h1_primary_model_gaps.csv",
+      "kind": "csv",
+      "key_columns": ["model", "metric"]
+    },
+    {
+      "path": "results/d13/d13_h2_temporal_comparison.csv",
+      "kind": "csv",
+      "key_columns": ["metric"]
+    },
+    {
+      "path": "logs/d13_positioning_decision.json",
+      "kind": "json",
+      "ignore_keys": []
+    },
+    {
+      "path": "results/d14/d14_rank_stability_summary.csv",
+      "kind": "csv",
+      "key_columns": ["output_scope"]
+    },
+    {
+      "path": "logs/d14_shap_run_summary.json",
+      "kind": "json",
+      "ignore_keys": ["completed_local", "protocol_sha256", "runtime_seconds"]
+    },
+    {
+      "path": "results/d14/exclude2020/d14_exclude2020_test_metrics.csv",
+      "kind": "csv",
+      "key_columns": ["model"],
+      "ignore_columns": ["transform_seconds", "prediction_seconds", "fit_seconds"]
+    },
+    {
+      "path": "results/d14/exclude2020/d14_exclude2020_comparisons.csv",
+      "kind": "csv",
+      "key_columns": ["comparison", "metric"]
+    },
+    {
+      "path": "logs/d14_exclude2020_run_summary.json",
+      "kind": "json",
+      "ignore_keys": ["protocol_sha256", "runtime_seconds"]
+    },
+    {
+      "path": "results/d14/d14_error_structure.csv",
+      "kind": "csv",
+      "key_columns": ["model", "true_code", "predicted_code"]
+    },
+    {
+      "path": "results/d14/d14_paired_error_outcomes.csv",
+      "kind": "csv",
+      "key_columns": ["true_class_scope", "paired_outcome"]
+    },
+    {
+      "path": "logs/d14_final_summary.json",
+      "kind": "json",
+      "ignore_keys": ["protocol_sha256"]
+    }
+  ],
+  "required_nonempty_files": [
+    "figures/figure2_dataset_overview.png",
+    "figures/figure2_dataset_overview.pdf",
+    "figures/d10b_validation_logloss_curve.png",
+    "figures/d11_test_metric_overview.png",
+    "figures/d12_h1_optimism_gaps.png",
+    "figures/d12_h2_temporal_differences.png",
+    "figures/d14_shap_rank_stability.png"
+  ]
+}

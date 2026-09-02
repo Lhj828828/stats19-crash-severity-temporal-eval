@@ -77,6 +77,14 @@ class PublicReproductionTests(unittest.TestCase):
         self.assertNotIn("code/d1_acquire_and_audit.py", arguments)
         self.assertFalse(any("d16" in argument.lower() for argument in arguments))
         self.assertNotIn("code/d15_reproducibility.py", arguments)
+        self.assertEqual(
+            public_reproduction.FINAL_RESULT_VERIFICATION,
+            "VERIFY_public_compact_results",
+        )
+        self.assertIn(
+            "config/public_result_contract.json",
+            public_reproduction.CONFIG_INPUTS,
+        )
         self.assertLess(names.index("D9_freeze_protocol"), names.index("D9_ordered_logit_subset"))
         self.assertLess(names.index("D10_freeze_protocol"), names.index("D10_tune"))
         self.assertLess(names.index("D11_freeze_protocol"), names.index("D11_one_time_evaluation"))

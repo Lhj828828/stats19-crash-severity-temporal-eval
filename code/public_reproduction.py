@@ -56,6 +56,7 @@ ROOT_INPUTS = (
 )
 CONFIG_INPUTS = (
     "config/public_data_manifest.json",
+    "config/public_result_contract.json",
     "config/d10_execution_amendment.json",
     "config/d10b_tree_sensitivity_protocol.json",
     "config/d14_exclude2020_planning_evidence.json",
@@ -67,6 +68,8 @@ MUTABLE_RUNTIME_TEMPLATES = {
     "config/d10b_tree_sensitivity_protocol.json",
 }
 AUXILIARY_INPUTS = ("logs/d10b_execution_incident.json",)
+RESULT_REFERENCE_DIR = "config/public_result_reference"
+FINAL_RESULT_VERIFICATION = "VERIFY_public_compact_results"
 
 
 @dataclass(frozen=True)
@@ -202,6 +205,11 @@ def source_input_paths(source: Path = SOURCE_DIR) -> list[Path]:
     paths.extend(source / item for item in ROOT_INPUTS)
     paths.extend(source / item for item in CONFIG_INPUTS)
     paths.extend(source / item for item in AUXILIARY_INPUTS)
+    reference_dir = source / RESULT_REFERENCE_DIR
+    reference_files = sorted(path for path in reference_dir.rglob("*") if path.is_file())
+    if not reference_files:
+        raise FileNotFoundError(f"Compact result references are missing: {reference_dir}")
+    paths.extend(reference_files)
     paths.extend(sorted((source / "data" / "external" / "documentation").glob("*")))
     paths.extend(source / item for item in verify_source_stats19(source))
     files = sorted({path.resolve() for path in paths if path.is_file()})
@@ -651,6 +659,44 @@ def execute_pipeline(
         state["stages"].append({"name": name, **result})
         write_json_atomic(state_file(workspace), state)
 
+    completed = completed_stage_names(state)
+    if FINAL_RESULT_VERIFICATION in completed:
+        print(f"[resume] skipping {FINAL_RESULT_VERIFICATION}")
+    else:
+        try:
+            result = run_process(
+                [
+                    str(python),
+                    str(workspace / "code" / "public_result_verifier.py"),
+                    "--candidate-root",
+                    str(workspace),
+                    "--report",
+                    str(workspace / "logs" / "public_result_verification.json"),
+                ],
+                cwd=workspace,
+                environment=environment,
+                log_file=(
+                    workspace
+                    / "logs"
+                    / "public_stage_logs"
+                    / f"{len(PIPELINE_STAGES) + len(STANDALONE_TESTS) + 1:02d}_"
+                    f"{FINAL_RESULT_VERIFICATION}.log"
+                ),
+                timeout_seconds=900,
+                label=FINAL_RESULT_VERIFICATION,
+            )
+        except Exception as exc:
+            state["status"] = "FAILED"
+            state["failure"] = {
+                "stage": FINAL_RESULT_VERIFICATION,
+                "type": type(exc).__name__,
+                "message": str(exc),
+            }
+            write_json_atomic(state_file(workspace), state)
+            raise
+        state["stages"].append({"name": FINAL_RESULT_VERIFICATION, **result})
+        write_json_atomic(state_file(workspace), state)
+
     state["status"] = "PIPELINE_COMPLETE"
     state["completed_local"] = time.strftime("%Y-%m-%dT%H:%M:%S%z")
     write_json_atomic(state_file(workspace), state)
@@ -669,6 +715,7 @@ def self_test(source: Path = SOURCE_DIR) -> None:
     required_scripts = {stage.arguments[0] for stage in PIPELINE_STAGES} | set(
         STANDALONE_TESTS
     )
+    required_scripts.add("code/public_result_verifier.py")
     missing = sorted(path for path in required_scripts if not (source / path).is_file())
     if missing:
         raise FileNotFoundError(f"Missing public pipeline script(s): {missing}")

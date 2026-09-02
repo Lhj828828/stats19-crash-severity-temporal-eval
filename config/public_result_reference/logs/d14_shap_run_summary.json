@@ -1,0 +1,20 @@
+{
+  "version": "D14_SHAP_V1",
+  "status": "D14_SHAP_COMPLETE",
+  "protocol_sha256": "25442cc216ee80a7b84f859371b18ddd93df98e958f9c7a1b6318b884d46bb22",
+  "completed_local": "2026-08-31",
+  "model_fits": 0,
+  "frozen_models_explained": 6,
+  "model_cohort_explanations": 11,
+  "explanation_rows_per_cohort": 10000,
+  "bootstrap_iterations": 2000,
+  "H3_status": "RANK_CHANGE_QUANTIFIED_NO_BINARY_MATERIALITY_THRESHOLD",
+  "overall_rho_mean": 0.6058823529411765,
+  "overall_rho_sd": 0.02725992688901821,
+  "overall_rho_range": [
+    0.5710784313725491,
+    0.6323529411764707
+  ],
+  "causal_claim_allowed": false,
+  "runtime_seconds": 1402.6627273000195
+}

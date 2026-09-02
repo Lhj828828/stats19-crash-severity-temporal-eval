@@ -94,9 +94,11 @@ python run_public_reproduction.py --all --resume
 
 The public runner starts from the seven verified annual files, recreates the
 D1-compatible input audit, and does not copy existing models, predictions,
-intermediate data or D16 artifacts. The development version has been exercised
-through D7; a clean D8-D14 run and immutable data URLs remain `v1.1.0` release
-gates. Detailed commands and current limitations are in `REPRODUCING.md`.
+intermediate data or D16 artifacts. It finishes with keyed, tolerance-aware
+comparison of compact scientific outputs against the tracked public
+references. The development version has been exercised through D7;
+a clean D8-D14 run and immutable data URLs remain `v1.1.0` release gates. Detailed
+commands and current limitations are in `REPRODUCING.md`.
 
 The retained author-side forensic entry point is:
 
@@ -152,6 +154,8 @@ rerun rather than changing a test result in place.
 
 - `code/`: STATS19 stages, CAS stages and standalone checks.
 - `config/`: frozen schemas, field audits, split protocols and model rules.
+- `config/public_result_reference/`: small frozen CSV/JSON summaries used by
+  the public verifier; no records, fitted models or large arrays.
 - `data/external/`: official documentation and CAS metadata snapshots.
 - `figures/`: compact figures retained for the manuscript.
 - `logs/`: provenance, checksums, audit trails and checkpoints.
@@ -160,6 +164,8 @@ rerun rather than changing a test result in place.
 - `DATA_SOURCES.md`: source attribution, snapshot hashes and data layout.
 - `REPRODUCING.md`: public reconstruction commands, resume behavior and
   verification limits.
+- `verify_public_results.py`: cross-platform compact-result verification
+  command.
 - `RELEASE_NOTES_v1.0.0.md`: the first public version boundary.
 - `RELEASE_NOTES_v1.0.1.md`: metadata-only Zenodo archival follow-up to the
   frozen `v1.0.0` materials.

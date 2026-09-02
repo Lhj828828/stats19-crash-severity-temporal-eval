@@ -74,7 +74,8 @@ python run_public_reproduction.py --all
 It creates a sibling directory named `<project>_public_reproduction`, copies
 the verified 2018-2024 annual files, creates a clean virtual environment from
 `requirements-lock.txt`, and runs the 32 frozen analysis stages followed by
-14 independent checks. It does not overwrite the software clone.
+14 independent checks and the compact-result verifier. It does not overwrite
+the software clone.
 
 To select another workspace or base Python executable:
 
@@ -123,11 +124,26 @@ intermediate datasets remain inside the isolated workspace and are not Git
 artifacts. Compact tables and decision summaries are the public scientific
 verification surface.
 
-The final `v1.1.0` instructions will include the public compact-result verifier
-after it passes against a clean release. Byte-identical floating-point files
-are not promised across unvalidated platforms. Identity/count fields and
-discrete decisions are checked exactly; documented numerical fields use fixed
-tolerances.
+The runner finishes by comparing 21 compact CSV/JSON outputs with the tracked
+references under `config/public_result_reference/` and by checking that seven
+required figures are nonempty. The comparison aligns CSV rows by declared
+keys, ignores only the runtime/provenance fields listed in
+`config/public_result_contract.json`, and excludes the documented secondary
+Ordered Logit drift from pass/fail. Identity/count fields and discrete
+decisions are checked exactly; numerical fields use the frozen absolute and
+relative tolerances.
+
+The machine-readable report is written to
+`logs/public_result_verification.json` in the isolated workspace. It can also
+be rerun from the software-project root:
+
+```text
+python verify_public_results.py --candidate-root /path/to/reproduction
+```
+
+Byte-identical floating-point files are not promised across unvalidated
+platforms. A failed comparison must be investigated; the contract tolerances
+must not be widened after seeing a new result merely to obtain a pass.
 
 The retained `run_d16_reproduction.py` is an author-side forensic comparator.
 It is historical evidence, not an alternative public entry point, because it

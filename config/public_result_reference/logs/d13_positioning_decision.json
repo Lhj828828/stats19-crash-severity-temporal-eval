@@ -1,0 +1,103 @@
+{
+  "version": "D13_V1",
+  "status": "D13_PERFORMANCE_CHECKPOINT_COMPLETE_H3_PENDING",
+  "H1": {
+    "broad_random_split_optimism_claim": "NOT_SUPPORTED",
+    "narrative_branch": "METRIC_DEPENDENT_MIXED_GENERALIZATION_GAP",
+    "lightgbm": {
+      "macro_f1": {
+        "mean_optimism_gap": -0.0031813885126504,
+        "sd_across_seeds": 0.0045290595067344,
+        "range": [
+          -0.0096067121690074,
+          0.0026125153595326
+        ],
+        "seed_level_evidence_class": "mixed_or_uncertain"
+      },
+      "qwk": {
+        "mean_optimism_gap": 0.0535535005855309,
+        "sd_across_seeds": 0.0063139780767533,
+        "range": [
+          0.0458579287826108,
+          0.0634444283425106
+        ],
+        "seed_level_evidence_class": "consistent_random_optimism"
+      },
+      "fatal_recall": {
+        "mean_optimism_gap": 0.264663027230734,
+        "sd_across_seeds": 0.0093055430427109,
+        "range": [
+          0.2534868802941818,
+          0.278954717505891
+        ],
+        "seed_level_evidence_class": "consistent_random_optimism"
+      },
+      "serious_or_fatal_recall": {
+        "mean_optimism_gap": 0.2965040036317145,
+        "sd_across_seeds": 0.0239857180707563,
+        "range": [
+          0.271319109568151,
+          0.3357138138556885
+        ],
+        "seed_level_evidence_class": "consistent_random_optimism"
+      },
+      "mean_asymmetric_cost": {
+        "mean_optimism_gap": -0.0565473604454773,
+        "sd_across_seeds": 0.0038872989464198,
+        "range": [
+          -0.0598074155006128,
+          -0.0504265713865083
+        ],
+        "seed_level_evidence_class": "consistent_random_pessimism"
+      }
+    },
+    "weighted_logistic_macro_f1_evidence_class": "consistent_random_pessimism",
+    "allowed_claim": "Random internal evaluation was consistently optimistic for QWK and severe-class recall, but not for Macro-F1 or all error metrics.",
+    "prohibited_claims": [
+      "Random splitting uniformly overestimates future performance.",
+      "An interval crossing zero proves equivalence.",
+      "The descriptive gap is the causal effect of splitting."
+    ]
+  },
+  "H2": {
+    "macro_f1_practical_and_interval_rule": "PASS",
+    "joint_incremental_value_rule": "FAIL",
+    "uniform_lightgbm_superiority_claim": "NOT_SUPPORTED",
+    "macro_f1": {
+      "delta": 0.0138956392462184,
+      "ci": [
+        0.0108749991299353,
+        0.0169556485631646
+      ],
+      "random_internal_mean_advantage": 0.0305608676026905,
+      "temporal_advantage": 0.0138956392462184,
+      "descriptive_advantage_change": -0.016665228356472
+    },
+    "fatal_recall": {
+      "delta": -0.1005326231691078,
+      "ci": [
+        -0.1165113182423435,
+        -0.0838881491344873
+      ],
+      "clear_worsening": true
+    },
+    "qwk_interval_class": "clear_candidate_advantage",
+    "asymmetric_cost_interval_class": "clear_candidate_advantage",
+    "allowed_claim": "LightGBM improved several metrics and passed the Macro-F1 rule, but substantially reduced fatal recall relative to weighted Logistic.",
+    "prohibited_claims": [
+      "LightGBM is uniformly or safely superior to weighted Logistic.",
+      "Macro-F1 alone satisfies the joint incremental-value rule."
+    ]
+  },
+  "H3": {
+    "status": "PENDING_NOT_EVALUATED",
+    "reason": "No frozen SHAP ranking or SHAP bootstrap interval exists yet.",
+    "required_next_evidence": "Spearman rank agreement between frozen random-test and temporal-test global SHAP importance, with its prespecified interval.",
+    "claim_allowed_now": false
+  },
+  "manuscript_positioning": {
+    "primary_empirical_message": "Evaluation-protocol optimism is metric dependent, with degradation in ordinal agreement and severe-class recall despite stable Macro-F1.",
+    "secondary_empirical_message": "Nonlinear-model gains depend on the metric and include a fatal-recall trade-off.",
+    "scope": "STATS19 2018-2024 and the frozen collision-time feature set"
+  }
+}

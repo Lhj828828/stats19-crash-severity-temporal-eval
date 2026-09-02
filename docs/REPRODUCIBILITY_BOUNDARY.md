@@ -33,7 +33,9 @@ identifiable and obtainable under their applicable source terms.
 1. **Public reconstruction** downloads and verifies the fixed input snapshots,
    creates a clean environment and regenerates the analysis outputs.
 2. **Public scientific verification** compares regenerated compact tables and
-   decision summaries with tracked expected values and documented tolerances.
+   decision summaries with the tracked references under
+   `config/public_result_reference/` and the documented tolerances in
+   `config/public_result_contract.json`.
 3. **Author-side forensic comparison** additionally compares large
    record-level predictions, arrays and other local frozen artifacts. The
    retained D16 workflow performs this level and is not the public entry point.
