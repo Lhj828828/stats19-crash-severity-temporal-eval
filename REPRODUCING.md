@@ -10,7 +10,12 @@ The public STATS19 runner is present on the development branch and has been
 tested from the fixed annual files through D7 (feature audit, quality control
 and frozen splits). A full clean D8-D14 run and the immutable data-record URLs
 remain release gates for `v1.1.0`. Until those gates pass, do not describe the
-development branch as a completed third-party reproduction package.
+STATS19 development branch as a completed third-party reproduction package.
+
+The separate public CAS runner has passed a complete isolated run from the
+fixed lossless JSONL snapshot, including its eight independent checks and
+compact-result verification. CAS is an independent workflow and is not a
+replacement for the STATS19 primary analysis.
 
 The existing `v1.0.2` Zenodo record is an immutable software archive. It
 documents the author's completed D16 forensic comparison, but it does not
@@ -153,10 +158,32 @@ depends on excluded author artifacts.
 
 CAS uses its own fixed 2022-2025 snapshot, audit, models and one-time 2025
 evaluation. Do not put CAS records into the STATS19 workspace or compare the
-two datasets as though their labels were identical. A separate CAS public
-entry and verification command must pass before `v1.1.0`; until then, the
-tracked CAS scripts and compact summaries support inspection but not a fresh
-snapshot-independent execution claim.
+two datasets as though their labels were identical. The public CAS entry and
+verification command have passed an isolated clean run. The exact input is
+the lossless JSONL file below, whose SHA-256 is checked before execution:
+
+```text
+data/raw/cas/cas_injury_2022_2025_snapshot.jsonl.gz
+SHA-256: 7db99dd4ba92716d751dabbc08b03f72373c635025b7d5335cf0b6705a7bd7f3
+```
+
+From the software-project root, run:
+
+```text
+python run_cas_public_reproduction.py --self-test
+python run_cas_public_reproduction.py --all --snapshot /path/to/cas_injury_2022_2025_snapshot.jsonl.gz
+python verify_cas_public_results.py --candidate-root /path/to/cas-reproduction
+```
+
+The runner creates an external isolated workspace, a clean Python 3.13
+environment by default, and all rebuildable models, predictions, Bootstrap
+arrays and SHAP arrays inside that workspace. It does not query the live CAS
+API or copy author-side artifacts. See `CAS_PUBLIC_REPRODUCTION.md` for the
+eight standalone checks and the required completion markers.
+
+The CAS result supports workflow executability and separately reported
+directional agreement or disagreement only. It does not establish
+cross-national or universal generalizability.
 
 See `DATA_SOURCES.md` for source attribution and
 `docs/REPRODUCIBILITY_BOUNDARY.md` for the exact distinction between public

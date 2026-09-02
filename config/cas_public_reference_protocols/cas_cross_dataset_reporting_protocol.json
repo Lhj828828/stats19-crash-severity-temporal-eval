@@ -1,0 +1,65 @@
+{
+  "version": "CAS_CROSS_DATASET_REPORTING_V1",
+  "status": "POST_RESULT_DETERMINISTIC_REPORTING_CONTRACT",
+  "created_local": "2026-09-01T15:48:52+08:00",
+  "timing_disclosure": "Both STATS19 and CAS H1-H3 results were known before this reporting contract was written. This is not a preregistration. It fixes deterministic summarization language only and performs no model selection, tuning, threshold adjustment or new hypothesis test.",
+  "cas_upstream": {
+    "h1_summary": {
+      "path": "results/cas_post_analysis/h1_across_seed_summary.csv",
+      "sha256": "7f3fb8aba561c67c67617fd264ed68ff932e4c4fcbbf7085cad99a33f44b434c"
+    },
+    "h2_bootstrap": {
+      "path": "results/cas_post_analysis/h2_bootstrap.csv",
+      "sha256": "7da34c869ec239e185a9446b4f08bd4b9f77696eea6b4b59f71f489340573537"
+    },
+    "h3_complete": {
+      "path": "config/cas/cas_h3_complete.json",
+      "sha256": "ac502fc300e412930e3b82a307d4004ceb96e9fb995a6ac97e3bc7fe349de815"
+    },
+    "evaluation_complete": {
+      "path": "config/cas/cas_evaluation_complete.json",
+      "sha256": "88750a5ef5a62379d311d94078685e4a621e9626dfe9edb810ce11e0ee3359f0"
+    },
+    "bootstrap_complete": {
+      "path": "config/cas/cas_bootstrap_complete.json",
+      "sha256": "55c3973ade57e6a1db200ce8adac6e4c8013aa48300990273bed0db105d57102"
+    }
+  },
+  "stats19_upstream": {
+    "final_summary": {
+      "path": "references/stats19_upstream/d14_final_summary.json",
+      "sha256": "20b7d749d826e95c3d5e76fc35207854954f79c4c318fdf8b4bcae596d873433"
+    },
+    "final_comparison_protocol": {
+      "path": "references/stats19_upstream/d16_final_comparison_protocol.json",
+      "sha256": "da4a5ed5c33ac7abeb9e6ac5eebeea8e361e123bfaeec22aaaa86cc353a47d67"
+    }
+  },
+  "comparison_questions": {
+    "H1": "Whether random-internal versus future gaps are metric-dependent rather than uniformly optimistic, with Macro-F1, QWK and fatal recall reported separately.",
+    "H2": "Whether weighted LightGBM versus weighted Logistic shows the same temporal-test Macro-F1 and fatal-recall directions.",
+    "H3": "Whether the observed mean-absolute-SHAP feature-rank agreement pattern is similar across the two separately analyzed datasets.",
+    "workflow": "Whether the frozen audit, temporal evaluation, ordered metrics, uncertainty and explanation-stability workflow executes on a second administrative source."
+  },
+  "allowed_labels": [
+    "broad_pattern_agreement",
+    "direction_same_evidence_weaker_in_cas",
+    "different_direction_near_zero_or_mixed",
+    "direction_replicated",
+    "not_replicated",
+    "different_observed_pattern",
+    "executability_demonstrated"
+  ],
+  "reporting_rules": [
+    "Keep CAS and STATS19 records, fitted models, target definitions, absolute performance levels and uncertainty calculations separate.",
+    "Do not pool records, effect estimates, Bootstrap draws or SHAP ranks.",
+    "Do not perform a cross-dataset significance test because the datasets, feature sets, years and severity definitions are not exchangeable.",
+    "A same-sign point estimate is directional agreement only; it does not prove equality, transportability or generalizability.",
+    "An interval crossing zero is uncertainty, not equivalence.",
+    "SHAP is fitted-model attribution and not causal evidence.",
+    "Two administrative data sources do not establish cross-national or cross-domain generalizability."
+  ],
+  "model_changes_allowed": false,
+  "new_inferential_test_allowed": false,
+  "cross_national_generalizability_claim_allowed": false
+}

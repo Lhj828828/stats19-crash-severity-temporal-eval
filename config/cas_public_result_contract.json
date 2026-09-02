@@ -1,0 +1,89 @@
+{
+  "schema_version": "PUBLIC_RESULT_CONTRACT_V1",
+  "status": "FROZEN_COMPACT_CAS_VERIFICATION_SURFACE",
+  "purpose": "Compare regenerated compact CAS outputs without author models, record-level predictions, SHAP arrays, bootstrap arrays or live API responses.",
+  "reference_root": "config/cas_public_result_reference",
+  "tolerances": {
+    "absolute": 1e-10,
+    "relative": 1e-8
+  },
+  "known_exclusions": {
+    "runtime_fields": "Wall-clock, fit and prediction timing are hardware dependent.",
+    "protocol_hashes": "Fresh protocols bind to freshly generated upstream files and therefore have run-specific hashes.",
+    "large_artifacts": "Models, record-level predictions, SHAP arrays and bootstrap arrays are regenerated but are not reference inputs.",
+    "live_api": "The public CAS entry uses only the fixed JSONL snapshot and tracked metadata; it does not query the mutable service."
+  },
+  "comparisons": [
+    {
+      "path": "results/cas_baseline/validation_metrics.csv",
+      "kind": "csv",
+      "key_columns": ["protocol", "seed", "evaluation_role", "model"],
+      "ignore_columns": ["preprocessing_seconds", "fit_seconds", "prediction_seconds"]
+    },
+    {
+      "path": "results/cas_lightgbm/tuning_results.csv",
+      "kind": "csv",
+      "key_columns": ["candidate_id"],
+      "ignore_columns": ["fit_seconds"]
+    },
+    {
+      "path": "results/cas_lightgbm/validation_metrics.csv",
+      "kind": "csv",
+      "key_columns": ["protocol", "seed", "evaluation_role", "model"],
+      "ignore_columns": ["fit_seconds"]
+    },
+    {
+      "path": "results/cas_evaluation/test_metrics.csv",
+      "kind": "csv",
+      "key_columns": ["evaluation_group", "model"],
+      "ignore_columns": ["prediction_seconds"]
+    },
+    {
+      "path": "results/cas_post_analysis/h1_across_seed_summary.csv",
+      "kind": "csv",
+      "key_columns": ["model", "metric"]
+    },
+    {
+      "path": "results/cas_post_analysis/h2_bootstrap.csv",
+      "kind": "csv",
+      "key_columns": ["evaluation_group", "metric"]
+    },
+    {
+      "path": "results/cas_post_analysis/h3_shap_stability.csv",
+      "kind": "csv",
+      "key_columns": ["seed"]
+    },
+    {
+      "path": "results/cas_post_analysis/cross_dataset_directional_comparison.csv",
+      "kind": "csv",
+      "key_columns": ["question", "component"]
+    },
+    {
+      "path": "config/cas/cas_evaluation_complete.json",
+      "kind": "json",
+      "ignore_keys": ["created_local", "protocol", "protocol_sha256", "metrics_sha256", "artifact_manifest", "artifact_manifest_sha256"]
+    },
+    {
+      "path": "config/cas/cas_h3_complete.json",
+      "kind": "json",
+      "ignore_keys": ["created_local", "protocol", "protocol_sha256", "artifact_manifest", "artifact_manifest_sha256", "runtime_seconds"]
+    },
+    {
+      "path": "config/cas/cas_replication_complete.json",
+      "kind": "json",
+      "ignore_keys": ["created_local", "protocol", "protocol_sha256", "artifact_manifest", "artifact_manifest_sha256", "external_upstream"]
+    }
+  ],
+  "required_nonempty_files": [
+    "results/cas_baseline/validation_metrics.csv",
+    "results/cas_lightgbm/tuning_results.csv",
+    "results/cas_lightgbm/validation_metrics.csv",
+    "results/cas_evaluation/test_metrics.csv",
+    "results/cas_post_analysis/h1_across_seed_summary.csv",
+    "results/cas_post_analysis/h2_bootstrap.csv",
+    "results/cas_post_analysis/h3_shap_stability.csv",
+    "results/cas_post_analysis/cross_dataset_directional_comparison.csv",
+    "config/cas/cas_workspace_manifest.json",
+    "logs/cas/cas_replication_checkpoint.md"
+  ]
+}

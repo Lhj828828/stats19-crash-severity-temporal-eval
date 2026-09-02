@@ -1,0 +1,17 @@
+{
+  "version": "CAS_EVALUATION_V1",
+  "status": "FROZEN_MODELS_EVALUATED_ONCE",
+  "created_local": "2026-09-01T14:37:00+08:00",
+  "protocol": "config/cas/cas_evaluation_protocol.json",
+  "protocol_sha256": "da60f0f54165d79e2af3bcde8075d4ee0d90199b6e63be20d987fc2b4f2c8993",
+  "metrics": "results/cas_evaluation/test_metrics.csv",
+  "metrics_sha256": "f7cab0cdb94100387482cdcc089d96629ccda108471c74651f48ffc840ad6ac4",
+  "artifact_manifest": "logs/cas/cas_evaluation_artifact_manifest.csv",
+  "artifact_manifest_sha256": "9992ca0bc091eb48f4ea31d3638ff8445e9988255ce5bb00eea738e1db04a1c2",
+  "evaluation_groups": 11,
+  "models_per_group": 3,
+  "metric_rows": 33,
+  "prediction_files": 33,
+  "preprocessing_refit": false,
+  "model_selection_after_test": false
+}

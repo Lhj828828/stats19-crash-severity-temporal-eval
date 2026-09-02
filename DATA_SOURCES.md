@@ -14,8 +14,8 @@ full-history STATS19 source file is retained only as provenance and is not
 required by the public workflow.
 
 Until an immutable data record has passed the final redistribution review and
-has been published, its download URLs remain deliberately unset. The following
-commands are already available:
+has been published, its download URLs remain deliberately unset. The
+following commands are already available:
 
 ```text
 python download_and_verify_data.py list
@@ -23,8 +23,8 @@ python download_and_verify_data.py verify --dataset all
 ```
 
 The `download` command fails closed while immutable URLs are unset. It never
-silently substitutes the mutable STATS19 `latest` file or a fresh CAS API query
-for the snapshots used in the paper.
+silently substitutes the mutable STATS19 `latest` file or a fresh CAS API
+query for the snapshots used in the paper.
 
 ## UK STATS19 (primary analysis)
 
@@ -66,6 +66,9 @@ original all-years extraction script.
 - Rows: 43,121 injury crashes from 2022-2025.
 - SHA-256:
   `cc554366351cf4d5ccc7207f583c8ff1437036a615f1bac4dcdcccac76d1745c`
+- Required authoritative input: `data/raw/cas/cas_injury_2022_2025_snapshot.jsonl.gz`
+- Authoritative input SHA-256:
+  `7db99dd4ba92716d751dabbc08b03f72373c635025b7d5335cf0b6705a7bd7f3`
 - License stated by the source metadata: CC BY 4.0 International.
 - Required attribution: Waka Kotahi NZ Transport Agency, Crash Analysis
   System (CAS), with the source URL and snapshot date.
@@ -85,8 +88,20 @@ pooled.
 3. Run `python run_public_reproduction.py --all`; the runner builds an isolated
    workspace and recreates the D1 audit directly from the seven verified
    annual files.
-4. Obtain and verify the CAS snapshot separately. CAS must use its own public
-   entry once that entry passes the clean-release gate.
+4. For CAS, obtain the exact lossless JSONL snapshot whose SHA-256 is
+   `7db99dd4ba92716d751dabbc08b03f72373c635025b7d5335cf0b6705a7bd7f3`, then
+   run:
+
+   ```text
+   python run_cas_public_reproduction.py --self-test
+   python run_cas_public_reproduction.py --all --snapshot /path/to/cas_injury_2022_2025_snapshot.jsonl.gz
+   python verify_cas_public_results.py --candidate-root /path/to/cas-reproduction
+   ```
+
+   The CAS runner keeps this workflow outside the STATS19 workspace and never
+   replaces the fixed snapshot with a live API query. The inspection CSV is
+   useful for transparent review; the lossless JSONL is the authoritative CAS
+   analysis input.
 
 Before publication of the immutable data record, a researcher who already has
 the exact files may place them at the manifest paths and run `verify`. The

@@ -51,12 +51,14 @@ not as universal validation.
 
 ## Data and provenance
 
-Raw data are intentionally excluded from Git. The planned separate data
-archive contains seven annual STATS19 analysis files plus the fixed CAS JSONL
-and inspection CSV, approximately 146 MB in total. It does not need the 1.53 GB
-all-years STATS19 source. Exact provenance, paths, byte sizes and SHA-256
-checksums are recorded in `DATA_SOURCES.md` and
-`config/public_data_manifest.json`.
+Raw data are intentionally excluded from Git. The separate fixed-input data
+archive is intended to contain seven annual STATS19 analysis files plus the
+fixed CAS JSONL snapshot and inspection CSV, approximately 146 MB in total.
+It does not need the 1.53 GB all-years STATS19 source. Exact provenance, paths,
+byte sizes and SHA-256 checksums are recorded in `DATA_SOURCES.md` and
+`config/public_data_manifest.json`. Until immutable archive URLs are published,
+an independent researcher must obtain the exact files separately and verify
+their hashes before running the corresponding pipeline.
 
 Download the required inputs into the paths documented in `DATA_SOURCES.md`
 before running a fresh pipeline. Do not commit access tokens, raw data copied
@@ -96,8 +98,8 @@ The public runner starts from the seven verified annual files, recreates the
 D1-compatible input audit, and does not copy existing models, predictions,
 intermediate data or D16 artifacts. It finishes with keyed, tolerance-aware
 comparison of compact scientific outputs against the tracked public
-references. The development version has been exercised through D7;
-a clean D8-D14 run and immutable data URLs remain `v1.1.0` release gates. Detailed
+references. The development version has been exercised through D7; a clean D8-D14 run
+and immutable data URLs remain `v1.1.0` release gates. Detailed
 commands and current limitations are in `REPRODUCING.md`.
 
 The retained author-side forensic entry point is:
@@ -144,7 +146,22 @@ python tests/test_cas_lightgbm.py
 python tests/test_cas_evaluation.py
 python tests/test_cas_bootstrap.py
 python tests/test_cas_shap.py
+python tests/test_cas_closeout.py
 ```
+
+The independent CAS public entry point is also available. It uses only the
+fixed lossless JSONL snapshot, never queries the live CAS service, and checks
+the snapshot SHA-256 before copying it to an isolated workspace:
+
+```text
+python run_cas_public_reproduction.py --self-test
+python run_cas_public_reproduction.py --all --snapshot /path/to/cas_injury_2022_2025_snapshot.jsonl.gz
+python verify_cas_public_results.py --candidate-root /path/to/cas-reproduction
+```
+
+The expected snapshot hash and the complete CAS command sequence are in
+`CAS_PUBLIC_REPRODUCTION.md`. CAS is a separately trained and evaluated
+workflow; its compact results are not pooled with STATS19 results.
 
 The completed one-time evaluation scripts intentionally refuse to overwrite
 their frozen outputs. Use the isolated reproduction entry point for a clean
