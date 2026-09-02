@@ -54,7 +54,7 @@ PREDICTION_DIR = RESULT_DIR / "predictions"
 MODEL_DIR = PROJECT_DIR / "models" / "d14_exclude2020"
 LOG_DIR = PROJECT_DIR / "logs"
 
-OUTLINE_FILE = PROJECT_DIR.parent / "PeerJ_Computer_Science_交通事故严重度预测论文大纲_执行质量完善版.docx"
+PLANNING_EVIDENCE_FILE = CONFIG_DIR / "d14_exclude2020_planning_evidence.json"
 DATA_FILE = PROJECT_DIR / "data" / "processed" / "stats19_modeling_dataset.csv.gz"
 ASSIGNMENTS_FILE = PROJECT_DIR / "data" / "processed" / "d6_split_assignments.csv.gz"
 SCHEMA_FILE = CONFIG_DIR / "d5_dataset_schema.json"
@@ -192,7 +192,7 @@ def package_versions() -> dict[str, str]:
 
 def upstream_paths() -> list[Path]:
     return [
-        OUTLINE_FILE,
+        PLANNING_EVIDENCE_FILE,
         DATA_FILE,
         ASSIGNMENTS_FILE,
         SCHEMA_FILE,
@@ -270,7 +270,15 @@ def build_protocol() -> dict[str, Any]:
             "no_retuning": True,
             "no_threshold_change": True,
         },
-        "upstream_sha256": {str(path.resolve()): hash_file(path) for path in required},
+        "planning_evidence": {
+            "record": relative(PLANNING_EVIDENCE_FILE),
+            "sha256": hash_file(PLANNING_EVIDENCE_FILE),
+            "boundary": (
+                "Local working-outline provenance only; not an external "
+                "preregistration or an independently timestamped record."
+            ),
+        },
+        "upstream_sha256": {relative(path): hash_file(path) for path in required},
         "split": {
             "training_years": list(TRAIN_YEARS),
             "excluded_training_year": EXCLUDED_TRAIN_YEAR,

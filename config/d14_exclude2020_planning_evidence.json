@@ -1,0 +1,17 @@
+{
+  "schema_version": "D14_PLANNING_EVIDENCE_V1",
+  "purpose": "Portable provenance record for the working-outline reference used by the exclusion-2020 sensitivity protocol.",
+  "original_author_file": {
+    "filename": "PeerJ_Computer_Science_交通事故严重度预测论文大纲_执行质量完善版.docx",
+    "size_bytes": 56196,
+    "sha256": "bbbf6b60a799a23c3afab0b856f215b34d27c3f726197efbe1d997de8394c77b",
+    "referenced_by_frozen_protocol": "config/d14_exclude2020_protocol_v2.json",
+    "redistributed": false
+  },
+  "recorded_statement": "The exclusion-2020 sensitivity analysis was listed in the author's working outline before that sensitivity run.",
+  "evidence_boundary": {
+    "supported": "The original local file identity and SHA-256 are preserved in the frozen author-side protocol and repeated here for provenance.",
+    "not_supported": "This record is not an external preregistration, does not independently establish the original file timestamp, and does not let a third party inspect the undistributed working draft.",
+    "public_reproduction_role": "Provenance only; this file is never used to select records, fit models, calculate metrics, or alter the sensitivity design."
+  }
+}
