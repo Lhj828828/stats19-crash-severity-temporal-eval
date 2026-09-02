@@ -35,11 +35,12 @@ def tracked_files() -> list[Path]:
         check=True,
         capture_output=True,
     )
-    return [
+    paths = [
         PROJECT_DIR / raw.decode("utf-8")
         for raw in result.stdout.split(b"\0")
         if raw
     ]
+    return [path for path in paths if path.is_file()]
 
 
 class PortableProvenanceTests(unittest.TestCase):

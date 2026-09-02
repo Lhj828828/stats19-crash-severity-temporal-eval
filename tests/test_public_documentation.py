@@ -10,6 +10,16 @@ PROJECT_DIR = Path(__file__).resolve().parents[1]
 
 
 class PublicDocumentationTests(unittest.TestCase):
+    def test_current_journal_target_is_applied_sciences(self) -> None:
+        readme = (PROJECT_DIR / "README.md").read_text(encoding="utf-8")
+        checklist = PROJECT_DIR / "docs" / "APPLIED_SCIENCES_RELEASE_CHECKLIST.md"
+        self.assertIn("Applied Sciences", readme)
+        self.assertNotIn("docs/IEEE_ACCESS_RELEASE_CHECKLIST.md", readme)
+        self.assertTrue(checklist.is_file())
+        self.assertFalse(
+            (PROJECT_DIR / "docs" / "IEEE_ACCESS_RELEASE_CHECKLIST.md").exists()
+        )
+
     def test_readme_names_public_runner_and_preserves_release_boundary(self) -> None:
         readme = (PROJECT_DIR / "README.md").read_text(encoding="utf-8")
         self.assertIn("python run_public_reproduction.py --all", readme)

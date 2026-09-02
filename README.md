@@ -2,15 +2,15 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22231696.svg)](https://doi.org/10.5281/zenodo.22231696)
 
-This repository contains the frozen computational materials for the IEEE
-Access manuscript on leakage-aware temporal generalization in collision
+This repository contains the frozen computational materials for the Applied
+Sciences manuscript on leakage-aware temporal generalization in collision
 severity classification. It combines the UK STATS19 primary analysis with a
 separately trained New Zealand Crash Analysis System (CAS) replication.
 
-IEEE Access is a fully open-access journal. An article processing charge and
-the current IEEE Access author requirements should be checked before
-submission; the journal choice does not change the frozen analyses in this
-repository.
+The current manuscript target is Applied Sciences (MDPI), a fully open-access
+journal. The current article processing charge, author requirements and any
+section-specific instructions must be checked again at submission; the journal
+target does not change the frozen analyses in this repository.
 
 ## Scope and status
 
@@ -200,12 +200,13 @@ rerun rather than changing a test result in place.
 
 ## Release materials
 
-The repository-level release checklist is in
-`docs/IEEE_ACCESS_RELEASE_CHECKLIST.md`. The original `v1.0.0` tag remains
-immutable; `v1.0.1` corrects the formal author metadata, and `v1.0.2` points
-to the same frozen commit and provides the successful Zenodo archival event.
-No analytical code, data-processing rule, model output or study conclusion
-changed between these two tags.
+The current repository-level release checklist is in
+`docs/APPLIED_SCIENCES_RELEASE_CHECKLIST.md`. The original `v1.0.0`-`v1.0.2`
+release materials retain the historical IEEE Access target recorded when those
+versions were prepared. The current working branch is a post-`v1.0.2` update
+and must receive a new version identifier before it is presented as an Applied
+Sciences supplement. No analytical code, data-processing rule, model output or
+study conclusion is changed by the journal-target update.
 
 The exact archived `v1.0.2` release is available at
 <https://doi.org/10.5281/zenodo.22231697>. The concept DOI
