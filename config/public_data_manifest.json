@@ -33,6 +33,7 @@
       "files": [
         {
           "relative_path": "data/raw/collisions/collision_2018.csv",
+          "expected_rows": 122635,
           "size_bytes": 23546899,
           "sha256": "843061a73214ba8832ed4ca78292c0f0c6686444927b0fc47c9207e4e5985f4f",
           "role": "analysis_input",
@@ -41,6 +42,7 @@
         },
         {
           "relative_path": "data/raw/collisions/collision_2019.csv",
+          "expected_rows": 117536,
           "size_bytes": 22503365,
           "sha256": "548b97c6afd3d6466779f7a36272f5674f0228e9b820b8d4a4a28c8b4c14b31a",
           "role": "analysis_input",
@@ -49,6 +51,7 @@
         },
         {
           "relative_path": "data/raw/collisions/collision_2020.csv",
+          "expected_rows": 91199,
           "size_bytes": 17427393,
           "sha256": "49072103f337a9017aef8cab858463c636b33758fec68664592943d1e1d33f93",
           "role": "analysis_input",
@@ -57,6 +60,7 @@
         },
         {
           "relative_path": "data/raw/collisions/collision_2021.csv",
+          "expected_rows": 101087,
           "size_bytes": 19208797,
           "sha256": "01442848b43bd89d6e9e0f21f17087c974f853ba9220dd8e6cc271b4a9d738de",
           "role": "analysis_input",
@@ -65,6 +69,7 @@
         },
         {
           "relative_path": "data/raw/collisions/collision_2022.csv",
+          "expected_rows": 106004,
           "size_bytes": 20116923,
           "sha256": "89b2f1460698e471858b3bf1c36a737f632d40c74bfe75aa8964d4260b118dbf",
           "role": "analysis_input",
@@ -73,6 +78,7 @@
         },
         {
           "relative_path": "data/raw/collisions/collision_2023.csv",
+          "expected_rows": 104258,
           "size_bytes": 19790001,
           "sha256": "ec28a1792ac22ff3382b8d0b3549dc07c9c57d9f8d94b5be0084def09aef47e6",
           "role": "analysis_input",
@@ -81,6 +87,7 @@
         },
         {
           "relative_path": "data/raw/collisions/collision_2024.csv",
+          "expected_rows": 100927,
           "size_bytes": 19208488,
           "sha256": "ad02c026d0f87074800bd26fbca0e51b7b18eacc3e541fb869c091604b6a8b20",
           "role": "analysis_input",
