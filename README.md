@@ -71,9 +71,9 @@ python download_and_verify_data.py list
 python download_and_verify_data.py verify --dataset all
 ```
 
-Immutable download URLs will be enabled only after the separate data archive
-passes its final source-terms review. Mutable upstream data are never accepted
-as silent replacements for the paper snapshots.
+The STATS19 source-terms review is complete under OGL v3.0. The separate CAS
+review and immutable archive publication remain pending. Mutable upstream data
+are never accepted as silent replacements for the paper snapshots.
 
 ## Environment and reproduction
 

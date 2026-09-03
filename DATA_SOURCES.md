@@ -13,8 +13,8 @@ SHA-256. Together these are the intended compact data archive; the 1.53 GB
 full-history STATS19 source file is retained only as provenance and is not
 required by the public workflow.
 
-Until an immutable data record has passed the final redistribution review and
-has been published, its download URLs remain deliberately unset. The
+Until each dataset has passed its redistribution review and an immutable data
+record has been published, its download URLs remain deliberately unset. The
 following commands are already available:
 
 ```text
@@ -40,12 +40,32 @@ query for the snapshots used in the paper.
   `4b60aac426b8fb7771dc9a3fc3e383399e88c9a49041544926aec4bea409e366`
 - Analysis years: 2018-2024. The source file contains additional years.
 
-The annual files in `data/raw/collisions/` were copied byte-for-byte from the
-complete source file. Their individual checksums, sizes and row counts are
-frozen in `config/public_data_manifest.json`; the original extraction record
-is retained in `logs/d1_file_manifest.csv`. The DfT/GOV.UK source terms in
-force at the time of reuse apply. Redistribution remains pending final review,
-so immutable archive URLs are not yet published.
+The annual files in `data/raw/collisions/` are derived fixed snapshots. They
+were created by selecting records by `collision_year` from the complete source
+file; the header and every selected CSV row were copied byte-for-byte. They are
+not represented as the official standalone annual release files. Their
+individual checksums, sizes and row counts are frozen in
+`config/public_data_manifest.json`; the original extraction record is retained
+in `logs/d1_file_manifest.csv`.
+
+DfT states that the public download contains the non-sensitive fields that can
+be made public and separately confirms that this limited STATS19 subset is
+released as open data under the Open Government Licence v3.0. That licence
+permits copying, publication, distribution and adaptation, including
+commercial and non-commercial reuse, subject to attribution and its stated
+exclusions. The project review therefore permits redistribution of these seven
+public-data snapshots with the following notice and links to the source and
+licence:
+
+> Contains public sector information licensed under the Open Government
+> Licence v3.0. Source: UK Department for Transport, Road Safety Open Data
+> (source snapshot retrieved 27 August 2026).
+
+The archive description must identify the files as project-derived snapshots,
+must not imply DfT endorsement, and must not include restricted STATS19 fields.
+The evidence and decision are recorded in
+`docs/STATS19_REDISTRIBUTION_REVIEW.md`. The source-terms review is complete,
+but the immutable archive URLs remain unpublished.
 
 Required DfT documentation snapshots are included in the software repository
 under `data/external/documentation/`. The public workflow does not run the

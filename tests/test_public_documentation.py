@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import unittest
 from pathlib import Path
 
@@ -53,6 +54,26 @@ class PublicDocumentationTests(unittest.TestCase):
         self.assertIn("not a claim that an independent third party", record)
         self.assertIn("remain pending", record)
 
+    def test_stats19_redistribution_review_is_explicit(self) -> None:
+        review = (
+            PROJECT_DIR / "docs" / "STATS19_REDISTRIBUTION_REVIEW.md"
+        ).read_text(encoding="utf-8")
+        normalized_review = " ".join(review.split())
+        manifest = json.loads(
+            (PROJECT_DIR / "config" / "public_data_manifest.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        stats19 = manifest["datasets"]["stats19"]
+        self.assertEqual(
+            stats19["source_terms_review"],
+            "REVIEW_COMPLETE_REDISTRIBUTION_PERMITTED_WITH_ATTRIBUTION",
+        )
+        self.assertEqual(stats19["license"]["id"], "ogl-uk-3.0")
+        self.assertIn("derived fixed snapshots", normalized_review)
+        self.assertIn("not legal advice", normalized_review)
+
+        self.assertIn("must not imply", normalized_review)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

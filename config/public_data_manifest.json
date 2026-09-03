@@ -20,9 +20,18 @@
         2023,
         2024
       ],
-      "snapshot_description": "Seven annual collision files copied byte-for-byte from the frozen complete DfT source file.",
+      "snapshot_description": "Seven annual collision snapshots derived by selecting 2018-2024 records from the frozen complete DfT source file; the header and selected CSV rows were retained byte-for-byte.",
       "source_landing_page": "https://www.gov.uk/government/statistical-data-sets/road-safety-open-data",
-      "source_terms_review": "PENDING_FINAL_REDISTRIBUTION_REVIEW",
+      "source_terms_review": "REVIEW_COMPLETE_REDISTRIBUTION_PERMITTED_WITH_ATTRIBUTION",
+      "license": {
+        "id": "ogl-uk-3.0",
+        "name": "Open Government Licence v3.0",
+        "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+        "provider": "UK Department for Transport",
+        "required_attribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
+        "reviewed_on": "2026-09-03",
+        "review_record": "docs/STATS19_REDISTRIBUTION_REVIEW.md"
+      },
       "provenance": {
         "complete_source_filename": "dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
         "complete_source_size_bytes": 1534937928,
