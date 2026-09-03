@@ -13,8 +13,9 @@ SHA-256. Together these are the intended compact data archive; the 1.53 GB
 full-history STATS19 source file is retained only as provenance and is not
 required by the public workflow.
 
-Until each dataset has passed its redistribution review and an immutable data
-record has been published, its download URLs remain deliberately unset. The
+Both datasets have passed the project redistribution review. Their download
+URLs remain deliberately unset until an immutable data record has actually
+been published and its deposited bytes have passed the frozen hashes. The
 following commands are already available:
 
 ```text
@@ -98,6 +99,20 @@ severity label is the worst injury recorded for a crash and is not assumed to
 be identical to the STATS19 severity label. The two datasets were trained and
 evaluated separately; records, absolute metrics and SHAP ranks were not
 pooled.
+
+The local files are project-created exports from the live attribute service:
+the query selected 2022-2025 records and excluded `Non-Injury Crash`, geometry
+was omitted, and the result was serialised as compressed JSONL and CSV. The
+archive must identify those changes rather than describe either file as an
+unchanged official release. It must preserve the source's live-data, quality
+and "as is, where is" caveats and must not imply Waka Kotahi endorsement.
+
+The CAS source-terms review permits redistribution of the two frozen files
+under CC BY 4.0 with attribution and indication of the project modifications.
+The full evidence, decision boundary and required archive wording are recorded
+in `docs/CAS_REDISTRIBUTION_REVIEW.md`. The CAS data licence is separate from
+the repository's MIT software licence. The immutable archive URLs remain
+unpublished.
 
 ## Recreating the local data layout
 

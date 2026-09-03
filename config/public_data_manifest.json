@@ -115,7 +115,16 @@
       ],
       "snapshot_description": "Attribute-only injury-crash snapshot; the lossless JSONL is authoritative and the CSV is retained for transparent inspection.",
       "source_landing_page": "https://opendata-nzta.opendata.arcgis.com/datasets/NZTA::crash-analysis-system-cas-data-1/about",
-      "source_terms_review": "SOURCE_METADATA_REPORTS_CC_BY_4_0; PENDING_FINAL_REDISTRIBUTION_REVIEW",
+      "source_terms_review": "REVIEW_COMPLETE_REDISTRIBUTION_PERMITTED_WITH_ATTRIBUTION",
+      "license": {
+        "id": "cc-by-4.0",
+        "name": "Creative Commons Attribution 4.0 International",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "provider": "Waka Kotahi NZ Transport Agency",
+        "required_attribution": "Source data: Waka Kotahi NZ Transport Agency, Crash Analysis System (CAS), licensed under CC BY 4.0. Fixed attribute snapshot retrieved 28 August 2026 from the public CAS service.",
+        "reviewed_on": "2026-09-03",
+        "review_record": "docs/CAS_REDISTRIBUTION_REVIEW.md"
+      },
       "provenance": {
         "query_endpoint": "https://services.arcgis.com/CXBb7LAjgIIdcsPt/arcgis/rest/services/CAS_Data_Public/FeatureServer/0/query",
         "query_scope": "crashYear BETWEEN 2022 AND 2025 AND crashSeverity <> 'Non-Injury Crash'",

@@ -95,7 +95,8 @@ Official pages checked on 2026-09-02:
 - [x] Verify all compact results against the tracked scientific contracts.
 - [x] Review STATS19 redistribution and attribution requirements under the Open
       Government Licence v3.0; retain the dated evidence record.
-- [ ] Complete the separate CAS redistribution and attribution review.
+- [x] Complete the separate CAS redistribution and attribution review under CC
+      BY 4.0; retain the dated evidence record.
 - [ ] Publish immutable fixed-input archive URLs only after all included source
       terms and attribution requirements have been satisfied.
 - [ ] Update the data manifest and verify every file hash from a clean checkout.

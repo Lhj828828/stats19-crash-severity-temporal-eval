@@ -90,7 +90,7 @@ following:
 
 ## Residual boundary
 
-This decision covers STATS19 only. It does not complete the separate licence
-review for the New Zealand CAS snapshot. Immutable download URLs must remain
-unset until the relevant archive has actually been published and its uploaded
-files have been verified against the frozen SHA-256 values.
+This decision covers STATS19 only. The separate review for the New Zealand CAS
+snapshot is recorded in `docs/CAS_REDISTRIBUTION_REVIEW.md`. Immutable download
+URLs must remain unset until the relevant archive has actually been published
+and its uploaded files have been verified against the frozen SHA-256 values.
