@@ -23,7 +23,8 @@ class PublicDocumentationTests(unittest.TestCase):
     def test_readme_names_public_runner_and_preserves_release_boundary(self) -> None:
         readme = (PROJECT_DIR / "README.md").read_text(encoding="utf-8")
         self.assertIn("python run_public_reproduction.py --all", readme)
-        self.assertIn("clean D8-D14 run", readme)
+        self.assertIn("all D1-D14 stages", readme)
+        self.assertIn("not an independent", readme)
         self.assertIn("not a command for third-party use", readme)
 
     def test_data_guide_does_not_require_complete_file_for_public_run(self) -> None:
@@ -34,12 +35,23 @@ class PublicDocumentationTests(unittest.TestCase):
         self.assertNotIn("code/d1_acquire_and_audit.py", local_layout)
         self.assertIn("not exact-snapshot fallbacks", normalized)
 
-    def test_reproduction_guide_discloses_unfinished_release_gates(self) -> None:
+    def test_reproduction_guide_discloses_validation_and_unfinished_data_gate(self) -> None:
         guide = (PROJECT_DIR / "REPRODUCING.md").read_text(encoding="utf-8")
-        self.assertIn("full clean D8-D14 run", guide)
+        self.assertIn("seven fixed annual files through D14", guide)
+        self.assertIn("not evidence of an independent", guide)
         self.assertIn("immutable data-record URLs", guide)
         self.assertIn("--stop-after D7_training_inputs", guide)
         self.assertIn("author-side forensic comparator", guide)
+
+    def test_validation_record_is_specific_and_does_not_claim_independence(self) -> None:
+        record = (
+            PROJECT_DIR / "docs" / "PUBLIC_REPRODUCTION_VALIDATION.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("baf63c3d9373c64d9845374c280848ae1a45ef25", record)
+        self.assertIn("47/47", record)
+        self.assertIn("21/21", record)
+        self.assertIn("not a claim that an independent third party", record)
+        self.assertIn("remain pending", record)
 
 
 if __name__ == "__main__":

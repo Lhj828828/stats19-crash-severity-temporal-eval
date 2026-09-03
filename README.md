@@ -98,9 +98,12 @@ The public runner starts from the seven verified annual files, recreates the
 D1-compatible input audit, and does not copy existing models, predictions,
 intermediate data or D16 artifacts. It finishes with keyed, tolerance-aware
 comparison of compact scientific outputs against the tracked public
-references. The development version has been exercised through D7; a clean D8-D14 run
-and immutable data URLs remain `v1.1.0` release gates. Detailed
-commands and current limitations are in `REPRODUCING.md`.
+references. An author-run isolated Windows/Python 3.13 validation completed
+all D1-D14 stages, all 14 independent checks and all 21 compact-result
+comparisons on 2026-09-03. This is workflow validation, not an independent
+third-party replication. Immutable data URLs remain a `v1.1.0` release gate.
+Detailed commands, evidence and limitations are in `REPRODUCING.md` and
+`docs/PUBLIC_REPRODUCTION_VALIDATION.md`.
 
 The retained author-side forensic entry point is:
 

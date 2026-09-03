@@ -6,11 +6,14 @@ pipelines because their fields and severity labels are not exchangeable.
 
 ## Current availability
 
-The public STATS19 runner is present on the development branch and has been
-tested from the fixed annual files through D7 (feature audit, quality control
-and frozen splits). A full clean D8-D14 run and the immutable data-record URLs
-remain release gates for `v1.1.0`. Until those gates pass, do not describe the
-STATS19 development branch as a completed third-party reproduction package.
+The public STATS19 runner has completed an author-run isolated validation from
+the seven fixed annual files through D14 on Windows 11 with a clean Python
+3.13.15 environment. All 32 analysis stages, 14 independent checks, 21 compact
+scientific comparisons and seven required-figure checks passed. This validates
+the workflow on the stated environment but is not evidence of an independent
+third-party replication. immutable data-record URLs remain a release gate for
+`v1.1.0`; until those URLs are published, a new user must obtain the exact
+files separately and verify every recorded hash.
 
 The separate public CAS runner has passed a complete isolated run from the
 fixed lossless JSONL snapshot, including its eight independent checks and
@@ -188,3 +191,5 @@ cross-national or universal generalizability.
 See `DATA_SOURCES.md` for source attribution and
 `docs/REPRODUCIBILITY_BOUNDARY.md` for the exact distinction between public
 reconstruction, compact scientific verification and author-side forensics.
+The dated author-run validation record is in
+`docs/PUBLIC_REPRODUCTION_VALIDATION.md`.

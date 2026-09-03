@@ -70,17 +70,21 @@ third-party reconstruction package because the fixed raw snapshots are not in
 that software archive and the retained D16 comparator expects excluded local
 artifacts.
 
-The development branch now contains an isolated public STATS19 runner. It has
-passed a fresh annual-input-to-D7 execution without author artifacts. This is
-an implementation milestone, not yet evidence that the entire public workflow
-is complete.
+The development branch contains an isolated public STATS19 runner. An
+author-run validation completed the annual-input-to-D14 workflow, all 14
+independent checks and the compact scientific-result contract in a clean
+Windows/Python 3.13 environment on 2026-09-03. This validates the workflow on
+that environment; it is not evidence of an independent third-party
+replication. See `docs/PUBLIC_REPRODUCTION_VALIDATION.md`.
 
-The planned `v1.1.0` release may be described as a third-party reproduction
-workflow only after all of the following pass from a clean downloaded release:
+The planned `v1.1.0` release may be described as a public reconstruction
+workflow only after all of the following release gates are satisfied:
 
 - fixed inputs can be obtained and their SHA-256 values verified;
-- the public reconstruction completes without author-local artifacts;
-- compact scientific outputs pass the public verification contract;
+- the public reconstruction completes without author-local artifacts
+  (author-run Windows validation passed on 2026-09-03);
+- compact scientific outputs pass the public verification contract
+  (21/21 comparisons and 7/7 required files passed in that validation);
 - the documented commands work on the supported operating systems;
 - the data availability statement matches the actual licensing and archive
   arrangement.
@@ -88,3 +92,6 @@ workflow only after all of the following pass from a clean downloaded release:
 Numerical equivalence must be reported using the frozen scientific tolerances;
 byte-identical floating-point outputs are not assumed across unsupported
 platforms or library versions.
+
+No software release should be described as independently reproduced unless an
+independent researcher actually completes and reports the workflow.

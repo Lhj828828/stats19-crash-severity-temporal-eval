@@ -86,13 +86,13 @@ Official pages checked on 2026-09-02:
 
 ## Public repository release gate
 
-- [ ] Keep raw STATS19 and CAS records, model binaries, record-level
+- [x] Keep raw STATS19 and CAS records, model binaries, record-level
       predictions, local environments and private working files out of Git.
-- [ ] Run author-path scanning, JSON parsing and all unit tests.
-- [ ] Complete a fresh public STATS19 D1-D14 reconstruction from the seven
+- [x] Run author-path scanning, JSON parsing and all unit tests.
+- [x] Complete a fresh public STATS19 D1-D14 reconstruction from the seven
       verified annual inputs in an isolated workspace.
-- [ ] Complete the isolated CAS public workflow from the fixed JSONL snapshot.
-- [ ] Verify all compact results against the tracked scientific contracts.
+- [x] Complete the isolated CAS public workflow from the fixed JSONL snapshot.
+- [x] Verify all compact results against the tracked scientific contracts.
 - [ ] Publish immutable fixed-input archive URLs only after reviewing source
       terms and attribution requirements.
 - [ ] Update the data manifest and verify every file hash from a clean checkout.
