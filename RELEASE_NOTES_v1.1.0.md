@@ -39,5 +39,5 @@ replication.
 ## Software citation
 
 The software concept DOI is <https://doi.org/10.5281/zenodo.22231696>. The
-version-specific software DOI for `v1.1.0` is recorded on the GitHub release
-page and in the repository metadata after Zenodo completes archival.
+version-specific software DOI for `v1.1.0` is
+<https://doi.org/10.5281/zenodo.22303858>.

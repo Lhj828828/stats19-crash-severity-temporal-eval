@@ -212,13 +212,14 @@ rerun rather than changing a test result in place.
 The current repository-level release checklist is in
 `docs/APPLIED_SCIENCES_RELEASE_CHECKLIST.md`. The original `v1.0.0`-`v1.0.2`
 release materials retain the historical IEEE Access target recorded when those
-versions were prepared. The current working branch is a post-`v1.0.2` update
-and must receive a new version identifier before it is presented as an Applied
-Sciences supplement. No analytical code, data-processing rule, model output or
-study conclusion is changed by the journal-target update.
+versions were prepared. The `v1.1.0` release is the current Applied Sciences
+computational supplement and adds immutable fixed-input retrieval. No
+analytical code, data-processing rule, model output or study conclusion was
+changed by the journal-target or data-publication updates.
 
-The exact archived `v1.0.2` release is available at
-<https://doi.org/10.5281/zenodo.22231697>. The concept DOI
+The exact archived `v1.1.0` release is available at
+<https://doi.org/10.5281/zenodo.22303858>. The concept DOI
 <https://doi.org/10.5281/zenodo.22231696> represents all versions and resolves
-to the latest Zenodo archive. Cite the version DOI when referring to the
-computational materials used for this study.
+to the latest Zenodo archive. The previous `v1.0.2` archive remains available
+at <https://doi.org/10.5281/zenodo.22231697>. Cite the `v1.1.0` version DOI when
+referring to the computational materials used for this study.

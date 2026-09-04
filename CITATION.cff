@@ -9,9 +9,9 @@ authors:
     email: 18255884865@163.com
 repository-code: "https://github.com/Lhj828828/stats19-crash-severity-temporal-eval"
 license: MIT
-doi: 10.5281/zenodo.22231697
-version: 1.0.2
-date-released: 2026-09-01
+doi: 10.5281/zenodo.22303858
+version: 1.1.0
+date-released: 2026-09-04
 keywords:
   - crash severity classification
   - temporal generalization

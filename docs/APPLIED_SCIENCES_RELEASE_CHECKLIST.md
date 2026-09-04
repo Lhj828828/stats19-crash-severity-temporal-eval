@@ -101,12 +101,17 @@ Official pages checked on 2026-09-02:
       terms and attribution requirements have been satisfied.
 - [x] Update the data manifest and verify every file hash from a clean download
       directory (9/9 passed on 2026-09-04).
-- [ ] Create a new versioned release rather than moving or rewriting the
-      existing `v1.0.0`-`v1.0.2` tags.
-- [ ] Record the exact Git commit, version tag, GitHub release URL, Zenodo
-      version DOI and Zenodo concept DOI.
-- [ ] Update `CITATION.cff`, README and the manuscript Data Availability
-      Statement to cite the same version-specific computational artifact.
+- [x] Create the `v1.1.0` release from commit
+      `f49148494f56ad32227dc3d7522d02e4b8d280ce` without moving or rewriting
+      the existing `v1.0.0`-`v1.0.2` tags.
+- [x] Record the GitHub release
+      <https://github.com/Lhj828828/stats19-crash-severity-temporal-eval/releases/tag/v1.1.0>,
+      Zenodo version DOI <https://doi.org/10.5281/zenodo.22303858> and Zenodo
+      concept DOI <https://doi.org/10.5281/zenodo.22231696>.
+- [x] Update `CITATION.cff` and README to cite the `v1.1.0` computational
+      artifact.
+- [ ] Update the manuscript Data Availability Statement to cite the same
+      version-specific artifact before submission.
 
 ## Final factual checks
 

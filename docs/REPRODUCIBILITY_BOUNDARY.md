@@ -77,8 +77,8 @@ Windows/Python 3.13 environment on 2026-09-03. This validates the workflow on
 that environment; it is not evidence of an independent third-party
 replication. See `docs/PUBLIC_REPRODUCTION_VALIDATION.md`.
 
-The planned `v1.1.0` release may be described as a public reconstruction
-workflow after all of the following release gates are satisfied:
+The `v1.1.0` release is a public reconstruction workflow. Its release gates
+were satisfied as follows:
 
 - fixed inputs can be obtained and their SHA-256 values verified (9/9 files
   passed a clean Zenodo retrieval on 2026-09-04);
@@ -86,7 +86,8 @@ workflow after all of the following release gates are satisfied:
   (author-run Windows validation passed on 2026-09-03);
 - compact scientific outputs pass the public verification contract
   (21/21 comparisons and 7/7 required files passed in that validation);
-- the documented commands work on the supported operating systems;
+- the public Python entry points avoid author-local paths; the complete
+  author-run validation environment remains Windows 11 with Python 3.13;
 - the data availability statement matches the actual licensing and archive
   arrangement.
 
