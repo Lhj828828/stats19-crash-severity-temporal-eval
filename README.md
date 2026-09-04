@@ -83,6 +83,18 @@ replacements for the paper snapshots.
 The validated environment used Python 3.13.15. Direct and serialized-model
 dependencies are pinned in `requirements-lock.txt`.
 
+For an exact reproduction, use the immutable `v1.1.0` software archive at
+<https://doi.org/10.5281/zenodo.22303858>, or check out the matching Git tag:
+
+```text
+git clone https://github.com/Lhj828828/stats19-crash-severity-temporal-eval.git
+cd stats19-crash-severity-temporal-eval
+git checkout v1.1.0
+```
+
+Do not use a later `main` revision while claiming an exact reproduction of
+`v1.1.0`.
+
 The public STATS19 entry point creates an isolated sibling workspace and, by
 default, a clean environment:
 
@@ -108,6 +120,13 @@ third-party replication. The published data URLs and hashes passed a separate
 clean retrieval check on 2026-09-04. Detailed commands, evidence and
 limitations are in `REPRODUCING.md` and
 `docs/PUBLIC_REPRODUCTION_VALIDATION.md`.
+
+A successful full STATS19 reconstruction ends with both markers:
+
+```text
+PUBLIC_RESULT_VERIFICATION=PASS
+PUBLIC_REPRODUCTION_PIPELINE=COMPLETE
+```
 
 The retained author-side forensic entry point is:
 

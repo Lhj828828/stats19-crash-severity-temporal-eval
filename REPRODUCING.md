@@ -38,6 +38,21 @@ The command-line entry point is cross-platform. Windows 11 is the currently
 validated operating system; Linux and macOS must not be claimed as validated
 until their clean-release checks have actually passed.
 
+## 0. Obtain the fixed software release
+
+For an exact reproduction, download and extract the immutable `v1.1.0`
+software archive from <https://doi.org/10.5281/zenodo.22303858>. Alternatively,
+obtain the same tagged source from GitHub:
+
+```text
+git clone https://github.com/Lhj828828/stats19-crash-severity-temporal-eval.git
+cd stats19-crash-severity-temporal-eval
+git checkout v1.1.0
+```
+
+Run the remaining commands from that project root. A later `main` revision
+must not be described as an exact reproduction of `v1.1.0`.
+
 ## 1. Obtain and verify the fixed inputs
 
 From the software-project root, inspect the exact input contract:
@@ -96,6 +111,13 @@ python run_public_reproduction.py --all --workspace /path/to/reproduction --base
 The path syntax may be changed for Windows. Scientific settings remain fixed:
 the main D10 and D10b LightGBM runs use their documented four-thread cap, and
 the exclusion-2020 sensitivity retains its frozen eight-thread setting.
+
+A successful full STATS19 run ends with both markers:
+
+```text
+PUBLIC_RESULT_VERIFICATION=PASS
+PUBLIC_REPRODUCTION_PIPELINE=COMPLETE
+```
 
 For a non-formal local check, an already prepared Python 3.13 environment may
 be used:
