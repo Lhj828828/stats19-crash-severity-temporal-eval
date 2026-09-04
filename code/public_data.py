@@ -1,8 +1,8 @@
 """Download and verify immutable public reconstruction inputs.
 
 Mutable upstream URLs are recorded for provenance but are never used as an
-exact-snapshot fallback. Downloads are enabled only after immutable archive
-URLs have been added to the public data manifest.
+exact-snapshot fallback. Downloads use version-specific Zenodo record URLs and
+are accepted only after byte-size and SHA-256 verification.
 """
 
 from __future__ import annotations
@@ -13,6 +13,7 @@ import json
 import os
 import re
 import sys
+import time
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
 from typing import Any, Callable
@@ -23,6 +24,8 @@ from urllib.request import Request, urlopen
 PROJECT_DIR = Path(__file__).resolve().parents[1]
 DEFAULT_MANIFEST = PROJECT_DIR / "config" / "public_data_manifest.json"
 BLOCK_SIZE = 8 * 1024 * 1024
+DEFAULT_RETRIES = 5
+DEFAULT_RETRY_BACKOFF = 2.0
 SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
 
 
@@ -172,6 +175,8 @@ def download_file(
     *,
     replace: bool = False,
     timeout: float = 120.0,
+    retries: int = DEFAULT_RETRIES,
+    retry_backoff: float = DEFAULT_RETRY_BACKOFF,
     opener: Callable[..., Any] = urlopen,
 ) -> Verification:
     current = verify_file(root, spec)
@@ -189,32 +194,85 @@ def download_file(
             "Use --replace only after checking that this is not your only copy."
         )
 
+    if retries < 0:
+        raise DataDownloadError("retries must be non-negative")
+    if retry_backoff < 0:
+        raise DataDownloadError("retry_backoff must be non-negative")
+
     destination.parent.mkdir(parents=True, exist_ok=True)
     partial = destination.with_name(destination.name + ".part")
-    partial.unlink(missing_ok=True)
-    request = Request(
-        spec.immutable_download_url,
-        headers={"User-Agent": "stats19-temporal-eval-public-reproduction/1.0"},
-    )
-    digest = hashlib.sha256()
-    size = 0
-    try:
-        with opener(request, timeout=timeout) as response, partial.open("wb") as output:
-            for block in iter(lambda: response.read(BLOCK_SIZE), b""):
-                output.write(block)
-                digest.update(block)
-                size += len(block)
-        observed = digest.hexdigest()
-        if size != spec.size_bytes or observed != spec.sha256:
+
+    last_error: Exception | None = None
+    for attempt in range(retries + 1):
+        # Keep incomplete bytes only for resume. A complete partial is either
+        # promoted after verification or discarded before another request.
+        if partial.exists():
+            partial_size = partial.stat().st_size
+            if partial_size == spec.size_bytes:
+                if sha256_file(partial) == spec.sha256:
+                    os.replace(partial, destination)
+                    return verify_file(root, spec)
+                partial.unlink()
+            elif partial_size > spec.size_bytes:
+                partial.unlink()
+
+        offset = partial.stat().st_size if partial.exists() else 0
+        digest = hashlib.sha256()
+        if offset:
+            with partial.open("rb") as existing:
+                for block in iter(lambda: existing.read(BLOCK_SIZE), b""):
+                    digest.update(block)
+
+        headers = {"User-Agent": "stats19-temporal-eval-public-reproduction/1.0"}
+        if offset:
+            headers["Range"] = f"bytes={offset}-"
+        request = Request(spec.immutable_download_url, headers=headers)
+
+        try:
+            with opener(request, timeout=timeout) as response:
+                status = getattr(response, "status", None)
+                if status is None and hasattr(response, "getcode"):
+                    status = response.getcode()
+
+                # Never append a full response to a partial file if a server
+                # ignores the Range request.
+                if offset and status not in (None, 206):
+                    partial.unlink(missing_ok=True)
+                    if attempt < retries:
+                        time.sleep(retry_backoff * (2**attempt))
+                        continue
+                    raise DataDownloadError(
+                        f"Server did not honour Range for {spec.relative_path}"
+                    )
+
+                mode = "ab" if offset else "wb"
+                with partial.open(mode) as output:
+                    for block in iter(lambda: response.read(BLOCK_SIZE), b""):
+                        output.write(block)
+                        digest.update(block)
+
+            size = partial.stat().st_size
+            observed = digest.hexdigest()
+            if size == spec.size_bytes and observed == spec.sha256:
+                os.replace(partial, destination)
+                return verify_file(root, spec)
+
             raise DataDownloadError(
-                f"Downloaded bytes failed verification for {spec.relative_path}: "
-                f"size={size}/{spec.size_bytes}, sha256={observed}/{spec.sha256}"
+                f"Downloaded bytes incomplete or failed verification for "
+                f"{spec.relative_path}: size={size}/{spec.size_bytes}, "
+                f"sha256={observed}/{spec.sha256}"
             )
-        os.replace(partial, destination)
-    except Exception:
-        partial.unlink(missing_ok=True)
-        raise
-    return verify_file(root, spec)
+        except Exception as exc:
+            last_error = exc
+            if attempt >= retries:
+                break
+            time.sleep(retry_backoff * (2**attempt))
+
+    raise DataDownloadError(
+        f"Download failed after {retries + 1} attempt(s) for "
+        f"{spec.relative_path}; a partial file may be retained for resume: "
+        f"{partial}"
+    ) from last_error
 
 
 def print_manifest_summary(payload: dict[str, Any], specs: list[FileSpec]) -> None:
@@ -253,6 +311,10 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     download.add_argument("--dataset", action="append", default=[])
     download.add_argument("--replace", action="store_true")
     download.add_argument("--timeout", type=float, default=120.0)
+    download.add_argument("--retries", type=int, default=DEFAULT_RETRIES)
+    download.add_argument(
+        "--retry-backoff", type=float, default=DEFAULT_RETRY_BACKOFF
+    )
     return parser.parse_args(argv)
 
 
@@ -275,6 +337,8 @@ def main(argv: list[str] | None = None) -> int:
             spec,
             replace=args.replace,
             timeout=args.timeout,
+            retries=args.retries,
+            retry_backoff=args.retry_backoff,
         )
         print(f"[{result.status}] {spec.dataset}: {spec.relative_path}")
         results.append(result)

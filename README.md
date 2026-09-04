@@ -51,30 +51,32 @@ not as universal validation.
 
 ## Data and provenance
 
-Raw data are intentionally excluded from Git. The separate fixed-input data
-archive is intended to contain seven annual STATS19 analysis files plus the
-fixed CAS JSONL snapshot and inspection CSV, approximately 146 MB in total.
-It does not need the 1.53 GB all-years STATS19 source. Exact provenance, paths,
-byte sizes and SHA-256 checksums are recorded in `DATA_SOURCES.md` and
-`config/public_data_manifest.json`. Until immutable archive URLs are published,
-an independent researcher must obtain the exact files separately and verify
-their hashes before running the corresponding pipeline.
+Raw data are intentionally excluded from Git. The fixed inputs are published
+as two independent Zenodo records because their licences differ:
 
-Download the required inputs into the paths documented in `DATA_SOURCES.md`
-before running a fresh pipeline. Do not commit access tokens, raw data copied
-under different names, or unreviewed local files.
+- STATS19 2018-2024 snapshots, OGL v3.0:
+  <https://doi.org/10.5281/zenodo.22290566>;
+- CAS 2022-2025 injury-crash snapshot, CC BY 4.0:
+  <https://doi.org/10.5281/zenodo.22296725>.
+
+Together, the seven annual STATS19 files and two CAS files are approximately
+146 MB. The 1.53 GB all-years STATS19 source is not required by the public
+workflow. Exact provenance, paths, byte sizes and SHA-256 checksums are
+recorded in `DATA_SOURCES.md` and `config/public_data_manifest.json`.
 
 Inspect or verify the fixed public input contract with:
 
 ```text
 python download_and_verify_data.py list
+python download_and_verify_data.py download --dataset all
 python download_and_verify_data.py verify --dataset all
 ```
 
 The STATS19 and CAS source-terms reviews are complete under OGL v3.0 and CC BY
-4.0, respectively. Immutable archive publication remains pending. Mutable
-upstream data are never accepted as silent replacements for the paper
-snapshots.
+4.0, respectively. The immutable records were published and their deposited
+bytes downloaded by the author and verified 9/9 against the frozen manifest
+on 4 September 2026. Mutable upstream data are never accepted as silent
+replacements for the paper snapshots.
 
 ## Environment and reproduction
 
@@ -102,8 +104,9 @@ comparison of compact scientific outputs against the tracked public
 references. An author-run isolated Windows/Python 3.13 validation completed
 all D1-D14 stages, all 14 independent checks and all 21 compact-result
 comparisons on 2026-09-03. This is workflow validation, not an independent
-third-party replication. Immutable data URLs remain a `v1.1.0` release gate.
-Detailed commands, evidence and limitations are in `REPRODUCING.md` and
+third-party replication. The published data URLs and hashes passed a separate
+clean retrieval check on 2026-09-04. Detailed commands, evidence and
+limitations are in `REPRODUCING.md` and
 `docs/PUBLIC_REPRODUCTION_VALIDATION.md`.
 
 The retained author-side forensic entry point is:
@@ -190,6 +193,8 @@ rerun rather than changing a test result in place.
 - `RELEASE_NOTES_v1.0.0.md`: the first public version boundary.
 - `RELEASE_NOTES_v1.0.1.md`: metadata-only Zenodo archival follow-up to the
   frozen `v1.0.0` materials.
+- `RELEASE_NOTES_v1.1.0.md`: published fixed-input records and verified public
+  download support.
 
 ## Interpretation boundaries
 

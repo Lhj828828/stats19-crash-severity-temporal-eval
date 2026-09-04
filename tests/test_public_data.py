@@ -22,8 +22,16 @@ SPEC.loader.exec_module(public_data)
 
 
 class FakeResponse:
-    def __init__(self, payload: bytes) -> None:
+    def __init__(
+        self,
+        payload: bytes,
+        *,
+        max_bytes: int | None = None,
+        status: int = 200,
+    ) -> None:
         self.payload = payload
+        self.max_bytes = max_bytes
+        self.status = status
         self.position = 0
 
     def __enter__(self) -> "FakeResponse":
@@ -33,6 +41,10 @@ class FakeResponse:
         return None
 
     def read(self, size: int) -> bytes:
+        if self.max_bytes is not None and self.position >= self.max_bytes:
+            return b""
+        if self.max_bytes is not None:
+            size = min(size, self.max_bytes - self.position)
         block = self.payload[self.position : self.position + size]
         self.position += len(block)
         return block
@@ -65,10 +77,22 @@ class PublicDataTests(unittest.TestCase):
         payload, specs = public_data.load_manifest(
             PROJECT_DIR / "config" / "public_data_manifest.json"
         )
-        self.assertEqual(payload["status"], "AWAITING_IMMUTABLE_DATA_ARCHIVE")
+        self.assertEqual(payload["status"], "IMMUTABLE_DATA_ARCHIVES_PUBLISHED")
         self.assertEqual(len(specs), 9)
         self.assertEqual({spec.dataset for spec in specs}, {"stats19", "cas"})
-        self.assertTrue(all(spec.immutable_download_url is None for spec in specs))
+        self.assertTrue(all(spec.immutable_download_url is not None for spec in specs))
+        records = payload["archive_policy"]["data_records"]
+        self.assertEqual(
+            records["stats19"]["version_doi"],
+            "10.5281/zenodo.22290566",
+        )
+        self.assertEqual(
+            records["cas"]["version_doi"],
+            "10.5281/zenodo.22296725",
+        )
+        for spec in specs:
+            record_id = "22290566" if spec.dataset == "stats19" else "22296725"
+            self.assertIn(f"/records/{record_id}/files/", spec.immutable_download_url)
 
     def test_verify_pass_and_hash_mismatch(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -111,6 +135,38 @@ class PublicDataTests(unittest.TestCase):
             self.assertEqual(result.status, "PASS")
             self.assertEqual((root / specs[0].relative_path).read_bytes(), payload)
             self.assertFalse((root / (specs[0].relative_path + ".part")).exists())
+
+    def test_interrupted_download_resumes_with_range(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            payload = b"0123456789"
+            manifest = root / "manifest.json"
+            write_manifest(manifest, payload, url="https://example.test/archive")
+            _, specs = public_data.load_manifest(manifest)
+            calls: list[str | None] = []
+
+            def opener(request: object, **_: object) -> FakeResponse:
+                range_value = (
+                    request.get_header("Range")
+                    if hasattr(request, "get_header")
+                    else None
+                )
+                calls.append(range_value)
+                if len(calls) == 1:
+                    return FakeResponse(payload, max_bytes=4)
+                self.assertEqual(range_value, "bytes=4-")
+                return FakeResponse(payload[4:], status=206)
+
+            result = public_data.download_file(
+                root,
+                specs[0],
+                retries=1,
+                retry_backoff=0,
+                opener=opener,
+            )
+            self.assertEqual(result.status, "PASS")
+            self.assertEqual((root / specs[0].relative_path).read_bytes(), payload)
+            self.assertEqual(calls, [None, "bytes=4-"])
 
     def test_path_traversal_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

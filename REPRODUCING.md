@@ -11,9 +11,9 @@ the seven fixed annual files through D14 on Windows 11 with a clean Python
 3.13.15 environment. All 32 analysis stages, 14 independent checks, 21 compact
 scientific comparisons and seven required-figure checks passed. This validates
 the workflow on the stated environment but is not evidence of an independent
-third-party replication. immutable data-record URLs remain a release gate for
-`v1.1.0`; until those URLs are published, a new user must obtain the exact
-files separately and verify every recorded hash.
+third-party replication. The exact STATS19 and CAS inputs are now available in
+separate immutable Zenodo records. A clean retrieval from those records passed
+all nine size and SHA-256 checks on 4 September 2026.
 
 The separate public CAS runner has passed a complete isolated run from the
 fixed lossless JSONL snapshot, including its eight independent checks and
@@ -46,19 +46,21 @@ From the software-project root, inspect the exact input contract:
 python download_and_verify_data.py list
 ```
 
-After the separate immutable data record is published and its URLs are added
-to `config/public_data_manifest.json`, download STATS19 and verify every file:
+Download and verify all published inputs directly from their version-specific
+Zenodo records:
 
 ```text
-python download_and_verify_data.py download --dataset stats19
-python download_and_verify_data.py verify --dataset stats19
+python download_and_verify_data.py download --dataset all
+python download_and_verify_data.py verify --dataset all
 ```
 
-Until those immutable URLs exist, `download` deliberately fails. A researcher
-who already possesses the exact annual files may place them under
-`data/raw/collisions/`; `verify` must report `PASS` for all seven files before
-the analysis starts. Never replace the fixed snapshot with the mutable DfT
-`latest-published-year` file merely because its filename is similar.
+The STATS19 record is <https://doi.org/10.5281/zenodo.22290566> under OGL
+v3.0. The separate CAS record is
+<https://doi.org/10.5281/zenodo.22296725> under CC BY 4.0. `verify` must report
+`PASS` for all nine files before either analysis starts. Interrupted downloads
+are resumed with finite retries, but no file is accepted unless its complete
+size and SHA-256 match the manifest. Never replace a fixed snapshot with the
+mutable DfT `latest-published-year` file or a fresh CAS API response.
 
 ## 2. Inspect the execution plan
 

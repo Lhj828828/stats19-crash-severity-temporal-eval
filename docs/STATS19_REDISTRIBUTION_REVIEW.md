@@ -91,6 +91,7 @@ following:
 ## Residual boundary
 
 This decision covers STATS19 only. The separate review for the New Zealand CAS
-snapshot is recorded in `docs/CAS_REDISTRIBUTION_REVIEW.md`. Immutable download
-URLs must remain unset until the relevant archive has actually been published
-and its uploaded files have been verified against the frozen SHA-256 values.
+snapshot is recorded in `docs/CAS_REDISTRIBUTION_REVIEW.md`. The publication
+condition was satisfied on 4 September 2026: the seven files were published in
+Zenodo record 22290566 under OGL v3.0 and the deposited bytes were verified
+against the frozen SHA-256 values.

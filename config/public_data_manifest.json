@@ -1,12 +1,26 @@
 {
   "schema_version": "PUBLIC_DATA_V1",
-  "status": "AWAITING_IMMUTABLE_DATA_ARCHIVE",
+  "status": "IMMUTABLE_DATA_ARCHIVES_PUBLISHED",
   "purpose": "Exact analysis-input manifest for the public third-party reconstruction workflow.",
   "archive_policy": {
     "software_archive_contains_raw_data": false,
-    "immutable_data_record_doi": null,
+    "separate_records_due_to_distinct_licenses": true,
+    "data_records": {
+      "stats19": {
+        "version_doi": "10.5281/zenodo.22290566",
+        "concept_doi": "10.5281/zenodo.22290565",
+        "record_url": "https://zenodo.org/records/22290566",
+        "published_on": "2026-09-04"
+      },
+      "cas": {
+        "version_doi": "10.5281/zenodo.22296725",
+        "concept_doi": "10.5281/zenodo.22296724",
+        "record_url": "https://zenodo.org/records/22296725",
+        "published_on": "2026-09-04"
+      }
+    },
     "mutable_source_urls_are_not_exact_snapshot_urls": true,
-    "download_urls_must_remain_null_until_license_review_and_archive_publication": true
+    "download_urls_populated_after_license_review_and_archive_publication": true
   },
   "datasets": {
     "stats19": {
@@ -47,7 +61,7 @@
           "sha256": "843061a73214ba8832ed4ca78292c0f0c6686444927b0fc47c9207e4e5985f4f",
           "role": "analysis_input",
           "source_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
-          "immutable_download_url": null
+          "immutable_download_url": "https://zenodo.org/api/records/22290566/files/collision_2018.csv/content"
         },
         {
           "relative_path": "data/raw/collisions/collision_2019.csv",
@@ -56,7 +70,7 @@
           "sha256": "548b97c6afd3d6466779f7a36272f5674f0228e9b820b8d4a4a28c8b4c14b31a",
           "role": "analysis_input",
           "source_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
-          "immutable_download_url": null
+          "immutable_download_url": "https://zenodo.org/api/records/22290566/files/collision_2019.csv/content"
         },
         {
           "relative_path": "data/raw/collisions/collision_2020.csv",
@@ -65,7 +79,7 @@
           "sha256": "49072103f337a9017aef8cab858463c636b33758fec68664592943d1e1d33f93",
           "role": "analysis_input",
           "source_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
-          "immutable_download_url": null
+          "immutable_download_url": "https://zenodo.org/api/records/22290566/files/collision_2020.csv/content"
         },
         {
           "relative_path": "data/raw/collisions/collision_2021.csv",
@@ -74,7 +88,7 @@
           "sha256": "01442848b43bd89d6e9e0f21f17087c974f853ba9220dd8e6cc271b4a9d738de",
           "role": "analysis_input",
           "source_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
-          "immutable_download_url": null
+          "immutable_download_url": "https://zenodo.org/api/records/22290566/files/collision_2021.csv/content"
         },
         {
           "relative_path": "data/raw/collisions/collision_2022.csv",
@@ -83,7 +97,7 @@
           "sha256": "89b2f1460698e471858b3bf1c36a737f632d40c74bfe75aa8964d4260b118dbf",
           "role": "analysis_input",
           "source_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
-          "immutable_download_url": null
+          "immutable_download_url": "https://zenodo.org/api/records/22290566/files/collision_2022.csv/content"
         },
         {
           "relative_path": "data/raw/collisions/collision_2023.csv",
@@ -92,7 +106,7 @@
           "sha256": "ec28a1792ac22ff3382b8d0b3549dc07c9c57d9f8d94b5be0084def09aef47e6",
           "role": "analysis_input",
           "source_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
-          "immutable_download_url": null
+          "immutable_download_url": "https://zenodo.org/api/records/22290566/files/collision_2023.csv/content"
         },
         {
           "relative_path": "data/raw/collisions/collision_2024.csv",
@@ -101,7 +115,7 @@
           "sha256": "ad02c026d0f87074800bd26fbca0e51b7b18eacc3e541fb869c091604b6a8b20",
           "role": "analysis_input",
           "source_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv",
-          "immutable_download_url": null
+          "immutable_download_url": "https://zenodo.org/api/records/22290566/files/collision_2024.csv/content"
         }
       ]
     },
@@ -139,7 +153,7 @@
           "sha256": "7db99dd4ba92716d751dabbc08b03f72373c635025b7d5335cf0b6705a7bd7f3",
           "role": "authoritative_analysis_input",
           "source_url": "https://services.arcgis.com/CXBb7LAjgIIdcsPt/arcgis/rest/services/CAS_Data_Public/FeatureServer/0/query",
-          "immutable_download_url": null
+          "immutable_download_url": "https://zenodo.org/api/records/22296725/files/cas_injury_2022_2025_snapshot.jsonl.gz/content"
         },
         {
           "relative_path": "data/raw/cas/cas_injury_2022_2025_snapshot.csv.gz",
@@ -147,7 +161,7 @@
           "sha256": "cc554366351cf4d5ccc7207f583c8ff1437036a615f1bac4dcdcccac76d1745c",
           "role": "inspection_copy",
           "source_url": "https://services.arcgis.com/CXBb7LAjgIIdcsPt/arcgis/rest/services/CAS_Data_Public/FeatureServer/0/query",
-          "immutable_download_url": null
+          "immutable_download_url": "https://zenodo.org/api/records/22296725/files/cas_injury_2022_2025_snapshot.csv.gz/content"
         }
       ]
     }

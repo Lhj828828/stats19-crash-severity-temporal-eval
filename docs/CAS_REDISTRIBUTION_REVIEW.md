@@ -113,6 +113,6 @@ following:
 This decision covers only the two files and hashes listed above. It does not
 make a mutable CAS API response reproducibly equivalent to the paper input,
 does not transfer rights in third-party marks, and does not imply Waka Kotahi
-endorsement. Immutable download URLs and the data-record DOI must remain unset
-until the archive has actually been published and its deposited bytes have
-been verified against the frozen hashes.
+endorsement. The publication condition was satisfied on 4 September 2026: the
+two files were published in Zenodo record 22296725 under CC BY 4.0 and the
+deposited bytes were verified against the frozen SHA-256 values.

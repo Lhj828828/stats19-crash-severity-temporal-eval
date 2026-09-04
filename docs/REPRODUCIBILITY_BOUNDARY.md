@@ -65,10 +65,10 @@ parameters or scientific conclusions.
 ## Version claims
 
 The `v1.0.2` archive records the frozen code, protocols and compact results and
-documents an author-run isolated reproduction. It is not yet a one-command
-third-party reconstruction package because the fixed raw snapshots are not in
-that software archive and the retained D16 comparator expects excluded local
-artifacts.
+documents an author-run isolated reproduction. It predates the two published
+fixed-input records and therefore does not contain the enabled immutable data
+download manifest. The retained D16 comparator also expects excluded local
+artifacts and is not the public entry point.
 
 The development branch contains an isolated public STATS19 runner. An
 author-run validation completed the annual-input-to-D14 workflow, all 14
@@ -78,9 +78,10 @@ that environment; it is not evidence of an independent third-party
 replication. See `docs/PUBLIC_REPRODUCTION_VALIDATION.md`.
 
 The planned `v1.1.0` release may be described as a public reconstruction
-workflow only after all of the following release gates are satisfied:
+workflow after all of the following release gates are satisfied:
 
-- fixed inputs can be obtained and their SHA-256 values verified;
+- fixed inputs can be obtained and their SHA-256 values verified (9/9 files
+  passed a clean Zenodo retrieval on 2026-09-04);
 - the public reconstruction completes without author-local artifacts
   (author-run Windows validation passed on 2026-09-03);
 - compact scientific outputs pass the public verification contract

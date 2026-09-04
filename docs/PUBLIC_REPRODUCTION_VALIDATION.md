@@ -26,10 +26,17 @@ The public runner completed all 32 analysis stages from the annual inputs throug
 
 The result verifier used the frozen keys and tolerances in `config/public_result_contract.json`. It did not require byte-identical floating-point files and did not widen a tolerance after inspecting this run.
 
-## Scope and remaining gate
+## Scope and published-input validation
 
 This validation supports the executability of the public STATS19 workflow on the stated Windows/Python environment and the reproduction of its compact scientific outputs. It does not validate Linux or macOS execution, does not establish cross-country generality, and does not turn the descriptive SHAP analysis into causal evidence.
 
-The fixed-input files are intentionally excluded from the software repository. The STATS19 and CAS source-terms reviews are complete; immutable public archive URLs and the data-record DOI remain pending. Until those archive gates are complete, a new user must obtain the exact files separately and pass the recorded hashes; the software release is not yet a self-contained one-command download-and-run package.
+The fixed-input files are intentionally excluded from the software repository.
+On 4 September 2026, they were published as two independent records with
+different licences: STATS19 at <https://doi.org/10.5281/zenodo.22290566> under
+OGL v3.0 and CAS at <https://doi.org/10.5281/zenodo.22296725> under CC BY 4.0.
+All nine analysis-input files were then downloaded into a new directory from
+the version-specific Zenodo URLs. Every deposited file passed the frozen byte
+size and SHA-256 contract (`9/9 PASS`). This closes the exact-input retrieval
+gate but remains an author-run validation, not an independent replication.
 
 The full local run state and record-level outputs are not distributed because they contain local paths and large rebuildable artifacts. This tracked record therefore reports the status, counts and timing needed for the release gate; the public runner recreates its own machine-readable state and verification report in every isolated workspace.

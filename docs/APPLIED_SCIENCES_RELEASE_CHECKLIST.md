@@ -97,9 +97,10 @@ Official pages checked on 2026-09-02:
       Government Licence v3.0; retain the dated evidence record.
 - [x] Complete the separate CAS redistribution and attribution review under CC
       BY 4.0; retain the dated evidence record.
-- [ ] Publish immutable fixed-input archive URLs only after all included source
+- [x] Publish immutable fixed-input archive URLs only after all included source
       terms and attribution requirements have been satisfied.
-- [ ] Update the data manifest and verify every file hash from a clean checkout.
+- [x] Update the data manifest and verify every file hash from a clean download
+      directory (9/9 passed on 2026-09-04).
 - [ ] Create a new versioned release rather than moving or rewriting the
       existing `v1.0.0`-`v1.0.2` tags.
 - [ ] Record the exact Git commit, version tag, GitHub release URL, Zenodo

@@ -9,23 +9,28 @@ exact files used in the completed analyses.
 The machine-readable public input contract is
 `config/public_data_manifest.json`. It identifies seven annual STATS19 files
 and two CAS snapshot files by path, row count where applicable, byte size and
-SHA-256. Together these are the intended compact data archive; the 1.53 GB
+SHA-256. Together these comprise the published compact data archives; the 1.53 GB
 full-history STATS19 source file is retained only as provenance and is not
 required by the public workflow.
 
-Both datasets have passed the project redistribution review. Their download
-URLs remain deliberately unset until an immutable data record has actually
-been published and its deposited bytes have passed the frozen hashes. The
-following commands are already available:
+Both datasets passed the project redistribution review and were published as
+separate immutable records because they use different licences:
+
+- STATS19 version DOI: <https://doi.org/10.5281/zenodo.22290566>;
+- CAS version DOI: <https://doi.org/10.5281/zenodo.22296725>.
+
+The deposited inputs can be downloaded and verified with:
 
 ```text
 python download_and_verify_data.py list
+python download_and_verify_data.py download --dataset all
 python download_and_verify_data.py verify --dataset all
 ```
 
-The `download` command fails closed while immutable URLs are unset. It never
-silently substitutes the mutable STATS19 `latest` file or a fresh CAS API
-query for the snapshots used in the paper.
+The `download` command uses only version-specific Zenodo file URLs and verifies
+each complete size and SHA-256 before accepting a file. It never silently
+substitutes the mutable STATS19 `latest` file or a fresh CAS API query for the
+snapshots used in the paper.
 
 ## UK STATS19 (primary analysis)
 
@@ -66,7 +71,7 @@ The archive description must identify the files as project-derived snapshots,
 must not imply DfT endorsement, and must not include restricted STATS19 fields.
 The evidence and decision are recorded in
 `docs/STATS19_REDISTRIBUTION_REVIEW.md`. The source-terms review is complete,
-but the immutable archive URLs remain unpublished.
+and the seven files are published under OGL v3.0 in Zenodo record 22290566.
 
 Required DfT documentation snapshots are included in the software repository
 under `data/external/documentation/`. The public workflow does not run the
@@ -111,15 +116,15 @@ The CAS source-terms review permits redistribution of the two frozen files
 under CC BY 4.0 with attribution and indication of the project modifications.
 The full evidence, decision boundary and required archive wording are recorded
 in `docs/CAS_REDISTRIBUTION_REVIEW.md`. The CAS data licence is separate from
-the repository's MIT software licence. The immutable archive URLs remain
-unpublished.
+the repository's MIT software licence. The two files are published under CC BY
+4.0 in Zenodo record 22296725.
 
 ## Recreating the local data layout
 
-1. Obtain the fixed data archive after its DOI and immutable file URLs are
-   published. Do not substitute a current live response.
-2. Run `python download_and_verify_data.py download --dataset stats19` and
-   `python download_and_verify_data.py verify --dataset stats19`.
+1. Run `python download_and_verify_data.py download --dataset all` and
+   `python download_and_verify_data.py verify --dataset all`. Do not substitute
+   a current live response.
+2. Confirm that all nine files report `PASS`.
 3. Run `python run_public_reproduction.py --all`; the runner builds an isolated
    workspace and recreates the D1 audit directly from the seven verified
    annual files.
@@ -138,9 +143,8 @@ unpublished.
    useful for transparent review; the lossless JSONL is the authoritative CAS
    analysis input.
 
-Before publication of the immutable data record, a researcher who already has
-the exact files may place them at the manifest paths and run `verify`. The
-mutable DfT complete-file URL and live CAS API remain provenance links, not
-exact-snapshot fallbacks.
+Researchers who already have the exact files may place them at the manifest
+paths and run `verify`. The mutable DfT complete-file URL and live CAS API
+remain provenance links, not exact-snapshot fallbacks.
 
 Do not combine the two datasets or treat their class labels as exchangeable.
