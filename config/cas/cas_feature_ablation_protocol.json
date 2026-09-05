@@ -1,0 +1,201 @@
+{
+  "version": "CAS_FEATURE_ABLATION_POSTHOC_V1",
+  "status": "FROZEN_AFTER_PRIMARY_RESULTS_BEFORE_POSTHOC_ABLATION_FITS",
+  "created_local": "2026-09-05T16:06:01+08:00",
+  "purpose": "Complete two feature-removal checks requested in the early CAS feasibility audit but omitted from the primary CAS execution.",
+  "post_hoc_disclosure": {
+    "primary_2025_results_known_before_freeze": true,
+    "reason_for_analysis": "The early feasibility audit explicitly requested these checks, but no execution result or explicit cancellation record was found during the manuscript-methods audit on 2026-09-05.",
+    "classification": "post-hoc sensitivity analysis",
+    "not_preregistered": true,
+    "eligible_for_primary_model_selection": false,
+    "eligible_to_replace_primary_results": false,
+    "interpretation": "Assess whether the direction and magnitude of the already reported CAS findings are sensitive to the two questioned feature sets; do not use the results to retune, select, or replace a model."
+  },
+  "upstream_files": [
+    {
+      "file": "data/processed/cas_modeling_dataset.csv.gz",
+      "sha256": "714ca06b492f209b95cde9042a0b439f38f0d29213f70bc64207d8af9be777cd"
+    },
+    {
+      "file": "data/processed/cas_split_assignments.csv.gz",
+      "sha256": "69309305340f25c6bfb6fee7474b47bf015eba28d3c3627f081becc3d0ebdf32"
+    },
+    {
+      "file": "config/cas/cas_modeling_schema.json",
+      "sha256": "44ca815864e8919a46feb993e931da4e9435467db5722382c831228d2e220bba"
+    },
+    {
+      "file": "config/cas/cas_training_inputs.json",
+      "sha256": "d951705e72f3c01fd131bfa63d5a74ffcfb47765ef1999b8083effb3efaf1924"
+    },
+    {
+      "file": "config/cas/cas_analysis_protocol.json",
+      "sha256": "8c864a216aa9f1a27d970de17d005bdcfa0aa56512b95f12dff7eddbd5aeb134"
+    },
+    {
+      "file": "config/cas/cas_lightgbm_protocol.json",
+      "sha256": "a086baf7facdbdb94dee34e28507eb848fe749b6750e4806b88e24c037d3c695"
+    },
+    {
+      "file": "config/cas/cas_lightgbm_selected.json",
+      "sha256": "baf3376508ddf5c825120e8ae848faa5f8daf0524bdd9aa83c2c40c5f0053d82"
+    },
+    {
+      "file": "results/cas_evaluation/test_metrics.csv",
+      "sha256": "f7cab0cdb94100387482cdcc089d96629ccda108471c74651f48ffc840ad6ac4"
+    },
+    {
+      "file": "results/cas_evaluation/predictions/temporal_2025__logistic_weighted.csv.gz",
+      "sha256": "f83a89cc4b0ccbf6c89f63ef7498c6646cc42d7bb37e0789d47c0f9236fdd773"
+    },
+    {
+      "file": "results/cas_evaluation/predictions/temporal_2025__lightgbm_weighted.csv.gz",
+      "sha256": "b6afbf95f8aea77ff1fcd78fdc77308435a2d7874644eb8a2fad08af9c2c231a"
+    },
+    {
+      "file": "logs/cas/CAS_feasibility_audit_report.md",
+      "sha256": "9f35eed41029d39ce43b89261b959179ddb54d1312ae205224c4c198ca5b8dde"
+    }
+  ],
+  "temporal_design": {
+    "training_years": [2022, 2023],
+    "training_rows": 21934,
+    "validation_years": [2024],
+    "validation_rows": 10645,
+    "test_years": [2025],
+    "test_rows": 10542,
+    "statistical_unit": "police-reported personal-injury crash",
+    "test_access_status": "already inspected in the primary CAS analysis before this post-hoc protocol"
+  },
+  "full_model_reference": {
+    "variant": "full15_primary",
+    "feature_count": 15,
+    "comparison_cohort": "the identical ordered 2025 temporal-test records",
+    "models": ["logistic_weighted", "lightgbm_weighted"]
+  },
+  "scenarios": [
+    {
+      "scenario_id": "drop_urban",
+      "drop_features": ["feature_urban"],
+      "expected_feature_count": 14,
+      "audit_origin": "Remove urban and rerun the model as requested in the early CAS feasibility report."
+    },
+    {
+      "scenario_id": "drop_sparse_speed",
+      "drop_features": [
+        "feature_advisory_speed",
+        "feature_temporary_speed_limit"
+      ],
+      "expected_feature_count": 13,
+      "audit_origin": "Remove the two highly sparse speed fields together and rerun the model as requested in the early CAS feasibility report."
+    }
+  ],
+  "models": {
+    "logistic_weighted": {
+      "penalty": "l2",
+      "C": 1.0,
+      "solver": "lbfgs",
+      "max_iter": 1000,
+      "tol": 0.0001,
+      "fit_intercept": true,
+      "random_state": 20260901,
+      "class_weight": "frozen balanced weights computed from the complete 2022-2023 temporal training partition",
+      "categorical_preprocessing": "training-only vocabulary plus __UNSEEN__, followed by one-hot encoding",
+      "numeric_preprocessing": "training-median imputation with missing indicators, followed by training-fitted standardization"
+    },
+    "lightgbm_weighted": {
+      "candidate_id": "C06",
+      "boosting_type": "gbdt",
+      "objective": "multiclass",
+      "num_class": 3,
+      "n_estimators": 1000,
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "max_depth": -1,
+      "min_child_samples": 100,
+      "min_split_gain": 0.0,
+      "reg_alpha": 0.0,
+      "reg_lambda": 5.0,
+      "colsample_bytree": 0.8,
+      "subsample": 0.8,
+      "subsample_freq": 1,
+      "max_bin": 255,
+      "random_state": 20260901,
+      "deterministic": true,
+      "force_col_wise": true,
+      "class_weight": "the same frozen temporal balanced weights as the primary CAS model",
+      "categorical_preprocessing": "LightGBM-native categorical values with training-only vocabulary plus __UNSEEN__",
+      "numeric_preprocessing": "native numeric values with NaN retained"
+    }
+  },
+  "prediction_rule": "argmax over Minor, Serious, and Fatal probabilities; no threshold adjustment",
+  "reporting": {
+    "validation": "Record 2024 point estimates for transparency only; do not use them to tune, select, or change the frozen settings.",
+    "test": "Compare 2025 point estimates with the corresponding original 15-feature model on exactly the same records.",
+    "metrics": [
+      "macro_f1",
+      "qwk",
+      "ordinal_mae",
+      "accuracy",
+      "minor_recall",
+      "serious_recall",
+      "fatal_recall",
+      "serious_or_fatal_recall",
+      "mean_asymmetric_cost"
+    ],
+    "asymmetric_cost_matrix_rows_true_columns_predicted": [
+      [0, 1, 2],
+      [2, 0, 1],
+      [5, 3, 0]
+    ]
+  },
+  "bootstrap": {
+    "iterations": 2000,
+    "base_seed": 20260901,
+    "resampling_unit": "record",
+    "stratification": "true severity class within the fixed 2025 temporal-test cohort",
+    "interval": "2.5th and 97.5th percentiles",
+    "paired_comparisons": [
+      "each ablated model minus its corresponding full 15-feature primary model",
+      "LightGBM minus Logistic within each ablation"
+    ],
+    "metrics": [
+      "macro_f1",
+      "qwk",
+      "ordinal_mae",
+      "accuracy",
+      "minor_recall",
+      "serious_recall",
+      "fatal_recall",
+      "serious_or_fatal_recall",
+      "mean_asymmetric_cost"
+    ],
+    "higher_is_better": {
+      "macro_f1": true,
+      "qwk": true,
+      "ordinal_mae": false,
+      "accuracy": true,
+      "minor_recall": true,
+      "serious_recall": true,
+      "fatal_recall": true,
+      "serious_or_fatal_recall": true,
+      "mean_asymmetric_cost": false
+    },
+    "interpretation_limit": "Intervals represent record-level sampling uncertainty conditional on the fixed data, split, and fitting procedure; they do not erase the post-hoc status."
+  },
+  "execution": {
+    "threads": 8,
+    "environment": "the existing locked project environment",
+    "output_policy": "write only to models/cas_feature_ablation, results/cas_feature_ablation, logs/cas/cas_feature_ablation_*, and the completion record",
+    "main_result_mutation_forbidden": true
+  },
+  "smoke_test": {
+    "seed": 20260901,
+    "training_rows": 3000,
+    "validation_rows": 1200,
+    "test_rows": 1200,
+    "lightgbm_estimators": 30,
+    "analytical_result": false
+  }
+}

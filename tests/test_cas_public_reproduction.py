@@ -43,6 +43,10 @@ class CASPublicReproductionTests(unittest.TestCase):
             encoding="utf-8",
         )
         self.assertIn("01 CAS_D1_OFFLINE_FEASIBILITY_AUDIT", completed.stdout)
+        self.assertIn(
+            "CAS_POSTHOC_FEATURE_ABLATION_SENSITIVITY",
+            completed.stdout,
+        )
         self.assertIn("CAS_PUBLIC_CLOSEOUT", completed.stdout)
         self.assertIn("TESTS_and_COMPACT_RESULT_VERIFICATION", completed.stdout)
 
@@ -54,11 +58,24 @@ class CASPublicReproductionTests(unittest.TestCase):
         )
         self.assertFalse(any("d16" in argument.lower() for argument in arguments))
         self.assertFalse(any("cas_feasibility_audit.py" == argument for argument in arguments))
-        self.assertEqual(len(cas_public.STANDALONE_TESTS), 8)
+        self.assertEqual(len(cas_public.STANDALONE_TESTS), 9)
+        stage_names = [stage.name for stage in cas_public.PIPELINE_STAGES]
+        self.assertLess(
+            stage_names.index("CAS_D6_ONE_TIME_2025_EVALUATION"),
+            stage_names.index("CAS_POSTHOC_BIND_FEATURE_ABLATION_PROTOCOL"),
+        )
+        self.assertLess(
+            stage_names.index("CAS_POSTHOC_FEATURE_ABLATION_SENSITIVITY"),
+            stage_names.index("CAS_D7_FREEZE_POST_ANALYSIS_PROTOCOL"),
+        )
 
     def test_public_inputs_exclude_rebuildable_author_artifacts(self) -> None:
         inputs = cas_public.input_map(PROJECT_DIR)
         self.assertIn("config/cas_public_result_contract.json", inputs)
+        self.assertIn(
+            "config/cas_public_reference_protocols/cas_feature_ablation_protocol.json",
+            inputs,
+        )
         self.assertIn(
             "config/cas_public_reference_protocols/cas_cross_dataset_reporting_protocol.json",
             inputs,

@@ -104,6 +104,22 @@ PIPELINE_STAGES = (
         ("code/cas_evaluate_frozen_models.py", "--evaluate-once"),
     ),
     Stage(
+        "CAS_POSTHOC_BIND_FEATURE_ABLATION_PROTOCOL",
+        (
+            "code/cas_public_reproduction.py",
+            "--internal",
+            "bind-feature-ablation-protocol",
+        ),
+    ),
+    Stage(
+        "CAS_POSTHOC_FEATURE_ABLATION_SMOKE",
+        ("code/cas_feature_ablation_sensitivity.py", "--smoke"),
+    ),
+    Stage(
+        "CAS_POSTHOC_FEATURE_ABLATION_SENSITIVITY",
+        ("code/cas_feature_ablation_sensitivity.py", "--run"),
+    ),
+    Stage(
         "CAS_D7_FREEZE_POST_ANALYSIS_PROTOCOL",
         ("code/cas_freeze_post_analysis.py",),
     ),
@@ -136,6 +152,7 @@ STANDALONE_TESTS = (
     "tests/test_cas_bootstrap.py",
     "tests/test_cas_shap.py",
     "tests/test_cas_closeout.py",
+    "tests/test_cas_feature_ablation.py",
 )
 
 COMPACT_REFERENCE_FILES = (
@@ -215,6 +232,7 @@ def input_map(source: Path = SOURCE_DIR) -> dict[str, Path]:
         "run_cas_public_reproduction.py",
         "run_cas_public_reproduction.ps1",
         "verify_cas_public_results.py",
+        "RELEASE_NOTES_v1.2.0.md",
     ):
         add(name, source / name)
 
@@ -230,6 +248,10 @@ def input_map(source: Path = SOURCE_DIR) -> dict[str, Path]:
     for path in sorted(protocol_root.rglob("*")):
         if path.is_file():
             add(relative(path, source), path)
+    add(
+        "config/cas_public_reference_protocols/cas_feature_ablation_protocol.json",
+        source / "config" / "cas" / "cas_feature_ablation_protocol.json",
+    )
 
     upstream_root = source / "references" / "stats19_upstream"
     for path in sorted(upstream_root.rglob("*")):
@@ -760,6 +782,64 @@ def bind_report_protocol(project: Path) -> None:
     print(f"CAS_PUBLIC_REPORT_PROTOCOL_BOUND={hash_file(active_path)}")
 
 
+def bind_feature_ablation_protocol(project: Path) -> None:
+    """Bind post-hoc sensitivity checks to regenerated public upstream files.
+
+    The scientific settings remain frozen in the tracked template. Only hashes
+    of files regenerated in this isolated workspace are rebound, because
+    timestamps and runtime metadata can differ from the author's execution.
+    """
+
+    require_runtime_workspace(project)
+    template_path = (
+        project
+        / "config"
+        / "cas_public_reference_protocols"
+        / "cas_feature_ablation_protocol.json"
+    )
+    active_path = (
+        project / "config" / "cas" / "cas_feature_ablation_protocol.json"
+    )
+    template = load_json(template_path)
+    if template.get("version") != "CAS_FEATURE_ABLATION_POSTHOC_V1":
+        raise RuntimeError("Unexpected CAS feature-ablation template")
+    if template.get("status") != (
+        "FROZEN_AFTER_PRIMARY_RESULTS_BEFORE_POSTHOC_ABLATION_FITS"
+    ):
+        raise RuntimeError("CAS feature-ablation template is not frozen")
+    disclosure = template.get("post_hoc_disclosure", {})
+    if disclosure.get("not_preregistered") is not True:
+        raise RuntimeError(
+            "CAS feature-ablation template must disclose post-hoc status"
+        )
+    if disclosure.get("eligible_for_primary_model_selection") is not False:
+        raise RuntimeError(
+            "CAS feature-ablation cannot select the primary model"
+        )
+
+    for item in template["upstream_files"]:
+        raw_path = str(item["file"])
+        path = project / raw_path
+        if not path.is_file():
+            raise FileNotFoundError(
+                f"CAS feature-ablation upstream is missing: {path}"
+            )
+        item["sha256"] = hash_file(path)
+
+    template["public_reproduction_instance"] = {
+        "version": VERSION,
+        "action": "Bind only regenerated upstream hashes before post-hoc fitting.",
+        "scientific_parameters_changed": False,
+        "primary_models_or_results_modified": False,
+        "live_api_queried": False,
+    }
+    write_json_atomic(active_path, template)
+    print(
+        "CAS_PUBLIC_FEATURE_ABLATION_PROTOCOL_BOUND="
+        f"{hash_file(active_path)}"
+    )
+
+
 def write_workspace_manifest(project: Path) -> None:
     marker = require_runtime_workspace(project)
     config_dir = project / "config" / "cas"
@@ -769,6 +849,9 @@ def write_workspace_manifest(project: Path) -> None:
     bootstrap = load_json(config_dir / "cas_bootstrap_complete.json")
     h3 = load_json(config_dir / "cas_h3_complete.json")
     closeout = load_json(config_dir / "cas_replication_complete.json")
+    feature_ablation = load_json(
+        config_dir / "cas_feature_ablation_complete.json"
+    )
     raw_csv = project / "data" / "raw" / "cas" / "cas_injury_2022_2025_snapshot.csv.gz"
     processed = project / "data" / "processed" / "cas_modeling_dataset.csv.gz"
     assignments = project / "data" / "processed" / "cas_split_assignments.csv.gz"
@@ -813,6 +896,10 @@ def write_workspace_manifest(project: Path) -> None:
             "post_test_model_selection": False,
             "h1_h2_bootstrap_complete": bootstrap.get("status") == "H1_H2_BOOTSTRAP_COMPLETE",
             "h3_shap_complete": h3.get("status") == "H3_SHAP_COMPLETE",
+            "posthoc_feature_ablation_complete": feature_ablation.get(
+                "status"
+            )
+            == "POST_HOC_FEATURE_ABLATION_COMPLETE",
             "cross_dataset_directional_closeout": True,
         },
         "frozen_modeling_table": {
@@ -850,6 +937,16 @@ def write_workspace_manifest(project: Path) -> None:
             "shap_arrays_copied": False,
             "bootstrap_arrays_copied": False,
         },
+        "posthoc_feature_ablation": {
+            "status": feature_ablation.get("status"),
+            "scenarios": feature_ablation.get("scenarios", []),
+            "primary_models_or_results_modified": feature_ablation.get(
+                "primary_models_or_results_modified"
+            ),
+            "eligible_for_model_selection": feature_ablation.get(
+                "eligible_for_model_selection"
+            ),
+        },
     }
     write_json_atomic(config_dir / "cas_workspace_manifest.json", payload)
     print("CAS_PUBLIC_WORKSPACE_MANIFEST=WRITTEN")
@@ -870,6 +967,13 @@ def self_test(source: Path = SOURCE_DIR) -> None:
     missing = sorted(path for path in required if not (source / path).is_file())
     if missing:
         raise FileNotFoundError(f"Missing CAS public pipeline script(s): {missing}")
+    if (
+        "config/cas_public_reference_protocols/cas_feature_ablation_protocol.json"
+        not in files
+    ):
+        raise FileNotFoundError(
+            "Missing public CAS feature-ablation protocol template"
+        )
     forbidden = [
         path
         for path in files
@@ -898,7 +1002,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     action.add_argument("--list-stages", action="store_true")
     action.add_argument(
         "--internal",
-        choices=("bind-report", "write-workspace-manifest"),
+        choices=(
+            "bind-report",
+            "bind-feature-ablation-protocol",
+            "write-workspace-manifest",
+        ),
         help=argparse.SUPPRESS,
     )
     parser.add_argument("--workspace", type=Path, default=DEFAULT_WORKSPACE)
@@ -923,6 +1031,8 @@ def main(argv: list[str] | None = None) -> int:
         project = SOURCE_DIR
         if args.internal == "bind-report":
             bind_report_protocol(project)
+        elif args.internal == "bind-feature-ablation-protocol":
+            bind_feature_ablation_protocol(project)
         else:
             write_workspace_manifest(project)
         return 0

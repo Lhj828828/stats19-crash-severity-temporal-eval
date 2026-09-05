@@ -183,8 +183,9 @@ depends on excluded author artifacts.
 
 ## 6. CAS replication
 
-CAS uses its own fixed 2022-2025 snapshot, audit, models and one-time 2025
-evaluation. Do not put CAS records into the STATS19 workspace or compare the
+CAS uses its own fixed 2022-2025 snapshot, audit, models, one-time 2025
+evaluation and post-hoc feature-ablation sensitivity checks. Do not put CAS
+records into the STATS19 workspace or compare the
 two datasets as though their labels were identical. The public CAS entry and
 verification command have passed an isolated clean run. The exact input is
 the lossless JSONL file below, whose SHA-256 is checked before execution:
@@ -205,8 +206,10 @@ python verify_cas_public_results.py --candidate-root /path/to/cas-reproduction
 The runner creates an external isolated workspace, a clean Python 3.13
 environment by default, and all rebuildable models, predictions, Bootstrap
 arrays and SHAP arrays inside that workspace. It does not query the live CAS
-API or copy author-side artifacts. See `CAS_PUBLIC_REPRODUCTION.md` for the
-eight standalone checks and the required completion markers.
+API or copy author-side artifacts. After the frozen 2025 evaluation, it binds
+the post-hoc feature-ablation protocol to the regenerated upstream files and
+runs both feature-removal scenarios. See `CAS_PUBLIC_REPRODUCTION.md` for the
+nine standalone checks and the required completion markers.
 
 The CAS result supports workflow executability and separately reported
 directional agreement or disagreement only. It does not establish

@@ -31,6 +31,9 @@ target does not change the frozen analyses in this repository.
   independently.
 - The 2025 cohort was evaluated once after model freezing.
 - CAS records were never pooled with STATS19 records.
+- A post-hoc sensitivity analysis refits the frozen temporal design after
+  removing urban and the two sparse speed fields separately. It does not
+  select or replace the primary model.
 - The CAS analysis tests workflow executability and directional agreement or
   disagreement only. It does not establish cross-national generalizability.
 
@@ -44,10 +47,14 @@ Logit path, propagated bootstrap outputs and one probability-only four-thread
 sensitivity result. They are documented in `logs/d16_checkpoint.md`; no
 tolerance was widened to hide them.
 
-The CAS closeout and all eight CAS independent checks passed. The fatal-recall
+The CAS closeout and all nine CAS independent checks passed. The fatal-recall
 trade-off direction agreed with STATS19, while the Macro-F1 gain and SHAP-rank
-pattern did not reproduce. These results are reported as directional evidence,
-not as universal validation.
+pattern did not reproduce. The two feature-ablation checks are explicitly
+post-hoc sensitivity evidence: removing `urban` leaves the main comparison
+nearly unchanged, whereas removing the sparse speed fields changes selected
+safety metrics and increases the mean asymmetric cost for both refitted
+models. These results are reported as directional evidence, not as universal
+validation.
 
 ## Data and provenance
 
@@ -173,6 +180,7 @@ python tests/test_cas_evaluation.py
 python tests/test_cas_bootstrap.py
 python tests/test_cas_shap.py
 python tests/test_cas_closeout.py
+python tests/test_cas_feature_ablation.py
 ```
 
 The independent CAS public entry point is also available. It uses only the
@@ -187,7 +195,12 @@ python verify_cas_public_results.py --candidate-root /path/to/cas-reproduction
 
 The expected snapshot hash and the complete CAS command sequence are in
 `CAS_PUBLIC_REPRODUCTION.md`. CAS is a separately trained and evaluated
-workflow; its compact results are not pooled with STATS19 results.
+workflow; its compact results are not pooled with STATS19 results. The
+`--all` public entry point also binds the post-hoc feature-ablation protocol to
+the regenerated upstream files, runs its smoke and sensitivity stages, and
+checks the resulting completion record. The binding changes only
+run-specific file hashes; it does not change the frozen feature-removal
+scenarios, model settings or interpretation boundary.
 
 The completed one-time evaluation scripts intentionally refuse to overwrite
 their frozen outputs. Use the isolated reproduction entry point for a clean
@@ -214,6 +227,8 @@ rerun rather than changing a test result in place.
   frozen `v1.0.0` materials.
 - `RELEASE_NOTES_v1.1.0.md`: published fixed-input records and verified public
   download support.
+- `RELEASE_NOTES_v1.2.0.md`: post-hoc CAS feature-ablation sensitivity checks
+  and their public reproduction entry.
 
 ## Interpretation boundaries
 
@@ -239,6 +254,9 @@ changed by the journal-target or data-publication updates.
 The exact archived `v1.1.0` release is available at
 <https://doi.org/10.5281/zenodo.22303858>. The concept DOI
 <https://doi.org/10.5281/zenodo.22231696> represents all versions and resolves
-to the latest Zenodo archive. The previous `v1.0.2` archive remains available
-at <https://doi.org/10.5281/zenodo.22231697>. Cite the `v1.1.0` version DOI when
-referring to the computational materials used for this study.
+to the latest Zenodo archive. The `v1.2.0` release adds the CAS sensitivity
+analysis and its clean-workspace binding. Its version-specific DOI is recorded
+in the release metadata and in `CITATION.cff` after Zenodo archives the
+release. The previous `v1.0.2` archive remains available at
+<https://doi.org/10.5281/zenodo.22231697>. Cite the version DOI matching the
+software materials used for the study.

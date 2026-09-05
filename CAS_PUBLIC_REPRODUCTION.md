@@ -37,8 +37,12 @@ The runner creates the sibling directory
 `STATS19论文_cas_public_reproduction`, creates a clean virtual environment by
 default, and executes the offline audit, deterministic data preparation,
 frozen temporal/random splits, baseline models, LightGBM, the one-time 2025
-evaluation, Bootstrap uncertainty, SHAP stability, CAS directional closeout,
-independent tests and compact-result verification.
+evaluation, Bootstrap uncertainty, SHAP stability, the post-hoc feature-ablation
+sensitivity checks, CAS directional closeout,
+independent tests and compact-result verification. Before the ablation stages,
+the runner binds only the hashes of regenerated upstream files to a copy of
+the frozen post-hoc protocol. It does not change the feature-removal
+scenarios, model settings or primary CAS results.
 
 To use a snapshot outside the default input path:
 
@@ -51,6 +55,20 @@ For a non-formal local check with an already prepared Python 3.13 environment:
 ```text
 python run_cas_public_reproduction.py --all --use-current-environment
 ```
+
+The full --all run includes the two explicitly post-hoc feature-ablation
+scenarios:
+
+- drop_urban: remove feature_urban;
+- drop_sparse_speed: remove feature_advisory_speed and
+  feature_temporary_speed_limit together.
+
+Both scenarios refit the frozen temporal design with weighted multinomial
+Logistic and the frozen C06 LightGBM configuration. They are sensitivity
+evidence only: they do not retune, select or replace the 15-feature primary
+models. The generated outputs remain in the isolated workspace under
+results/cas_feature_ablation/; no raw data, fitted models or record-level
+prediction files are copied from the author workspace.
 
 On Windows, the equivalent convenience entry is:
 
@@ -92,11 +110,13 @@ python tests/test_cas_evaluation.py
 python tests/test_cas_bootstrap.py
 python tests/test_cas_shap.py
 python tests/test_cas_closeout.py
+python tests/test_cas_feature_ablation.py
 ```
 
-The resulting `config/cas/cas_workspace_manifest.json` records that the run
-used an isolated copy, did not query the live API, and did not copy author
-models or large result artifacts.
+The resulting config/cas/cas_workspace_manifest.json records that the run
+used an isolated copy, did not query the live API, did not copy author models
+or large result artifacts, and completed the post-hoc feature-ablation
+scenarios without modifying the primary analysis.
 
 ## Interpretation boundary
 

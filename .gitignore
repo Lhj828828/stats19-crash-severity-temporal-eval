@@ -100,6 +100,12 @@ results/**/*.npy
 results/**/*.joblib
 results/**/*.csv.gz
 
+# Rebuildable CAS post-hoc sensitivity outputs
+models/cas_feature_ablation/*
+results/cas_feature_ablation/*
+logs/cas/cas_feature_ablation_*
+config/cas/cas_feature_ablation_complete.json
+
 # Common local archives and OS metadata
 *.zip
 *.tar
