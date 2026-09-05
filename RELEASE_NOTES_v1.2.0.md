@@ -45,5 +45,5 @@ release remains an immutable reproduction boundary; users reproducing that
 version should continue to use its version-specific archive and DOI.
 
 The software concept DOI is
-<https://doi.org/10.5281/zenodo.22231696>. A version-specific DOI for this
-release is assigned by Zenodo when the GitHub release is archived.
+<https://doi.org/10.5281/zenodo.22231696>. The version-specific DOI for this
+release is <https://doi.org/10.5281/zenodo.22341639>.

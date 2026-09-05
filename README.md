@@ -90,17 +90,19 @@ replacements for the paper snapshots.
 The validated environment used Python 3.13.15. Direct and serialized-model
 dependencies are pinned in `requirements-lock.txt`.
 
-For an exact reproduction, use the immutable `v1.1.0` software archive at
-<https://doi.org/10.5281/zenodo.22303858>, or check out the matching Git tag:
+For an exact reproduction of the current software materials, use the immutable
+`v1.2.0` software archive at <https://doi.org/10.5281/zenodo.22341639>, or
+check out the matching Git tag:
 
 ```text
 git clone https://github.com/Lhj828828/stats19-crash-severity-temporal-eval.git
 cd stats19-crash-severity-temporal-eval
-git checkout v1.1.0
+git checkout v1.2.0
 ```
 
 Do not use a later `main` revision while claiming an exact reproduction of
-`v1.1.0`.
+`v1.2.0`. The earlier `v1.1.0` boundary remains available at
+<https://doi.org/10.5281/zenodo.22303858>.
 
 The public STATS19 entry point creates an isolated sibling workspace and, by
 default, a clean environment:
@@ -246,17 +248,17 @@ rerun rather than changing a test result in place.
 The current repository-level release checklist is in
 `docs/APPLIED_SCIENCES_RELEASE_CHECKLIST.md`. The original `v1.0.0`-`v1.0.2`
 release materials retain the historical IEEE Access target recorded when those
-versions were prepared. The `v1.1.0` release is the current Applied Sciences
-computational supplement and adds immutable fixed-input retrieval. No
+versions were prepared. The `v1.2.0` release is the current Applied Sciences
+computational supplement and adds the CAS feature-ablation sensitivity checks
+on top of the immutable fixed-input retrieval from `v1.1.0`. No
 analytical code, data-processing rule, model output or study conclusion was
 changed by the journal-target or data-publication updates.
 
-The exact archived `v1.1.0` release is available at
-<https://doi.org/10.5281/zenodo.22303858>. The concept DOI
+The exact archived `v1.2.0` release is available at
+<https://doi.org/10.5281/zenodo.22341639>. It adds the CAS sensitivity analysis
+and its clean-workspace binding. The concept DOI
 <https://doi.org/10.5281/zenodo.22231696> represents all versions and resolves
-to the latest Zenodo archive. The `v1.2.0` release adds the CAS sensitivity
-analysis and its clean-workspace binding. Its version-specific DOI is recorded
-in the release metadata and in `CITATION.cff` after Zenodo archives the
-release. The previous `v1.0.2` archive remains available at
-<https://doi.org/10.5281/zenodo.22231697>. Cite the version DOI matching the
-software materials used for the study.
+to the latest Zenodo archive. The previous `v1.1.0` archive remains available
+at <https://doi.org/10.5281/zenodo.22303858>, and the previous `v1.0.2` archive
+remains available at <https://doi.org/10.5281/zenodo.22231697>. Cite the version
+DOI matching the software materials used for the study.
