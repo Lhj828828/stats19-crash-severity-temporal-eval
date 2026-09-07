@@ -9,6 +9,7 @@ authors:
     email: 18255884865@163.com
 repository-code: "https://github.com/Lhj828828/stats19-crash-severity-temporal-eval"
 license: MIT
+doi: 10.5281/zenodo.22642853
 version: 1.3.0
 date-released: 2026-09-07
 keywords:

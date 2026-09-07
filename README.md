@@ -50,9 +50,11 @@ cross-platform validation. See
 The historical public-validation records below describe older implementations.
 See [FINAL_ANALYSIS.md](FINAL_ANALYSIS.md) for the separate reconstruction
 command, provenance boundaries and the remaining manuscript/release work.
-This source snapshot is prepared for `v1.3.0`. Its version DOI is assigned
-after the GitHub release; consult the release page and updated citation metadata.
-Do not use an earlier version DOI for this corrected analysis.
+The corrected source snapshot is published as `v1.3.0` at
+<https://doi.org/10.5281/zenodo.22642853>, from commit
+`962377ca6cbd0ca12c06bb801aaaf531b3c62ce7`. All 808 files downloaded from this
+archive matched that Git tree byte-for-byte. Do not use an earlier version DOI
+for this corrected analysis. Main-branch DOI backfill does not move the tag.
 
 ### Post-review random-reference correction
 
@@ -175,7 +177,9 @@ dependencies are pinned in `requirements-lock.txt`.
 
 ### Current 15-feature workflow
 
-From the corrected source tree, using Python 3.13 in a working environment:
+Download and extract the `v1.3.0` source archive from
+<https://doi.org/10.5281/zenodo.22642853>, or clone the repository and check out
+`v1.3.0`. From that source directory, use Python 3.13 in a working environment:
 
 ```text
 python -m pip install --requirement requirements-lock.txt
@@ -192,8 +196,9 @@ author-fitted models or predictions. Resume in the same workspace with:
 python run_final_analysis.py --stage reproduce --dataset all --workspace ../final-reconstruction --resume
 ```
 
-The corrected source snapshot is `v1.3.0`; its Zenodo version DOI is assigned
-after release. The old tags and DOIs below do not contain this entry.
+The corrected source snapshot is `v1.3.0`, DOI
+<https://doi.org/10.5281/zenodo.22642853>. The old tags and DOIs below do not
+contain this entry.
 See [FINAL_ANALYSIS.md](FINAL_ANALYSIS.md) for scope and current verification
 status. The author-run clean reconstruction passed against all 20 V2 reference
 tables on 7 September 2026. Manuscript editing remains separate from this check.
@@ -369,7 +374,8 @@ The current repository-level release checklist is in
 `docs/APPLIED_SCIENCES_RELEASE_CHECKLIST.md`. The original `v1.0.0`-`v1.0.2`
 release materials retain the historical IEEE Access target recorded when those
 versions were prepared. The current corrected computational supplement is
-prepared as `v1.3.0`, described in `RELEASE_NOTES_v1.3.0.md`. It replaces the
+published as `v1.3.0`, DOI <https://doi.org/10.5281/zenodo.22642853>, described
+in `RELEASE_NOTES_v1.3.0.md`. It replaces the
 selected analysis scope, not the historical tags or their archived artifacts.
 The `v1.2.0` release added CAS feature-ablation sensitivity to the older analysis.
 

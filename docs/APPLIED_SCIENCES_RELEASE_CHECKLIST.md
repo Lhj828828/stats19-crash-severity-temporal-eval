@@ -142,8 +142,9 @@ from the temporal hyperparameter-selection process identified on 2026-09-06.
 - [x] Record the broader regression outcome honestly: 27/29 standalone files
       passed. Two legacy D14 provenance-equality checks stop on historical
       path-normalization differences; do not rewrite their frozen hashes.
-- [ ] Publish the verified correction as a new software release/version DOI.
-      Do not claim that the immutable v1.2.0 archive contains the correction.
+- [x] Publish the verified correction as a new software release/version DOI:
+      `v1.3.0`, <https://doi.org/10.5281/zenodo.22642853>. The immutable
+      `v1.2.0` archive remains the historical implementation.
 
 ### Current 15-feature revision gate (7 September 2026)
 
@@ -174,9 +175,12 @@ from the temporal hyperparameter-selection process identified on 2026-09-06.
       historical D14 exact-hash failures separate from the passing test count.
 - [ ] Visually inspect final manuscript figures later; distinguish layout QA
       from numerical experiment and reproduction verification.
-- [ ] Scan and release the corrected public sources with a new software DOI,
-      then update the README, citation metadata and manuscript availability
-      statement together. Do not repurpose an older immutable version DOI.
+- [x] Scan and release corrected public sources as `v1.3.0`, archive at
+      <https://doi.org/10.5281/zenodo.22642853>, and backfill README/citation
+      metadata. All 808 published files matched commit
+      `962377ca6cbd0ca12c06bb801aaaf531b3c62ce7`; old tags/data DOIs are unchanged.
+- [ ] Update the manuscript availability statement to this version-specific
+      DOI when manuscript work resumes.
 
 ### Submission checks
 

@@ -76,6 +76,9 @@ archive. Fixed data archives are unchanged:
 - CAS: <https://doi.org/10.5281/zenodo.22296725> (CC BY 4.0).
 
 The software concept DOI is <https://doi.org/10.5281/zenodo.22231696>.
-The version-specific DOI will be added to the GitHub release description and
-the main-branch citation metadata after Zenodo archives this tag. The tag itself
-will not be moved for this metadata-only backfill.
+The version-specific software DOI is <https://doi.org/10.5281/zenodo.22642853>.
+Its published ZIP contains 808 files, all verified byte-for-byte against
+commit `962377ca6cbd0ca12c06bb801aaaf531b3c62ce7`. This DOI was backfilled in
+the GitHub release description and main-branch citation metadata after archival.
+The released tag is unchanged; its initial citation file necessarily predates
+the DOI assignment. No new scientific result is introduced by the backfill.

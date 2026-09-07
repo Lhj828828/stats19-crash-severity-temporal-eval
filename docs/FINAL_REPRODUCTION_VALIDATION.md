@@ -132,8 +132,21 @@ candidate files, not raw/model directories or historical Git objects:
 
 ## Release boundary
 
-Release packaging is separate from the successful experimental reconstruction
-and working-tree checks. No Git commit, new GitHub release or updated software
-DOI is claimed by this record. Manuscript writing remains paused.
-The current corrected sources must be published as a new version before an old
-immutable software DOI can be replaced in citation metadata.
+The corrected package was subsequently published as `v1.3.0` on 7 September 2026,
+commit `962377ca6cbd0ca12c06bb801aaaf531b3c62ce7`, DOI
+<https://doi.org/10.5281/zenodo.22642853>. The GitHub release is
+<https://github.com/Lhj828828/stats19-crash-severity-temporal-eval/releases/tag/v1.3.0>.
+
+The published 4,890,784-byte ZIP was downloaded and checked against Zenodo's
+size/MD5 and all 808 files in the fixed Git tree, with no differences. Its SHA-256
+is `c7edcd81e7e2349854b67c320784b206048770e293fc455a0893bcc3757681b8`.
+See `logs/final_analysis/release_v1.3.0_archive_verification.json`.
+The source ZIP excludes the pending manuscript workflow/Visio files and their
+builders. The 159 applicable tests also passed on the exported source with
+verified raw inputs available; the CAS snapshot test requires these inputs and
+does not pass on a data-free clone before the documented download step.
+
+Explicit Git attributes preserve bytes of the new sealed snapshots. The
+subsequent DOI backfill is metadata-only and does not move the tag, change
+analysis rules or require model refitting. Existing data DOIs remain unchanged.
+Manuscript writing remains paused.

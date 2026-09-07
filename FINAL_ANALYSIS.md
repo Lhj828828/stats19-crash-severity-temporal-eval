@@ -1,8 +1,9 @@
 # Final corrected analysis
 
 Target: Applied Sciences. Status: the corrected primary and retained sensitivity
-experiments are complete and locally verified. This revision is not yet released
-under a software DOI. On 7 September 2026 the author requested that experimental
+experiments are complete and locally verified. This revision is published as
+`v1.3.0`, DOI <https://doi.org/10.5281/zenodo.22642853>. On 7 September 2026
+the author requested that experimental
 and reproduction validation take priority over manuscript work. The final clean
 raw-to-results reconstruction subsequently passed for both datasets that day,
 before manuscript table or figure integration. See
@@ -167,11 +168,12 @@ exact-equality assertions, which do not apply to the normalized snapshot.
 
 ## Remaining sequence
 
-1. Prepare the corrected reproducibility package and release audit. The clean
-   reconstruction and selected-result acceptance are complete. Manuscript
-   editing and final figure layout remain paused; they do not block these checks.
-2. Commit/release the verified sources, archive a new software version, and fill the
-   new version DOI into citation metadata. Do not describe an old DOI as holding
-   these later corrections.
-3. Resume manuscript integration later. Layout-only edits do not require model
-   retraining; any scientific change needs a separately documented validation.
+The corrected sources are committed and published as `v1.3.0` from
+`962377ca6cbd0ca12c06bb801aaaf531b3c62ce7`. Zenodo archive DOI
+<https://doi.org/10.5281/zenodo.22642853> contains the fixed tag. All 808 archived
+files were downloaded and matched against that Git tree. DOI backfill is a
+separate main-branch documentation commit; the released tag is not moved.
+
+Manuscript integration remains paused. No further model training is required
+under the current frozen scope. Layout-only edits do not require retraining;
+any scientific change needs a separately documented validation.

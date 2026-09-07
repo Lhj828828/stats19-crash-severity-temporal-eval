@@ -1,0 +1,14 @@
+{
+  "status": "PASS_ALL_ARCHIVED_FILES_MATCH_RELEASED_COMMIT",
+  "version": "v1.3.0",
+  "commit": "962377ca6cbd0ca12c06bb801aaaf531b3c62ce7",
+  "record_url": "https://zenodo.org/records/22642853",
+  "doi": "10.5281/zenodo.22642853",
+  "archive_bytes": 4890784,
+  "archive_md5": "f46e6b7b2fe7bd2b5545efb1bf60b1fc",
+  "archive_sha256": "c7edcd81e7e2349854b67c320784b206048770e293fc455a0893bcc3757681b8",
+  "compared_files": 808,
+  "downloaded_from_published_record": true,
+  "models_retrained": false,
+  "existing_data_archives_changed": false
+}
