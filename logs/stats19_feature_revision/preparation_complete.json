@@ -1,0 +1,14 @@
+{
+  "status": "PREPARATION_VERIFIED_FULL_EXPERIMENT_NOT_RUN",
+  "verified_local": "2026-09-07T13:14:36+08:00",
+  "smoke_splits": 6,
+  "feature_count": 15,
+  "historical_files_unchanged": 1071,
+  "protocol_sha256": "d0090f1b292cb30e784eef7ff5792e507033e40f252207254e0fee71fb67a730",
+  "smoke_summary_sha256": "921a581cdc616448a7fe27886e1b81b001aebae275871f4caffb9e6a8109915b",
+  "full_training_run": false,
+  "test_evaluation_run": false,
+  "bootstrap_run": false,
+  "shap_run": false,
+  "next_action": "Separate authorization and implementation freeze required for full-training/evaluation orchestration"
+}

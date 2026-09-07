@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE",
+  "version": "STATS19_15_FEATURE_EXCLUDE2020_V1",
+  "created_local": "2026-09-07T16:58:02+08:00",
+  "protocol_sha256": "5fe006976655ae599131ac7a983529eb0fe475f037d1a80a57badc6fa34984ca",
+  "files_sha256": {
+    "results/stats19_feature_revision/exclude2020/common_2024_predictions.npz": "c8c65de5e1d0ec5852c956ef571939b3c536f6a700c88db2222e74fc57c98143",
+    "results/stats19_feature_revision/exclude2020/test_metrics.csv": "eaf10aa782a35b0b725c20a0e48e20e55b047ec11986f027563beb79260dd8e4",
+    "results/stats19_feature_revision/exclude2020/confusion_matrices.csv": "06fd1f595089f74386c981a0612763da3298e71e6c065a1ab636163cfaac241a",
+    "logs/stats19_feature_revision/exclude2020/training_complete.json": "b6c1a8f5b2ef3fc7fd268c95e6860526a27a466eba53364af0f6d1e8b9494db7"
+  },
+  "test_rows": 100927,
+  "joint_order": [
+    "main_logistic_weighted",
+    "main_lightgbm_weighted",
+    "exclude2020_logistic_weighted",
+    "exclude2020_lightgbm_weighted"
+  ],
+  "unchanged_main_predictions": true
+}

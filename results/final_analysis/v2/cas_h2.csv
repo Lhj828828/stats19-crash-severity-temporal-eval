@@ -1,0 +1,10 @@
+evaluation_group,evaluation_design,seed,metric,higher_is_better,contrast,logistic_value,lightgbm_value,point_difference,ci_lower,ci_upper,iterations,valid_iterations,bootstrap_design
+temporal_2025,temporal_test,year_based,accuracy,True,lightgbm_minus_logistic,0.47865680136596472,0.48947068867387594,0.010813887307911219,0.0024663251754885583,0.019446025422121038,2000,2000,paired_stratified
+temporal_2025,temporal_test,year_based,fatal_recall,True,lightgbm_minus_logistic,0.61389961389961389,0.45173745173745172,-0.16216216216216217,-0.22393822393822388,-0.10424710424710421,2000,2000,paired_stratified
+temporal_2025,temporal_test,year_based,macro_f1,True,lightgbm_minus_logistic,0.32805050765411542,0.32732870288717358,-0.00072180476694183593,-0.0086434490862411211,0.007378565293686282,2000,2000,paired_stratified
+temporal_2025,temporal_test,year_based,mean_asymmetric_cost,False,lightgbm_minus_logistic,0.83551508252703477,0.81341301460823379,-0.022102067918800983,-0.037184594953519223,-0.0076835515082527258,2000,2000,paired_stratified
+temporal_2025,temporal_test,year_based,minor_recall,True,lightgbm_minus_logistic,0.53296035027973732,0.54658234006324491,0.013621989783507593,0.0037703721722208705,0.022865482850887853,2000,2000,paired_stratified
+temporal_2025,temporal_test,year_based,ordinal_mae,False,lightgbm_minus_logistic,0.73752608613166382,0.69768544868146465,-0.039840637450199168,-0.05255406943653957,-0.027319294251565207,2000,2000,paired_stratified
+temporal_2025,temporal_test,year_based,qwk,True,lightgbm_minus_logistic,0.10331429835713046,0.088729904332625731,-0.014584394024504732,-0.025139715850488336,-0.0035387213870364423,2000,2000,paired_stratified
+temporal_2025,temporal_test,year_based,serious_or_fatal_recall,True,lightgbm_minus_logistic,0.64094827586206893,0.59655172413793101,-0.044396551724137923,-0.0625,-0.027144396551724157,2000,2000,paired_stratified
+temporal_2025,temporal_test,year_based,serious_recall,True,lightgbm_minus_logistic,0.245026686074721,0.26637554585152839,0.021348859776807394,0.00097040271712761498,0.041727316836487116,2000,2000,paired_stratified

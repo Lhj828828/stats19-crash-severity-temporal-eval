@@ -1,0 +1,190 @@
+{
+  "status": "PASS",
+  "datasets": {
+    "stats19": {
+      "checked_intervals": 650,
+      "changed_hard_predictions": {
+        "1103/internal": 0,
+        "1103/future": 0,
+        "2207/internal": 0,
+        "2207/future": 0,
+        "3301/internal": 0,
+        "3301/future": 0,
+        "4409/internal": 0,
+        "4409/future": 0,
+        "5501/internal": 0,
+        "5501/future": 0
+      },
+      "prediction_rows": {
+        "1103/internal": 96408,
+        "1103/future": 100927,
+        "2207/internal": 96408,
+        "2207/future": 100927,
+        "3301/internal": 96408,
+        "3301/future": 100927,
+        "4409/internal": 96408,
+        "4409/future": 100927,
+        "5501/internal": 96408,
+        "5501/future": 100927
+      },
+      "shap_samples": [
+        {
+          "seed": 1103,
+          "cohort": "internal",
+          "rows": 10000,
+          "fatal_rows": 145
+        },
+        {
+          "seed": 1103,
+          "cohort": "future",
+          "rows": 10000,
+          "fatal_rows": 149
+        },
+        {
+          "seed": 2207,
+          "cohort": "internal",
+          "rows": 10000,
+          "fatal_rows": 145
+        },
+        {
+          "seed": 2207,
+          "cohort": "future",
+          "rows": 10000,
+          "fatal_rows": 149
+        },
+        {
+          "seed": 3301,
+          "cohort": "internal",
+          "rows": 10000,
+          "fatal_rows": 145
+        },
+        {
+          "seed": 3301,
+          "cohort": "future",
+          "rows": 10000,
+          "fatal_rows": 149
+        },
+        {
+          "seed": 4409,
+          "cohort": "internal",
+          "rows": 10000,
+          "fatal_rows": 145
+        },
+        {
+          "seed": 4409,
+          "cohort": "future",
+          "rows": 10000,
+          "fatal_rows": 149
+        },
+        {
+          "seed": 5501,
+          "cohort": "internal",
+          "rows": 10000,
+          "fatal_rows": 145
+        },
+        {
+          "seed": 5501,
+          "cohort": "future",
+          "rows": 10000,
+          "fatal_rows": 149
+        }
+      ],
+      "status": "PASS"
+    },
+    "cas": {
+      "checked_intervals": 650,
+      "changed_hard_predictions": {
+        "1103/internal": 43,
+        "1103/future": 101,
+        "2207/internal": 674,
+        "2207/future": 1669,
+        "3301/internal": 67,
+        "3301/future": 169,
+        "4409/internal": 602,
+        "4409/future": 1349,
+        "5501/internal": 410,
+        "5501/future": 967
+      },
+      "prediction_rows": {
+        "1103/internal": 4887,
+        "1103/future": 10542,
+        "2207/internal": 4887,
+        "2207/future": 10542,
+        "3301/internal": 4887,
+        "3301/future": 10542,
+        "4409/internal": 4887,
+        "4409/future": 10542,
+        "5501/internal": 4887,
+        "5501/future": 10542
+      },
+      "shap_samples": [
+        {
+          "seed": 1103,
+          "cohort": "internal",
+          "rows": 4887,
+          "fatal_rows": 133
+        },
+        {
+          "seed": 1103,
+          "cohort": "future",
+          "rows": 4887,
+          "fatal_rows": 133
+        },
+        {
+          "seed": 2207,
+          "cohort": "internal",
+          "rows": 4887,
+          "fatal_rows": 133
+        },
+        {
+          "seed": 2207,
+          "cohort": "future",
+          "rows": 4887,
+          "fatal_rows": 133
+        },
+        {
+          "seed": 3301,
+          "cohort": "internal",
+          "rows": 4887,
+          "fatal_rows": 133
+        },
+        {
+          "seed": 3301,
+          "cohort": "future",
+          "rows": 4887,
+          "fatal_rows": 133
+        },
+        {
+          "seed": 4409,
+          "cohort": "internal",
+          "rows": 4887,
+          "fatal_rows": 133
+        },
+        {
+          "seed": 4409,
+          "cohort": "future",
+          "rows": 4887,
+          "fatal_rows": 133
+        },
+        {
+          "seed": 5501,
+          "cohort": "internal",
+          "rows": 4887,
+          "fatal_rows": 133
+        },
+        {
+          "seed": 5501,
+          "cohort": "future",
+          "rows": 4887,
+          "fatal_rows": 133
+        }
+      ],
+      "status": "PASS"
+    }
+  },
+  "implementation_sha256": {
+    "code/random_reference_revision.py": "3896ab4bf833e77a93debf9c9edc3f13b44ff9dd8183dc9249bd3d8d43f1bf19",
+    "tests/test_random_reference_revision.py": "0b0b6be6b6f8bbf5e433dc2a5071ff26fc0dfa7ea836fd2396ca680ccf36aad0",
+    "config/random_reference_revision/implementation_amendment_01.json": "8e3946c232516987d9fb833fdb0374084ff9ad0dd7230533b604d66788972261"
+  }
+}

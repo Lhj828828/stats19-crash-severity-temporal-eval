@@ -1,0 +1,89 @@
+{
+  "conditions": {
+    "macro_gain_at_least_001_and_lower_ci_positive": true,
+    "qwk_interval_not_wholly_negative": true,
+    "fatal_interval_not_wholly_negative": false,
+    "cost_interval_not_wholly_positive": true
+  },
+  "joint_descriptive_gate": false,
+  "not_noninferiority_evidence": true,
+  "all_temporal_comparator_intervals": [
+    {
+      "group": "temporal_2024",
+      "candidate": "lightgbm_weighted",
+      "reference": "logistic_weighted",
+      "metric": "macro_f1",
+      "delta": 0.028626933029300583,
+      "ci_lower": 0.025555145178550582,
+      "ci_upper": 0.03172461829514267,
+      "design": "paired_true_class_stratified",
+      "iterations": 2000
+    },
+    {
+      "group": "temporal_2024",
+      "candidate": "lightgbm_weighted",
+      "reference": "logistic_weighted",
+      "metric": "qwk",
+      "delta": -0.0005243619030311786,
+      "ci_lower": -0.0055088129646390675,
+      "ci_upper": 0.004668281117098455,
+      "design": "paired_true_class_stratified",
+      "iterations": 2000
+    },
+    {
+      "group": "temporal_2024",
+      "candidate": "lightgbm_weighted",
+      "reference": "logistic_weighted",
+      "metric": "ordinal_mae",
+      "delta": -0.131401904346706,
+      "ci_lower": -0.13540504523071126,
+      "ci_upper": -0.12756695433332998,
+      "design": "paired_true_class_stratified",
+      "iterations": 2000
+    },
+    {
+      "group": "temporal_2024",
+      "candidate": "lightgbm_weighted",
+      "reference": "logistic_weighted",
+      "metric": "accuracy",
+      "delta": 0.04974882836109262,
+      "ci_lower": 0.04704365531522783,
+      "ci_upper": 0.05253351432223281,
+      "design": "paired_true_class_stratified",
+      "iterations": 2000
+    },
+    {
+      "group": "temporal_2024",
+      "candidate": "lightgbm_weighted",
+      "reference": "logistic_weighted",
+      "metric": "fatal_recall",
+      "delta": -0.3002663115845539,
+      "ci_lower": -0.32490013315579225,
+      "ci_upper": -0.2749667110519308,
+      "design": "paired_true_class_stratified",
+      "iterations": 2000
+    },
+    {
+      "group": "temporal_2024",
+      "candidate": "lightgbm_weighted",
+      "reference": "logistic_weighted",
+      "metric": "serious_or_fatal_recall",
+      "delta": -0.05712234233515495,
+      "ci_lower": -0.06306693525868602,
+      "ci_upper": -0.05145797598627788,
+      "design": "paired_true_class_stratified",
+      "iterations": 2000
+    },
+    {
+      "group": "temporal_2024",
+      "candidate": "lightgbm_weighted",
+      "reference": "logistic_weighted",
+      "metric": "mean_asymmetric_cost",
+      "delta": -0.10827627889464664,
+      "ci_lower": -0.11292394502957574,
+      "ci_upper": -0.10367840122068422,
+      "design": "paired_true_class_stratified",
+      "iterations": 2000
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE",
+  "version": "STATS19_15_FEATURE_FULL_V1",
+  "created_local": "2026-09-07T14:02:26+08:00",
+  "execution_sha256": "0f3e3f99cdc2338d4704d2279ced3ae45bc9cbf27288c9196bdaa5ecc05c3aed",
+  "files_sha256": {
+    "logs/stats19_feature_revision/full/validation/temporal.json": "053d22d8b060224604b91edf7d4f3de2211b73310ec840eecb0b2ab28a143eb9",
+    "models/stats19_feature_revision/full/temporal/dummy_most_frequent.joblib": "c767c5977adf37ebb4335449ac502f1b9549c42af4f73d29a5d72edbaf42c726",
+    "models/stats19_feature_revision/full/temporal/logistic_unweighted.joblib": "f69412b699462bf7ae73ac8f2ae6755f9af89bae4b8cea3dcf9987c785748e9e",
+    "models/stats19_feature_revision/full/temporal/logistic_weighted.joblib": "1ac3fe1248ff06cfa709c5905e38154a23674f11aa8c884fb6b69fc552c9fc6e",
+    "models/stats19_feature_revision/full/temporal/lightgbm_weighted.joblib": "72cc669f8f0d9da078ba83b3658689a20010c745ae9b96473098bbdd85d00726",
+    "results/stats19_feature_revision/full/temporal/validation_predictions.npz": "704f017ba949258cdabb8a9eabcb154ef81b550c1b5664c1355de91711199ad4",
+    "results/stats19_feature_revision/full/temporal/candidate_metrics.csv": "bb5ce2a3961def4e8ee71277ad36622c46d2bccb1844602afb5a8a83a072e8aa",
+    "results/stats19_feature_revision/full/temporal/validation_metrics.csv": "c8303b450500e669127cbd68101d47a6bcb07f38681a88cf15d8a89ee2433a1d"
+  },
+  "split": "temporal",
+  "train_rows": 538461,
+  "validation_rows": 104258,
+  "test_performance_evaluated": false
+}

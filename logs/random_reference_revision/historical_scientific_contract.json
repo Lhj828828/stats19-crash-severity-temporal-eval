@@ -1,0 +1,259 @@
+{
+  "version": "PUBLIC_RESULT_VERIFICATION_V1",
+  "status": "PASS",
+  "contract": "config/public_result_contract.json",
+  "candidate_root": "PUBLIC_SOFTWARE_PROJECT",
+  "reference_root": "config/public_result_reference",
+  "tolerances": {
+    "absolute": 1e-10,
+    "relative": 1e-08
+  },
+  "comparison_summary": {
+    "passed": 21,
+    "total": 21
+  },
+  "required_file_summary": {
+    "passed": 7,
+    "total": 7
+  },
+  "comparisons": [
+    {
+      "path": "logs/d1_initial_audit.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 7,
+      "candidate_rows": 7,
+      "compared_values": 105,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "logs/d5_sample_flow.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 8,
+      "candidate_rows": 8,
+      "compared_values": 48,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "logs/d6_temporal_split_audit.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 3,
+      "candidate_rows": 3,
+      "compared_values": 27,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "logs/d6_random_split_audit.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 15,
+      "candidate_rows": 15,
+      "compared_values": 135,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "results/d10/d10_tuning_results.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 6,
+      "candidate_rows": 6,
+      "compared_values": 168,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "config/d10_selected_lightgbm.json",
+      "kind": "json",
+      "status": "PASS",
+      "compared_values": 40,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "results/d10b/d10b_checkpoint_metrics.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 3,
+      "candidate_rows": 3,
+      "compared_values": 54,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "results/d10b/d10b_logloss_history.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 2000,
+      "candidate_rows": 2000,
+      "compared_values": 6000,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "results/d11/d11_test_metrics.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 44,
+      "candidate_rows": 44,
+      "compared_values": 1012,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "results/d12/d12_model_gain_summary.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 7,
+      "candidate_rows": 7,
+      "compared_values": 56,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "results/d13/d13_h1_primary_model_gaps.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 14,
+      "candidate_rows": 14,
+      "compared_values": 168,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "results/d13/d13_h2_temporal_comparison.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 7,
+      "candidate_rows": 7,
+      "compared_values": 126,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "logs/d13_positioning_decision.json",
+      "kind": "json",
+      "status": "PASS",
+      "compared_values": 59,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "results/d14/d14_rank_stability_summary.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 4,
+      "candidate_rows": 4,
+      "compared_values": 24,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "logs/d14_shap_run_summary.json",
+      "kind": "json",
+      "status": "PASS",
+      "compared_values": 13,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "results/d14/exclude2020/d14_exclude2020_test_metrics.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 2,
+      "candidate_rows": 2,
+      "compared_values": 46,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "results/d14/exclude2020/d14_exclude2020_comparisons.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 28,
+      "candidate_rows": 28,
+      "compared_values": 280,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "logs/d14_exclude2020_run_summary.json",
+      "kind": "json",
+      "status": "PASS",
+      "compared_values": 17,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "results/d14/d14_error_structure.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 12,
+      "candidate_rows": 12,
+      "compared_values": 120,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "results/d14/d14_paired_error_outcomes.csv",
+      "kind": "csv",
+      "status": "PASS",
+      "reference_rows": 20,
+      "candidate_rows": 20,
+      "compared_values": 60,
+      "mismatch_count": 0,
+      "examples": []
+    },
+    {
+      "path": "logs/d14_final_summary.json",
+      "kind": "json",
+      "status": "PASS",
+      "compared_values": 76,
+      "mismatch_count": 0,
+      "examples": []
+    }
+  ],
+  "required_nonempty_files": [
+    {
+      "path": "figures/figure2_dataset_overview.png",
+      "status": "PASS",
+      "bytes": 194137
+    },
+    {
+      "path": "figures/figure2_dataset_overview.pdf",
+      "status": "PASS",
+      "bytes": 25031
+    },
+    {
+      "path": "figures/d10b_validation_logloss_curve.png",
+      "status": "PASS",
+      "bytes": 138660
+    },
+    {
+      "path": "figures/d11_test_metric_overview.png",
+      "status": "PASS",
+      "bytes": 141972
+    },
+    {
+      "path": "figures/d12_h1_optimism_gaps.png",
+      "status": "PASS",
+      "bytes": 167614
+    },
+    {
+      "path": "figures/d12_h2_temporal_differences.png",
+      "status": "PASS",
+      "bytes": 96260
+    },
+    {
+      "path": "figures/d14_shap_rank_stability.png",
+      "status": "PASS",
+      "bytes": 144223
+    }
+  ],
+  "completed_local": "2026-09-06T22:21:30+0800"
+}

@@ -1,0 +1,12 @@
+split,cohort,rows,class0_count,class1_count,class2_count
+temporal,future,10000,7516,2335,149
+random_seed_1103,internal,10000,7796,2059,145
+random_seed_1103,future,10000,7516,2335,149
+random_seed_2207,internal,10000,7796,2059,145
+random_seed_2207,future,10000,7516,2335,149
+random_seed_3301,internal,10000,7796,2059,145
+random_seed_3301,future,10000,7516,2335,149
+random_seed_4409,internal,10000,7796,2059,145
+random_seed_4409,future,10000,7516,2335,149
+random_seed_5501,internal,10000,7796,2059,145
+random_seed_5501,future,10000,7516,2335,149

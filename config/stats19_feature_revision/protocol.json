@@ -1,0 +1,491 @@
+{
+  "version": "STATS19_15_FEATURE_POST_REVIEW_V1",
+  "created_local": "2026-09-07T13:02:57+08:00",
+  "status": "METHOD_RULES_FIXED_BEFORE_REVISION_SMOKE_AND_FULL_FITS",
+  "dataset": "STATS19",
+  "legacy_outcomes_known": true,
+  "post_hoc": true,
+  "preregistered": false,
+  "new_unseen_test_claim": false,
+  "full_run_performed": false,
+  "reason": "Review-driven removal of two semantically problematic fields; not performance-based feature selection",
+  "reporting": "Report the corrected 15-feature run regardless of direction; preserve legacy 17-feature results, never select a preferred version by outcome",
+  "schema": {
+    "version": "STATS19_15_FEATURE_POST_REVIEW_V1",
+    "feature_columns": [
+      "feature_day_of_week",
+      "feature_first_road_class",
+      "feature_road_type",
+      "feature_junction_detail",
+      "feature_junction_control",
+      "feature_second_road_class",
+      "feature_pedestrian_crossing",
+      "feature_light_conditions",
+      "feature_weather_conditions",
+      "feature_road_surface_conditions",
+      "feature_urban_or_rural_area",
+      "feature_trunk_road_flag",
+      "feature_speed_limit",
+      "feature_month",
+      "feature_hour"
+    ],
+    "categorical_feature_columns": [
+      "feature_day_of_week",
+      "feature_first_road_class",
+      "feature_road_type",
+      "feature_junction_detail",
+      "feature_junction_control",
+      "feature_second_road_class",
+      "feature_pedestrian_crossing",
+      "feature_light_conditions",
+      "feature_weather_conditions",
+      "feature_road_surface_conditions",
+      "feature_urban_or_rural_area",
+      "feature_trunk_road_flag",
+      "feature_month",
+      "feature_hour"
+    ],
+    "numeric_feature_columns": [
+      "feature_speed_limit"
+    ],
+    "excluded_feature_columns": [
+      "feature_special_conditions_at_site",
+      "feature_carriageway_hazards"
+    ],
+    "metadata_columns": [
+      "meta_collision_index",
+      "meta_collision_year",
+      "meta_date",
+      "meta_police_force",
+      "meta_injury_based"
+    ],
+    "target_column": "target_severity",
+    "feature_count": 15
+  },
+  "rules": {
+    "baseline_models": {
+      "logistic_unweighted": {
+        "penalty": "l2",
+        "C": 1.0,
+        "solver": "lbfgs",
+        "max_iter": 500,
+        "tol": 0.0001,
+        "fit_intercept": true,
+        "random_state": 20260828
+      },
+      "logistic_weighted": {
+        "penalty": "l2",
+        "C": 1.0,
+        "solver": "lbfgs",
+        "max_iter": 500,
+        "tol": 0.0001,
+        "fit_intercept": true,
+        "random_state": 20260828
+      }
+    },
+    "candidates": [
+      {
+        "candidate_id": "C01",
+        "complexity_rank": 1,
+        "parameters": {
+          "num_leaves": 15,
+          "max_depth": -1,
+          "min_child_samples": 100,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C02",
+        "complexity_rank": 3,
+        "parameters": {
+          "num_leaves": 31,
+          "max_depth": -1,
+          "min_child_samples": 100,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C03",
+        "complexity_rank": 6,
+        "parameters": {
+          "num_leaves": 63,
+          "max_depth": -1,
+          "min_child_samples": 100,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C04",
+        "complexity_rank": 5,
+        "parameters": {
+          "num_leaves": 31,
+          "max_depth": -1,
+          "min_child_samples": 50,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C05",
+        "complexity_rank": 2,
+        "parameters": {
+          "num_leaves": 31,
+          "max_depth": -1,
+          "min_child_samples": 250,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "colsample_bytree": 1.0,
+          "subsample": 1.0,
+          "subsample_freq": 0
+        }
+      },
+      {
+        "candidate_id": "C06",
+        "complexity_rank": 4,
+        "parameters": {
+          "num_leaves": 31,
+          "max_depth": -1,
+          "min_child_samples": 100,
+          "min_split_gain": 0.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 5.0,
+          "colsample_bytree": 0.8,
+          "subsample": 0.8,
+          "subsample_freq": 1
+        }
+      }
+    ],
+    "common_parameters": {
+      "boosting_type": "gbdt",
+      "objective": "multiclass",
+      "num_class": 3,
+      "learning_rate": 0.05,
+      "max_bin": 255,
+      "random_state": 20260830,
+      "n_jobs": 8,
+      "deterministic": true,
+      "force_col_wise": true,
+      "verbosity": -1
+    },
+    "maximum_estimators": 1200,
+    "early_stopping_rounds": 75,
+    "early_stopping_metric": "unweighted multiclass log loss on that split's own validation",
+    "ranking": [
+      "eligible candidates only",
+      "highest Macro-F1",
+      "highest QWK if Macro-F1 is exactly tied",
+      "highest fatal recall if still tied",
+      "lowest pre-frozen complexity_rank if still tied",
+      "lexicographically smallest candidate_id if still tied"
+    ],
+    "fallback": "apply the same ranking to all candidates and explicitly record that constraints were unmet",
+    "constraint_reference": "new 15-feature weighted Logistic in the SAME split; QWK minus 0.01, fatal recall minus 0.05",
+    "refit": "training-only at selected iteration; no train-plus-validation refit; compare validation probabilities",
+    "prediction": "three-class argmax; no threshold optimization",
+    "cost_matrix": [
+      [
+        0.0,
+        1.0,
+        2.0
+      ],
+      [
+        2.0,
+        0.0,
+        1.0
+      ],
+      [
+        5.0,
+        3.0,
+        0.0
+      ]
+    ]
+  },
+  "splits": [
+    {
+      "slug": "temporal",
+      "roles": {
+        "train": {
+          "rows": 538461,
+          "positions_sha256": "a36f00735767c964a3bec3c3d1777a23df423e760e374336dd83320d64a1031a"
+        },
+        "validation": {
+          "rows": 104258,
+          "positions_sha256": "9169cc5860fddf44a644d6eee76b725ab59b19328dd19e4968f6095278bd421b"
+        },
+        "future": {
+          "rows": 100927,
+          "positions_sha256": "a2dce368d97485ec1273f992e14f5e65388ec111c21c7e207127a7df813808b6"
+        }
+      },
+      "training_class_counts": [
+        421745,
+        108920,
+        7796
+      ],
+      "training_class_weights": {
+        "0": 0.42558180891296876,
+        "1": 1.647879177377892,
+        "2": 23.022960492560287
+      }
+    },
+    {
+      "slug": "random_seed_1103",
+      "roles": {
+        "train": {
+          "rows": 449903,
+          "positions_sha256": "1902da94cf43c59aee26f96b1fe6a13db4dc5b212a6a8cb649d5ad06eb51d1a1"
+        },
+        "validation": {
+          "rows": 96408,
+          "positions_sha256": "1d34f3502d9f76dcfdc4e0d84b1af27eb09e6824282a7c20afea8efc5dd5bac8"
+        },
+        "internal": {
+          "rows": 96408,
+          "positions_sha256": "5a43e84a92be03c4c6e666d3d7f8adabae1bf9cbc66fb077ef891fda4dc2b83c"
+        },
+        "future": {
+          "rows": 100927,
+          "positions_sha256": "a2dce368d97485ec1273f992e14f5e65388ec111c21c7e207127a7df813808b6"
+        }
+      },
+      "training_class_counts": [
+        350730,
+        92650,
+        6523
+      ],
+      "training_class_weights": {
+        "0": 0.42758722283998135,
+        "1": 1.6186472387119986,
+        "2": 22.9905973733967
+      }
+    },
+    {
+      "slug": "random_seed_2207",
+      "roles": {
+        "train": {
+          "rows": 449903,
+          "positions_sha256": "0ca98ab725f7a98eef50a89e43f34aaf90ce9ed512886ffed3281a370ad33c31"
+        },
+        "validation": {
+          "rows": 96408,
+          "positions_sha256": "3634c18fdda3a944ca96f3511b9df246fb81d9f95dd85a2020a82f0bd5d9ed0c"
+        },
+        "internal": {
+          "rows": 96408,
+          "positions_sha256": "1da790769d5e401254c8f643db95b924472075ab84516678e68cf2eafe84c25d"
+        },
+        "future": {
+          "rows": 100927,
+          "positions_sha256": "a2dce368d97485ec1273f992e14f5e65388ec111c21c7e207127a7df813808b6"
+        }
+      },
+      "training_class_counts": [
+        350730,
+        92650,
+        6523
+      ],
+      "training_class_weights": {
+        "0": 0.42758722283998135,
+        "1": 1.6186472387119986,
+        "2": 22.9905973733967
+      }
+    },
+    {
+      "slug": "random_seed_3301",
+      "roles": {
+        "train": {
+          "rows": 449903,
+          "positions_sha256": "159e2872be19cfd330ca67cf0e874e9f8b7d08cf92b64564d81b7a9d263ae78f"
+        },
+        "validation": {
+          "rows": 96408,
+          "positions_sha256": "625cd32a24bb2e76780ed231717013d7240e77e77def19e0a1867eb11f5c4b85"
+        },
+        "internal": {
+          "rows": 96408,
+          "positions_sha256": "5bc39ecb8244889a3be7337e622248114962e108bac712e360e078c8e5f184cc"
+        },
+        "future": {
+          "rows": 100927,
+          "positions_sha256": "a2dce368d97485ec1273f992e14f5e65388ec111c21c7e207127a7df813808b6"
+        }
+      },
+      "training_class_counts": [
+        350730,
+        92650,
+        6523
+      ],
+      "training_class_weights": {
+        "0": 0.42758722283998135,
+        "1": 1.6186472387119986,
+        "2": 22.9905973733967
+      }
+    },
+    {
+      "slug": "random_seed_4409",
+      "roles": {
+        "train": {
+          "rows": 449903,
+          "positions_sha256": "2b686b8b7255d1a54a2e4402904c6e0581b6aaff3c941e98302f020d17570884"
+        },
+        "validation": {
+          "rows": 96408,
+          "positions_sha256": "099057564f4ed73d349279ff7dc7fad2c037bb80480f028f5bcdfa64c5712d96"
+        },
+        "internal": {
+          "rows": 96408,
+          "positions_sha256": "2c12a16b49a13e05f5c6635511747571e814a3078a247180efb3a65bb68121a8"
+        },
+        "future": {
+          "rows": 100927,
+          "positions_sha256": "a2dce368d97485ec1273f992e14f5e65388ec111c21c7e207127a7df813808b6"
+        }
+      },
+      "training_class_counts": [
+        350730,
+        92650,
+        6523
+      ],
+      "training_class_weights": {
+        "0": 0.42758722283998135,
+        "1": 1.6186472387119986,
+        "2": 22.9905973733967
+      }
+    },
+    {
+      "slug": "random_seed_5501",
+      "roles": {
+        "train": {
+          "rows": 449903,
+          "positions_sha256": "8ea2f8eafb88515e6cc7461a8180d0b222c7fda4d2b9f93e09796b256a987997"
+        },
+        "validation": {
+          "rows": 96408,
+          "positions_sha256": "b7539d7d94e17cec0ed6be9646c3a374e59aeb942770b608037f3e506c712c91"
+        },
+        "internal": {
+          "rows": 96408,
+          "positions_sha256": "845fd671e43cc8051808e3728c0fffca7d2ebaf577587574238c09e45447b79a"
+        },
+        "future": {
+          "rows": 100927,
+          "positions_sha256": "a2dce368d97485ec1273f992e14f5e65388ec111c21c7e207127a7df813808b6"
+        }
+      },
+      "training_class_counts": [
+        350730,
+        92650,
+        6523
+      ],
+      "training_class_weights": {
+        "0": 0.42758722283998135,
+        "1": 1.6186472387119986,
+        "2": 22.9905973733967
+      }
+    }
+  ],
+  "prediction_time": "at collision; no consequence, response, injury-derived, or severity-adjustment inputs",
+  "future_scope": {
+    "primary": "Dummy, full unweighted/weighted Logistic and weighted LightGBM in temporal plus five random splits",
+    "test_gate": "all six split model sets must be sealed before corrected future/internal test evaluation",
+    "evaluation_groups": [
+      "temporal_2024",
+      "random_seed_1103_internal",
+      "random_seed_1103_2024",
+      "random_seed_2207_internal",
+      "random_seed_2207_2024",
+      "random_seed_3301_internal",
+      "random_seed_3301_2024",
+      "random_seed_4409_internal",
+      "random_seed_4409_2024",
+      "random_seed_5501_internal",
+      "random_seed_5501_2024"
+    ],
+    "H1": "same fitted random model internal-minus-future; reverse sign for error metrics; no causal split-method claim",
+    "H2": "corrected temporal LightGBM vs corrected weighted Logistic, all metrics; never infer noninferiority from an interval including zero",
+    "bootstrap": "2000 true-class-stratified record draws; paired within cohort; independent across disjoint cohorts; descriptive five-seed summary",
+    "bootstrap_seed": 20260828,
+    "shap": "existing fixed STATS19 10000-record sampling design, raw multiclass TreeSHAP, equal-output mean absolute ranks, 2000 cached-contribution bootstrap draws",
+    "recording_diagnostics": "year by injury-based recording flag by severity counts; descriptive only, metadata never features",
+    "secondary": "Ordered Logit/matched subset, tree-count and exclusion-2020 analyses must be explicitly rerun on 15 fields or omitted/labeled historical; no silent reuse",
+    "not_claimed": "No spatial, causal, cross-country, calibrated-probability or newly untouched-test validation",
+    "CAS": "unchanged; no CAS retraining in this revision"
+  },
+  "preparation_scope": {
+    "commands": [
+      "prepare",
+      "smoke",
+      "verify"
+    ],
+    "full_training_cli_available": false,
+    "bootstrap_executed": false,
+    "shap_executed": false,
+    "smoke": {
+      "train_rows": 3000,
+      "validation_rows": 1200,
+      "tree_cap": 30,
+      "threads": 4,
+      "seed": 20260907,
+      "all_six_splits": true,
+      "test_performance_access": false,
+      "eligible_for_reporting_or_model_selection": false
+    }
+  },
+  "upstream_sha256": {
+    "config/d10_lightgbm_protocol.json": "079aad5af8e95360b60b17b664c847336db66b4712811bac17b67ce5a9d5c963",
+    "config/d14_shap_protocol.json": "25442cc216ee80a7b84f859371b18ddd93df98e958f9c7a1b6318b884d46bb22",
+    "config/d3_feature_manifest.json": "90d5c738096726524b6cfaa8eb886043265617deec84bca51189d351b4aceee3",
+    "config/d5_cleaning_rules.json": "a6305a6e9a79ac5f01a900ce6e901bbd834e7cd434af7579d198fe286cc2dac0",
+    "config/d5_dataset_schema.json": "cea222466650a095170a66a3d094eba76b3cdf71c22bc6bcb61054152969030b",
+    "config/d6_analysis_protocol.json": "5040fa8b1c2d4d33304af371cfec91b0bc8fcf49b8d872ca473ea00e2d31a3f8",
+    "config/d7_training_inputs.json": "232962cc1ba5cf61504a6bf5b151f484cb9c7c0e5c8b45164e952132601599cb",
+    "config/d8_baseline_protocol.json": "7b4a1c487334827799169f88342bbac49559f2a1c7bad8412558e958501114c5",
+    "data/external/documentation/dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx": "5ee0d473e212ed50b2723ae52feeda86487861ed6a5a627b900f7b93c9bbf6b6",
+    "data/processed/d6_split_assignments.csv.gz": "5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076",
+    "data/processed/stats19_modeling_dataset.csv.gz": "2277e47fd899c15116bfa2e62eca9f9c7ea9d45d08d1b5cda2027724c843021e"
+  },
+  "source_sha256": {
+    "run_stats19_feature_revision.py": "d693580e0bfb61de530e3dbda3a42376d7ebcec7cbc94f2de541072e71bd4467",
+    "code/stats19_feature_revision.py": "d2f589ebc6065ed44122998de84182f195d57d53ebdf32f123556377e1a06f02",
+    "tests/test_stats19_feature_revision.py": "ceac08e44ae9ce6ad833f47e03153ea5ed8dc85e21096750408e3a3aafe6e998",
+    "code/baseline_modeling.py": "34c024f461ad3c6a083e5e2ea16e911ae96b2bb6a75151dd3ece11f7005f79ec",
+    "code/d10_tune_lightgbm.py": "ba584669cedc84c7095cf2385ecdce815a6d8ccbf75ab9538f12bc0468178cc1",
+    "code/modeling_data.py": "ec28dc9c8cc83ad7609be3ba1710b167c3886746a76903136c5e49914f44fbbf",
+    "requirements-lock.txt": "7a974836ebbd01a87f4cd9c95b9154ce30e62449d1fadae01c1217ff59ee9903"
+  },
+  "preparation_files_sha256": {
+    "config/stats19_feature_revision/feature_schema.json": "18671af686c27e1288aa97645ef6118a1c0e37cdf9a8edf124a10c7165cf5dbc",
+    "config/stats19_feature_revision/field_audit_amendment.json": "b959c8535f2be0cdc91b968b75ba9250f63ac2055192c12e36ba15076a12bf0a",
+    "logs/stats19_feature_revision/historical_files.json": "1c673e4b5002d9aaaae53886f592b40161bdaf7874ef0fe75500ff0b209b68cd"
+  },
+  "historical_manifest": "logs/stats19_feature_revision/historical_files.json",
+  "runtime": {
+    "python": "3.13.15",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.0",
+    "lightgbm": "4.7.0",
+    "joblib": "1.5.3"
+  }
+}

@@ -84,7 +84,11 @@ Official pages checked on 2026-09-02:
 - [ ] Confirm every author has reviewed the final manuscript, authorship order,
       affiliations, contribution statement and public display of email details.
 
-## Public repository release gate
+## Historical public repository release gate
+
+These checked items describe earlier released implementations, not completion
+of the 15-feature revision or its final clean reconstruction. The current gate
+below supersedes them for the manuscript and next software release.
 
 - [x] Keep raw STATS19 and CAS records, model binaries, record-level
       predictions, local environments and private working files out of Git.
@@ -114,6 +118,67 @@ Official pages checked on 2026-09-02:
       version-specific artifact before submission.
 
 ## Final factual checks
+
+### Post-review random-reference correction gate
+
+The historical reproduction checks above remain records of the historical
+implementation. They do not establish independence of random internal tests
+from the temporal hyperparameter-selection process identified on 2026-09-06.
+
+- [x] Add a split-local correction entry point and pass 16 invariant tests,
+      including direct overlap rejection and test-label perturbation.
+- [x] Freeze separate STATS19/CAS correction protocols before corrected fits,
+      explicitly recording that legacy outcomes were already known.
+- [x] Complete all ten split-local random LightGBM models and dependent test,
+      bootstrap and SHAP outputs; require both correction completion markers.
+- [x] Check that historical temporal models, H2 and all protected artifacts
+      remain unchanged; retain legacy random results as labeled comparisons.
+- [ ] Synchronize manuscript methods, results, figures and captions with the
+      corrected selection procedure and results, regardless of direction.
+      Methods and outline are synchronized; the original Visio workflow and
+      final manuscript results/captions still require integration.
+- [x] Independently check 1,300 intervals, SHAP samples/ranks, and historical
+      compact results (21/21 comparisons and 7/7 required files).
+- [x] Record the broader regression outcome honestly: 27/29 standalone files
+      passed. Two legacy D14 provenance-equality checks stop on historical
+      path-normalization differences; do not rewrite their frozen hashes.
+- [ ] Publish the verified correction as a new software release/version DOI.
+      Do not claim that the immutable v1.2.0 archive contains the correction.
+
+### Current 15-feature revision gate (7 September 2026)
+
+- [x] Complete and independently verify all six corrected STATS19 model sets,
+      eleven evaluation groups, paired Bootstrap contrasts and SHAP summaries.
+- [x] Refit and verify the exclusion-2020 sensitivity at fixed corrected-main
+      parameters; keep the observed fatal-recall trade-off in the conclusions.
+- [x] Select the current results in `config/final_analysis/result_catalog.json`
+      and 20 compact tables. These are source tables, not 20 manuscript tables.
+- [x] Omit Ordered Logit, matched subsets and the tree-count extension from the
+      revised manuscript while preserving their historical artifacts. Continue
+      to disclose the 1200-round search boundary and post-review timing.
+- [x] Add the explicit current entry in `FINAL_ANALYSIS.md`; check separate
+      raw-to-splits preparation for STATS19/CAS without full model fitting.
+- [x] Pass the separate bounded historical D14 snapshot check. Keep both original
+      exact-equality assertions and frozen hashes unchanged; do not claim the
+      original two assertions passed or the unavailable outline was verified.
+- [ ] Align the manuscript, numbered figures/tables and Visio with the current
+      15-feature catalog. Earlier method/outline edits concern an older scope.
+- [x] Run the final full reconstruction in clean isolated environments and
+      compare the selected compact results. Completed on 7 September 2026:
+      STATS19 22 stages, CAS 25 stages, all 20 V2 tables passed. See
+      `docs/FINAL_REPRODUCTION_VALIDATION.md` and
+      `logs/final_analysis/final_reproduction_acceptance.json`. This is author-run
+      same-machine Windows evidence, using verified existing raw snapshots.
+- [x] Pass 159 applicable unit tests and seven standalone CAS audits; verify
+      artifact seals and inspect four regenerated diagnostic PNGs. Keep the two
+      historical D14 exact-hash failures separate from the passing test count.
+- [ ] Visually inspect final manuscript figures later; distinguish layout QA
+      from numerical experiment and reproduction verification.
+- [ ] Scan and release the corrected public sources with a new software DOI,
+      then update the README, citation metadata and manuscript availability
+      statement together. Do not repurpose an older immutable version DOI.
+
+### Submission checks
 
 - [ ] Recheck the current Applied Sciences aims, section list, instructions,
       article processing charge, licensing terms and file limits on the day of

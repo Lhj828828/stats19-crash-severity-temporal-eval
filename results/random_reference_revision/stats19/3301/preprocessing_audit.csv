@@ -1,0 +1,18 @@
+feature,feature_type,training_levels,validation_unseen_count,training_missing_count,validation_missing_count,training_median_audit_only,value_applied_to_data
+feature_day_of_week,categorical_native,7,0,0,0,,
+feature_first_road_class,categorical_native,6,0,0,0,,
+feature_road_type,categorical_native,6,0,0,0,,
+feature_junction_detail,categorical_native,7,0,0,0,,
+feature_junction_control,categorical_native,7,0,0,0,,
+feature_second_road_class,categorical_native,9,0,0,0,,
+feature_pedestrian_crossing,categorical_native,10,0,0,0,,
+feature_light_conditions,categorical_native,6,0,0,0,,
+feature_weather_conditions,categorical_native,10,0,0,0,,
+feature_road_surface_conditions,categorical_native,7,0,0,0,,
+feature_special_conditions_at_site,categorical_native,10,0,0,0,,
+feature_carriageway_hazards,categorical_native,14,0,0,0,,
+feature_urban_or_rural_area,categorical_native,4,0,0,0,,
+feature_trunk_road_flag,categorical_native,3,0,0,0,,
+feature_month,categorical_native,12,0,0,0,,
+feature_hour,categorical_native,24,0,0,0,,
+feature_speed_limit,numeric_native,,,59,17,30.0,none; NaN retained

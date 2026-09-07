@@ -1,0 +1,184 @@
+{
+  "runtime": {
+    "logistic_weighted": {
+      "seconds": 8.83889559993986,
+      "iterations": [
+        173
+      ],
+      "convergence_warning": false
+    },
+    "lightgbm_weighted": {
+      "seconds": 25.789285200065933,
+      "iterations": 1200,
+      "convergence_warning": false
+    }
+  },
+  "class_weights": {
+    "0": 0.4256087302402948,
+    "1": 1.6461915014998436,
+    "2": 23.276710902940412
+  },
+  "preprocessing_audit": [
+    {
+      "feature": "feature_day_of_week",
+      "feature_type": "categorical_native",
+      "training_levels": 7,
+      "validation_unseen_count": 0,
+      "training_missing_count": 0,
+      "validation_missing_count": 0,
+      "training_median_audit_only": "",
+      "value_applied_to_data": ""
+    },
+    {
+      "feature": "feature_first_road_class",
+      "feature_type": "categorical_native",
+      "training_levels": 6,
+      "validation_unseen_count": 0,
+      "training_missing_count": 0,
+      "validation_missing_count": 0,
+      "training_median_audit_only": "",
+      "value_applied_to_data": ""
+    },
+    {
+      "feature": "feature_road_type",
+      "feature_type": "categorical_native",
+      "training_levels": 6,
+      "validation_unseen_count": 0,
+      "training_missing_count": 0,
+      "validation_missing_count": 0,
+      "training_median_audit_only": "",
+      "value_applied_to_data": ""
+    },
+    {
+      "feature": "feature_junction_detail",
+      "feature_type": "categorical_native",
+      "training_levels": 7,
+      "validation_unseen_count": 0,
+      "training_missing_count": 0,
+      "validation_missing_count": 0,
+      "training_median_audit_only": "",
+      "value_applied_to_data": ""
+    },
+    {
+      "feature": "feature_junction_control",
+      "feature_type": "categorical_native",
+      "training_levels": 7,
+      "validation_unseen_count": 0,
+      "training_missing_count": 0,
+      "validation_missing_count": 0,
+      "training_median_audit_only": "",
+      "value_applied_to_data": ""
+    },
+    {
+      "feature": "feature_second_road_class",
+      "feature_type": "categorical_native",
+      "training_levels": 9,
+      "validation_unseen_count": 0,
+      "training_missing_count": 0,
+      "validation_missing_count": 0,
+      "training_median_audit_only": "",
+      "value_applied_to_data": ""
+    },
+    {
+      "feature": "feature_pedestrian_crossing",
+      "feature_type": "categorical_native",
+      "training_levels": 10,
+      "validation_unseen_count": 0,
+      "training_missing_count": 0,
+      "validation_missing_count": 0,
+      "training_median_audit_only": "",
+      "value_applied_to_data": ""
+    },
+    {
+      "feature": "feature_light_conditions",
+      "feature_type": "categorical_native",
+      "training_levels": 6,
+      "validation_unseen_count": 0,
+      "training_missing_count": 0,
+      "validation_missing_count": 0,
+      "training_median_audit_only": "",
+      "value_applied_to_data": ""
+    },
+    {
+      "feature": "feature_weather_conditions",
+      "feature_type": "categorical_native",
+      "training_levels": 10,
+      "validation_unseen_count": 0,
+      "training_missing_count": 0,
+      "validation_missing_count": 0,
+      "training_median_audit_only": "",
+      "value_applied_to_data": ""
+    },
+    {
+      "feature": "feature_road_surface_conditions",
+      "feature_type": "categorical_native",
+      "training_levels": 7,
+      "validation_unseen_count": 0,
+      "training_missing_count": 0,
+      "validation_missing_count": 0,
+      "training_median_audit_only": "",
+      "value_applied_to_data": ""
+    },
+    {
+      "feature": "feature_urban_or_rural_area",
+      "feature_type": "categorical_native",
+      "training_levels": 4,
+      "validation_unseen_count": 0,
+      "training_missing_count": 0,
+      "validation_missing_count": 0,
+      "training_median_audit_only": "",
+      "value_applied_to_data": ""
+    },
+    {
+      "feature": "feature_trunk_road_flag",
+      "feature_type": "categorical_native",
+      "training_levels": 3,
+      "validation_unseen_count": 0,
+      "training_missing_count": 0,
+      "validation_missing_count": 0,
+      "training_median_audit_only": "",
+      "value_applied_to_data": ""
+    },
+    {
+      "feature": "feature_month",
+      "feature_type": "categorical_native",
+      "training_levels": 12,
+      "validation_unseen_count": 0,
+      "training_missing_count": 0,
+      "validation_missing_count": 0,
+      "training_median_audit_only": "",
+      "value_applied_to_data": ""
+    },
+    {
+      "feature": "feature_hour",
+      "feature_type": "categorical_native",
+      "training_levels": 24,
+      "validation_unseen_count": 0,
+      "training_missing_count": 0,
+      "validation_missing_count": 0,
+      "training_median_audit_only": "",
+      "value_applied_to_data": ""
+    },
+    {
+      "feature": "feature_speed_limit",
+      "feature_type": "numeric_native",
+      "training_levels": "",
+      "validation_unseen_count": "",
+      "training_missing_count": 80,
+      "validation_missing_count": 0,
+      "training_median_audit_only": 30.0,
+      "value_applied_to_data": "none; NaN retained"
+    }
+  ],
+  "train_rows": 447262,
+  "validation_rows": 104258,
+  "seconds": 40.145132899982855,
+  "role_hashes": {
+    "train": "9a345ca030915641dd82bc4c2572a47d1192779b17f81cbfdbe0df2c15a62a49",
+    "removed_2020": "728e90d2af93976763689d009ca75bf28f5cfd5b1c5ca0266ba0b92c861844f2",
+    "validation": "9169cc5860fddf44a644d6eee76b725ab59b19328dd19e4968f6095278bd421b",
+    "future": "a2dce368d97485ec1273f992e14f5e65388ec111c21c7e207127a7df813808b6"
+  },
+  "test_evaluated": false,
+  "retuned": false
+}

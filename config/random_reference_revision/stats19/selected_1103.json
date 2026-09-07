@@ -1,0 +1,38 @@
+{
+  "status": "MODEL_SEALED_BEFORE_REVISED_TEST_EVALUATION",
+  "created_local": "2026-09-06T21:27:50+08:00",
+  "seed": 1103,
+  "dataset": "stats19",
+  "protocol_sha256": "d858ce5ea4b791bb425f54c0be72a2edc8e2d2e07b8acd80afa54780a84e3b1f",
+  "candidate_id": "C03",
+  "best_iteration": 1200,
+  "initial_selection_constraints_met": false,
+  "final_constraints_met": false,
+  "validation_metrics": {
+    "macro_f1": 0.3524314176816816,
+    "qwk": 0.11324767346518139,
+    "ordinal_mae": 0.5409094680939341,
+    "accuracy": 0.5446850883744088,
+    "fatal_recall": 0.36292054402290624,
+    "serious_or_fatal_recall": 0.5469389675779963,
+    "mean_asymmetric_cost": 0.6592398971039748,
+    "class0_recall": 0.5955266974466783,
+    "class0_precision": 0.8229691464715184,
+    "class1_recall": 0.36501460662838725,
+    "class1_precision": 0.23930128120459648,
+    "class2_recall": 0.36292054402290624,
+    "class2_precision": 0.04319304821945817
+  },
+  "class_weights": [
+    0.42758722283998135,
+    1.6186472387119986,
+    22.9905973733967
+  ],
+  "files": {
+    "models/random_reference_revision/stats19/1103/model.joblib": "e1b6a9ef5cad24893cc56c0de8407a49eca7e8d2f481fb02186e6eba7ab16dab",
+    "results/random_reference_revision/stats19/1103/candidate_metrics.csv": "a0b800af7c96aed5418b31dc12282261a868560aa76f56f8490d0db022a74dc5",
+    "results/random_reference_revision/stats19/1103/preprocessing_audit.csv": "1631f8d08b2ae659459400a88c9bec9fb71c086917bcb9da6c15013b0a9bcc63",
+    "results/random_reference_revision/stats19/1103/validation_predictions.npz": "3137431532670578f0b6f512a42907859f717d3b363eb0e4390ff86a015294ad",
+    "results/random_reference_revision/stats19/1103/selection_roles.csv": "8e84898293289daddfdd00c82653f478aed8fb89015de6f22f94fa5c84d0300e"
+  }
+}

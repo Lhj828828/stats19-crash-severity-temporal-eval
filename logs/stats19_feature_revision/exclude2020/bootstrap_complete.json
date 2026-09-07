@@ -1,0 +1,16 @@
+{
+  "status": "COMPLETE",
+  "version": "STATS19_15_FEATURE_EXCLUDE2020_V1",
+  "created_local": "2026-09-07T16:58:04+08:00",
+  "protocol_sha256": "5fe006976655ae599131ac7a983529eb0fe475f037d1a80a57badc6fa34984ca",
+  "files_sha256": {
+    "results/stats19_feature_revision/exclude2020/bootstrap_draws.npz": "42a00a13c29d598400a534736411ea716d1721b0f282d555d494fa230168d427",
+    "results/stats19_feature_revision/exclude2020/paired_comparisons.csv": "a9d51eb815db98471e056ab79512ef40e1f744b71168e6d49402b4185b997245",
+    "results/stats19_feature_revision/exclude2020/metric_intervals.csv": "91fe615427db5e557ddde8a900c1a1741046cb24e6a098dbc0e71042dc1b892a",
+    "results/stats19_feature_revision/exclude2020/h2_sensitivity_decision.json": "070f642f8c6e38cc6e764894912dd8ab3cae3d83c6b7ea84fe70032122cac443",
+    "logs/stats19_feature_revision/exclude2020/evaluation_complete.json": "026c9a34c555a7de37a8cd12996c697f5ecfdf247e0f91d98a3aa6c1392c0846"
+  },
+  "iterations": 2000,
+  "model_count": 4,
+  "contrasts_per_metric": 5
+}

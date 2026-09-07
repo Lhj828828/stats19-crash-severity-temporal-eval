@@ -1,0 +1,192 @@
+{
+  "status": "PASS_CLEAN_RAW_RECONSTRUCTION_AND_V2_RESULTS",
+  "created_local": "2026-09-07T19:33:41+08:00",
+  "reference_catalog_version": "FINAL_ANALYSIS_SCOPE_20260907_V2",
+  "catalog_sha256": "b16e477612abf6326b51035bfad732397c7e9a522421f48bb4649a26bac8889a",
+  "datasets": [
+    {
+      "dataset": "stats19",
+      "completed_stages": 22,
+      "python_version": "3.13.15",
+      "clean_environment": true,
+      "copied_analytical_artifacts": false,
+      "reviewed_nonscientific_source_changes": [
+        {
+          "file": "code/final_result_catalog.py",
+          "run_sha256": "2280491ba000b1a7802d46999a77ea16fde737ae99d82941edb2b0058787a47a",
+          "current_sha256": "d0c73f87432b6d09f10d64664398aebbd8836c4d963f5087d860e21146c98e10",
+          "reason": "Reviewed CAS H2 catalog-only scope amendment and its tests"
+        },
+        {
+          "file": "tests/test_final_analysis.py",
+          "run_sha256": "3f0f214b47c0ca6055f9587f0ce624607456fef22ba19748c2798f521380e80a",
+          "current_sha256": "223dd864788bf94521cf81de5581da7919eca08a91803669e59fd669f8b05721",
+          "reason": "Reviewed CAS H2 catalog-only scope amendment and its tests"
+        }
+      ],
+      "numerical_comparison": {
+        "status": "PASS",
+        "reference_catalog_version": "FINAL_ANALYSIS_SCOPE_20260907_V2",
+        "tables": [
+          {
+            "table": "stats19_main_metrics",
+            "rows": 44,
+            "status": "PASS"
+          },
+          {
+            "table": "stats19_confusions",
+            "rows": 396,
+            "status": "PASS"
+          },
+          {
+            "table": "stats19_intervals",
+            "rows": 308,
+            "status": "PASS"
+          },
+          {
+            "table": "stats19_paired_comparisons",
+            "rows": 231,
+            "status": "PASS"
+          },
+          {
+            "table": "stats19_h1",
+            "rows": 140,
+            "status": "PASS"
+          },
+          {
+            "table": "stats19_h1_seed_summary",
+            "rows": 28,
+            "status": "PASS"
+          },
+          {
+            "table": "stats19_shap_stability",
+            "rows": 20,
+            "status": "PASS"
+          },
+          {
+            "table": "stats19_shap_importance",
+            "rows": 660,
+            "status": "PASS"
+          },
+          {
+            "table": "stats19_shap_samples",
+            "rows": 11,
+            "status": "PASS"
+          },
+          {
+            "table": "stats19_exclude2020_metrics",
+            "rows": 4,
+            "status": "PASS"
+          },
+          {
+            "table": "stats19_exclude2020_comparisons",
+            "rows": 35,
+            "status": "PASS"
+          }
+        ],
+        "float_atol": 1e-10,
+        "float_rtol": 1e-08,
+        "boundary": "No tolerance expansion; any mismatch requires a documented diagnosis, not silent reference replacement"
+      },
+      "figures": [
+        {
+          "file": "figures/stats19_feature_revision/full/h1_same_model_gaps.png",
+          "width": 2420,
+          "height": 814,
+          "sha256": "e10043bbe37e3b7333a21b858adae33e0b3514f2a967ee323aec54d860f260eb",
+          "status": "NONBLANK_FILE_CHECK_PASS"
+        },
+        {
+          "file": "figures/stats19_feature_revision/full/shap_rank_stability.png",
+          "width": 1320,
+          "height": 836,
+          "sha256": "b77de4f7569b34503bd724e907801792f92e8e94d44131ea40327968c10c1533",
+          "status": "NONBLANK_FILE_CHECK_PASS"
+        }
+      ]
+    },
+    {
+      "dataset": "cas",
+      "completed_stages": 25,
+      "python_version": "3.13.15",
+      "clean_environment": true,
+      "copied_analytical_artifacts": false,
+      "reviewed_nonscientific_source_changes": [],
+      "numerical_comparison": {
+        "status": "PASS",
+        "reference_catalog_version": "FINAL_ANALYSIS_SCOPE_20260907_V2",
+        "tables": [
+          {
+            "table": "cas_temporal_metrics",
+            "rows": 3,
+            "status": "PASS"
+          },
+          {
+            "table": "cas_random_baselines",
+            "rows": 20,
+            "status": "PASS"
+          },
+          {
+            "table": "cas_random_lightgbm",
+            "rows": 10,
+            "status": "PASS"
+          },
+          {
+            "table": "cas_h1",
+            "rows": 105,
+            "status": "PASS"
+          },
+          {
+            "table": "cas_h2",
+            "rows": 9,
+            "status": "PASS"
+          },
+          {
+            "table": "cas_shap_stability",
+            "rows": 20,
+            "status": "PASS"
+          },
+          {
+            "table": "cas_shap_importance",
+            "rows": 600,
+            "status": "PASS"
+          },
+          {
+            "table": "cas_ablation_metrics",
+            "rows": 6,
+            "status": "PASS"
+          },
+          {
+            "table": "cas_ablation_comparisons",
+            "rows": 54,
+            "status": "PASS"
+          }
+        ],
+        "float_atol": 1e-10,
+        "float_rtol": 1e-08,
+        "boundary": "No tolerance expansion; any mismatch requires a documented diagnosis, not silent reference replacement"
+      },
+      "figures": [
+        {
+          "file": "figures/random_reference_revision/cas/h1_revision.png",
+          "width": 1980,
+          "height": 1320,
+          "sha256": "711fa605f31557b9ae8ddf6879ebd15f4e623c33a69ac93126077959ef2c3e44",
+          "status": "NONBLANK_FILE_CHECK_PASS"
+        },
+        {
+          "file": "figures/random_reference_revision/cas/shap_revision.png",
+          "width": 1320,
+          "height": 770,
+          "sha256": "e3de5e159a40ee69244a80c2a04104ae0818eac841e7fd73586eaccc8f1aa848",
+          "status": "NONBLANK_FILE_CHECK_PASS"
+        }
+      ]
+    }
+  ],
+  "model_training_performed_by_this_check": false,
+  "fresh_download_performed": false,
+  "input_boundary": "Previously verified immutable raw snapshots were copied, never models or predictions",
+  "manuscript_layout_verified": false,
+  "new_software_release_published": false
+}

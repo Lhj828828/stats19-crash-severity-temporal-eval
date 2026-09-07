@@ -1,5 +1,13 @@
 # Public CAS reproduction
 
+> Historical CAS entry. This guide preserves the archived pipeline and its
+> completed-run evidence. Its random LightGBM and cross-dataset reporting stages
+> do not supply the current revised manuscript results. Use
+> [FINAL_ANALYSIS.md](FINAL_ANALYSIS.md) for the current entry, which retains
+> temporal and baseline results and runs the split-local random correction.
+> The corrected combination passed author-run clean reconstruction on
+> 7 September 2026; see [the validation record](docs/FINAL_REPRODUCTION_VALIDATION.md).
+
 This is an independent New Zealand CAS workflow reproduction. CAS records are
 never pooled with STATS19 records, and the CAS labels and absolute metrics are
 not treated as interchangeable with STATS19 labels and metrics.

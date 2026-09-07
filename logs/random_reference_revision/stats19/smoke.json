@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "analytical_result": false,
+  "training_rows": 3000,
+  "validation_rows": 1200,
+  "finite_metrics": true,
+  "seconds": 0.06120919995009899
+}

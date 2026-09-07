@@ -1,0 +1,28 @@
+{
+  "status": "COMPLETE",
+  "version": "STATS19_15_FEATURE_FULL_V1",
+  "created_local": "2026-09-07T14:25:42+08:00",
+  "execution_sha256": "0f3e3f99cdc2338d4704d2279ced3ae45bc9cbf27288c9196bdaa5ecc05c3aed",
+  "files_sha256": {
+    "results/stats19_feature_revision/full/bootstrap/temporal_2024.npz": "ac1805fb4c4ac23517f9691b70746cbdb8312243bd1f1f4649ab76ab24ba9a4e",
+    "results/stats19_feature_revision/full/bootstrap/random_seed_1103_internal.npz": "9039233d539e45ced64bd97afc470797b9a247bebf248da8f29ffa8e1e5ea271",
+    "results/stats19_feature_revision/full/bootstrap/random_seed_1103_2024.npz": "e935a5a12e508c7ea329a747e9e0311fcac1f42cddaa8411904dc4a64a522446",
+    "results/stats19_feature_revision/full/bootstrap/random_seed_2207_internal.npz": "583afcfc4fcb408582703e34f0d3046204e5eb80d301fe515929195ca30f5b0c",
+    "results/stats19_feature_revision/full/bootstrap/random_seed_2207_2024.npz": "35176f9c7408bfd86357c5ed03b4f52f0c35b588f6e9adebda82d410b0daf48c",
+    "results/stats19_feature_revision/full/bootstrap/random_seed_3301_internal.npz": "2cb040d99c24a67c6a68c90cd43e8ff08e33b32982edfba815b5611646ca153e",
+    "results/stats19_feature_revision/full/bootstrap/random_seed_3301_2024.npz": "b0e9ce9f38a83e96b6e1a694868d809fda8fdb4df886818a05d68aa01a10c27c",
+    "results/stats19_feature_revision/full/bootstrap/random_seed_4409_internal.npz": "4dc14b8aaea398e7ccc857d58b88faac409d240262d92dab5fc04757bdece085",
+    "results/stats19_feature_revision/full/bootstrap/random_seed_4409_2024.npz": "3306aac3b163b264954ef2598f169bd3cc44d78acc8a29f4cae2832ad4defd0b",
+    "results/stats19_feature_revision/full/bootstrap/random_seed_5501_internal.npz": "4787a8f1356439c751c0d9a59993d250c2ecd880186338f199d90d2f54253114",
+    "results/stats19_feature_revision/full/bootstrap/random_seed_5501_2024.npz": "71f55a6b13156f95fd63646db81d0763a57781cd07666e89a303a7f77fa336ec",
+    "results/stats19_feature_revision/full/metric_intervals.csv": "a6bb8a01b22b8dca95f5299b6e5863289e6a135a70976a1d1c6e9091ea8c1b4f",
+    "results/stats19_feature_revision/full/paired_differences.csv": "0bbde7435e685379f685168e20fd1e8a06cbc9399ff55609f2be2d9a9bf5e449",
+    "results/stats19_feature_revision/full/h1_gaps.csv": "e66e6560ee5aac1bb699770d86030852bd6ff303620825c335ca5c998fc7f8cc",
+    "results/stats19_feature_revision/full/h1_summary.csv": "e22aeee834c186bea09758d8957e9d1a5484d65bf0b0391dcb5b257c4e79677e",
+    "results/stats19_feature_revision/full/h2_descriptive_decision.json": "dfa8de087b30aa7cc8f04ef4a8619f03184cf2fd0866960f8efcf2a060e1bf6c",
+    "logs/stats19_feature_revision/full/evaluation_complete.json": "bc0e17c45bd7d6bc0bf0227b20a4a560c4b39aff78527a00642ef012e6698e41"
+  },
+  "groups": 11,
+  "iterations": 2000,
+  "uncertainty": "within-seed test-sampling intervals separate from across-seed descriptive sample SD/range"
+}

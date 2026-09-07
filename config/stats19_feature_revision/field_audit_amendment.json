@@ -1,0 +1,20 @@
+{
+  "original_audit_preserved": true,
+  "prediction_time_unchanged": true,
+  "changes": [
+    {
+      "field": "feature_special_conditions_at_site",
+      "action": "EXCLUDE_SCHEMA_TRANSITION",
+      "reason": "Legacy special conditions mapped into harmonized carriageway hazards; marked 2024 availability shift.",
+      "official_evidence": "2025 guide, 2011_to_2024_conversion, rows 31-39",
+      "claim": "Observed recording-process association; performance contribution not yet quantified"
+    },
+    {
+      "field": "feature_carriageway_hazards",
+      "action": "EXCLUDE_OUTCOME_QUALIFIED_CATEGORY",
+      "reason": "Category 19 specifies pedestrian not injured; inconsistent with fixed outcome-excluded prediction time.",
+      "official_evidence": "2025 guide, 2024_code_list, row 1394",
+      "claim": "Conservative feature removal; not a demonstrated deterministic target copy"
+    }
+  ]
+}

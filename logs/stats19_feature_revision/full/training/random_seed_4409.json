@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE",
+  "version": "STATS19_15_FEATURE_FULL_V1",
+  "created_local": "2026-09-07T14:20:06+08:00",
+  "execution_sha256": "0f3e3f99cdc2338d4704d2279ced3ae45bc9cbf27288c9196bdaa5ecc05c3aed",
+  "files_sha256": {
+    "logs/stats19_feature_revision/full/validation/random_seed_4409.json": "cb735c61d994697c05f933ec5785ad06c0c5eefb1c1c1f2a25e39cbafd35e730",
+    "models/stats19_feature_revision/full/random_seed_4409/dummy_most_frequent.joblib": "72b742a7d80db08602de6f1fd256ebf98ab668f9b21e9b55b145383432681d82",
+    "models/stats19_feature_revision/full/random_seed_4409/logistic_unweighted.joblib": "a43c4cc1d5f2e6df8ad5573bebbdcf5803a0779c1181d0a887b7d872f1422abf",
+    "models/stats19_feature_revision/full/random_seed_4409/logistic_weighted.joblib": "a279e888c0a2a69f8701b3f9733f0524e9142d340b7cada6cc687640fdbd6369",
+    "models/stats19_feature_revision/full/random_seed_4409/lightgbm_weighted.joblib": "d96df156d3f041c664de6230315814d4fe9fc8737c444ccd26ba08d22f3766ae",
+    "results/stats19_feature_revision/full/random_seed_4409/validation_predictions.npz": "c6941dc02c90173da8dad1334a03880aa46ffbf0688438038b0a55c716b13684",
+    "results/stats19_feature_revision/full/random_seed_4409/candidate_metrics.csv": "e01141ffefdfc21f65458798b52a9ac918fa1f5167a4a120c1e2a1c9ff5efa6a",
+    "results/stats19_feature_revision/full/random_seed_4409/validation_metrics.csv": "2a54d803fd8a11e1f6223590358ea18c32896af49a6104aec1a47b343f56c969"
+  },
+  "split": "random_seed_4409",
+  "train_rows": 449903,
+  "validation_rows": 96408,
+  "test_performance_evaluated": false
+}

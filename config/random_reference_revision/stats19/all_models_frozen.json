@@ -1,0 +1,12 @@
+{
+  "status": "ALL_FIVE_RANDOM_MODELS_SEALED",
+  "created_local": "2026-09-06T21:41:57+08:00",
+  "protocol_sha256": "d858ce5ea4b791bb425f54c0be72a2edc8e2d2e07b8acd80afa54780a84e3b1f",
+  "selected_files": {
+    "1103": "b35f53b3d3cca00b964511b1ce7348afce87bd283f597a260027bccedc348bf5",
+    "2207": "c766d26301a8731f15b7ebaae420595d68e88e1d16eb3e378d7add2a80af4a73",
+    "3301": "42db5a5953967d1fc0a000c271129857de17cc238927efda92bd4411b36aeaef",
+    "4409": "2ee91360a5cdda96d5659c33a95456ba3f644341d09125e0d3093809d45d8148",
+    "5501": "00840f325cf1b57dc44e7e015bd0cb56bf7d952781750bd98d22dd7d10ead942"
+  }
+}

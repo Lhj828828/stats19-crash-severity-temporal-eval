@@ -1,0 +1,220 @@
+{
+  "version": "STATS19_15_FEATURE_FULL_V1",
+  "created_local": "2026-09-07T13:57:23+08:00",
+  "parent_sha256": "d0090f1b292cb30e784eef7ff5792e507033e40f252207254e0fee71fb67a730",
+  "post_review_correction": true,
+  "old_test_results_known": true,
+  "preregistered": false,
+  "new_unseen_test_claim": false,
+  "source_sha256": {
+    "code/baseline_modeling.py": "34c024f461ad3c6a083e5e2ea16e911ae96b2bb6a75151dd3ece11f7005f79ec",
+    "code/build_d14_note.py": "8a9ba89118c83c54589db310d504faba9595a3c2068f4c10c55aa812652a3e0f",
+    "code/build_figure1_workflow.py": "c5aa5869a79a4862f9e231be68c99142a17f599389cbe9c5a3b3cd0317fe152f",
+    "code/cas_bootstrap_uncertainty.py": "c337a2e0d1880cd0969c3af770e8b31574047de0a0aaeb5bf3f9c19385975fc6",
+    "code/cas_evaluate_frozen_models.py": "ec94599b87c7c4a4200000fcd3438dd5e89173c62bfdb67c21359b92262885f5",
+    "code/cas_feasibility_audit.py": "8ba46e087d33efeede43827929d9212b6771d1b7283688f0e4b12f38baa273ee",
+    "code/cas_feature_ablation_sensitivity.py": "b2748a9f564c3700a03cbb50e235935b3f1097b30c698b48d9d9dcf0aefac9c9",
+    "code/cas_finalize_replication.py": "e32a15987fbcb4e4835b9099d4dc17b5247318bece40f770fd28687be19111f5",
+    "code/cas_freeze_post_analysis.py": "690a36cfb6e5a4dc7aac2bebf9c8b90e3eb2d9b3e2f5ec6528156d15ccd4e963",
+    "code/cas_freeze_splits.py": "522e8351df06095c1be14de98cd4f81c5ec67b459cb37569ea06100230ce6ff5",
+    "code/cas_modeling_common.py": "5fe1104e12e4545ee9c05084cbd4a90585212f6c67337c47726462b1b57ee46c",
+    "code/cas_normalize_public_manifest.py": "68b16fe07dbd7bb5780f620fa9247e43aac17c100ec2f4f1790245190deb1c81",
+    "code/cas_offline_feasibility_audit.py": "587cfde0790e4b626b748bd41b6b8d4c3e8d8f41754de67c140b75686de87a10",
+    "code/cas_prepare_modeling_data.py": "42767776e90c743a66ca55e3869978816abfdc887e48ca685b5826a4317a874a",
+    "code/cas_public_reproduction.py": "69fc30e00ff89317b9e8b5c3d15970df4b24ab236957297e423b449782c7426a",
+    "code/cas_shap_stability.py": "d3ab808dbb026674ba593a2fd8d3ecce06bed1fd771cb2cdeeac45d6753c9338",
+    "code/cas_train_baselines.py": "643b077a9949bcdaaf477294229088de75e758c0e5100dbc05d3130d848cfeb4",
+    "code/cas_train_lightgbm.py": "39d8ddf06ed99aa5d92dab486230c9fe3f96242cb7b9b8a663216a419898d3b5",
+    "code/cas_write_public_feasibility_report.py": "2db2bdf6eed9af8039b7283c66c2fb57cf107f2847600008056a652b7b554463",
+    "code/d10_tune_lightgbm.py": "ba584669cedc84c7095cf2385ecdce815a6d8ccbf75ab9538f12bc0468178cc1",
+    "code/d10b_tree_sensitivity.py": "f0285be37c76fe4a19afabec5581e2ef064461c5de4211295e6b641aea13d758",
+    "code/d11_evaluate_frozen_models.py": "7cc6ffcb554f5b86efc68a8a17fd5f4601f253111d0926de048ede585b5d4b3c",
+    "code/d12_bootstrap_uncertainty.py": "ed579bd41c5dff8a91a6cca28f0ce34946f93a781f5738c675110ea8b25f62ac",
+    "code/d13_freeze_results.py": "2e9323075c035a0c691b0e4814dfc279ddd174e9e77df3a56e1f3b9c08dcb211",
+    "code/d14_closeout.py": "dd8b4a73dbaa7a140599598909707157928a92ec9eddc616eb246fa404334996",
+    "code/d14_exclude2020_sensitivity.py": "53fcf70c017de5cf1e5e7cf8f6a07e98452732b37895f5a564259bb8384e95e4",
+    "code/d14_shap_stability.py": "76cf2d0945874ffbd339a41d52afe5b567b490d1260848910356ca6b9f806b9e",
+    "code/d15_reproducibility.py": "c031c18e9be47fd6f98a186ff960fa9518b74fbbd2599ba64208ffb017504b35",
+    "code/d16_reproduce.py": "d9e21f20ddc710e85efff8fdb48a521141f85acff451c59c643d399354410515",
+    "code/d1_acquire_and_audit.py": "492d09ed7c041bb415509f1fb7196bb161f52f6307091871302a6631cdcd44d9",
+    "code/d2_audit_schema_and_codes.py": "c2baeac740591b8f28dca06882dac250fe50a5ee91a2ba6af26f70203db8784e",
+    "code/d3_build_leakage_audit.py": "b8d5ff169312d2508dc45301ad13e5aaa5d0b86d0cde315afc1246f82423130a",
+    "code/d4_build_features.py": "223ccf11284ffe350dc2fb71566f7653e45a3ada0076958d190d8b58832a74a1",
+    "code/d5_quality_control.py": "b198373a84169b79805e3106e874c38c9c10681ec1b9570adf48a031bf60c4bf",
+    "code/d6_freeze_protocol_and_plot.py": "8ffd4474ab1073b63984da72f7c9041dbbd668fcca7aa076218f418c49353860",
+    "code/d7_finalize_training_inputs.py": "925fe0bfd903960675aec1928c14ac36850cb2f4444a8b05eda01e5b951a74a1",
+    "code/d8_train_baselines.py": "a891ca24566d579e8e12708fe2b7b8608111a10d6b5b7de9308b36d1cf98f1ca",
+    "code/d9_train_ordered_logit.py": "2ad90b59a28e18a68146759931151db4db4d11e279e32461f8cf947e29c726c3",
+    "code/d9s1_matched_subset_logistic.py": "c7e874325b089583a72e0bb261a43f17b36786ebaa8f33343668a6d9e43fb71a",
+    "code/modeling_data.py": "ec28dc9c8cc83ad7609be3ba1710b167c3886746a76903136c5e49914f44fbbf",
+    "code/public_data.py": "395309cfde1f04a378f9208db8d43a4f9e679faa68dbbd5c5efd7e44902981e0",
+    "code/public_input_audit.py": "ee62e15a542f80c1ee233f9bb6fde94e78513789deeeaa474f1b40d2f95a8410",
+    "code/public_reproduction.py": "bf4cbe6945f2ee514b9bbf69de61c110f7d649effb759c268a68833e2a0c39d4",
+    "code/public_result_verifier.py": "4a000595dd6b9755b6a03c8f91f0c5df0a04f740d796e25ef4b661b719c74ba4",
+    "code/random_reference_revision.py": "3896ab4bf833e77a93debf9c9edc3f13b44ff9dd8183dc9249bd3d8d43f1bf19",
+    "code/stats19_feature_revision.py": "d2f589ebc6065ed44122998de84182f195d57d53ebdf32f123556377e1a06f02",
+    "code/stats19_feature_revision_full.py": "8c24f6e91a56791b24bfd3955f1cf775196dcaf7e3dc554dbe216735ad4deb99",
+    "code/test_cas_feasibility_audit.py": "ca6f7bdb5b54a2132c6dfe4845dbac835e0be8f276eb505c6f04770b1722ed38",
+    "code/test_d10_lightgbm.py": "aa4a20e31c515d34971e40c84bb2a03b0e27201e1401e4d2883ad13d55535a87",
+    "code/test_d10b_tree_sensitivity.py": "0026ed3ab79451b706345f39c7602998c3d653a51a9ba3d941ead6425c2561d1",
+    "code/test_d11_evaluation.py": "651f4cc1699279043ee514b199a52a70bb9329ae6683fc3d934d64db9f7d2c12",
+    "code/test_d12_bootstrap.py": "2d85e12097910ad3ef8d566d16be30d03264d86cb3b9facf4d7e9f3f9cd463b6",
+    "code/test_d13_checkpoint.py": "efca29126ee1318a0cdb3185b0b7b039fd0b7375eb81301c0fd3ab0ee8a3d98a",
+    "code/test_d14_closeout.py": "c28776bacb0f07c02bbbd9e5d1f7ddfec6e86628c4b9379229055b70bdbb0a85",
+    "code/test_d14_exclude2020.py": "ba5bc7f471e24b8406a1a232fc9a2789e9f1558cd2e95f29453a29002bc106c9",
+    "code/test_d14_shap.py": "fa9a305e9d794a32f56c4303c7761b92ef971fd8f36ca65cf0602b02ed59b66a",
+    "code/test_d15_reproducibility.py": "7a2302739465bce9c49440df884362c9f8def14b701302d1706cd7c55b921191",
+    "code/test_d16_d14_exclude2020.py": "3ab3c728d2ccc2e94bec14837aaf90c56f52bc9278a374b58f3c8f4378d4e801",
+    "code/test_d16_reproduction.py": "244fdf928bd4488ce932f98ef3a4ee0b9b1df796aa24f2448ba37f318165d717",
+    "code/test_d6_protocol.py": "deb49ab2d9c832c5a1a8f74ee3f895ea38ce31bbff2a980aa38decd746235fa9",
+    "code/test_d7_training_inputs.py": "70fa22215ebe2242292669cfcfd93477710876269b826da7cfd18dc4eda4afed",
+    "code/test_d8_baselines.py": "509db96261626566128ac5926d1665ab21d467d913603505b08a6cbbdfecf63a",
+    "code/test_d9_ordered_logit.py": "bc06bab66731013c09e29b93a12658243ec234d6bdbfa95900e23d723117ca3c",
+    "code/test_d9s1_matched_subset.py": "7a264c16aca3b19fa5c66af2f74ae567bc29ec2e15c7ecaf7b327123e741973c",
+    "code/test_environment.py": "de912a7608901674b3f689f9b52b08e24de38b02b8ed2080981f6978914d5ab4",
+    "run_stats19_feature_revision_full.py": "5e7041e324cbda9f4d0c3535b86361380a748f896db4268ec179342b13abf80a",
+    "tests/test_stats19_feature_revision_full.py": "969bbe3cfccc5fe4ef38a6e24d9363f0faf36b8c6a24eb4fe39dd8781d1523a0",
+    "requirements-lock.txt": "7a974836ebbd01a87f4cd9c95b9154ce30e62449d1fadae01c1217ff59ee9903"
+  },
+  "preparation_evidence_sha256": {
+    "logs/stats19_feature_revision/preparation_complete.json": "9aca316231aa9945dc5b018a8ba6decbf80d1ff68994c34d2a9460ef90337bda",
+    "logs/stats19_feature_revision/full/preflight_tests.json": "2acfe745d510078e97831c20282b36b094da7095cc6dcc16b2ef670facdee8c0"
+  },
+  "threads": 8,
+  "models": [
+    "dummy_most_frequent",
+    "logistic_unweighted",
+    "logistic_weighted",
+    "lightgbm_weighted"
+  ],
+  "splits": [
+    "temporal",
+    "random_seed_1103",
+    "random_seed_2207",
+    "random_seed_3301",
+    "random_seed_4409",
+    "random_seed_5501"
+  ],
+  "evaluation_groups": [
+    {
+      "group": "temporal_2024",
+      "split": "temporal",
+      "role": "future",
+      "rows": 100927
+    },
+    {
+      "group": "random_seed_1103_internal",
+      "split": "random_seed_1103",
+      "role": "internal",
+      "rows": 96408
+    },
+    {
+      "group": "random_seed_1103_2024",
+      "split": "random_seed_1103",
+      "role": "future",
+      "rows": 100927
+    },
+    {
+      "group": "random_seed_2207_internal",
+      "split": "random_seed_2207",
+      "role": "internal",
+      "rows": 96408
+    },
+    {
+      "group": "random_seed_2207_2024",
+      "split": "random_seed_2207",
+      "role": "future",
+      "rows": 100927
+    },
+    {
+      "group": "random_seed_3301_internal",
+      "split": "random_seed_3301",
+      "role": "internal",
+      "rows": 96408
+    },
+    {
+      "group": "random_seed_3301_2024",
+      "split": "random_seed_3301",
+      "role": "future",
+      "rows": 100927
+    },
+    {
+      "group": "random_seed_4409_internal",
+      "split": "random_seed_4409",
+      "role": "internal",
+      "rows": 96408
+    },
+    {
+      "group": "random_seed_4409_2024",
+      "split": "random_seed_4409",
+      "role": "future",
+      "rows": 100927
+    },
+    {
+      "group": "random_seed_5501_internal",
+      "split": "random_seed_5501",
+      "role": "internal",
+      "rows": 96408
+    },
+    {
+      "group": "random_seed_5501_2024",
+      "split": "random_seed_5501",
+      "role": "future",
+      "rows": 100927
+    }
+  ],
+  "training": "Frozen preparation.fit_validation, complete training partitions, six candidates per split, cap 1200, training-only refit",
+  "constraints": "new same-split weighted Logistic QWK minus 0.01 and fatal recall minus 0.05; original deterministic fallback",
+  "logistic_nonconvergence": "Stop before sealing; retain diagnostics, require documented amendment rather than silent iteration increase",
+  "checkpoint": "Completed splits immutable and hash-validated; unfinished split restarts; SHAP resumes verified 1000-row chunks",
+  "test_gate": "All six model sets and validation reports sealed before evaluation; no retuning from tests",
+  "decision": "three-class argmax, no threshold tuning",
+  "bootstrap": {
+    "iterations": 2000,
+    "seed": 20260828,
+    "within_group": "paired record bootstrap, fixed true-class counts, exact joint-prediction-pattern multinomial kernel",
+    "H1": "independent internal and future streams per seed; error metrics reversed; mean/sample-SD/range across five seeds",
+    "H2": "temporal weighted LightGBM minus weighted Logistic; report all paired intervals",
+    "H2_descriptive_gate": "Macro-F1 delta >=0.01 and lower CI>0, QWK/fatal upper CI>=0 and cost lower CI<=0; NOT evidence of noninferiority"
+  },
+  "shap": {
+    "rows": 10000,
+    "sampling_seed": 20260831,
+    "features": [
+      "feature_day_of_week",
+      "feature_first_road_class",
+      "feature_road_type",
+      "feature_junction_detail",
+      "feature_junction_control",
+      "feature_second_road_class",
+      "feature_pedestrian_crossing",
+      "feature_light_conditions",
+      "feature_weather_conditions",
+      "feature_road_surface_conditions",
+      "feature_urban_or_rural_area",
+      "feature_trunk_road_flag",
+      "feature_speed_limit",
+      "feature_month",
+      "feature_hour"
+    ],
+    "design": "reuse original position sampling; same random model on internal/future; temporal future descriptive only",
+    "output": "raw margin, tree_path_dependent; mean absolute over records and equal average of three output classes",
+    "scope_caution": "Fatal-output importance uses all sampled records, not a fatal-record-only estimate",
+    "bootstrap": "2000 stratified cached-contribution record draws, no refitting; shared future positions and stream across models",
+    "direction": "signed summaries for separate class outputs only; no pooled signed risk direction or causal claim",
+    "correlated_groups": "not computed; individual-feature rankings only, no correlation-group stability claim"
+  },
+  "secondary": "Not rerun here: Ordered Logit/matched subset, exclusion-2020, tree-cap extension. Historical results must not enter corrected main tables.",
+  "CAS": "Unchanged; not included in this execution",
+  "runtime": {
+    "python": "3.13.15",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.0",
+    "lightgbm": "4.7.0",
+    "shap": "0.52.0",
+    "joblib": "1.5.3",
+    "threadpoolctl": "3.6.0"
+  }
+}

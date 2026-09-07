@@ -1,0 +1,43 @@
+{
+  "status": "POST_REVIEW_RANDOM_REFERENCE_CORRECTION_VERIFIED",
+  "created_local": "2026-09-06T22:13:08+08:00",
+  "dataset": "cas",
+  "checks": [
+    {
+      "seed": 1103,
+      "selection_test_overlap": 0,
+      "serialized_predictions_checked": true,
+      "metrics_recomputed": true
+    },
+    {
+      "seed": 2207,
+      "selection_test_overlap": 0,
+      "serialized_predictions_checked": true,
+      "metrics_recomputed": true
+    },
+    {
+      "seed": 3301,
+      "selection_test_overlap": 0,
+      "serialized_predictions_checked": true,
+      "metrics_recomputed": true
+    },
+    {
+      "seed": 4409,
+      "selection_test_overlap": 0,
+      "serialized_predictions_checked": true,
+      "metrics_recomputed": true
+    },
+    {
+      "seed": 5501,
+      "selection_test_overlap": 0,
+      "serialized_predictions_checked": true,
+      "metrics_recomputed": true
+    }
+  ],
+  "historical_files_unchanged": 553,
+  "protocol_sha256": "4cc1676ab1623e054c9bec6602785602e16e3881b8897d28375f76730282c148",
+  "manifest_sha256": "117d95723ac09ec2380026176967e5014ba385794bc3f8e5fade61b9a6d99e8a",
+  "untouched_temporal_models_and_H2": true,
+  "legacy_outcomes_known": true,
+  "new_preregistration_claim": false
+}

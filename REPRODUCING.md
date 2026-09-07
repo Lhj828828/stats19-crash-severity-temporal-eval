@@ -1,5 +1,14 @@
 # Reproducing the analyses
 
+> Historical release guide. The commands and completed-run evidence below
+> describe the archived 17-feature STATS19 implementation and original CAS
+> random reference. For the current 15-feature STATS19 analysis, retained
+> exclusion-2020 sensitivity and corrected CAS random reference, start with
+> [FINAL_ANALYSIS.md](FINAL_ANALYSIS.md) and `run_final_analysis.py`.
+> Its author-run clean end-to-end reconstruction passed on 7 September 2026;
+> see [the current validation record](docs/FINAL_REPRODUCTION_VALIDATION.md).
+> The historical success records below concern the older implementation.
+
 This guide is for a researcher starting from a fresh software release. The
 STATS19 primary analysis and the New Zealand CAS replication are separate
 pipelines because their fields and severity labels are not exchangeable.

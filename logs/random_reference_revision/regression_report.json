@@ -1,0 +1,157 @@
+{
+  "started_local": "2026-09-06T22:17:07.552265+08:00",
+  "invocation": "Separate interpreter per documented standalone test file",
+  "environment_note": "Historical test_environment.py is a report writer, not a unit test; do not overwrite its frozen historical log. Runtime versions are recorded in correction protocols.",
+  "discovery_note": "unittest discover -s tests encounters existing same-name code/tests module collisions; no historical test was modified.",
+  "tests": [
+    {
+      "file": "tests/test_cas_baselines.py",
+      "exit_code": 0,
+      "output": "CAS baseline metric rows: 12\nCAS baseline validation prediction rows: 70160\nCAS baseline 2025 embargo: PASS\nCAS_BASELINE_INDEPENDENT_CHECKS=PASS\n"
+    },
+    {
+      "file": "tests/test_cas_bootstrap.py",
+      "exit_code": 0,
+      "output": "CAS H1 bootstrap rows: 135\nCAS H2 bootstrap rows: 99\nCAS_BOOTSTRAP_INDEPENDENT_CHECKS=PASS\n"
+    },
+    {
+      "file": "tests/test_cas_closeout.py",
+      "exit_code": 0,
+      "output": "CAS closeout comparison rows: 8\nCAS_CLOSEOUT_INDEPENDENT_CHECKS=PASS\n"
+    },
+    {
+      "file": "tests/test_cas_evaluation.py",
+      "exit_code": 0,
+      "output": "CAS evaluation groups: 11\nCAS evaluation metric rows: 33\nCAS evaluation prediction rows: 263061\nCAS_EVALUATION_INDEPENDENT_CHECKS=PASS\n"
+    },
+    {
+      "file": "tests/test_cas_feasibility_audit.py",
+      "exit_code": 0,
+      "output": "PASS: test_snapshot_shape_and_target\nPASS: test_literal_none_and_null_are_preserved\nPASS: test_jsonl_is_lossless_and_complete\nPASS: test_leakage_audit_covers_live_schema\nPASS: test_protocol_is_separate_and_temporal\nPASS: test_no_unseen_categories_in_frozen_splits\nPASS: test_crosswalk_prevents_false_external_validation_claim\nPASS: test_snapshot_hash_matches_manifest_protocol_and_report\nAll 8 CAS feasibility checks passed.\n"
+    },
+    {
+      "file": "tests/test_cas_feature_ablation.py",
+      "exit_code": 0,
+      "output": "CAS feature-ablation scenarios: 2\nCAS feature-ablation 2025 predictions: 42168\nCAS_FEATURE_ABLATION_INDEPENDENT_CHECKS=PASS\n"
+    },
+    {
+      "file": "tests/test_cas_lightgbm.py",
+      "exit_code": 0,
+      "output": "CAS LightGBM tuning rows: 6\nCAS LightGBM validation prediction rows: 35080\nCAS LightGBM 2025 embargo: PASS\nCAS_LIGHTGBM_INDEPENDENT_CHECKS=PASS\n"
+    },
+    {
+      "file": "tests/test_cas_modeling_inputs.py",
+      "exit_code": 0,
+      "output": "PASS: test_frozen_schema_and_hashes\nPASS: test_modeling_table_contract\nPASS: test_literal_categories_and_missingness\nPASS: test_allowlist_matches_leakage_audit\nPASS: test_split_protocol_and_identity\nPASS: test_temporal_roles_are_year_locked\nPASS: test_random_roles_and_test_lock\nPASS: test_training_only_class_weights\nAll 8 CAS modeling-input checks passed.\n"
+    },
+    {
+      "file": "tests/test_cas_public_reproduction.py",
+      "exit_code": 0,
+      "output": "test_fixed_snapshot_hash_is_pinned (__main__.CASPublicReproductionTests.test_fixed_snapshot_hash_is_pinned) ... ok\ntest_pipeline_has_no_live_query_or_forensic_stage (__main__.CASPublicReproductionTests.test_pipeline_has_no_live_query_or_forensic_stage) ... ok\ntest_public_inputs_do_not_embed_author_home_paths (__main__.CASPublicReproductionTests.test_public_inputs_do_not_embed_author_home_paths) ... ok\ntest_public_inputs_exclude_rebuildable_author_artifacts (__main__.CASPublicReproductionTests.test_public_inputs_exclude_rebuildable_author_artifacts) ... ok\ntest_root_entry_lists_offline_pipeline (__main__.CASPublicReproductionTests.test_root_entry_lists_offline_pipeline) ... ok\ntest_workspace_must_be_outside_source (__main__.CASPublicReproductionTests.test_workspace_must_be_outside_source) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.214s\n\nOK\n"
+    },
+    {
+      "file": "tests/test_cas_shap.py",
+      "exit_code": 0,
+      "output": "CAS H3 stability rows: 5\nCAS H3 raw SHAP shape: (5, 2, 4887, 3, 15)\nCAS_H3_INDEPENDENT_CHECKS=PASS\n"
+    },
+    {
+      "file": "tests/test_portable_provenance.py",
+      "exit_code": 0,
+      "output": "test_d14_script_uses_repository_evidence (__main__.PortableProvenanceTests.test_d14_script_uses_repository_evidence) ... ok\ntest_original_outline_hash_is_preserved_without_runtime_dependency (__main__.PortableProvenanceTests.test_original_outline_hash_is_preserved_without_runtime_dependency) ... ok\ntest_tracked_text_has_no_author_workstation_path (__main__.PortableProvenanceTests.test_tracked_text_has_no_author_workstation_path) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.114s\n\nOK\n"
+    },
+    {
+      "file": "tests/test_public_data.py",
+      "exit_code": 0,
+      "output": "test_interrupted_download_resumes_with_range (__main__.PublicDataTests.test_interrupted_download_resumes_with_range) ... ok\ntest_missing_immutable_url_fails_closed (__main__.PublicDataTests.test_missing_immutable_url_fails_closed) ... ok\ntest_path_traversal_is_rejected (__main__.PublicDataTests.test_path_traversal_is_rejected) ... ok\ntest_repository_manifest_contract (__main__.PublicDataTests.test_repository_manifest_contract) ... ok\ntest_verified_atomic_download (__main__.PublicDataTests.test_verified_atomic_download) ... ok\ntest_verify_pass_and_hash_mismatch (__main__.PublicDataTests.test_verify_pass_and_hash_mismatch) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.031s\n\nOK\n"
+    },
+    {
+      "file": "tests/test_public_documentation.py",
+      "exit_code": 0,
+      "output": "test_cas_redistribution_review_is_explicit (__main__.PublicDocumentationTests.test_cas_redistribution_review_is_explicit) ... ok\ntest_current_journal_target_is_applied_sciences (__main__.PublicDocumentationTests.test_current_journal_target_is_applied_sciences) ... ok\ntest_data_guide_does_not_require_complete_file_for_public_run (__main__.PublicDocumentationTests.test_data_guide_does_not_require_complete_file_for_public_run) ... ok\ntest_readme_names_public_runner_and_preserves_release_boundary (__main__.PublicDocumentationTests.test_readme_names_public_runner_and_preserves_release_boundary) ... ok\ntest_reproduction_guide_discloses_validation_and_published_data (__main__.PublicDocumentationTests.test_reproduction_guide_discloses_validation_and_published_data) ... ok\ntest_stats19_redistribution_review_is_explicit (__main__.PublicDocumentationTests.test_stats19_redistribution_review_is_explicit) ... ok\ntest_validation_record_is_specific_and_does_not_claim_independence (__main__.PublicDocumentationTests.test_validation_record_is_specific_and_does_not_claim_independence) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "file": "tests/test_public_input_audit.py",
+      "exit_code": 0,
+      "output": "test_builds_d1_compatible_audit (__main__.PublicInputAuditTests.test_builds_d1_compatible_audit) ... ok\ntest_hash_mismatch_stops_before_audit (__main__.PublicInputAuditTests.test_hash_mismatch_stops_before_audit) ... ok\ntest_repository_manifest_freezes_annual_row_counts (__main__.PublicInputAuditTests.test_repository_manifest_freezes_annual_row_counts) ... ok\ntest_wrong_year_stops_after_verified_read (__main__.PublicInputAuditTests.test_wrong_year_stops_after_verified_read) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.117s\n\nOK\n"
+    },
+    {
+      "file": "tests/test_public_reproduction.py",
+      "exit_code": 0,
+      "output": "PUBLIC_D10_AMENDMENT_BOUND=9882270efd2798eeba2a49f63b0c6b028dbb87b22dfbe62a2e6bb6b422b38143\nPUBLIC_D10_AMENDMENT_BOUND=9882270efd2798eeba2a49f63b0c6b028dbb87b22dfbe62a2e6bb6b422b38143\nPUBLIC_D10B_PROTOCOL_BOUND=34fa4a6d1f2aa9ce48544407cbc80ade394e7169422b823284945d12411ecc1a\nPUBLIC_D10B_PROTOCOL_BOUND=34fa4a6d1f2aa9ce48544407cbc80ade394e7169422b823284945d12411ecc1a\ntest_bind_d10_changes_only_runtime_binding (__main__.PublicReproductionTests.test_bind_d10_changes_only_runtime_binding) ... ok\ntest_bind_d10b_refreshes_only_declared_upstream_hashes (__main__.PublicReproductionTests.test_bind_d10b_refreshes_only_declared_upstream_hashes) ... ok\ntest_child_output_is_forced_to_utf8 (__main__.PublicReproductionTests.test_child_output_is_forced_to_utf8) ... ok\ntest_pipeline_has_public_boundary_and_protocol_freezes (__main__.PublicReproductionTests.test_pipeline_has_public_boundary_and_protocol_freezes) ... ok\ntest_root_entry_point_is_directly_runnable (__main__.PublicReproductionTests.test_root_entry_point_is_directly_runnable) ... ok\ntest_workspace_must_be_outside_source (__main__.PublicReproductionTests.test_workspace_must_be_outside_source) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.351s\n\nOK\n"
+    },
+    {
+      "file": "tests/test_public_result_verifier.py",
+      "exit_code": 0,
+      "output": "test_contract_rejects_path_traversal (__main__.PublicResultVerifierTests.test_contract_rejects_path_traversal) ... ok\ntest_csv_comparison_is_keyed_and_tolerant (__main__.PublicResultVerifierTests.test_csv_comparison_is_keyed_and_tolerant) ... ok\ntest_filter_excludes_ordered_logit_from_pass_fail (__main__.PublicResultVerifierTests.test_filter_excludes_ordered_logit_from_pass_fail) ... ok\ntest_frozen_project_matches_compact_references (__main__.PublicResultVerifierTests.test_frozen_project_matches_compact_references) ... ok\ntest_json_comparison_recursively_ignores_runtime_keys (__main__.PublicResultVerifierTests.test_json_comparison_recursively_ignores_runtime_keys) ... ok\ntest_numeric_difference_outside_tolerance_fails (__main__.PublicResultVerifierTests.test_numeric_difference_outside_tolerance_fails) ... ok\ntest_repository_contract_uses_only_compact_artifacts (__main__.PublicResultVerifierTests.test_repository_contract_uses_only_compact_artifacts) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.051s\n\nOK\n"
+    },
+    {
+      "file": "tests/test_random_reference_revision.py",
+      "exit_code": 0,
+      "output": "STAGE=shap DATASET=stats19 TIME=2026-09-06T22:17:28+08:00\ntest_all_roles_disjoint (__main__.RevisionTests.test_all_roles_disjoint) ... ok\ntest_bootstrap_reproducibility_and_independent_streams (__main__.RevisionTests.test_bootstrap_reproducibility_and_independent_streams) ... ok\ntest_confusion_kernel_matches_sklearn (__main__.RevisionTests.test_confusion_kernel_matches_sklearn) ... ok\ntest_constant_or_invalid_bootstrap_rejected (__main__.RevisionTests.test_constant_or_invalid_bootstrap_rejected) ... ok\ntest_cost_direction (__main__.RevisionTests.test_cost_direction) ... ok\ntest_duplicate_record_rejected (__main__.RevisionTests.test_duplicate_record_rejected) ... ok\ntest_fallback_and_local_constraint (__main__.RevisionTests.test_fallback_and_local_constraint) ... ok\ntest_invalid_role_rejected (__main__.RevisionTests.test_invalid_role_rejected) ... ok\ntest_paired_bootstrap_identity_and_stratum_counts (__main__.RevisionTests.test_paired_bootstrap_identity_and_stratum_counts) ... ok\ntest_prediction_id_alignment_and_target_guard (__main__.RevisionTests.test_prediction_id_alignment_and_target_guard) ... ok\ntest_shap_cli_dispatches_to_analysis_function (__main__.RevisionTests.test_shap_cli_dispatches_to_analysis_function) ... ok\ntest_shap_rank_kernel (__main__.RevisionTests.test_shap_rank_kernel) ... ok\ntest_test_label_perturbation_does_not_change_selection_fit (__main__.RevisionTests.test_test_label_perturbation_does_not_change_selection_fit) ... <PROJECT_ROOT>\\.venv\\Lib\\site-packages\\lightgbm\\sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.\n  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)\n<PROJECT_ROOT>\\.venv\\Lib\\site-packages\\lightgbm\\sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.\n  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)\nok\ntest_training_only_category_and_nan (__main__.RevisionTests.test_training_only_category_and_nan) ... ok\ntest_training_test_overlap_rejected (__main__.RevisionTests.test_training_test_overlap_rejected) ... ok\ntest_validation_test_overlap_rejected (__main__.RevisionTests.test_validation_test_overlap_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.134s\n\nOK\n"
+    },
+    {
+      "file": "code/test_d6_protocol.py",
+      "exit_code": 0,
+      "output": "D6 assignment hash: 5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076\nD6 figure pixels: 2210x1170\nD6 figure DPI: (299.9994, 299.9994)\nINDEPENDENT_D6_ASSERTIONS=PASS\n"
+    },
+    {
+      "file": "code/test_d7_training_inputs.py",
+      "exit_code": 0,
+      "output": "D7 assignment hash: 5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076\nD7 class-weight rows: 18\nINDEPENDENT_D7_ASSERTIONS=PASS\n"
+    },
+    {
+      "file": "code/test_d8_baselines.py",
+      "exit_code": 0,
+      "output": "D8 validation metric rows: 18\nD8 prediction rows checked: 1758894\nD8 2024 embargo: PASS\nINDEPENDENT_D8_ASSERTIONS=PASS\n"
+    },
+    {
+      "file": "code/test_d9_ordered_logit.py",
+      "exit_code": 0,
+      "output": "D9 validation metric rows: 6\nD9 prediction rows checked: 586298\nD9 2024 embargo: PASS\nINDEPENDENT_D9_ASSERTIONS=PASS\n"
+    },
+    {
+      "file": "code/test_d9s1_matched_subset.py",
+      "exit_code": 0,
+      "output": "D9-S1 subset identities checked: 600000\nD9-S1 validation prediction rows checked: 586298\nD9-S1 2024 embargo: PASS\nINDEPENDENT_D9S1_ASSERTIONS=PASS\n"
+    },
+    {
+      "file": "code/test_d10_lightgbm.py",
+      "exit_code": 0,
+      "output": "D10 tuning candidates checked: 6\nD10 validation prediction rows checked: 586298\nD10 split-specific class weights: PASS\nD10 random-test and 2024 embargo: PASS\nINDEPENDENT_D10_ASSERTIONS=PASS\n"
+    },
+    {
+      "file": "code/test_d11_evaluation.py",
+      "exit_code": 0,
+      "output": "D11 main metric rows checked: 30\nD11 secondary diagnostic rows checked: 25\nD11 prediction rows checked: 5438010\nD11 role/year and transform-only checks: PASS\nD11 one-time run lock: PASS\nINDEPENDENT_D11_ASSERTIONS=PASS\n"
+    },
+    {
+      "file": "code/test_d12_bootstrap.py",
+      "exit_code": 0,
+      "output": "INDEPENDENT_D12_ASSERTIONS=PASS\nBOOTSTRAP_DRAWS=22000\nMODEL_METRIC_VALUES=770000\n"
+    },
+    {
+      "file": "code/test_d13_checkpoint.py",
+      "exit_code": 0,
+      "output": "INDEPENDENT_D13_ASSERTIONS=PASS\nD13_MAIN_ROWS=35 H1_ROWS=14 H2_ROWS=7\nH3_STATUS=PENDING_NOT_EVALUATED\n"
+    },
+    {
+      "file": "code/test_d14_shap.py",
+      "exit_code": 0,
+      "output": "INDEPENDENT_D14_SHAP_ASSERTIONS=PASS\nD14_IMPORTANCE_ROWS=748 STABILITY_ROWS=20 RAW_SHAP_FILES=11\nH3_STATUS=RANK_CHANGE_QUANTIFIED_NO_BINARY_MATERIALITY_THRESHOLD\n"
+    },
+    {
+      "file": "code/test_d14_exclude2020.py",
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"<PROJECT_ROOT>\\code\\test_d14_exclude2020.py\", line 129, in <module>\n    main()\n    ~~~~^^\n  File \"<PROJECT_ROOT>\\code\\test_d14_exclude2020.py\", line 64, in main\n    assert protocol == build_protocol()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    {
+      "file": "code/test_d14_closeout.py",
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"<PROJECT_ROOT>\\code\\test_d14_closeout.py\", line 103, in <module>\n    main()\n    ~~~~^^\n  File \"<PROJECT_ROOT>\\code\\test_d14_closeout.py\", line 41, in main\n    assert protocol == build_protocol()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    }
+  ],
+  "finished_local": "2026-09-06T22:18:15.338835+08:00",
+  "passed_files": 27,
+  "total_files": 29,
+  "status": "FAIL"
+}

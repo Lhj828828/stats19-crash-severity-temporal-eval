@@ -1,0 +1,23 @@
+{
+  "status": "COMPLETE",
+  "version": "STATS19_15_FEATURE_EXCLUDE2020_V1",
+  "created_local": "2026-09-07T16:58:20+08:00",
+  "protocol_sha256": "5fe006976655ae599131ac7a983529eb0fe475f037d1a80a57badc6fa34984ca",
+  "files_sha256": {
+    "results/stats19_feature_revision/exclude2020/SUMMARY.md": "510b5b2d6343a28fc12c737192637c7767ca78322f1e48278347d2d581590bce",
+    "logs/stats19_feature_revision/exclude2020/training_complete.json": "b6c1a8f5b2ef3fc7fd268c95e6860526a27a466eba53364af0f6d1e8b9494db7",
+    "logs/stats19_feature_revision/exclude2020/evaluation_complete.json": "026c9a34c555a7de37a8cd12996c697f5ecfdf247e0f91d98a3aa6c1392c0846",
+    "logs/stats19_feature_revision/exclude2020/bootstrap_complete.json": "18479fdba15599d6d46cd4205be799b8bab7e5cceaaf97b466557a59ea2bb662"
+  },
+  "feature_count": 15,
+  "training_rows": 447262,
+  "excluded_training_rows": 91199,
+  "validation_rows": 104258,
+  "test_rows": 100927,
+  "bootstrap_iterations": 2000,
+  "full_serialized_validation_and_test_predictions_checked": true,
+  "main_results_unchanged": true,
+  "protected_files_unchanged": 1468,
+  "retuned": false,
+  "public_reproduction_performed": false
+}

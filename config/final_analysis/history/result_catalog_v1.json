@@ -1,0 +1,620 @@
+{
+  "version": "FINAL_ANALYSIS_SCOPE_20260907_V1",
+  "assembled_local": "2026-09-07T17:15:49+08:00",
+  "status": "AUTHOR_VERIFIED_FINAL_RESULT_SELECTION",
+  "post_review": true,
+  "fresh_reproduction_complete": false,
+  "software_release_contains_revision": false,
+  "tables": [
+    {
+      "name": "stats19_main_metrics",
+      "dataset": "stats19",
+      "source": "results/stats19_feature_revision/full/test_metrics.csv",
+      "keys": [
+        "group",
+        "model"
+      ],
+      "purpose": "main performance table",
+      "selection": "all",
+      "rows": 44,
+      "columns": [
+        "group",
+        "split",
+        "role",
+        "rows",
+        "model",
+        "macro_f1",
+        "qwk",
+        "ordinal_mae",
+        "accuracy",
+        "slight_recall",
+        "serious_recall",
+        "fatal_recall",
+        "serious_or_fatal_recall",
+        "mean_asymmetric_cost",
+        "class0_precision",
+        "class0_recall",
+        "class1_precision",
+        "class1_recall",
+        "class2_precision",
+        "class2_recall",
+        "log_loss"
+      ],
+      "source_sha256": "22811c3c04600098d92eb01d7ddfc56af5c19f115aa06c0ed43b689d8d11e8ce",
+      "output": "results/final_analysis/stats19_main_metrics.csv",
+      "output_sha256": "c6ddf23b4e8ec0c29a0ae215bf283385e8b9cf9460cbef392e74ef923d662bd9"
+    },
+    {
+      "name": "stats19_confusions",
+      "dataset": "stats19",
+      "source": "results/stats19_feature_revision/full/confusion_matrices.csv",
+      "keys": [
+        "group",
+        "model",
+        "true",
+        "predicted"
+      ],
+      "purpose": "error structure",
+      "selection": "all",
+      "rows": 396,
+      "columns": [
+        "group",
+        "model",
+        "true",
+        "predicted",
+        "count"
+      ],
+      "source_sha256": "302443e56dca42cb3bfd2903229e2e6821cfb5fc8fb7775898c106a87ccd9da9",
+      "output": "results/final_analysis/stats19_confusions.csv",
+      "output_sha256": "e0124ee893cdd5191a4f3d0d8768819655a851c2fa9bc49b6f27c4f7d5823561"
+    },
+    {
+      "name": "stats19_intervals",
+      "dataset": "stats19",
+      "source": "results/stats19_feature_revision/full/metric_intervals.csv",
+      "keys": [
+        "group",
+        "model",
+        "metric"
+      ],
+      "purpose": "main uncertainty",
+      "selection": "all",
+      "rows": 308,
+      "columns": [
+        "group",
+        "model",
+        "metric",
+        "estimate",
+        "ci_lower",
+        "ci_upper"
+      ],
+      "source_sha256": "a6bb8a01b22b8dca95f5299b6e5863289e6a135a70976a1d1c6e9091ea8c1b4f",
+      "output": "results/final_analysis/stats19_intervals.csv",
+      "output_sha256": "b464ba0b972e0345547798dccfd5ab0fc3bfce7d53f34ac073b8e8682d0ae64f"
+    },
+    {
+      "name": "stats19_paired_comparisons",
+      "dataset": "stats19",
+      "source": "results/stats19_feature_revision/full/paired_differences.csv",
+      "keys": [
+        "group",
+        "candidate",
+        "reference",
+        "metric"
+      ],
+      "purpose": "H2 and comparator intervals",
+      "selection": "all",
+      "rows": 231,
+      "columns": [
+        "group",
+        "candidate",
+        "reference",
+        "metric",
+        "delta",
+        "ci_lower",
+        "ci_upper",
+        "design",
+        "iterations"
+      ],
+      "source_sha256": "0bbde7435e685379f685168e20fd1e8a06cbc9399ff55609f2be2d9a9bf5e449",
+      "output": "results/final_analysis/stats19_paired_comparisons.csv",
+      "output_sha256": "ff20c0c59d5505e8a10474ca3143ea3d4c4d67fad9ca1efb01519bb4e1db89e2"
+    },
+    {
+      "name": "stats19_h1",
+      "dataset": "stats19",
+      "source": "results/stats19_feature_revision/full/h1_gaps.csv",
+      "keys": [
+        "seed",
+        "model",
+        "metric"
+      ],
+      "purpose": "same-model H1 gaps",
+      "selection": "all",
+      "rows": 140,
+      "columns": [
+        "seed",
+        "model",
+        "metric",
+        "gap",
+        "ci_lower",
+        "ci_upper",
+        "design",
+        "iterations"
+      ],
+      "source_sha256": "e66e6560ee5aac1bb699770d86030852bd6ff303620825c335ca5c998fc7f8cc",
+      "output": "results/final_analysis/stats19_h1.csv",
+      "output_sha256": "0e5220f51e6157712c0c45c2a002da65dc549dfdbdbb14675ac388eb77866f5e"
+    },
+    {
+      "name": "stats19_h1_seed_summary",
+      "dataset": "stats19",
+      "source": "results/stats19_feature_revision/full/h1_summary.csv",
+      "keys": [
+        "model",
+        "metric"
+      ],
+      "purpose": "descriptive seed variability",
+      "selection": "all",
+      "rows": 28,
+      "columns": [
+        "model",
+        "metric",
+        "mean",
+        "std",
+        "min",
+        "max"
+      ],
+      "source_sha256": "e22aeee834c186bea09758d8957e9d1a5484d65bf0b0391dcb5b257c4e79677e",
+      "output": "results/final_analysis/stats19_h1_seed_summary.csv",
+      "output_sha256": "40bdc6c7311f68ff0d5c98e939ef84116ac7d3595efcd6db016741bc1b9ad56b"
+    },
+    {
+      "name": "stats19_shap_stability",
+      "dataset": "stats19",
+      "source": "results/stats19_feature_revision/full/shap_stability.csv",
+      "keys": [
+        "seed",
+        "scope"
+      ],
+      "purpose": "H3 rank stability",
+      "selection": "all",
+      "rows": 20,
+      "columns": [
+        "seed",
+        "scope",
+        "rho",
+        "ci_lower",
+        "ci_upper",
+        "internal_rows",
+        "future_rows",
+        "iterations"
+      ],
+      "source_sha256": "da2ecb2dfb5b632479a7551a933a6e453da703a80715931a2bba6253cae841a8",
+      "output": "results/final_analysis/stats19_shap_stability.csv",
+      "output_sha256": "61ea0e8f253b6e44ffd75674c6bcb7ed0add7f8ce666852d91fc516c88adf353"
+    },
+    {
+      "name": "stats19_shap_importance",
+      "dataset": "stats19",
+      "source": "results/stats19_feature_revision/full/shap_importance.csv",
+      "keys": [
+        "split",
+        "cohort",
+        "scope",
+        "feature"
+      ],
+      "purpose": "15-feature mean absolute importance",
+      "selection": "all",
+      "rows": 660,
+      "columns": [
+        "split",
+        "cohort",
+        "scope",
+        "feature",
+        "mean_abs_shap",
+        "rank"
+      ],
+      "source_sha256": "8f28e6a27e472af73cb4995be33cca800f6b6b9ef83ff5d765ff581abc2834ee",
+      "output": "results/final_analysis/stats19_shap_importance.csv",
+      "output_sha256": "ffc1aad1e43ed832462fca4e019570fc8ab9f631784e82dc635df954b0662f23"
+    },
+    {
+      "name": "stats19_shap_samples",
+      "dataset": "stats19",
+      "source": "results/stats19_feature_revision/full/shap_sample_counts.csv",
+      "keys": [
+        "split",
+        "cohort"
+      ],
+      "purpose": "explanation sample class counts",
+      "selection": "all",
+      "rows": 11,
+      "columns": [
+        "split",
+        "cohort",
+        "rows",
+        "class0_count",
+        "class1_count",
+        "class2_count"
+      ],
+      "source_sha256": "8ef3d63d8930d902c1f72f2feb57dccaeb71b5b66d71f9ba6944a98dc9441871",
+      "output": "results/final_analysis/stats19_shap_samples.csv",
+      "output_sha256": "bed46ea2d63e7a16a342499d3544a750dac00674c2bb7d524fcb67e81bf19cdd"
+    },
+    {
+      "name": "stats19_exclude2020_metrics",
+      "dataset": "stats19",
+      "source": "results/stats19_feature_revision/exclude2020/test_metrics.csv",
+      "keys": [
+        "model"
+      ],
+      "purpose": "appendix sensitivity",
+      "selection": "all",
+      "rows": 4,
+      "columns": [
+        "model",
+        "test_year",
+        "rows",
+        "macro_f1",
+        "qwk",
+        "ordinal_mae",
+        "accuracy",
+        "slight_recall",
+        "serious_recall",
+        "fatal_recall",
+        "serious_or_fatal_recall",
+        "mean_asymmetric_cost",
+        "class0_precision",
+        "class0_recall",
+        "class1_precision",
+        "class1_recall",
+        "class2_precision",
+        "class2_recall",
+        "log_loss"
+      ],
+      "source_sha256": "eaf10aa782a35b0b725c20a0e48e20e55b047ec11986f027563beb79260dd8e4",
+      "output": "results/final_analysis/stats19_exclude2020_metrics.csv",
+      "output_sha256": "b5d65f635d5bed865ca34bb168bfd2b6d4e9b9ea900838b628fa944df0e30849"
+    },
+    {
+      "name": "stats19_exclude2020_comparisons",
+      "dataset": "stats19",
+      "source": "results/stats19_feature_revision/exclude2020/paired_comparisons.csv",
+      "keys": [
+        "contrast",
+        "metric"
+      ],
+      "purpose": "appendix paired contrasts",
+      "selection": "all",
+      "rows": 35,
+      "columns": [
+        "contrast",
+        "metric",
+        "delta",
+        "ci_lower",
+        "ci_upper",
+        "iterations",
+        "design"
+      ],
+      "source_sha256": "a9d51eb815db98471e056ab79512ef40e1f744b71168e6d49402b4185b997245",
+      "output": "results/final_analysis/stats19_exclude2020_comparisons.csv",
+      "output_sha256": "900b8cc360afd1a32231e1bb5a8c5a89529015cf899e0d7e7397307b874bf5ed"
+    },
+    {
+      "name": "cas_temporal_metrics",
+      "dataset": "cas",
+      "source": "results/cas_evaluation/test_metrics.csv",
+      "keys": [
+        "evaluation_group",
+        "model"
+      ],
+      "purpose": "CAS temporal replication",
+      "selection": "cas_temporal",
+      "rows": 3,
+      "columns": [
+        "evaluation_group",
+        "evaluation_design",
+        "model_protocol",
+        "seed",
+        "cohort_role",
+        "cohort_rows",
+        "cohort_years",
+        "model",
+        "macro_f1",
+        "qwk",
+        "ordinal_mae",
+        "accuracy",
+        "minor_recall",
+        "serious_recall",
+        "fatal_recall",
+        "minor_precision",
+        "serious_precision",
+        "fatal_precision",
+        "serious_or_fatal_recall",
+        "mean_asymmetric_cost"
+      ],
+      "source_sha256": "f7cab0cdb94100387482cdcc089d96629ccda108471c74651f48ffc840ad6ac4",
+      "output": "results/final_analysis/cas_temporal_metrics.csv",
+      "output_sha256": "234226542040d79a4c56b03d1c2609d28cd233cb5719366f1151a1b90c0131fd"
+    },
+    {
+      "name": "cas_random_baselines",
+      "dataset": "cas",
+      "source": "results/cas_evaluation/test_metrics.csv",
+      "keys": [
+        "evaluation_group",
+        "model"
+      ],
+      "purpose": "unchanged CAS random baselines",
+      "selection": "cas_random_baselines",
+      "rows": 20,
+      "columns": [
+        "evaluation_group",
+        "evaluation_design",
+        "model_protocol",
+        "seed",
+        "cohort_role",
+        "cohort_rows",
+        "cohort_years",
+        "model",
+        "macro_f1",
+        "qwk",
+        "ordinal_mae",
+        "accuracy",
+        "minor_recall",
+        "serious_recall",
+        "fatal_recall",
+        "minor_precision",
+        "serious_precision",
+        "fatal_precision",
+        "serious_or_fatal_recall",
+        "mean_asymmetric_cost"
+      ],
+      "source_sha256": "f7cab0cdb94100387482cdcc089d96629ccda108471c74651f48ffc840ad6ac4",
+      "output": "results/final_analysis/cas_random_baselines.csv",
+      "output_sha256": "6c3495b740403f46c97401d8ec1ee14206c20d6c6fbcd47ed1b20da7a4261752"
+    },
+    {
+      "name": "cas_random_lightgbm",
+      "dataset": "cas",
+      "source": "results/random_reference_revision/cas/revised_test_metrics.csv",
+      "keys": [
+        "seed",
+        "cohort"
+      ],
+      "purpose": "corrected CAS random LightGBM",
+      "selection": "all",
+      "rows": 10,
+      "columns": [
+        "dataset",
+        "seed",
+        "cohort",
+        "rows",
+        "macro_f1",
+        "qwk",
+        "ordinal_mae",
+        "accuracy",
+        "fatal_recall",
+        "serious_or_fatal_recall",
+        "mean_asymmetric_cost",
+        "class0_recall",
+        "class0_precision",
+        "class1_recall",
+        "class1_precision",
+        "class2_recall",
+        "class2_precision"
+      ],
+      "source_sha256": "95a89acf2cc1adeeab0149ad0d15bc16270ac3cf202b45b604b53642ae3231f8",
+      "output": "results/final_analysis/cas_random_lightgbm.csv",
+      "output_sha256": "b0416864ef1862970329d9c8d4e7b8b5664c6d34d6f1413f247a220be4718420"
+    },
+    {
+      "name": "cas_h1",
+      "dataset": "cas",
+      "source": "results/random_reference_revision/cas/h1_gaps.csv",
+      "keys": [
+        "seed",
+        "model",
+        "metric"
+      ],
+      "purpose": "corrected CAS within-dataset H1",
+      "selection": "exclude_legacy_model",
+      "rows": 105,
+      "columns": [
+        "dataset",
+        "seed",
+        "model",
+        "metric",
+        "gap",
+        "ci_lower",
+        "ci_upper",
+        "design",
+        "iterations"
+      ],
+      "source_sha256": "cd42fdebb649695d3b9ebf5a847b3da043342371f613e3cf4e8995002fe4a531",
+      "output": "results/final_analysis/cas_h1.csv",
+      "output_sha256": "5e1864202cd8bd3c653bf814df3735c6cdf3eb0469e5c60e306a29a37f07ee4f"
+    },
+    {
+      "name": "cas_h2",
+      "dataset": "cas",
+      "source": "results/cas_post_analysis/h2_bootstrap.csv",
+      "keys": [
+        "evaluation_group",
+        "metric",
+        "contrast"
+      ],
+      "purpose": "unchanged CAS temporal H2",
+      "selection": "all",
+      "rows": 99,
+      "columns": [
+        "evaluation_group",
+        "evaluation_design",
+        "seed",
+        "metric",
+        "higher_is_better",
+        "contrast",
+        "logistic_value",
+        "lightgbm_value",
+        "point_difference",
+        "ci_lower",
+        "ci_upper",
+        "iterations",
+        "valid_iterations",
+        "bootstrap_design"
+      ],
+      "source_sha256": "7da34c869ec239e185a9446b4f08bd4b9f77696eea6b4b59f71f489340573537",
+      "output": "results/final_analysis/cas_h2.csv",
+      "output_sha256": "0d192a99ae37b1c7f2457b3ce9195734c2bd59b2598b427774d6ac78a24ce218"
+    },
+    {
+      "name": "cas_shap_stability",
+      "dataset": "cas",
+      "source": "results/random_reference_revision/cas/shap_stability.csv",
+      "keys": [
+        "seed",
+        "scope"
+      ],
+      "purpose": "corrected CAS within-dataset H3",
+      "selection": "all",
+      "rows": 20,
+      "columns": [
+        "dataset",
+        "seed",
+        "scope",
+        "rho",
+        "ci_lower",
+        "ci_upper",
+        "internal_rows",
+        "future_rows",
+        "iterations"
+      ],
+      "source_sha256": "692596f255709ecfcad50a80c370b11764b2fffbf7e7a4e5e317ab2cfa78f6b9",
+      "output": "results/final_analysis/cas_shap_stability.csv",
+      "output_sha256": "b53260f7968a91ac866a9e5f2b2a9520f81a7cb34f52040524cb3d3f20d110d7"
+    },
+    {
+      "name": "cas_shap_importance",
+      "dataset": "cas",
+      "source": "results/random_reference_revision/cas/shap_importance.csv",
+      "keys": [
+        "seed",
+        "cohort",
+        "scope",
+        "feature"
+      ],
+      "purpose": "corrected CAS importance",
+      "selection": "all",
+      "rows": 600,
+      "columns": [
+        "dataset",
+        "seed",
+        "cohort",
+        "scope",
+        "feature",
+        "mean_abs_shap",
+        "rank",
+        "mean_signed_shap",
+        "positive_fraction",
+        "negative_fraction"
+      ],
+      "source_sha256": "508063fac251e890fe6dae68c1d1bb9ba598a3e2cf55033ec7bd641c9d8ce9bf",
+      "output": "results/final_analysis/cas_shap_importance.csv",
+      "output_sha256": "d7e1e3a2fe07c4c4af6487138f46b4c3695dddb5be8fa67a673b8e0acbdf993b"
+    },
+    {
+      "name": "cas_ablation_metrics",
+      "dataset": "cas",
+      "source": "results/cas_feature_ablation/test_metrics.csv",
+      "keys": [
+        "scenario",
+        "model"
+      ],
+      "purpose": "CAS post-hoc feature sensitivity",
+      "selection": "all",
+      "rows": 6,
+      "columns": [
+        "analysis_variant",
+        "scenario",
+        "feature_count",
+        "dropped_features",
+        "cohort",
+        "cohort_rows",
+        "model",
+        "macro_f1",
+        "qwk",
+        "ordinal_mae",
+        "accuracy",
+        "minor_recall",
+        "serious_recall",
+        "fatal_recall",
+        "minor_precision",
+        "serious_precision",
+        "fatal_precision",
+        "serious_or_fatal_recall",
+        "mean_asymmetric_cost"
+      ],
+      "source_sha256": "bdcb7076baa26d76fc5f7b2e990db73b55f3c10dc2b365417d74c933d663c3cf",
+      "output": "results/final_analysis/cas_ablation_metrics.csv",
+      "output_sha256": "75af8645ea473363ae534a39ce1a3d16bd2d03299bd5f8b7e77a945391f76e5e"
+    },
+    {
+      "name": "cas_ablation_comparisons",
+      "dataset": "cas",
+      "source": "results/cas_feature_ablation/test_paired_differences.csv",
+      "keys": [
+        "scenario",
+        "comparison",
+        "model_a",
+        "model_b",
+        "metric"
+      ],
+      "purpose": "CAS post-hoc paired contrasts",
+      "selection": "all",
+      "rows": 54,
+      "columns": [
+        "scenario",
+        "comparison",
+        "model_a",
+        "model_b",
+        "model_a_variant",
+        "model_b_variant",
+        "metric",
+        "model_a_value",
+        "model_b_value",
+        "point_difference_a_minus_b",
+        "ci_lower",
+        "ci_upper",
+        "valid_iterations",
+        "bootstrap_design",
+        "bootstrap_seed",
+        "higher_is_better"
+      ],
+      "source_sha256": "5ddcb6047a76b2b9658063013b5bbe59eb5eb2c4e07db40bfcf41670aadda4db",
+      "output": "results/final_analysis/cas_ablation_comparisons.csv",
+      "output_sha256": "314d015f6b95681ac125f9645ade996000bf53ead4439999eed74cc8f41f0c08"
+    }
+  ],
+  "verification": {
+    "stats19_primary": "verified",
+    "stats19_exclude2020": "verified",
+    "cas_random_revision": "verified",
+    "cas_feature_ablation": "verified",
+    "models_refitted": false,
+    "fresh_reproduction_performed": false
+  },
+  "omitted_from_revised_manuscript": [
+    "Ordered Logit",
+    "matched-subset Ordered Logit comparison",
+    "tree-count sensitivity"
+  ],
+  "preserved_history": true,
+  "no_direct_cross_dataset_SHAP_rho_comparison": true,
+  "recording_diagnostic": "logs/stats19_feature_revision/recording_system_severity_counts.csv",
+  "entrypoint": "run_final_analysis.py",
+  "scientific_source_hashes": {
+    "config/stats19_feature_revision/full/execution_protocol.json": "0f3e3f99cdc2338d4704d2279ced3ae45bc9cbf27288c9196bdaa5ecc05c3aed",
+    "config/stats19_feature_revision/exclude2020/protocol.json": "5fe006976655ae599131ac7a983529eb0fe475f037d1a80a57badc6fa34984ca"
+  }
+}

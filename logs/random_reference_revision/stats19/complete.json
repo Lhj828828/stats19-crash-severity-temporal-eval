@@ -1,0 +1,43 @@
+{
+  "status": "POST_REVIEW_RANDOM_REFERENCE_CORRECTION_VERIFIED",
+  "created_local": "2026-09-06T22:13:07+08:00",
+  "dataset": "stats19",
+  "checks": [
+    {
+      "seed": 1103,
+      "selection_test_overlap": 0,
+      "serialized_predictions_checked": true,
+      "metrics_recomputed": true
+    },
+    {
+      "seed": 2207,
+      "selection_test_overlap": 0,
+      "serialized_predictions_checked": true,
+      "metrics_recomputed": true
+    },
+    {
+      "seed": 3301,
+      "selection_test_overlap": 0,
+      "serialized_predictions_checked": true,
+      "metrics_recomputed": true
+    },
+    {
+      "seed": 4409,
+      "selection_test_overlap": 0,
+      "serialized_predictions_checked": true,
+      "metrics_recomputed": true
+    },
+    {
+      "seed": 5501,
+      "selection_test_overlap": 0,
+      "serialized_predictions_checked": true,
+      "metrics_recomputed": true
+    }
+  ],
+  "historical_files_unchanged": 553,
+  "protocol_sha256": "d858ce5ea4b791bb425f54c0be72a2edc8e2d2e07b8acd80afa54780a84e3b1f",
+  "manifest_sha256": "c8e968cda3949f2c5bae4a565b3a8409c8d5d44b73e2377d2270a4519fb5d214",
+  "untouched_temporal_models_and_H2": true,
+  "legacy_outcomes_known": true,
+  "new_preregistration_claim": false
+}

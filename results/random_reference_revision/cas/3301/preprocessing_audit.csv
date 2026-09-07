@@ -1,0 +1,16 @@
+feature,feature_type,training_levels,validation_unseen_count,training_missing_count,validation_missing_count,training_median_audit_only,value_applied_to_data
+feature_number_of_lanes,categorical_native,10,0,0,0,,
+feature_state_highway,categorical_native,4,0,0,0,,
+feature_terrain,categorical_native,3,0,0,0,,
+feature_light,categorical_native,5,0,0,0,,
+feature_road_character,categorical_native,9,0,0,0,,
+feature_road_lane,categorical_native,4,0,0,0,,
+feature_road_surface,categorical_native,4,0,0,0,,
+feature_street_light,categorical_native,4,0,0,0,,
+feature_traffic_control,categorical_native,8,0,0,0,,
+feature_urban,categorical_native,2,0,0,0,,
+feature_weather_primary,categorical_native,7,0,0,0,,
+feature_weather_secondary,categorical_native,4,0,0,0,,
+feature_advisory_speed,numeric_native,,,21560,4617,55.0,none; NaN retained
+feature_speed_limit,numeric_native,,,392,72,50.0,none; NaN retained
+feature_temporary_speed_limit,numeric_native,,,22003,4743,30.0,none; NaN retained

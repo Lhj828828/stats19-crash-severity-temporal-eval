@@ -1,0 +1,23 @@
+{
+  "status": "COMPLETE",
+  "version": "STATS19_15_FEATURE_FULL_V1",
+  "created_local": "2026-09-07T14:24:22+08:00",
+  "execution_sha256": "0f3e3f99cdc2338d4704d2279ced3ae45bc9cbf27288c9196bdaa5ecc05c3aed",
+  "files_sha256": {
+    "logs/stats19_feature_revision/full/training/temporal.json": "e47496827b7b3a65f8425e5c1471a87678aa410bd081e5ff53b29686ed6d5d16",
+    "logs/stats19_feature_revision/full/training/random_seed_1103.json": "3aed1d956208320b020c45d439ae4b378552af57541185bcc10b2ece51612ff6",
+    "logs/stats19_feature_revision/full/training/random_seed_2207.json": "5ae4076d42849db688e7b228e9736d3ba1390d4f8b6afa7eaa6d056219bd64bc",
+    "logs/stats19_feature_revision/full/training/random_seed_3301.json": "0a5f090c16f0ea0794183e80ace2426974193dc3c897ed6ab2f9312f27518129",
+    "logs/stats19_feature_revision/full/training/random_seed_4409.json": "fd375444622b4e0fe2ca83fb4479d1af66ca5cfaf0f810dd8bbfd9745cb60fb0",
+    "logs/stats19_feature_revision/full/training/random_seed_5501.json": "eb4ac74957c07c732ea7a6da4aa3237c2bbbeff264ad540de8d2360143bc66d9"
+  },
+  "splits": [
+    "temporal",
+    "random_seed_1103",
+    "random_seed_2207",
+    "random_seed_3301",
+    "random_seed_4409",
+    "random_seed_5501"
+  ],
+  "test_performance_evaluated": false
+}

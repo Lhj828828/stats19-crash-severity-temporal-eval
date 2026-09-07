@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE",
+  "version": "STATS19_15_FEATURE_EXCLUDE2020_V1",
+  "created_local": "2026-09-07T16:57:53+08:00",
+  "protocol_sha256": "5fe006976655ae599131ac7a983529eb0fe475f037d1a80a57badc6fa34984ca",
+  "files_sha256": {
+    "logs/stats19_feature_revision/exclude2020/training_diagnostics.json": "d6daccabdb43f72e9510e522a312558a21b50dbd73ac1be670c13d06637b11db",
+    "models/stats19_feature_revision/exclude2020/logistic_weighted.joblib": "1c14e7c86a58b1b66e3d42e7a4f52d9309731ceb273cca46b0293e70824f605c",
+    "models/stats19_feature_revision/exclude2020/lightgbm_weighted.joblib": "b82e072fae7f2360510ebb83200c8cf23094dfa2d688a5498789f302de616f96",
+    "results/stats19_feature_revision/exclude2020/validation_predictions.npz": "9661b50be4c85d6db10db49af5031cfa5f5035249ba2b0178622ec2738d5df57",
+    "results/stats19_feature_revision/exclude2020/validation_metrics.csv": "c1fc1080e1bcd3e96ccc57d990f7a85c4b75870d96d4b1cb587940754fb95913"
+  },
+  "models": [
+    "logistic_weighted",
+    "lightgbm_weighted"
+  ],
+  "test_performance_evaluated": false,
+  "validation_used_for_selection": false,
+  "training_rows": 447262
+}

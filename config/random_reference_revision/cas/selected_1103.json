@@ -1,0 +1,38 @@
+{
+  "status": "MODEL_SEALED_BEFORE_REVISED_TEST_EVALUATION",
+  "created_local": "2026-09-06T21:42:17+08:00",
+  "seed": 1103,
+  "dataset": "cas",
+  "protocol_sha256": "4cc1676ab1623e054c9bec6602785602e16e3881b8897d28375f76730282c148",
+  "candidate_id": "C06",
+  "best_iteration": 958,
+  "initial_selection_constraints_met": false,
+  "final_constraints_met": false,
+  "validation_metrics": {
+    "macro_f1": 0.3366974496848727,
+    "qwk": 0.09677905268549947,
+    "ordinal_mae": 0.6492735829752404,
+    "accuracy": 0.5205647636586863,
+    "fatal_recall": 0.40601503759398494,
+    "serious_or_fatal_recall": 0.5525581395348838,
+    "mean_asymmetric_cost": 0.7800286474319623,
+    "class0_recall": 0.5926023084994754,
+    "class0_precision": 0.8244525547445255,
+    "class1_recall": 0.24522292993630573,
+    "class1_precision": 0.22362052274927396,
+    "class2_recall": 0.40601503759398494,
+    "class2_precision": 0.04847396768402154
+  },
+  "class_weights": [
+    0.4273240017239118,
+    1.730010620543165,
+    12.221329046087888
+  ],
+  "files": {
+    "models/random_reference_revision/cas/1103/model.joblib": "fc4dbf4a78cf6c924d40385d047e48a4b5dfe75601c80833454cf8a2743cc3c0",
+    "results/random_reference_revision/cas/1103/candidate_metrics.csv": "90eac5efdcedd7923ed0053d83763ef4eda90a613e016198e515a094d4db7299",
+    "results/random_reference_revision/cas/1103/preprocessing_audit.csv": "d277b1ca57b7e3bd646ff61de4932568a987bd7d15b1dac172210317915f43bd",
+    "results/random_reference_revision/cas/1103/validation_predictions.npz": "84b4c579ea6d5c28d1719f374dd2c035a48f8789efa906a3b1cab525cc33ab90",
+    "results/random_reference_revision/cas/1103/selection_roles.csv": "e79115fe0575d9274e4db04396ca13a086ca265041dab567ed3f549e8d8706de"
+  }
+}

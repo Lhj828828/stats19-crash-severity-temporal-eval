@@ -1,0 +1,64 @@
+{
+  "status": "COMPLETE",
+  "version": "STATS19_15_FEATURE_FULL_V1",
+  "created_local": "2026-09-07T14:47:28+08:00",
+  "execution_sha256": "0f3e3f99cdc2338d4704d2279ced3ae45bc9cbf27288c9196bdaa5ecc05c3aed",
+  "files_sha256": {
+    "figures/stats19_feature_revision/full/h1_same_model_gaps.png": "e10043bbe37e3b7333a21b858adae33e0b3514f2a967ee323aec54d860f260eb",
+    "figures/stats19_feature_revision/full/h1_same_model_gaps.pdf": "bdfbd458c654b719efdaab4cc37a09cd78e66db9f5cef713a644ee06925b0f02",
+    "figures/stats19_feature_revision/full/shap_rank_stability.png": "b77de4f7569b34503bd724e907801792f92e8e94d44131ea40327968c10c1533",
+    "figures/stats19_feature_revision/full/shap_rank_stability.pdf": "3d6945c7f5fafa60949849327aef1a2db519f388e1e7ac014befed412302b91a",
+    "results/stats19_feature_revision/full/SUMMARY.md": "b9f967635dbd6d11475a29133f7cdbac96479dabe9cb7d5c1f897d26792fd924",
+    "logs/stats19_feature_revision/full/training_complete.json": "fd476caf21ead961c30a5e9c1b433b6e5a77264a7f945fc403de3847a901756b",
+    "logs/stats19_feature_revision/full/evaluation_complete.json": "bc0e17c45bd7d6bc0bf0227b20a4a560c4b39aff78527a00642ef012e6698e41",
+    "logs/stats19_feature_revision/full/bootstrap_complete.json": "9de297a02ea2cb4b7ac34dfc1cf8c1bb4e31c850d91ba2d48c704ba71dc316e1",
+    "logs/stats19_feature_revision/full/shap_complete.json": "746473a03cea2db23cd35841db224e5de4433ce3576bf34346d6a2f91dff8e88"
+  },
+  "feature_count": 15,
+  "training_splits": 6,
+  "evaluation_groups": 11,
+  "model_group_evaluations": 44,
+  "bootstrap_iterations": 2000,
+  "shap_cohorts": 11,
+  "historical_files_unchanged": 1071,
+  "training_checks": [
+    {
+      "split": "temporal",
+      "selection_overlap": 0,
+      "local_constraint_verified": true,
+      "training_preprocessor_and_weights_verified": true
+    },
+    {
+      "split": "random_seed_1103",
+      "selection_overlap": 0,
+      "local_constraint_verified": true,
+      "training_preprocessor_and_weights_verified": true
+    },
+    {
+      "split": "random_seed_2207",
+      "selection_overlap": 0,
+      "local_constraint_verified": true,
+      "training_preprocessor_and_weights_verified": true
+    },
+    {
+      "split": "random_seed_3301",
+      "selection_overlap": 0,
+      "local_constraint_verified": true,
+      "training_preprocessor_and_weights_verified": true
+    },
+    {
+      "split": "random_seed_4409",
+      "selection_overlap": 0,
+      "local_constraint_verified": true,
+      "training_preprocessor_and_weights_verified": true
+    },
+    {
+      "split": "random_seed_5501",
+      "selection_overlap": 0,
+      "local_constraint_verified": true,
+      "training_preprocessor_and_weights_verified": true
+    }
+  ],
+  "secondary_analyses_rerun": false,
+  "public_clean_room_reproduction_performed": false
+}

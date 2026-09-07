@@ -1,0 +1,33 @@
+{
+  "version": "IMPLEMENTATION_AMENDMENT_01",
+  "recorded_local_date": "2026-09-06",
+  "reason": "The CLI stage name 'shap' was dispatched as globals()['shap'], but the implementation function is named shap_analysis. The runner stopped with KeyError before any revised SHAP computation.",
+  "timing": "After all ten models, test evaluations and bootstrap outputs were complete, before revised SHAP results existed.",
+  "changes": [
+    "Route the shap CLI stage explicitly to the existing shap_analysis function.",
+    "Allow only explicitly hashed source changes tied to the unchanged parent protocols and sealed models.",
+    "Add a regression test invoking the shap CLI stage with a mocked analysis function."
+  ],
+  "scientific_changes": false,
+  "model_refits": 0,
+  "selection_rule_changes": 0,
+  "sample_or_seed_changes": 0,
+  "parent_protocol_sha256": {
+    "stats19": "d858ce5ea4b791bb425f54c0be72a2edc8e2d2e07b8acd80afa54780a84e3b1f",
+    "cas": "4cc1676ab1623e054c9bec6602785602e16e3881b8897d28375f76730282c148"
+  },
+  "source_changes": {
+    "code/random_reference_revision.py": {
+      "before": "f596696cd40ff6d66772bbaed6090446c483fd83e62e62a13f95bb5c710ec581",
+      "after": "3896ab4bf833e77a93debf9c9edc3f13b44ff9dd8183dc9249bd3d8d43f1bf19"
+    },
+    "tests/test_random_reference_revision.py": {
+      "before": "f9aa8e55a7449ef275b4b3e2c4ba3ff578c5c50350a7b43171eb7de6af2634ca",
+      "after": "0b0b6be6b6f8bbf5e433dc2a5071ff26fc0dfa7ea836fd2396ca680ccf36aad0"
+    }
+  },
+  "frozen_models_sha256": {
+    "config/random_reference_revision/stats19/all_models_frozen.json": "859b534cfd48cc344919262f64ccde15182f2decaaf05ff24a106ff44dab6ed9",
+    "config/random_reference_revision/cas/all_models_frozen.json": "4bf6397c115d10f4e63aecdbb3dbd74ab351f817a7ae175a5453c8492a0281cc"
+  }
+}

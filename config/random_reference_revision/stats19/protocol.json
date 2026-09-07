@@ -1,0 +1,434 @@
+{
+  "version": "POST_REVIEW_SPLIT_LOCAL_SELECTION_V1",
+  "dataset": "stats19",
+  "created_local": "2026-09-06T21:21:40+08:00",
+  "status": "FROZEN_BEFORE_REVISED_FITS_AFTER_LEGACY_OUTCOMES",
+  "disclosure": "Review-driven correction; original tests and SHAP results already known. Not preregistration or a newly untouched test.",
+  "scope": "Only five random LightGBM branches and dependent evaluations; temporal models and H2 unchanged.",
+  "selection_boundary": "Each fit, vocabulary, weight and baseline constraint uses only that seed's train/validation records. No temporal-selected hyperparameters are reused.",
+  "reporting_rule": "Report revised random results regardless of direction; preserve and label legacy outputs; no outcome-driven choice between versions.",
+  "seeds": [
+    1103,
+    2207,
+    3301,
+    4409,
+    5501
+  ],
+  "features": [
+    "feature_day_of_week",
+    "feature_first_road_class",
+    "feature_road_type",
+    "feature_junction_detail",
+    "feature_junction_control",
+    "feature_second_road_class",
+    "feature_pedestrian_crossing",
+    "feature_light_conditions",
+    "feature_weather_conditions",
+    "feature_road_surface_conditions",
+    "feature_special_conditions_at_site",
+    "feature_carriageway_hazards",
+    "feature_urban_or_rural_area",
+    "feature_trunk_road_flag",
+    "feature_speed_limit",
+    "feature_month",
+    "feature_hour"
+  ],
+  "splits": [
+    {
+      "seed": 1103,
+      "roles": {
+        "train": {
+          "rows": 449903,
+          "positions_sha256": "1902da94cf43c59aee26f96b1fe6a13db4dc5b212a6a8cb649d5ad06eb51d1a1"
+        },
+        "validation": {
+          "rows": 96408,
+          "positions_sha256": "1d34f3502d9f76dcfdc4e0d84b1af27eb09e6824282a7c20afea8efc5dd5bac8"
+        },
+        "test": {
+          "rows": 96408,
+          "positions_sha256": "5a43e84a92be03c4c6e666d3d7f8adabae1bf9cbc66fb077ef891fda4dc2b83c"
+        },
+        "locked_temporal_test": {
+          "rows": 100927,
+          "positions_sha256": "a2dce368d97485ec1273f992e14f5e65388ec111c21c7e207127a7df813808b6"
+        }
+      },
+      "baseline_reference": {
+        "macro_f1": 0.3248113002321487,
+        "qwk": 0.10052595518817609,
+        "fatal_recall": 0.6542591267000716
+      },
+      "minimum_qwk": 0.09052595518817609,
+      "minimum_fatal_recall": 0.6042591267000715,
+      "class_counts": [
+        350730,
+        92650,
+        6523
+      ],
+      "class_weights": [
+        0.42758722283998135,
+        1.6186472387119986,
+        22.9905973733967
+      ],
+      "selection_test_intersection": 0
+    },
+    {
+      "seed": 2207,
+      "roles": {
+        "train": {
+          "rows": 449903,
+          "positions_sha256": "0ca98ab725f7a98eef50a89e43f34aaf90ce9ed512886ffed3281a370ad33c31"
+        },
+        "validation": {
+          "rows": 96408,
+          "positions_sha256": "3634c18fdda3a944ca96f3511b9df246fb81d9f95dd85a2020a82f0bd5d9ed0c"
+        },
+        "test": {
+          "rows": 96408,
+          "positions_sha256": "1da790769d5e401254c8f643db95b924472075ab84516678e68cf2eafe84c25d"
+        },
+        "locked_temporal_test": {
+          "rows": 100927,
+          "positions_sha256": "a2dce368d97485ec1273f992e14f5e65388ec111c21c7e207127a7df813808b6"
+        }
+      },
+      "baseline_reference": {
+        "macro_f1": 0.32461934108183516,
+        "qwk": 0.09949847408993029,
+        "fatal_recall": 0.6542591267000716
+      },
+      "minimum_qwk": 0.0894984740899303,
+      "minimum_fatal_recall": 0.6042591267000715,
+      "class_counts": [
+        350730,
+        92650,
+        6523
+      ],
+      "class_weights": [
+        0.42758722283998135,
+        1.6186472387119986,
+        22.9905973733967
+      ],
+      "selection_test_intersection": 0
+    },
+    {
+      "seed": 3301,
+      "roles": {
+        "train": {
+          "rows": 449903,
+          "positions_sha256": "159e2872be19cfd330ca67cf0e874e9f8b7d08cf92b64564d81b7a9d263ae78f"
+        },
+        "validation": {
+          "rows": 96408,
+          "positions_sha256": "625cd32a24bb2e76780ed231717013d7240e77e77def19e0a1867eb11f5c4b85"
+        },
+        "test": {
+          "rows": 96408,
+          "positions_sha256": "5bc39ecb8244889a3be7337e622248114962e108bac712e360e078c8e5f184cc"
+        },
+        "locked_temporal_test": {
+          "rows": 100927,
+          "positions_sha256": "a2dce368d97485ec1273f992e14f5e65388ec111c21c7e207127a7df813808b6"
+        }
+      },
+      "baseline_reference": {
+        "macro_f1": 0.3241869880640548,
+        "qwk": 0.09762875040573615,
+        "fatal_recall": 0.6316165951359084
+      },
+      "minimum_qwk": 0.08762875040573616,
+      "minimum_fatal_recall": 0.5816165951359084,
+      "class_counts": [
+        350730,
+        92650,
+        6523
+      ],
+      "class_weights": [
+        0.42758722283998135,
+        1.6186472387119986,
+        22.9905973733967
+      ],
+      "selection_test_intersection": 0
+    },
+    {
+      "seed": 4409,
+      "roles": {
+        "train": {
+          "rows": 449903,
+          "positions_sha256": "2b686b8b7255d1a54a2e4402904c6e0581b6aaff3c941e98302f020d17570884"
+        },
+        "validation": {
+          "rows": 96408,
+          "positions_sha256": "099057564f4ed73d349279ff7dc7fad2c037bb80480f028f5bcdfa64c5712d96"
+        },
+        "test": {
+          "rows": 96408,
+          "positions_sha256": "2c12a16b49a13e05f5c6635511747571e814a3078a247180efb3a65bb68121a8"
+        },
+        "locked_temporal_test": {
+          "rows": 100927,
+          "positions_sha256": "a2dce368d97485ec1273f992e14f5e65388ec111c21c7e207127a7df813808b6"
+        }
+      },
+      "baseline_reference": {
+        "macro_f1": 0.32399216674451914,
+        "qwk": 0.10044263786969221,
+        "fatal_recall": 0.6402002861230329
+      },
+      "minimum_qwk": 0.09044263786969221,
+      "minimum_fatal_recall": 0.5902002861230329,
+      "class_counts": [
+        350730,
+        92650,
+        6523
+      ],
+      "class_weights": [
+        0.42758722283998135,
+        1.6186472387119986,
+        22.9905973733967
+      ],
+      "selection_test_intersection": 0
+    },
+    {
+      "seed": 5501,
+      "roles": {
+        "train": {
+          "rows": 449903,
+          "positions_sha256": "8ea2f8eafb88515e6cc7461a8180d0b222c7fda4d2b9f93e09796b256a987997"
+        },
+        "validation": {
+          "rows": 96408,
+          "positions_sha256": "b7539d7d94e17cec0ed6be9646c3a374e59aeb942770b608037f3e506c712c91"
+        },
+        "test": {
+          "rows": 96408,
+          "positions_sha256": "845fd671e43cc8051808e3728c0fffca7d2ebaf577587574238c09e45447b79a"
+        },
+        "locked_temporal_test": {
+          "rows": 100927,
+          "positions_sha256": "a2dce368d97485ec1273f992e14f5e65388ec111c21c7e207127a7df813808b6"
+        }
+      },
+      "baseline_reference": {
+        "macro_f1": 0.3240103649288634,
+        "qwk": 0.09678634132973174,
+        "fatal_recall": 0.6394849785407726
+      },
+      "minimum_qwk": 0.08678634132973174,
+      "minimum_fatal_recall": 0.5894849785407725,
+      "class_counts": [
+        350730,
+        92650,
+        6523
+      ],
+      "class_weights": [
+        0.42758722283998135,
+        1.6186472387119986,
+        22.9905973733967
+      ],
+      "selection_test_intersection": 0
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "C01",
+      "complexity_rank": 1,
+      "parameters": {
+        "num_leaves": 15,
+        "max_depth": -1,
+        "min_child_samples": 100,
+        "min_split_gain": 0.0,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "colsample_bytree": 1.0,
+        "subsample": 1.0,
+        "subsample_freq": 0
+      }
+    },
+    {
+      "candidate_id": "C02",
+      "complexity_rank": 3,
+      "parameters": {
+        "num_leaves": 31,
+        "max_depth": -1,
+        "min_child_samples": 100,
+        "min_split_gain": 0.0,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "colsample_bytree": 1.0,
+        "subsample": 1.0,
+        "subsample_freq": 0
+      }
+    },
+    {
+      "candidate_id": "C03",
+      "complexity_rank": 6,
+      "parameters": {
+        "num_leaves": 63,
+        "max_depth": -1,
+        "min_child_samples": 100,
+        "min_split_gain": 0.0,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "colsample_bytree": 1.0,
+        "subsample": 1.0,
+        "subsample_freq": 0
+      }
+    },
+    {
+      "candidate_id": "C04",
+      "complexity_rank": 5,
+      "parameters": {
+        "num_leaves": 31,
+        "max_depth": -1,
+        "min_child_samples": 50,
+        "min_split_gain": 0.0,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "colsample_bytree": 1.0,
+        "subsample": 1.0,
+        "subsample_freq": 0
+      }
+    },
+    {
+      "candidate_id": "C05",
+      "complexity_rank": 2,
+      "parameters": {
+        "num_leaves": 31,
+        "max_depth": -1,
+        "min_child_samples": 250,
+        "min_split_gain": 0.0,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "colsample_bytree": 1.0,
+        "subsample": 1.0,
+        "subsample_freq": 0
+      }
+    },
+    {
+      "candidate_id": "C06",
+      "complexity_rank": 4,
+      "parameters": {
+        "num_leaves": 31,
+        "max_depth": -1,
+        "min_child_samples": 100,
+        "min_split_gain": 0.0,
+        "reg_alpha": 0.0,
+        "reg_lambda": 5.0,
+        "colsample_bytree": 0.8,
+        "subsample": 0.8,
+        "subsample_freq": 1
+      }
+    }
+  ],
+  "common_parameters": {
+    "boosting_type": "gbdt",
+    "objective": "multiclass",
+    "num_class": 3,
+    "learning_rate": 0.05,
+    "max_bin": 255,
+    "random_state": 20260830,
+    "n_jobs": 8,
+    "deterministic": true,
+    "force_col_wise": true,
+    "verbosity": -1
+  },
+  "maximum_estimators": 1200,
+  "early_stopping_rounds": 75,
+  "early_stopping_metric": "unweighted multi_logloss on own validation",
+  "boundary_rule": "Keep 1200 cap; no random-branch extension or D10b retuning",
+  "ranking": [
+    "eligible candidates only",
+    "highest Macro-F1",
+    "highest QWK if Macro-F1 is exactly tied",
+    "highest fatal recall if still tied",
+    "lowest pre-frozen complexity_rank if still tied",
+    "lexicographically smallest candidate_id if still tied"
+  ],
+  "fallback": "apply the same ranking to all candidates and explicitly record that constraints were unmet",
+  "refit": "Train-only refit at selected best_iteration; validation not added to training; verify validation predictions match selection run.",
+  "test_gate": "All five revised models for this data source must be sealed before any revised internal/future evaluation.",
+  "bootstrap": {
+    "iterations": 2000,
+    "base_seed": 20260828,
+    "stream_rule": "first eight little-endian SHA256 bytes of base:key",
+    "design": "true-class-stratified; fixed counts; paired within a cohort; independent internal/future",
+    "interval": "percentile 2.5 and 97.5; no multiplicity adjustment; fixed models; seeds described by sample SD and range"
+  },
+  "shap": {
+    "samples": "Recreate original deterministic STATS19 10000-per-cohort and CAS 4887 class-matched samples",
+    "algorithm": "Existing STATS19 TreeExplainer and CAS native TreeSHAP, raw multiclass scores, additivity verified",
+    "aggregation": "Mean absolute by output class, equal output-class mean, Spearman across original fields",
+    "intervals": "2000 record-stratified draws of precomputed SHAP, not 2000 TreeSHAP runs; shared STATS19 future draws",
+    "threads": 8,
+    "causal_claim": false
+  },
+  "upstream_sha256": {
+    "config/d10_lightgbm_protocol.json": "079aad5af8e95360b60b17b664c847336db66b4712811bac17b67ce5a9d5c963",
+    "config/d5_dataset_schema.json": "cea222466650a095170a66a3d094eba76b3cdf71c22bc6bcb61054152969030b",
+    "data/processed/d6_split_assignments.csv.gz": "5c3ac69f0a5b5623719d48a4d62824d4dce1c99821f4171592bb1f21c8d51076",
+    "data/processed/stats19_modeling_dataset.csv.gz": "2277e47fd899c15116bfa2e62eca9f9c7ea9d45d08d1b5cda2027724c843021e",
+    "results/d11/predictions/random_seed_1103__dummy_most_frequent__2024_diagnostic.csv.gz": "d52c5a68ad9c36cf35fd7157645aaaf92e970acd212f387c73890144fa02c2d4",
+    "results/d11/predictions/random_seed_1103__dummy_most_frequent__test.csv.gz": "0c10b556a3e129cf293ce1848db2da34ec7dc4a816a9e39b8e8ffb256b832714",
+    "results/d11/predictions/random_seed_1103__lightgbm_weighted__2024_diagnostic.csv.gz": "8720c895bf3d4cb16cad1288726fee797c0e6668416bec938690068ed83d4170",
+    "results/d11/predictions/random_seed_1103__lightgbm_weighted__test.csv.gz": "333c0b839db6057bef36d6239942b73b3400bc198b353d887b23e8f0958e6ca8",
+    "results/d11/predictions/random_seed_1103__logistic_weighted__2024_diagnostic.csv.gz": "e2682b119a0b251ff53a7385a3fa1168f8614556cd651411be5520fc5da6e0d6",
+    "results/d11/predictions/random_seed_1103__logistic_weighted__test.csv.gz": "4163bbc873c1c0928b9953c77f5d3e3e09a2ec44cb5d662f1cab820e4d3e984c",
+    "results/d11/predictions/random_seed_2207__dummy_most_frequent__2024_diagnostic.csv.gz": "25acf590f33938cfb785537e4fd1f91b8be2937628bcf51a921b00e17156bb16",
+    "results/d11/predictions/random_seed_2207__dummy_most_frequent__test.csv.gz": "37ed55b57d1246e25066474fb6c382245dd69a48e3dc3e8d456ee82ad2ffc860",
+    "results/d11/predictions/random_seed_2207__lightgbm_weighted__2024_diagnostic.csv.gz": "857c49bc07cae997458fe2cf099c02ddb4c165eb86771973c1522fc7d34e571a",
+    "results/d11/predictions/random_seed_2207__lightgbm_weighted__test.csv.gz": "f05e9b421116a9c2fe0bd581a5fccff6095e62392ac12bf5024ccaf049b1ccde",
+    "results/d11/predictions/random_seed_2207__logistic_weighted__2024_diagnostic.csv.gz": "562dac4558945c072c230c03bdb3a0d203bf40a062bedef9deb9c7ad6ad52083",
+    "results/d11/predictions/random_seed_2207__logistic_weighted__test.csv.gz": "5cb47bd7950d13833f4bb464eff43b065eb114c95f00684f41861fc82df237ef",
+    "results/d11/predictions/random_seed_3301__dummy_most_frequent__2024_diagnostic.csv.gz": "1dee936faa9aa41100d487b7fe0f64f01b59b3a7c5e1be84aeeae2d00aa136f8",
+    "results/d11/predictions/random_seed_3301__dummy_most_frequent__test.csv.gz": "78d7d92e9823050b76d2a169aff6426320302cc3e4581af9a5b174a52998dd2f",
+    "results/d11/predictions/random_seed_3301__lightgbm_weighted__2024_diagnostic.csv.gz": "439a4f7d62e2ceceb40d52d76db38f03cdb1c0a4d8988a9a0679b85050a6fe0a",
+    "results/d11/predictions/random_seed_3301__lightgbm_weighted__test.csv.gz": "7194faaeb91b2c870395403c792253e07580e3503aed3dbe8f5cf7d4bf99988b",
+    "results/d11/predictions/random_seed_3301__logistic_weighted__2024_diagnostic.csv.gz": "0daa7f27c93642b1a6bf36b3b82b465d14afd1f3794d4b5c396ef34ecb24fb53",
+    "results/d11/predictions/random_seed_3301__logistic_weighted__test.csv.gz": "fd376bae02ee2511e8dbb77af9de331ce953bedd45fde6dabfee96cbe23890bf",
+    "results/d11/predictions/random_seed_4409__dummy_most_frequent__2024_diagnostic.csv.gz": "d3dad74102468eed724c129b918e8694bd71cccad091eb57e14f6262f0cf8ff3",
+    "results/d11/predictions/random_seed_4409__dummy_most_frequent__test.csv.gz": "7aa26a3a5ef807cfe608dcfd0e620c32467b304b757225fdfb3bac410cfd3351",
+    "results/d11/predictions/random_seed_4409__lightgbm_weighted__2024_diagnostic.csv.gz": "0de688ef9b2a313bfeea5cdcc451eb85e082fd66aea6c355bb7b7d75e3434d9e",
+    "results/d11/predictions/random_seed_4409__lightgbm_weighted__test.csv.gz": "092caade5b09cbb5e505b651ae453fe29ef68803053237e5afdd37e2b9b390da",
+    "results/d11/predictions/random_seed_4409__logistic_weighted__2024_diagnostic.csv.gz": "e403e295cae4a82958abe4700b36c0ffca662c1e62604844d1049be3d5413a70",
+    "results/d11/predictions/random_seed_4409__logistic_weighted__test.csv.gz": "aab25c86e84379e0522db7c37e9f99cd9f9d7f3bdaa5b52a83c7421447bf39ab",
+    "results/d11/predictions/random_seed_5501__dummy_most_frequent__2024_diagnostic.csv.gz": "da1ae6997a1fb1c33ad20c0481f20e09a8b1643553a0ebd4a96c0c58b7e85579",
+    "results/d11/predictions/random_seed_5501__dummy_most_frequent__test.csv.gz": "759585a3079ac2ff54dcd33a63f0cccb897360783200b7593c578fc89526219b",
+    "results/d11/predictions/random_seed_5501__lightgbm_weighted__2024_diagnostic.csv.gz": "08a405f931aed07441bef07095fb312d50c5b494b2a6623c517da44a3664ed64",
+    "results/d11/predictions/random_seed_5501__lightgbm_weighted__test.csv.gz": "a31182a8cda328b5343260a614f0435e89c5ddd1eee3860fe1a77a420249ef20",
+    "results/d11/predictions/random_seed_5501__logistic_weighted__2024_diagnostic.csv.gz": "cec058544016a49c8d9b3d7657c7f5f96f09f09c59144b1d88890e9140458496",
+    "results/d11/predictions/random_seed_5501__logistic_weighted__test.csv.gz": "21a170f843f170849fbf1e6ac378a118f374556c64a673087b223a59ea0f1a26",
+    "results/d8/d8_validation_metrics.csv": "a76aeb569ba73ad9681f89f9016d744d4ac0eaeba09be7eae31151d094bb7836",
+    "results/d8/validation_predictions/random_seed_1103__logistic_weighted.csv.gz": "6acc743ab72d28d9736d1ba6129506ab76f43cdfdc9cb2159db5dd4612f0fb00",
+    "results/d8/validation_predictions/random_seed_2207__logistic_weighted.csv.gz": "8e7623f6c1cbb60db0cbd941bf6705e75bd43d48668263580b71a5aa3adc0c1f",
+    "results/d8/validation_predictions/random_seed_3301__logistic_weighted.csv.gz": "dec05b0aeb890ff7cf31b03b1d9a97d420d397cd8b8413854e3d5ce5e5e88930",
+    "results/d8/validation_predictions/random_seed_4409__logistic_weighted.csv.gz": "0616c324964e7b6c45ba7e62f659bd5aae5dd9a517099da94cb4a415a240e238",
+    "results/d8/validation_predictions/random_seed_5501__logistic_weighted.csv.gz": "7e93a70e79418e058022dbe8d7cf2fcdc0425e2fbe48b69a84fda195db5794a2"
+  },
+  "source_sha256": {
+    "run_random_reference_revision.py": "f7ccfcce605898be734f22167237d81cd8e9b820623102543c8594af58536480",
+    "code/random_reference_revision.py": "f596696cd40ff6d66772bbaed6090446c483fd83e62e62a13f95bb5c710ec581",
+    "code/baseline_modeling.py": "34c024f461ad3c6a083e5e2ea16e911ae96b2bb6a75151dd3ece11f7005f79ec",
+    "code/d10_tune_lightgbm.py": "ba584669cedc84c7095cf2385ecdce815a6d8ccbf75ab9538f12bc0468178cc1",
+    "code/d12_bootstrap_uncertainty.py": "ed579bd41c5dff8a91a6cca28f0ce34946f93a781f5738c675110ea8b25f62ac",
+    "code/d14_shap_stability.py": "76cf2d0945874ffbd339a41d52afe5b567b490d1260848910356ca6b9f806b9e",
+    "code/cas_shap_stability.py": "d3ab808dbb026674ba593a2fd8d3ecce06bed1fd771cb2cdeeac45d6753c9338",
+    "code/cas_modeling_common.py": "5fe1104e12e4545ee9c05084cbd4a90585212f6c67337c47726462b1b57ee46c",
+    "code/d11_evaluate_frozen_models.py": "7cc6ffcb554f5b86efc68a8a17fd5f4601f253111d0926de048ede585b5d4b3c",
+    "code/modeling_data.py": "ec28dc9c8cc83ad7609be3ba1710b167c3886746a76903136c5e49914f44fbbf",
+    "tests/test_random_reference_revision.py": "f9aa8e55a7449ef275b4b3e2c4ba3ff578c5c50350a7b43171eb7de6af2634ca"
+  },
+  "historical_manifest": "logs/random_reference_revision/stats19/historical_artifacts.json",
+  "historical_manifest_sha256": "65484f4901e66edfee4fcb90a3c10646de12f14234c2758ba633f2a3118385ae",
+  "runtime": {
+    "python": "3.13.15",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.0",
+    "lightgbm": "4.7.0",
+    "shap": "0.52.0",
+    "joblib": "1.5.3"
+  }
+}

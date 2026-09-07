@@ -106,6 +106,14 @@ results/cas_feature_ablation/*
 logs/cas/cas_feature_ablation_*
 config/cas/cas_feature_ablation_complete.json
 
+# Local execution lock for the separate post-review correction
+logs/random_reference_revision/.execution.lock
+
+# Non-analytical preparation smoke artifacts and execution lock
+logs/stats19_feature_revision/.execution.lock
+logs/stats19_feature_revision/smoke/
+results/stats19_feature_revision/smoke/
+
 # Common local archives and OS metadata
 *.zip
 *.tar
