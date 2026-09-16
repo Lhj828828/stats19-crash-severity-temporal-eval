@@ -73,8 +73,10 @@ download alone does not contain them. Readers should use the wrapper above so
 that their reconstruction timestamps and input hashes are recorded separately.
 Existing protocols and completed outputs are verified rather than silently
 replaced. The QWK addition is supplied in the v1.3.1 source version; it was not
-part of the already published v1.3.0 DOI. Cite the verified version-specific
-archive for v1.3.1 when referring to this addition, once that archive is published.
+part of the already published v1.3.0 DOI. The verified version-specific archive
+for this addition is **v1.3.1**, <https://doi.org/10.5281/zenodo.22793992>,
+commit `e0ccfeb60ec66a3ea0febe969df58f6868ba1ab6`. All 824 files downloaded from
+Zenodo matched the fixed Git tree. Cite this version DOI for the added QWK code.
 
 ## Artifacts and validation
 

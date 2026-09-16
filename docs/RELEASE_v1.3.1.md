@@ -1,5 +1,10 @@
 # v1.3.1: Post hoc QWK prevalence sensitivity
 
+Published version DOI: <https://doi.org/10.5281/zenodo.22793992>.
+Fixed commit: `e0ccfeb60ec66a3ea0febe969df58f6868ba1ab6`.
+The downloaded 4,918,983-byte Zenodo ZIP matched all 824 files in the fixed
+release tree. This DOI backfill does not move or replace the released tag.
+
 This additive source version makes Appendix A.14.6 and Table A13 reproducible
 from a completed final 15-feature STATS19 run. It adds the QWK calculation code,
 the protocol recorded on 16 September 2026, focused tests, compact reference
@@ -51,5 +56,5 @@ does not claim a fresh full pipeline or independent third-party validation.
 The parent v1.3.0 DOI is https://doi.org/10.5281/zenodo.22642853 and does not
 contain this addition. Data DOIs are unchanged: STATS19
 https://doi.org/10.5281/zenodo.22290566 and CAS
-https://doi.org/10.5281/zenodo.22296725. The new version-specific software DOI
-must be verified after publication before being used in the manuscript.
+https://doi.org/10.5281/zenodo.22296725. The verified version-specific software
+DOI for the QWK addition is https://doi.org/10.5281/zenodo.22793992.

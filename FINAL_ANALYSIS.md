@@ -10,7 +10,8 @@ raw-to-results reconstruction subsequently passed for both datasets that day,
 before manuscript table or figure integration. See
 [the validation record](docs/FINAL_REPRODUCTION_VALIDATION.md).
 
-The additive v1.3.1 source supplies the post hoc QWK prevalence analysis for
+The additive v1.3.1 source, DOI <https://doi.org/10.5281/zenodo.22793992>,
+supplies the post hoc QWK prevalence analysis for
 Appendix A.14.6 and Table A13, which is not contained in the parent v1.3.0 DOI.
 After completing the main STATS19 reconstruction, use
 `reproduce_qwk_sensitivity.py` as documented in

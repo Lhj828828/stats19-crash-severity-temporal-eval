@@ -35,6 +35,13 @@ three summary tables against the recorded references. See
 resumption, uncertainty and archive boundaries. Publication/DOI verification of
 this source version is recorded separately from local preparation.
 
+Published software archive: **v1.3.1**, DOI
+<https://doi.org/10.5281/zenodo.22793992>, commit
+`e0ccfeb60ec66a3ea0febe969df58f6868ba1ab6`. The downloaded Zenodo ZIP matched
+all 824 files in that fixed Git tree. The later DOI backfill only updates
+main-branch documentation and does not move the released tag. See
+`logs/qwk_prevalence_sensitivity/release_v1.3.1_archive_verification.json`.
+
 ### Current corrected analysis (7 September 2026)
 
 The current analysis uses the **15-feature STATS19 correction**, including all
@@ -198,10 +205,11 @@ dependencies are pinned in `requirements-lock.txt`.
 
 ### Current 15-feature workflow
 
-Download and extract the `v1.3.0` source archive from
-<https://doi.org/10.5281/zenodo.22642853>, or clone the repository and check out
-`v1.3.0` to reproduce the primary analysis alone. Use the additive `v1.3.1`
-source when also reproducing Table A13, following the QWK section above.
+Download and extract the `v1.3.1` source archive from
+<https://doi.org/10.5281/zenodo.22793992>, or clone the repository and check out
+`v1.3.1`. The parent `v1.3.0` archive remains sufficient for the primary
+analysis alone, but does not include Table A13; use the QWK section above
+for that additive postprocessing step.
 From that source directory, use Python 3.13 in a working environment:
 
 ```text
