@@ -41,3 +41,8 @@ results/random_reference_revision/** -text whitespace=trailing-space,space-befor
 results/stats19_feature_revision/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
 # Retain the exact documentation-test source copied by the accepted clean run.
 tests/test_public_documentation.py -text whitespace=trailing-space,space-before-tab,cr-at-eol
+
+# Preserve the separately recorded QWK protocol and compact reference outputs.
+config/qwk_prevalence_sensitivity/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+logs/qwk_prevalence_sensitivity/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+results/qwk_prevalence_sensitivity/** -text whitespace=trailing-space,space-before-tab,cr-at-eol

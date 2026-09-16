@@ -2,17 +2,38 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22231696.svg)](https://doi.org/10.5281/zenodo.22231696)
 
-This repository contains the frozen computational materials for the Applied
-Sciences manuscript on leakage-aware temporal generalization in collision
+This repository contains the frozen computational materials for the Traffic
+Injury Prevention manuscript on leakage-aware temporal generalization in collision
 severity classification. It combines the UK STATS19 primary analysis with a
 separately trained New Zealand Crash Analysis System (CAS) replication.
 
-The current manuscript target is Applied Sciences (MDPI), a fully open-access
-journal. The current article processing charge, author requirements and any
-section-specific instructions must be checked again at submission; the journal
-target does not change the frozen analyses in this repository.
+The current manuscript target is Traffic Injury Prevention. Journal-specific
+requirements must be checked again at submission; the journal target does not
+change the frozen analyses in this repository.
 
 ## Scope and status
+
+### Additive QWK sensitivity (16 September 2026, v1.3.1)
+
+The v1.3.1 source adds the post hoc QWK true-class-prevalence sensitivity for
+Appendix A.14.6 and Table A13. It contains the calculation code, recorded protocol,
+tests, compact reference outputs and a separate reproduction entry. The final
+15-feature primary results, model rules, data archives and v1.3.0 tag remain
+unchanged. This was specified after the primary results were known, not
+preregistered. The historical v1.3.0 DOI below does not include this addition.
+
+After completing the STATS19 reconstruction, run from this source directory:
+
+```text
+python reproduce_qwk_sensitivity.py --parent ../final-reconstruction/stats19 --workspace ../qwk-reconstruction
+```
+
+This creates a separate postprocessing workspace, verifies parent inputs,
+recalculates QWK without model fitting or prediction calls, and compares its
+three summary tables against the recorded references. See
+[QWK_PREVALENCE_SENSITIVITY.md](docs/QWK_PREVALENCE_SENSITIVITY.md) for provenance,
+resumption, uncertainty and archive boundaries. Publication/DOI verification of
+this source version is recorded separately from local preparation.
 
 ### Current corrected analysis (7 September 2026)
 
@@ -179,7 +200,9 @@ dependencies are pinned in `requirements-lock.txt`.
 
 Download and extract the `v1.3.0` source archive from
 <https://doi.org/10.5281/zenodo.22642853>, or clone the repository and check out
-`v1.3.0`. From that source directory, use Python 3.13 in a working environment:
+`v1.3.0` to reproduce the primary analysis alone. Use the additive `v1.3.1`
+source when also reproducing Table A13, following the QWK section above.
+From that source directory, use Python 3.13 in a working environment:
 
 ```text
 python -m pip install --requirement requirements-lock.txt
@@ -370,10 +393,11 @@ rerun rather than changing a test result in place.
 
 ## Release materials
 
-The current repository-level release checklist is in
-`docs/APPLIED_SCIENCES_RELEASE_CHECKLIST.md`. The original `v1.0.0`-`v1.0.2`
+The additive QWK release is described in `docs/RELEASE_v1.3.1.md`.
+The older `docs/APPLIED_SCIENCES_RELEASE_CHECKLIST.md` is a historical checklist,
+not the current journal's author instructions. The original `v1.0.0`-`v1.0.2`
 release materials retain the historical IEEE Access target recorded when those
-versions were prepared. The current corrected computational supplement is
+versions were prepared. The corrected parent computational supplement was
 published as `v1.3.0`, DOI <https://doi.org/10.5281/zenodo.22642853>, described
 in `RELEASE_NOTES_v1.3.0.md`. It replaces the
 selected analysis scope, not the historical tags or their archived artifacts.

@@ -1,6 +1,7 @@
 # Final corrected analysis
 
-Target: Applied Sciences. Status: the corrected primary and retained sensitivity
+Current target: Traffic Injury Prevention. The parent release was prepared for
+Applied Sciences. Status: the corrected primary and retained sensitivity
 experiments are complete and locally verified. This revision is published as
 `v1.3.0`, DOI <https://doi.org/10.5281/zenodo.22642853>. On 7 September 2026
 the author requested that experimental
@@ -8,6 +9,14 @@ and reproduction validation take priority over manuscript work. The final clean
 raw-to-results reconstruction subsequently passed for both datasets that day,
 before manuscript table or figure integration. See
 [the validation record](docs/FINAL_REPRODUCTION_VALIDATION.md).
+
+The additive v1.3.1 source supplies the post hoc QWK prevalence analysis for
+Appendix A.14.6 and Table A13, which is not contained in the parent v1.3.0 DOI.
+After completing the main STATS19 reconstruction, use
+`reproduce_qwk_sensitivity.py` as documented in
+[QWK_PREVALENCE_SENSITIVITY.md](docs/QWK_PREVALENCE_SENSITIVITY.md).
+This separate postprocessing entry does not retrain models or change the
+20-table V2 primary catalog.
 
 ## One current entry point
 

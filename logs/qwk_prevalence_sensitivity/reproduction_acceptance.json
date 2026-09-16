@@ -1,0 +1,31 @@
+{
+  "status": "PASS_QWK_POSTPROCESSING_REPRODUCTION",
+  "version": "QWK_REPRODUCTION_ENTRY_V1",
+  "comparisons": [
+    {
+      "file": "qwk_gaps.csv",
+      "rows": 10,
+      "columns": 14,
+      "pass": true
+    },
+    {
+      "file": "class_weights.csv",
+      "rows": 15,
+      "columns": 7,
+      "pass": true
+    },
+    {
+      "file": "seed_summary.csv",
+      "rows": 6,
+      "columns": 7,
+      "pass": true
+    }
+  ],
+  "float_atol": 1e-10,
+  "float_rtol": 1e-08,
+  "model_fits": 0,
+  "prediction_calls": 0,
+  "parent_inputs_unchanged": true,
+  "post_hoc": true,
+  "boundary": "Uses completed parent outputs; not a fresh raw-to-model or third-party validation."
+}

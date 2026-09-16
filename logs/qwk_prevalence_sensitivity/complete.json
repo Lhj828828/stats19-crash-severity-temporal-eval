@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "completed_local": "2026-09-16T10:08:43.646781+08:00",
+  "protocol_sha256": "a5751bca50996845254f4c62127a9a37fe4f3ed70cd00356088189e08aebfaff",
+  "post_hoc": true,
+  "model_fits": 0,
+  "prediction_calls": 0,
+  "groups_verified": 10,
+  "model_seed_comparisons": 10,
+  "bootstrap_iterations": 2000,
+  "original_intervals_reproduced": true,
+  "independent_sklearn_weighted_qwk_check": true,
+  "frozen_inputs_unchanged": true,
+  "versions": {
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.0"
+  },
+  "outputs_sha256": {
+    "results/qwk_prevalence_sensitivity/bootstrap_draws.npz": "1dd25cdea01cf2a699aeb0c9d88a6724462bf7822ce97be9c4406b0260a46965",
+    "results/qwk_prevalence_sensitivity/class_weights.csv": "034f2cfaa707e6649291c8669f359f0456ddac19c3c5882a0c9faf1f1a7d6d7d",
+    "results/qwk_prevalence_sensitivity/input_audit.json": "461e55271b631274f95b418a6d8b5391f050c53fc0ddbac406f0b6d7fd3b76d3",
+    "results/qwk_prevalence_sensitivity/qwk_gaps.csv": "401759b76435f2ee827e927a428b6099e08e82d1cea92bb4762acac659b85825",
+    "results/qwk_prevalence_sensitivity/seed_summary.csv": "ff2b8b2519f762f8ff3f0aaee382b94bf5a1279eeae0da618f9e181f01ccec24"
+  }
+}

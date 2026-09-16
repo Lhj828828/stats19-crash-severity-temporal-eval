@@ -1,0 +1,122 @@
+[
+  {
+    "group": "random_seed_1103_internal",
+    "rows": 96408,
+    "class_counts": [
+      75156,
+      19854,
+      1398
+    ],
+    "identifiers_targets_split_positions_match": true,
+    "all_original_qwk_draws_replayed": true,
+    "confusions_match_frozen": true
+  },
+  {
+    "group": "random_seed_1103_2024",
+    "rows": 100927,
+    "class_counts": [
+      75858,
+      23567,
+      1502
+    ],
+    "identifiers_targets_split_positions_match": true,
+    "all_original_qwk_draws_replayed": true,
+    "confusions_match_frozen": true
+  },
+  {
+    "group": "random_seed_2207_internal",
+    "rows": 96408,
+    "class_counts": [
+      75156,
+      19854,
+      1398
+    ],
+    "identifiers_targets_split_positions_match": true,
+    "all_original_qwk_draws_replayed": true,
+    "confusions_match_frozen": true
+  },
+  {
+    "group": "random_seed_2207_2024",
+    "rows": 100927,
+    "class_counts": [
+      75858,
+      23567,
+      1502
+    ],
+    "identifiers_targets_split_positions_match": true,
+    "all_original_qwk_draws_replayed": true,
+    "confusions_match_frozen": true
+  },
+  {
+    "group": "random_seed_3301_internal",
+    "rows": 96408,
+    "class_counts": [
+      75157,
+      19854,
+      1397
+    ],
+    "identifiers_targets_split_positions_match": true,
+    "all_original_qwk_draws_replayed": true,
+    "confusions_match_frozen": true
+  },
+  {
+    "group": "random_seed_3301_2024",
+    "rows": 100927,
+    "class_counts": [
+      75858,
+      23567,
+      1502
+    ],
+    "identifiers_targets_split_positions_match": true,
+    "all_original_qwk_draws_replayed": true,
+    "confusions_match_frozen": true
+  },
+  {
+    "group": "random_seed_4409_internal",
+    "rows": 96408,
+    "class_counts": [
+      75157,
+      19854,
+      1397
+    ],
+    "identifiers_targets_split_positions_match": true,
+    "all_original_qwk_draws_replayed": true,
+    "confusions_match_frozen": true
+  },
+  {
+    "group": "random_seed_4409_2024",
+    "rows": 100927,
+    "class_counts": [
+      75858,
+      23567,
+      1502
+    ],
+    "identifiers_targets_split_positions_match": true,
+    "all_original_qwk_draws_replayed": true,
+    "confusions_match_frozen": true
+  },
+  {
+    "group": "random_seed_5501_internal",
+    "rows": 96408,
+    "class_counts": [
+      75157,
+      19854,
+      1397
+    ],
+    "identifiers_targets_split_positions_match": true,
+    "all_original_qwk_draws_replayed": true,
+    "confusions_match_frozen": true
+  },
+  {
+    "group": "random_seed_5501_2024",
+    "rows": 100927,
+    "class_counts": [
+      75858,
+      23567,
+      1502
+    ],
+    "identifiers_targets_split_positions_match": true,
+    "all_original_qwk_draws_replayed": true,
+    "confusions_match_frozen": true
+  }
+]

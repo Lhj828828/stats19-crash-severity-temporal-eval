@@ -11,10 +11,12 @@ PROJECT_DIR = Path(__file__).resolve().parents[1]
 
 
 class PublicDocumentationTests(unittest.TestCase):
-    def test_current_journal_target_is_applied_sciences(self) -> None:
+    def test_current_journal_target_and_qwk_archive_boundary(self) -> None:
         readme = (PROJECT_DIR / "README.md").read_text(encoding="utf-8")
         checklist = PROJECT_DIR / "docs" / "APPLIED_SCIENCES_RELEASE_CHECKLIST.md"
-        self.assertIn("Applied Sciences", readme)
+        self.assertIn("Traffic Injury Prevention", readme)
+        self.assertIn("reproduce_qwk_sensitivity.py", readme)
+        self.assertIn("historical v1.3.0 DOI below does not include this addition", readme)
         self.assertNotIn("docs/IEEE_ACCESS_RELEASE_CHECKLIST.md", readme)
         self.assertTrue(checklist.is_file())
         self.assertFalse(
