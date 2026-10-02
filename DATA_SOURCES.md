@@ -121,27 +121,39 @@ the repository's MIT software licence. The two files are published under CC BY
 
 ## Recreating the local data layout
 
-1. Run `python download_and_verify_data.py download --dataset all` and
-   `python download_and_verify_data.py verify --dataset all`. Do not substitute
-   a current live response.
-2. Confirm that all nine files report `PASS`.
-3. Run `python run_public_reproduction.py --all`; the runner builds an isolated
-   workspace and recreates the D1 audit directly from the seven verified
-   annual files.
-4. For CAS, obtain the exact lossless JSONL snapshot whose SHA-256 is
-   `7db99dd4ba92716d751dabbc08b03f72373c635025b7d5335cf0b6705a7bd7f3`, then
-   run:
+For the current manuscript, use the fixed **v1.3.1** software source from
+<https://doi.org/10.5281/zenodo.22793992> or the matching Git tag. Follow the
+environment setup in [REPRODUCING.md](REPRODUCING.md#current-manuscript-workflow-v131),
+then run from that source directory:
 
-   ```text
-   python run_cas_public_reproduction.py --self-test
-   python run_cas_public_reproduction.py --all --snapshot /path/to/cas_injury_2022_2025_snapshot.jsonl.gz
-   python verify_cas_public_results.py --candidate-root /path/to/cas-reproduction
-   ```
+```text
+python download_and_verify_data.py download --dataset all
+python download_and_verify_data.py verify --dataset all
+python run_final_analysis.py --stage plan
+python run_final_analysis.py --stage reproduce --dataset all --workspace ../final-reconstruction
+```
 
-   The CAS runner keeps this workflow outside the STATS19 workspace and never
-   replaces the fixed snapshot with a live API query. The inspection CSV is
-   useful for transparent review; the lossless JSONL is the authoritative CAS
-   analysis input.
+All nine files must report `PASS` before reconstruction. The final runner
+creates separate STATS19 and CAS workspaces and clean environments, regenerates
+the analyses, and compares the 20 selected V2 result tables. It does not copy
+author-fitted models or predictions. CAS uses the lossless JSONL snapshot;
+the inspection CSV is useful for review, not a replacement analysis input.
+
+After the main reconstruction, reproduce the added QWK sensitivity separately:
+
+```text
+python reproduce_qwk_sensitivity.py --parent ../final-reconstruction/stats19 --workspace ../qwk-reconstruction
+```
+
+For an interrupted run, use the same workspace and add `--resume` to the
+corresponding reconstruction command. See the current guide for completion
+markers, partial-stage limitations and per-dataset paths.
+
+The top-level `run_public_reproduction.py` and
+`run_cas_public_reproduction.py` workflows reproduce historical implementations,
+not the current selected results. Their instructions remain in the clearly
+marked historical sections of `REPRODUCING.md` and
+`CAS_PUBLIC_REPRODUCTION.md`; they are not alternative current entry points.
 
 Researchers who already have the exact files may place them at the manifest
 paths and run `verify`. The mutable DfT complete-file URL and live CAS API

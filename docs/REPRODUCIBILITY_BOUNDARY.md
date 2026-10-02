@@ -5,6 +5,13 @@ author-side forensic comparison. The distinction prevents a compact software
 archive from implying that excluded raw data or multi-gigabyte record-level
 artifacts are present.
 
+For the current manuscript, follow
+[the v1.3.1 reproduction instructions](../REPRODUCING.md#current-manuscript-workflow-v131).
+The entry is `run_final_analysis.py --stage reproduce`, followed by
+`reproduce_qwk_sensitivity.py` for the added STATS19 QWK analysis. The retained
+top-level `run_public_reproduction.py` and `run_cas_public_reproduction.py`
+workflows belong to historical analyses, not the current selected results.
+
 ## Public software archive
 
 The public GitHub and Zenodo software archive is intended to contain:
@@ -33,9 +40,13 @@ identifiable and obtainable under their applicable source terms.
 1. **Public reconstruction** downloads and verifies the fixed input snapshots,
    creates a clean environment and regenerates the analysis outputs.
 2. **Public scientific verification** compares regenerated compact tables and
-   decision summaries with the tracked references under
-   `config/public_result_reference/` and the documented tolerances in
-   `config/public_result_contract.json`.
+   decision summaries with version-matched references. The current final runner
+   compares 20 V2 tables selected by `config/final_analysis/result_catalog.json`;
+   copies of those compact references are isolated under `config/final_reference/`
+   in the new workspaces. The separate QWK wrapper compares three more tables.
+   Both use exact text/integer comparisons and `atol=1e-10`, `rtol=1e-8` for
+   floating values. `config/public_result_reference/` and
+   `config/public_result_contract.json` belong to the historical verifier.
 3. **Author-side forensic comparison** additionally compares large
    record-level predictions, arrays and other local frozen artifacts. The
    retained D16 workflow performs this level and is not the public entry point.
@@ -62,7 +73,23 @@ cross-dataset protocol instead uses the portable STATS19 copies under
 Path normalization changes location strings and therefore file bytes, but it
 does not change samples, predictions, metrics, uncertainty estimates, model
 parameters or scientific conclusions.
-## Version claims
+## Current version claims
+
+The corrected primary analysis was archived as v1.3.0, DOI
+<https://doi.org/10.5281/zenodo.22642853>. Its author-run clean reconstruction
+passed 22 STATS19 stages, 25 CAS stages and 20 selected V2 table comparisons on
+7 September 2026. This was a same-machine Windows validation, not independent
+third-party or cross-platform validation. See
+[FINAL_REPRODUCTION_VALIDATION.md](FINAL_REPRODUCTION_VALIDATION.md).
+
+The v1.3.1 source, DOI <https://doi.org/10.5281/zenodo.22793992>, adds the post hoc
+QWK sensitivity and its separate reproduction wrapper. Use that version for the
+complete current computational scope. The main-branch documentation clarification
+does not replace these archives, move their tags or change scientific settings.
+Each new execution must produce its own completion and comparison records;
+archived author acceptance records are not proof that a new run has completed.
+
+## Historical version claims
 
 The `v1.0.2` archive records the frozen code, protocols and compact results and
 documents an author-run isolated reproduction. It predates the two published

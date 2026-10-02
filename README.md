@@ -11,6 +11,24 @@ The current manuscript target is Traffic Injury Prevention. Journal-specific
 requirements must be checked again at submission; the journal target does not
 change the frozen analyses in this repository.
 
+## Start here: reproduce the current manuscript
+
+Use the fixed **v1.3.1** source, DOI
+<https://doi.org/10.5281/zenodo.22793992>, for the 15-feature STATS19 analysis,
+corrected CAS analysis and additional QWK sensitivity. Follow the
+[current reproduction steps](REPRODUCING.md#current-manuscript-workflow-v131).
+The primary entry is `run_final_analysis.py --stage reproduce`; after STATS19
+completes, `reproduce_qwk_sensitivity.py` reproduces Appendix A.14.6/Table A13.
+
+`run_public_reproduction.py` and `run_cas_public_reproduction.py` are retained
+historical entry points. Their top-level workflows do **not** reproduce the
+current manuscript's selected results. The final runner reuses necessary
+components and applies the corrections. `run_d16_reproduction.py` is an
+author-side historical comparator, not a first-time reader entry.
+
+This main-branch documentation clarification does not change the v1.3.1 tag,
+published Zenodo archives, analysis code, frozen settings or reference results.
+
 ## Scope and status
 
 ### Additive QWK sensitivity (16 September 2026, v1.3.1)
@@ -50,16 +68,16 @@ Ordered Logit, its matched-subset comparison and the tree-count extension are
 omitted from the revised manuscript. Their historical files are retained.
 The 1200-round search boundary remains a limitation and must still be reported.
 
-The current entry point is explicit and defaults to a plan, not model fitting:
+Inspect the current entry point without fitting models:
 
 ```text
 python run_final_analysis.py --stage plan
-python run_final_analysis.py --stage check
 ```
 
-`check` is an author-side audit of existing completed artifacts, not a fresh
-clone's installation test. First-time reproduction uses `--stage reproduce`
-as described under Environment and reproduction below.
+First-time reproduction uses `--stage reproduce` as described in the
+[current reproduction guide](REPRODUCING.md#current-manuscript-workflow-v131).
+`--stage check` is an author-side audit of existing completed artifacts, not a
+fresh clone's installation test.
 
 `results/final_analysis/v2/` contains 20 curated compact tables. The catalog at
 `config/final_analysis/result_catalog.json` fixes their sources, keys, hashes
@@ -325,7 +343,8 @@ migrations and recomputes the scientific outputs. It does not relabel the
 original failures or overwrite their hashes. Corrected 15-feature runs use
 their own execution-bound validators, not this historical compatibility check.
 
-For the CAS replication, run the standalone checks in `tests/`, for example:
+For the historical CAS replication, run the standalone checks in `tests/`,
+for example (these are not the current corrected workflow's test list):
 
 ```text
 python tests/test_cas_feasibility_audit.py
@@ -339,7 +358,11 @@ python tests/test_cas_closeout.py
 python tests/test_cas_feature_ablation.py
 ```
 
-The independent CAS public entry point is also available. It uses only the
+The retained historical CAS public entry point is also available. Current CAS
+reproduction uses `run_final_analysis.py --stage reproduce --dataset cas` with
+an explicit separate workspace; see the
+[current CAS instructions](CAS_PUBLIC_REPRODUCTION.md#current-cas-workflow).
+The historical runner uses only the
 fixed lossless JSONL snapshot, never queries the live CAS service, and checks
 the snapshot SHA-256 before copying it to an isolated workspace:
 
@@ -366,18 +389,20 @@ rerun rather than changing a test result in place.
 
 - `code/`: STATS19 stages, CAS stages and standalone checks.
 - `config/`: frozen schemas, field audits, split protocols and model rules.
-- `config/public_result_reference/`: small frozen CSV/JSON summaries used by
-  the public verifier; no records, fitted models or large arrays.
+- `config/final_analysis/result_catalog.json`: the current V2 result selection;
+  its 20 compact references are under `results/final_analysis/v2/`.
+- `config/public_result_reference/`: historical compact CSV/JSON references;
+  no records, fitted models or large arrays.
 - `data/external/`: official documentation and CAS metadata snapshots.
 - `figures/`: compact figures retained for the manuscript.
 - `logs/`: provenance, checksums, audit trails and checkpoints.
 - `results/`: compact summary tables; record-level outputs are excluded by
   default.
 - `DATA_SOURCES.md`: source attribution, snapshot hashes and data layout.
-- `REPRODUCING.md`: public reconstruction commands, resume behavior and
-  verification limits.
-- `verify_public_results.py`: cross-platform compact-result verification
-  command.
+- `REPRODUCING.md`: current reconstruction commands first, followed by
+  explicitly separated historical commands and validation records.
+- `verify_public_results.py`: historical compact-result verification command;
+  the current final runner invokes its own V2 comparison.
 - `RELEASE_NOTES_v1.0.0.md`: the first public version boundary.
 - `RELEASE_NOTES_v1.0.1.md`: metadata-only Zenodo archival follow-up to the
   frozen `v1.0.0` materials.

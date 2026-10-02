@@ -1,5 +1,32 @@
 # Public CAS reproduction
 
+## Current CAS workflow
+
+For the current manuscript, run CAS through the corrected final entry point,
+not through the historical standalone command below. From the fixed v1.3.1
+source directory, after downloading and verifying all nine public inputs, use:
+
+```text
+python run_final_analysis.py --stage plan --dataset cas
+python run_final_analysis.py --stage reproduce --dataset cas --workspace ../final-reconstruction/cas
+```
+
+The run creates a separate clean environment and regenerates the current CAS
+workflow: the audited 15-feature design, temporal and baseline models, the
+one-time 2025 evaluation, Bootstrap, the urban/sparse-speed post hoc
+sensitivity, and the split-local random-reference correction. It does not pool
+CAS with STATS19. Expected completion markers are
+`FINAL_RESULT_COMPARISON=PASS` and `FINAL_REPRODUCTION_COMPLETE cas`; the
+generated comparison must contain nine current V2 CAS tables.
+
+For an interrupted run, reuse the same directory and add `--resume`. Do not
+use `--use-current-environment` as clean-reproduction evidence, and do not use
+the historical runner below as a substitute for the current manuscript
+workflow. After the STATS19 run, the separate QWK wrapper concerns STATS19 only.
+
+The remainder of this file is retained for the historical standalone CAS
+release and is labeled accordingly.
+
 > Historical CAS entry. This guide preserves the archived pipeline and its
 > completed-run evidence. Its random LightGBM and cross-dataset reporting stages
 > do not supply the current revised manuscript results. Use
@@ -12,7 +39,7 @@ This is an independent New Zealand CAS workflow reproduction. CAS records are
 never pooled with STATS19 records, and the CAS labels and absolute metrics are
 not treated as interchangeable with STATS19 labels and metrics.
 
-## Fixed input
+## Historical fixed input
 
 The public run starts from the lossless JSONL snapshot below:
 
@@ -31,7 +58,7 @@ The snapshot contains 43,121 police-reported personal-injury crashes from
 input. Place the exact file at the path above, or provide another local path
 with `--snapshot`; the hash check remains mandatory.
 
-## Run
+## Historical run commands
 
 Python 3.13 is required. From the repository root:
 
@@ -90,7 +117,7 @@ An interrupted run can be resumed without rerunning passed stages:
 python run_cas_public_reproduction.py --all --resume
 ```
 
-## Verification
+## Historical verification
 
 The runner must finish with:
 

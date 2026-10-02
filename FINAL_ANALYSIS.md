@@ -21,12 +21,21 @@ This separate postprocessing entry does not retrain models or change the
 
 ## One current entry point
 
+For a first-time reconstruction, follow
+[the current v1.3.1 guide](REPRODUCING.md#current-manuscript-workflow-v131).
+Inspect the plan, then run the reconstruction in a separate workspace:
+
 ```text
 python run_final_analysis.py --stage plan
-python run_final_analysis.py --stage check
+python run_final_analysis.py --stage reproduce --dataset all --workspace ../final-reconstruction
 ```
 
-Neither command trains a model. The check validates completed source artifacts,
+Only `plan` avoids model fitting; `reproduce` actually rebuilds the analyses.
+Download and verify the fixed inputs and install the locked dependencies first,
+as described in the guide. The top-level historical STATS19/CAS runners are not
+alternative entries for the current selected results.
+
+`--stage check` validates completed source artifacts,
 the selected result catalog and the separately documented historical D14
 provenance boundaries. `--stage package` verifies/assembles the compact tables
 without running the historical check. Re-running package never overwrites a
